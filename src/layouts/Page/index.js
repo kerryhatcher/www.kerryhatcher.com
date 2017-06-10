@@ -26,12 +26,12 @@ const Page = (
   warning(
     typeof head.title === "string",
     `Your page '${ __filename }' needs a title`
-  )
+  );
 
-  const metaTitle = head.metaTitle ? head.metaTitle : head.title
+  const metaTitle = head.metaTitle ? head.metaTitle : head.title;
 
   const socialImage = head.hero && head.hero.match("://") ? head.hero
-    : joinUri(process.env.PHENOMIC_USER_URL, head.hero)
+    : joinUri(process.env.PHENOMIC_USER_URL, head.hero);
 
   const meta = [
     { property: "og:type", content: "article" },
@@ -48,14 +48,17 @@ const Page = (
     { name: "twitter:description", content: head.description },
     { name: "twitter:image", content: socialImage },
     { name: "description", content: head.description },
-  ]
+  ];
 
   return (
     <div className={ styles.page }>
       <Helmet
         title={ metaTitle }
         meta={ meta }
-      />
+      >
+          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" />
+          <script async src="/assets/gadstuff.js.js" />
+      </Helmet>
       {
         <div
           className={ styles.hero }
@@ -92,7 +95,7 @@ const Page = (
       </div>
     </div>
   )
-}
+};
 
 Page.propTypes = {
   children: PropTypes.node,
@@ -103,10 +106,10 @@ Page.propTypes = {
   body: PropTypes.string,
   header: PropTypes.element,
   footer: PropTypes.element,
-}
+};
 
 Page.contextTypes = {
   metadata: PropTypes.object.isRequired,
-}
+};
 
 export default Page

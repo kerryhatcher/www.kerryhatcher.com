@@ -2,8 +2,10 @@
 title: Generating Diffs with Python
 date: 2014-8-26
 layout: Post
-hero: https://farm8.staticflickr.com/7479/15669216853_aa8e70eae1_o.jpg
+hero: /assets/21779073769_24078096d8_o.jpg
 ---
+
+## Generating Diffs with Python
 
 When managing large numbers of servers, one of the hardest problems to deal with is standard configuration drift, especially in big enterprise multi-admin environments. Overtime as various sysadmins fix small issues on individual servers, the systems diverge from the standard settings that other admins expect to find on the boxes. This causes big issues down the road when trying to troubleshoot a followup issue.
 

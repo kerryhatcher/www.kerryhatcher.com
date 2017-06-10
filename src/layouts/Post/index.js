@@ -1,6 +1,7 @@
 import React, { PropTypes } from "react"
 
 import LatestPosts from "../../components/LatestPosts"
+import PostAd from "../../components/PostAd"
 import Page from "../Page"
 
 import styles from "./index.css"
@@ -10,7 +11,7 @@ const Post = (props) => {
   const pageDate = props.head.date ? new Date(props.head.date) : null
 
   return (
-    <Page
+  <Page
       { ...props }
       header={
         <div>
@@ -25,6 +26,8 @@ const Post = (props) => {
         </div>
       }
     >
+      <hr />
+        <PostAd />
       <hr />
       <LatestPosts />
     </Page>

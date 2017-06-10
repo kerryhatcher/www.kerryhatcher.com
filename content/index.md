@@ -8,7 +8,7 @@ cta:
   link: "about"
 ---
 
-Hi there. I'm still working on this. Check back later!
+Welcome! Thanks for visiting!!
 
 
 ---
