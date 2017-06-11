@@ -1,19 +1,30 @@
-# [Phenomic](https://github.com/MoOx/phenomic) phenomic-theme-base
+# Kerry's Personal Site
 
 ## Install dependencies
 
-```sh
-npm install
+```bash
+yarn install
 ```
 
 ## Run development server
 
-```sh
-npm start
+```bash
+yarn start
 ```
 
 ## Build for production
 
-```sh
-npm run build
+```bash
+yarn run build
+```
+
+## Preview production build
+```bash
+yarn run serve
+```
+
+
+ ## Deploy to AWS S3 bucket
+ ```bash
+yarn run deploy
 ```
