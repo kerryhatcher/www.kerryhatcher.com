@@ -8,7 +8,10 @@ cta:
   link: "about"
 ---
 
-Welcome! Thanks for visiting!!
+Welcome!  
+  
+
+Thanks for visiting!
 
 
 ---
