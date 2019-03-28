@@ -1,0 +1,18 @@
+---
+label: Test
+hide_body: false
+fields:
+- type: text
+  name: title
+  label: Title
+  description: Have  a title
+  config:
+    required: true
+- type: textarea
+  name: text_area
+  label: Text Area
+  description: What goes here? I don't know
+  config:
+    wysiwyg: true
+    schema:
+      format: markdown
