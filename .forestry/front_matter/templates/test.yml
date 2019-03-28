@@ -8,13 +8,5 @@ fields:
   description: Have  a title
   config:
     required: true
-- type: textarea
-  name: text_area
-  label: Text Area
-  description: What goes here? I don't know
-  config:
-    wysiwyg: true
-    schema:
-      format: markdown
 pages:
 - content/posts/first-forestry-post.md
