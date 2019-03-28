@@ -1,0 +1,4 @@
+baseURL = "https://www.kerryhatcher.com/"
+languageCode = "en-us"
+title = "Kerry Hatcher"
+theme = "ananke"
