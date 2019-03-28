@@ -9,4 +9,5 @@ fields:
   config:
     required: true
 pages:
+- content/posts/admin-page-post.md
 - content/posts/first-forestry-post.md
