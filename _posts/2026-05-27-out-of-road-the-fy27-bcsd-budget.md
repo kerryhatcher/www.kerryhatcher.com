@@ -170,4 +170,8 @@ Contact me on [Signal](https://signal.org/): `kerryhatcher.03`
 
 ---
 
-*Subscribe for updates on the FY27 budget and what happens after Tuesday, June 2.*
+## Share the full breakdown
+
+If you found this useful, the full infographic below summarizes everything — the deficit, the cut menu, the two paths, and what a 3-mill increase actually costs. Save it, send it, post it.
+
+![Full FY27 BCSD budget infographic: $23.8M deficit by June 2; fund balance falls from 7.8% (FY27) to -14.3% (FY30). Every mill not raised must be matched by ~$5.4M of cuts. Path A (cuts-heavy): +1.7 mills (~$9.40/month on a median home) plus $15.8M in cuts including bigger class sizes, school closures, outsourcing paraprofessionals, pay freeze, and furloughs. Path B (revenue-heavy): +4.3 mills (~$24/month) with only $0.68M in small operational cuts and minimal classroom impact.](/assets/images/remote/hatchdata/2026/05/FY27_two_paths_infographic.png)
