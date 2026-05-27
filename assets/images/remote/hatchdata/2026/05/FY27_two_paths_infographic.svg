@@ -246,8 +246,19 @@
        fill="url(#spectrum)"
        id="rect22"
        style="fill:url(#spectrum);stroke-width:1.17308" />
+    <!-- horizontal axis line through bar center; runs to bar edges to signal the scale continues -->
+    <line x1="102" y1="828.748" x2="1322" y2="828.748" stroke="#f5f1e8" stroke-width="2" stroke-opacity="0.55" id="scale-axis"/>
+    <!-- tick marks bisecting the bar at integer mill values (1..5), inset past rounded caps; 286 px per mill -->
+    <g stroke="#f5f1e8" stroke-width="3" stroke-linecap="square" id="scale-ticks">
+      <line x1="140"  y1="783" x2="140"  y2="875"/>
+      <line x1="426"  y1="783" x2="426"  y2="875"/>
+      <line x1="712"  y1="783" x2="712"  y2="875"/>
+      <line x1="998"  y1="783" x2="998"  y2="875"/>
+      <line x1="1284" y1="783" x2="1284" y2="875"/>
+    </g>
+    <!-- value indicators at 1.7 mills and 4.3 mills -->
     <circle
-       cx="348.01337"
+       cx="340"
        cy="828.7478"
        r="28"
        fill="#2e4a7a"
@@ -255,13 +266,21 @@
        stroke-width="6"
        id="circle22" />
     <circle
-       cx="1064.4598"
+       cx="1084"
        cy="828.7478"
        r="28"
        fill="#3a6952"
        stroke="#f5f1e8"
        stroke-width="6"
        id="circle23" />
+  </g>
+  <!-- scale numeric labels below the bar -->
+  <g font-size="30" font-weight="700" fill="#5c5f6b" text-anchor="middle" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" id="scale-labels">
+    <text x="140"  y="910">1</text>
+    <text x="426"  y="910">2</text>
+    <text x="712"  y="910">3</text>
+    <text x="998"  y="910">4</text>
+    <text x="1284" y="910">5</text>
   </g>
   <!-- directional labels below bar -->
   <!-- ============ DETAIL COLUMNS WITH COLORED PILL HEADERS ============ -->
