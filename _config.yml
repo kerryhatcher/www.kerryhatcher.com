@@ -74,3 +74,4 @@ exclude:
   - wrangler.jsonc
   - .wrangler
   - node_modules
+  - .remember

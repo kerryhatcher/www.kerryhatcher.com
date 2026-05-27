@@ -15,9 +15,8 @@
 
   <defs>
     <linearGradient id="t-spectrum" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%"  stop-color="#2e4a7a"/>
-      <stop offset="50%" stop-color="#997e54"/>
-      <stop offset="100%" stop-color="#3a6952"/>
+      <stop offset="0%"   stop-color="#152870"/>
+      <stop offset="100%" stop-color="#0F5832"/>
     </linearGradient>
     <style>
       .brand       { font-size: 56px; font-weight: 800; fill: #111e48; letter-spacing: -1px; }
@@ -26,7 +25,7 @@
       .hero-cap    { font-size: 24px; fill: #3a3d49; }
       .hero-cap-em { font-size: 24px; font-weight: 800; fill: #1a1d28; }
       .trade-l     { font-size: 52px; font-weight: 700; fill: #f5f1e8; }
-      .trade-em    { font-size: 52px; font-weight: 800; fill: #d99c4a; }
+      .trade-em    { font-size: 52px; font-weight: 800; fill: #f5f1e8; }
       .spec-num    { font-size: 64px; font-weight: 800; fill: #1a1d28; letter-spacing: -1.5px; }
       .spec-cost   { font-size: 26px; font-weight: 700; fill: #1a1d28; }
       .spec-sub    { font-size: 20px; font-weight: 500; fill: #5c5f6b; }
@@ -45,7 +44,7 @@
 
   <!-- ===== HEADER (top-left, vertically aligned with deficit hero on right) ===== -->
   <text x="80" y="130" class="brand">Bibb School FY27 Budget</text>
-  <line x1="80" y1="150" x2="232" y2="150" stroke="#2e4a7a" stroke-width="5"/>
+  <line x1="80" y1="150" x2="232" y2="150" stroke="#152870" stroke-width="5"/>
   <text x="80" y="190" class="section">THE GAP TO CLOSE BY TUESDAY, JUNE 2</text>
 
   <!-- ===== DEFICIT HERO (top-right) ===== -->
@@ -58,16 +57,27 @@
   <!-- ===== TRADE BAND (full-width dark) ===== -->
   <rect x="0" y="276" width="1600" height="160" fill="#111e48"/>
   <text x="80" y="338" class="trade-l">Every mill <tspan class="trade-em">not</tspan> raised must be matched by</text>
-  <text x="80" y="402" class="trade-l"><tspan class="trade-em">~$5.4M</tspan> of cuts somewhere.</text>
+  <text x="1520" y="402" text-anchor="end" class="trade-l"><tspan class="trade-em">~$5.4M</tspan> of cuts somewhere.</text>
+  <!-- marker underlines on emphasis words; hand-drawn curve, round caps, with ink-bleed halo -->
+  <g stroke="#D14545" stroke-linecap="round" fill="none">
+    <g opacity="0.32" stroke-width="16">
+      <path d="M 333 354 Q 380 360 426 351"/>
+      <path d="M 858 418 Q 950 425 1043 416"/>
+    </g>
+    <g stroke-width="9">
+      <path d="M 333 354 Q 380 359 426 351"/>
+      <path d="M 858 418 Q 950 423 1043 416"/>
+    </g>
+  </g>
 
   <!-- ===== SPECTRUM ===== -->
   <!-- left endpoint label -->
-  <text x="80" y="516" class="spec-num" fill="#2e4a7a">+1.7 mills<tspan class="mills-mark" dy="-22">*</tspan></text>
+  <text x="80" y="516" class="spec-num" fill="#152870">+1.7 mills<tspan class="mills-mark" dy="-22">*</tspan></text>
   <text x="80" y="551" class="spec-cost">~$12 / month
     <tspan class="spec-sub">· median home</tspan></text>
 
   <!-- right endpoint label -->
-  <text x="1520" y="516" text-anchor="end" class="spec-num" fill="#3a6952">+4.3 mills<tspan class="mills-mark" dy="-22">*</tspan></text>
+  <text x="1520" y="516" text-anchor="end" class="spec-num" fill="#0F5832">+4.3 mills<tspan class="mills-mark" dy="-22">*</tspan></text>
   <text x="1520" y="551" text-anchor="end" class="spec-cost">~$30 / month
     <tspan class="spec-sub">· median home</tspan></text>
 
@@ -88,8 +98,8 @@
     </g>
 
     <!-- value indicators at 1.7 mills and 4.3 mills -->
-    <circle cx="352"  cy="623" r="24" fill="#2e4a7a" stroke="#f5f1e8" stroke-width="6"/>
-    <circle cx="1249" cy="623" r="24" fill="#3a6952" stroke="#f5f1e8" stroke-width="6"/>
+    <circle cx="352"  cy="623" r="24" fill="#152870" stroke="#f5f1e8" stroke-width="6"/>
+    <circle cx="1249" cy="623" r="24" fill="#0F5832" stroke="#f5f1e8" stroke-width="6"/>
   </g>
 
   <!-- larger numeric labels under the bar -->
@@ -102,18 +112,18 @@
   </g>
 
   <!-- pill labels under bar (shifted down to make room for scale labels) -->
-  <rect x="80" y="720" width="360" height="50" rx="12" fill="#2e4a7a"/>
+  <rect x="80" y="720" width="360" height="50" rx="12" fill="#152870"/>
   <text x="260" y="755" text-anchor="middle" class="pill-tag">MORE CUTS</text>
 
-  <rect x="1160" y="720" width="360" height="50" rx="12" fill="#3a6952"/>
+  <rect x="1160" y="720" width="360" height="50" rx="12" fill="#0F5832"/>
   <text x="1340" y="755" text-anchor="middle" class="pill-tag">MORE TAXES</text>
 
   <!-- ===== TOTAL CUTS UNDER EACH OPTION ===== -->
-  <text x="260" y="815" text-anchor="middle" class="cuts-label" fill="#2e4a7a">INCLUDES CUTS TOTALING</text>
-  <text x="260" y="858" text-anchor="middle" class="cuts-total" fill="#2e4a7a">$15.8M</text>
+  <text x="260" y="815" text-anchor="middle" class="cuts-label" fill="#152870">INCLUDES CUTS TOTALING</text>
+  <text x="260" y="858" text-anchor="middle" class="cuts-total" fill="#152870">$15.8M</text>
 
-  <text x="1340" y="815" text-anchor="middle" class="cuts-label" fill="#3a6952">INCLUDES CUTS TOTALING</text>
-  <text x="1340" y="858" text-anchor="middle" class="cuts-total" fill="#3a6952">$0.68M</text>
+  <text x="1340" y="815" text-anchor="middle" class="cuts-label" fill="#0F5832">INCLUDES CUTS TOTALING</text>
+  <text x="1340" y="858" text-anchor="middle" class="cuts-total" fill="#0F5832">$0.68M</text>
 
   <!-- brand mark, centered at bottom -->
   <text x="800" y="858" text-anchor="middle" class="footer-em">kerryhatcher.com</text>

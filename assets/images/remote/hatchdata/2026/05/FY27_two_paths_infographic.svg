@@ -63,15 +63,11 @@
        gradientUnits="userSpaceOnUse">
       <stop
          offset="0%"
-         stop-color="#2e4a7a"
+         stop-color="#152870"
          id="stop1" />
       <stop
-         offset="50%"
-         stop-color="#997e54"
-         id="stop2" />
-      <stop
          offset="100%"
-         stop-color="#3a6952"
+         stop-color="#0F5832"
          id="stop3" />
     </linearGradient>
     <clipPath
@@ -99,13 +95,13 @@
       .pill-tag    { font-size: 22px; font-weight: 800; fill: #f5f1e8; letter-spacing: 3px; }
       .pill-num    { font-size: 64px; font-weight: 900; fill: #f5f1e8; letter-spacing: -1.5px; }
       .cut-item    { font-size: 24px; fill: #1a1d28; }
-      .cut-cost    { font-size: 24px; font-weight: 700; fill: #2e4a7a; }
+      .cut-cost    { font-size: 24px; font-weight: 700; fill: #152870; }
       .body-mute   { font-size: 22px; fill: #3a3d49; }
       .quiet       { font-size: 30px; fill: #1a1d28; }
-      .quiet-em    { font-size: 30px; font-weight: 800; fill: #3a6952; }
+      .quiet-em    { font-size: 30px; font-weight: 800; fill: #0F5832; }
       .trade-h     { font-size: 27px; font-weight: 800; fill: #f5f1e8; letter-spacing: 3px; }
       .trade-l     { font-size: 48px; font-weight: 700; fill: #f5f1e8; }
-      .trade-em    { font-size: 48px; font-weight: 800; fill: #d99c4a; }
+      .trade-em    { font-size: 48px; font-weight: 800; fill: #f5f1e8; }
       .closer      { font-size: 40px; font-weight: 800; fill: #1a1d28; letter-spacing: -0.5px; }
       .closer-sub  { font-size: 22px; fill: #3a3d49; }
       .footer      { font-size: 14px; fill: #5c5f6b; }
@@ -132,7 +128,7 @@
      y1="150"
      x2="282"
      y2="150"
-     stroke="#2e4a7a"
+     stroke="#152870"
      stroke-width="5"
      id="line4" />
   <text
@@ -188,9 +184,20 @@
      y="597.54694"
      class="trade-l"
      id="text14"
-     style="font-weight:700;font-size:48px;fill:#d99c4a;fill-opacity:1"><tspan
-   style="font-style:normal;font-variant:normal;font-weight:800;font-stretch:normal;font-size:53.3333px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;-inkscape-font-specification:'Helvetica Neue, Helvetica, Arial, sans-serif, Ultra-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#d99c4a;fill-opacity:1"
+     style="font-weight:700;font-size:48px;fill:#f5f1e8;fill-opacity:1"><tspan
+   style="font-style:normal;font-variant:normal;font-weight:800;font-stretch:normal;font-size:53.3333px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;-inkscape-font-specification:'Helvetica Neue, Helvetica, Arial, sans-serif, Ultra-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#f5f1e8;fill-opacity:1"
    id="tspan63">~$5.4 million</tspan> of cuts somewhere.</text>
+  <!-- marker underlines on emphasis words; hand-drawn curve, round caps, with ink-bleed halo -->
+  <g stroke="#D14545" stroke-linecap="round" fill="none">
+    <g opacity="0.32" stroke-width="18">
+      <path d="M 337 547 Q 378 554 419 544"/>
+      <path d="M 535 614 Q 684 623 833 611"/>
+    </g>
+    <g stroke-width="10">
+      <path d="M 337 547 Q 378 553 419 544"/>
+      <path d="M 535 614 Q 684 621 833 611"/>
+    </g>
+  </g>
   <!-- ============ SPECTRUM ============ -->
   <!-- LEFT bound chip + supporting -->
   <g
@@ -200,7 +207,7 @@
        x="192"
        y="858"
        class="spec-num"
-       fill="#2e4a7a"
+       fill="#152870"
        id="text18">+1.7 mills</text>
     <text
        x="192"
@@ -221,7 +228,7 @@
        y="858"
        text-anchor="end"
        class="spec-num"
-       fill="#3a6952"
+       fill="#0F5832"
        id="text21">+4.3 mills</text>
     <text
        x="1232"
@@ -261,7 +268,7 @@
        cx="340"
        cy="828.7478"
        r="28"
-       fill="#2e4a7a"
+       fill="#152870"
        stroke="#f5f1e8"
        stroke-width="6"
        id="circle22" />
@@ -269,7 +276,7 @@
        cx="1084"
        cy="828.7478"
        r="28"
-       fill="#3a6952"
+       fill="#0F5832"
        stroke="#f5f1e8"
        stroke-width="6"
        id="circle23" />
@@ -309,7 +316,7 @@
        width="560"
        height="98"
        rx="14"
-       fill="#2e4a7a"
+       fill="#152870"
        id="rect24" />
     <text
        x="261.2179"
@@ -483,7 +490,7 @@
          text-anchor="end"
          font-size="28px"
          font-weight="900"
-         fill="#2e4a7a"
+         fill="#152870"
          id="text46">$15.8M</text>
     </g>
     <rect
@@ -492,7 +499,7 @@
        width="560"
        height="98"
        rx="14"
-       fill="#3a6952"
+       fill="#0F5832"
        id="rect46" />
     <text
        x="911.36584"
@@ -561,13 +568,13 @@
        cx="147.80989"
        cy="1606.5337"
        r="8"
-       fill="#2e4a7a"
+       fill="#152870"
        id="circle56" />
     <circle
        cx="1251.8099"
        cy="1606.5337"
        r="8"
-       fill="#3a6952"
+       fill="#0F5832"
        id="circle57" />
   </g>
   <!-- ============ FOOTER ============ -->
