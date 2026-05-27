@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Out of Road: The FY27 BCSD Budget"
+title: "Out of Runway: The FY27 BCSD Budget"
 dek: "The Bibb County School District is staring at back-to-back eight-figure deficits, a fund balance falling toward zero, and a June 2 deadline. Here's what the math actually says."
 date: 2026-05-27T08:00:00.000-04:00
 tags:
@@ -101,6 +101,8 @@ Board President Morton said it plainly at Thursday's session: *"We can't tax our
 
 What I *am* saying is this: **the numbers don't negotiate, and the deadline is Tuesday, June 2.**
 
+Strictly speaking, June 2 is the *tentative* adoption. The board can still tweak the numbers before final passage at the June 18 hearing. In past years, though, the changes between tentative and final have been minimal at best. June 2 is where the direction gets locked in.
+
 After June 2, the board owns whatever deficit it carries forward. Anything not fixed by then gets offset later, and "later" in school finance almost always means emergency loans, deeper cuts, or both.
 
 ## What the range actually costs a homeowner
@@ -158,7 +160,7 @@ And share this post. The empty-chair problem at these meetings is real, and I've
 
 I'll be at the meeting. Whether the board lands on cuts, a mill increase, or some mix of both, the worst outcome is the one we already know: another deferred deficit, another year of pretending, and a much larger bill in FY28.
 
-We've run out of road.
+We've run out of runway.
 
 Thank you,
 
