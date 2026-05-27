@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 1600 900"
+     width="1600" height="900"
+     role="img"
+     aria-labelledby="thumb-title thumb-desc"
+     font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <title id="thumb-title">Bibb School FY27 Budget: Two Paths to Balance</title>
+  <desc id="thumb-desc">
+    Bibb County Schools faces a 23.8 million dollar FY27 deficit. Every mill not raised
+    must be matched by about 5.4 million dollars of cuts. Path A: about 1.7 mills plus
+    15.8 million dollars in cuts. Path B: about 4.3 mills with only 0.68 million dollars
+    in small operational cuts.
+  </desc>
+
+  <defs>
+    <linearGradient id="t-spectrum" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"  stop-color="#2e4a7a"/>
+      <stop offset="50%" stop-color="#997e54"/>
+      <stop offset="100%" stop-color="#3a6952"/>
+    </linearGradient>
+    <style>
+      .brand       { font-size: 56px; font-weight: 800; fill: #111e48; letter-spacing: -1px; }
+      .section     { font-size: 22px; font-weight: 800; fill: #5c5f6b; letter-spacing: 3.4px; }
+      .hero-num    { font-size: 140px; font-weight: 900; fill: #800000; letter-spacing: -3px; }
+      .hero-cap    { font-size: 24px; fill: #3a3d49; }
+      .hero-cap-em { font-size: 24px; font-weight: 800; fill: #1a1d28; }
+      .trade-l     { font-size: 52px; font-weight: 700; fill: #f5f1e8; }
+      .trade-em    { font-size: 52px; font-weight: 800; fill: #d99c4a; }
+      .spec-num    { font-size: 64px; font-weight: 800; fill: #1a1d28; letter-spacing: -1.5px; }
+      .spec-cost   { font-size: 26px; font-weight: 700; fill: #1a1d28; }
+      .spec-sub    { font-size: 20px; font-weight: 500; fill: #5c5f6b; }
+      .scale-num   { font-size: 26px; font-weight: 700; fill: #5c5f6b; letter-spacing: 0.5px; }
+      .pill-tag    { font-size: 32px; font-weight: 800; fill: #f5f1e8; letter-spacing: 3px; }
+      .cuts-total  { font-size: 30px; font-weight: 800; }
+      .cuts-label  { font-size: 18px; font-weight: 700; fill: #5c5f6b; letter-spacing: 2px; }
+      .footer-em   { font-size: 32px; font-weight: 700; fill: #111e48; }
+      .disclaimer  { font-size: 16px; font-weight: 500; fill: #5c5f6b; font-style: italic; }
+      .mills-mark  { font-size: 34px; font-weight: 700; fill: #5c5f6b; }
+    </style>
+  </defs>
+
+  <!-- background -->
+  <rect width="1600" height="900" fill="#f5f1e8"/>
+
+  <!-- ===== HEADER (top-left, vertically aligned with deficit hero on right) ===== -->
+  <text x="80" y="130" class="brand">Bibb School FY27 Budget</text>
+  <line x1="80" y1="150" x2="232" y2="150" stroke="#2e4a7a" stroke-width="5"/>
+  <text x="80" y="190" class="section">THE GAP TO CLOSE BY TUESDAY, JUNE 2</text>
+
+  <!-- ===== DEFICIT HERO (top-right) ===== -->
+  <text x="1520" y="166" text-anchor="end" class="hero-num">-$23.8M</text>
+  <text x="1520" y="202" text-anchor="end" class="hero-cap">FY27 projected deficit.</text>
+  <text x="1520" y="234" text-anchor="end" class="hero-cap">Fund balance falls from
+    <tspan class="hero-cap-em">7.8%</tspan> to
+    <tspan font-weight="800" fill="#800000">-14.3%</tspan> by FY30.</text>
+
+  <!-- ===== TRADE BAND (full-width dark) ===== -->
+  <rect x="0" y="276" width="1600" height="160" fill="#111e48"/>
+  <text x="80" y="338" class="trade-l">Every mill <tspan class="trade-em">not</tspan> raised must be matched by</text>
+  <text x="80" y="402" class="trade-l"><tspan class="trade-em">~$5.4M</tspan> of cuts somewhere.</text>
+
+  <!-- ===== SPECTRUM ===== -->
+  <!-- left endpoint label -->
+  <text x="80" y="516" class="spec-num" fill="#2e4a7a">+1.7 mills<tspan class="mills-mark" dy="-22">*</tspan></text>
+  <text x="80" y="551" class="spec-cost">~$9.40 / month
+    <tspan class="spec-sub">· median home</tspan></text>
+
+  <!-- right endpoint label -->
+  <text x="1520" y="516" text-anchor="end" class="spec-num" fill="#3a6952">+4.3 mills<tspan class="mills-mark" dy="-22">*</tspan></text>
+  <text x="1520" y="551" text-anchor="end" class="spec-cost">~$24 / month
+    <tspan class="spec-sub">· median home</tspan></text>
+
+  <!-- spectrum bar; mill 1..5 mapped to x=110..1490 (345 px per mill), inset past rounded caps -->
+  <g>
+    <rect x="80" y="598" width="1440" height="50" rx="25" fill="url(#t-spectrum)"/>
+
+    <!-- horizontal axis line down the center of the bar; extends to bar edges to signal the scale continues beyond 1 and 5 -->
+    <line x1="80" y1="623" x2="1520" y2="623" stroke="#f5f1e8" stroke-width="1.5" stroke-opacity="0.55"/>
+
+    <!-- tick marks bisecting the bar at integer mill values -->
+    <g stroke="#f5f1e8" stroke-width="2.5" stroke-linecap="square">
+      <line x1="110"  y1="588" x2="110"  y2="658"/>
+      <line x1="455"  y1="588" x2="455"  y2="658"/>
+      <line x1="800"  y1="588" x2="800"  y2="658"/>
+      <line x1="1145" y1="588" x2="1145" y2="658"/>
+      <line x1="1490" y1="588" x2="1490" y2="658"/>
+    </g>
+
+    <!-- value indicators at 1.7 mills and 4.3 mills -->
+    <circle cx="352"  cy="623" r="24" fill="#2e4a7a" stroke="#f5f1e8" stroke-width="6"/>
+    <circle cx="1249" cy="623" r="24" fill="#3a6952" stroke="#f5f1e8" stroke-width="6"/>
+  </g>
+
+  <!-- larger numeric labels under the bar -->
+  <g class="scale-num" text-anchor="middle">
+    <text x="110"  y="696">1</text>
+    <text x="455"  y="696">2</text>
+    <text x="800"  y="696">3</text>
+    <text x="1145" y="696">4</text>
+    <text x="1490" y="696">5</text>
+  </g>
+
+  <!-- pill labels under bar (shifted down to make room for scale labels) -->
+  <rect x="80" y="720" width="360" height="50" rx="12" fill="#2e4a7a"/>
+  <text x="260" y="755" text-anchor="middle" class="pill-tag">MORE CUTS</text>
+
+  <rect x="1160" y="720" width="360" height="50" rx="12" fill="#3a6952"/>
+  <text x="1340" y="755" text-anchor="middle" class="pill-tag">MORE TAXES</text>
+
+  <!-- ===== TOTAL CUTS UNDER EACH OPTION ===== -->
+  <text x="260" y="815" text-anchor="middle" class="cuts-label" fill="#2e4a7a">INCLUDES CUTS TOTALING</text>
+  <text x="260" y="858" text-anchor="middle" class="cuts-total" fill="#2e4a7a">$15.8M</text>
+
+  <text x="1340" y="815" text-anchor="middle" class="cuts-label" fill="#3a6952">INCLUDES CUTS TOTALING</text>
+  <text x="1340" y="858" text-anchor="middle" class="cuts-total" fill="#3a6952">$0.68M</text>
+
+  <!-- brand mark, centered at bottom -->
+  <text x="800" y="858" text-anchor="middle" class="footer-em">kerryhatcher.com</text>
+
+  <!-- disclaimer footnote -->
+  <text x="800" y="890" text-anchor="middle" class="disclaimer">* Mill estimates based on last year's tax digest. Final FY27 rates depend on the 2026 digest.</text>
+</svg>
