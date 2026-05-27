@@ -39,7 +39,7 @@ That last number is the one that should keep you up at night.
 
 ## Why 7.8% matters more than $23M
 
-Schools don't run on cash they collect this week. State and federal money arrives on a schedule that doesn't match payroll. The district has to carry enough in reserve — the fund balance — to keep buses moving and paychecks cut between deposits.
+Schools don't run on cash they collect this week. State and federal money arrives on a schedule that doesn't match payroll. The district has to carry enough in reserve, the fund balance, to keep buses moving and paychecks cut between deposits.
 
 Most lenders and ratings agencies look for a school district fund balance ratio in the **15–20% range**. Bibb is projected to drop to **7.8%** by the end of FY27. And if we hold this course, the same deck shows the ratio falling to **0.5% in FY28** and going to **negative 14.3% by FY30**.
 
@@ -55,7 +55,7 @@ The categories, roughly:
 - Non-instructional staff furloughs (all 200+ work-day employees, not just Central Office) — **~$1.4M**
 - District-wide pay freeze — **~$2.0M**
 - Class size waiver (more kids per teacher) — **~$3.8M**
-- Outsource 80 new paraprofessional positions — **~$2.3M** *(outsourced paras lose TRS eligibility — board members flagged this as a recruitment risk)*
+- Outsource 80 new paraprofessional positions — **~$2.3M** *(outsourced paras lose TRS eligibility; board members flagged this as a recruitment risk)*
 - Other small cuts — **~$0.68M**
 
 Further cuts have been discussed previously outside the meeting:
@@ -68,7 +68,7 @@ Further cuts have been discussed previously outside the meeting:
 
 Apply every one of those, including the ones the Superintendent flatly does not recommend, and we are still **$8 million short** of balancing FY27. After consolidating schools, freezing pay, packing more kids into classrooms, and contracting out the people who hold our buildings together. Still short.
 
-Board member James Freeman put the school consolidation line in sharp relief: the district has had three separate studies — efficiency, rezoning, and consolidation — running for as long as six years. None of them have produced implemented changes. *"Here I am six years in and we haven't consolidated the school, we haven't rezoned the school,"* Freeman said. The $3M consolidation figure isn't a new idea. It's an answer that keeps getting deferred.
+Board member James Freeman put the school consolidation line in sharp relief: the district has had three separate studies (efficiency, rezoning, and consolidation) running for as long as six years. None of them have produced implemented changes. *"Here I am six years in and we haven't consolidated the school, we haven't rezoned the school,"* Freeman said. The $3M consolidation figure isn't a new idea. It's an answer that keeps getting deferred.
 
 Here are the slides CFO Bush showed:
 
@@ -89,7 +89,7 @@ The tentative adoption deck models four scenarios:
 | +3 mills (17.674) | $(8.2M) | 13.1% | +5.5% |
 | +4 mills (18.674) | $(2.2M) | 15.1% | +13.2% |
 
-![Comparison chart showing FY27 deficit and projected fund balance ratios under four millage scenarios — current, +2, +3, and +4 mills — through FY30.](/assets/images/remote/hatchdata/2026/05/5JHp3Om4-18.png)
+![Comparison chart showing FY27 deficit and projected fund balance ratios under four millage scenarios (current, +2, +3, and +4 mills) through FY30.](/assets/images/remote/hatchdata/2026/05/5JHp3Om4-18.png)
 
 A 3-mill increase is the smallest scenario that gets the fund balance ratio back into healthy territory and keeps it there through FY30.
 
@@ -138,7 +138,7 @@ I'm not interested in re-litigating last year. I'm interested in not doing it ag
 
 To be clear: I'm not telling anyone how to vote on the mills or the cuts. The tradeoffs are real in both directions. Higher taxes hit working families and seniors. Deeper cuts hit kids, teachers, and the staff who keep our schools open. I get why people land differently on that.
 
-Board President Morton said it plainly at Thursday's session: *"We can't tax our way out of our situation. We have to make fundamental changes in how we deliver education."* The mills and the structural changes aren't either/or — both will be needed and the board knows it.
+Board President Morton said it plainly at Thursday's session: *"We can't tax our way out of our situation. We have to make fundamental changes in how we deliver education."* The mills and the structural changes aren't either/or. Both will be needed, and the board knows it.
 
 What I *am* saying is this: **the math is what it is, and the deadline is Tuesday, June 2.**
 
@@ -154,7 +154,7 @@ That's worth keeping in mind when the conversation starts to feel like "3 mills 
 
 ## What to do before Tuesday, June 2
 
-If you live in Bibb County, show up. This is when the deficit gets locked in, one way or another, and even if you don't speak, your presence in the room sends a message that the community is watching. If you can't be there, email the board — their addresses are [here](https://simbli.eboardsolutions.com/AboutUs/AboutUs.aspx?S=4013&TID=1) — and tell them which tradeoff you'd accept and which you wouldn't.
+If you live in Bibb County, show up. This is when the deficit gets locked in, one way or another, and even if you don't speak, your presence in the room sends a message that the community is watching. If you can't be there, email the board. Their addresses are [here](https://simbli.eboardsolutions.com/AboutUs/AboutUs.aspx?S=4013&TID=1). Tell them which tradeoff you'd accept and which you wouldn't.
 
 And share this post. The empty-chair problem at these meetings is real, and I've written about it [before](https://www.kerryhatcher.com/empty-chairs-and-big-decisions-why-the-final-bcsd-budget-hearing-matters/). If you've made it this far, you know more about the FY27 budget than 99% of Bibb County. Help fix that ratio.
 
@@ -172,6 +172,6 @@ Contact me on [Signal](https://signal.org/): `kerryhatcher.03`
 
 ## Share the full breakdown
 
-If you found this useful, the full infographic below summarizes everything — the deficit, the cut menu, the two paths, and what a 3-mill increase actually costs. Save it, send it, post it.
+If you found this useful, the full infographic below summarizes everything: the deficit, the cut menu, the two paths, and what a 3-mill increase actually costs. Save it, send it, post it.
 
 ![Full FY27 BCSD budget infographic: $23.8M deficit by June 2; fund balance falls from 7.8% (FY27) to -14.3% (FY30). Every mill not raised must be matched by ~$5.4M of cuts. Path A (cuts-heavy): +1.7 mills (~$9.40/month on a median home) plus $15.8M in cuts including bigger class sizes, school closures, outsourcing paraprofessionals, pay freeze, and furloughs. Path B (revenue-heavy): +4.3 mills (~$24/month) with only $0.68M in small operational cuts and minimal classroom impact.](/assets/images/remote/hatchdata/2026/05/FY27_two_paths_infographic.png)
