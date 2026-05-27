@@ -1,0 +1,26 @@
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__col">
+      <p class="site-footer__wordmark">Kerry Hatcher</p>
+      <p class="site-footer__tag">{{ site.description }}</p>
+    </div>
+    <div class="site-footer__col">
+      <p class="site-footer__label">Elsewhere</p>
+      <ul>
+        {% for link in site.social %}
+          <li><a href="{{ link.href }}">{{ link.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="site-footer__col">
+      <p class="site-footer__label">Feed</p>
+      <ul>
+        <li><a href="{{ '/feed.xml' | relative_url }}">Atom</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="site-footer__rule" aria-hidden="true"></p>
+  <p class="site-footer__colophon">
+    <span>&copy; {{ site.time | date: '%Y' }} Kerry Hatcher.</span>
+  </p>
+</footer>

@@ -1,0 +1,20 @@
+<header class="site-header" data-site-header>
+  <div class="site-header__inner">
+    <a class="wordmark" href="{{ '/' | relative_url }}" aria-label="{{ site.title }}, home">
+      <span class="wordmark__mark" aria-hidden="true">K&middot;H</span>
+      <span class="wordmark__name">{{ site.title }}</span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <ul>
+        {% for item in site.nav %}
+          <li>
+            <a href="{{ item.url | relative_url }}"
+               {% if page.url == item.url %}aria-current="page"{% endif %}>
+              {{ item.label }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>

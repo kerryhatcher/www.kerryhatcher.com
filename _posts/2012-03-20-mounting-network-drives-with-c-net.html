@@ -1,0 +1,58 @@
+---
+layout: post
+title: "Mounting Network Drives with C#.net"
+date: 2012-03-20T10:00:00.000-04:00
+tags:
+  - "old"
+  - "#Import 2025-06-30 17:59"
+  - "#Import 2025-07-15 14:46"
+authors:
+  - "Kerry Hatcher"
+feature_image: "https://images.unsplash.com/photo-1484662020986-75935d2ebc66?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDJ8fGhhcmRkcml2ZXxlbnwwfHx8fDE3NDk1NzQ3NjR8MA&ixlib=rb-4.1.0&q=80&w=2000"
+feature_image_caption: "<span style=\"white-space: pre-wrap;\">Photo by </span><a href=\"https://unsplash.com/@heapdump?utm_source=ghost&amp;utm_medium=referral&amp;utm_campaign=api-credit\"><span style=\"white-space: pre-wrap;\">Patrick Lindenberg</span></a><span style=\"white-space: pre-wrap;\"> / </span><a href=\"https://unsplash.com/?utm_source=ghost&amp;utm_medium=referral&amp;utm_campaign=api-credit\"><span style=\"white-space: pre-wrap;\">Unsplash</span></a>"
+ghost_id: "6876a213df7b2049e70a0662"
+ghost_url: "https://www.kerryhatcher.com/mounting-network-drives-with-c-net/"
+---
+<p>First off, big thanks to&nbsp;<a href="http://www.codeproject.com/Members/aejw?ref=kerryhatcher.com" rel="noreferrer">aejw</a>&nbsp;for making my life a lot easier by writing an awesome class to make this&nbsp;possible.<br><br>Download the project files from <a href="http://www.codeproject.com/KB/system/mapnetdrive/NetworkDrives0015_src.zip?ref=kerryhatcher.com" rel="noreferrer">here</a>, extract cNetworkDrives0015.cs and add it to your project.</p><pre><code class="language-C#">using aejw.Network;
+
+
+private bool mount_drive(string localdrive, string sharelocation, string user = "blank", string pass = "blank")
+        {
+
+            NetworkDrive oNetDrive = new NetworkDrive();
+
+            try
+            {
+                oNetDrive.LocalDrive = localdrive;
+                oNetDrive.ShareName = sharelocation;
+                if (user == "blank")
+                {
+                    oNetDrive.MapDrive();
+                }
+                else
+                {
+                    oNetDrive.MapDrive(user, pass);
+                }
+            }
+            catch (Exception err)
+            {
+                //Optional MessageBox to show Error
+                //MessageBox.Show(this, "Error: " + err.Message);
+                return false;
+            }
+
+            return true;
+
+        }
+</code></pre>
+<p>Example Usage:</p><pre><code class="language-C#">
+if (mount_drive("h", @"\\nas007\shared"))
+            {
+                //Alert that drive was mapped
+            }
+            else
+            {
+                //Alert that drive mapping failed
+            }
+</code></pre>
+

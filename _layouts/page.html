@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<article class="page" data-reveal-stagger>
+  <header class="page__header">
+    {% if page.kicker %}
+      <p class="page__kicker" data-reveal>{{ page.kicker }}</p>
+    {% endif %}
+    <h1 class="page__title" data-reveal>{{ page.title }}</h1>
+    {% if page.dek %}
+      <p class="page__dek" data-reveal>{{ page.dek }}</p>
+    {% endif %}
+  </header>
+  <div class="page__body prose" data-reveal>
+    {{ content }}
+  </div>
+</article>

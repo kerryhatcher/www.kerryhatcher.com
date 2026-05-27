@@ -1,0 +1,110 @@
+---
+layout: default
+---
+{% if paginator.page == 1 or paginator.page == nil %}
+<section class="hero" data-reveal-stagger>
+  <p class="hero__kicker" data-reveal>{{ page.kicker | default: "Field notes &amp; essays" }}</p>
+  <h1 class="hero__title">
+    <span class="hero__line" data-reveal>{{ page.headline_line_1 | default: "Writing about" }}</span>
+    <span class="hero__line hero__line--accent" data-reveal>{{ page.headline_line_2 | default: "the things I'm trying to learn." }}</span>
+  </h1>
+  <p class="hero__lede" data-reveal>
+    {{ page.lede | default: "Long-form notes, half-formed essays, and the occasional confident opinion. New things appear when they're ready, not when a schedule says so." }}
+  </p>
+</section>
+{% endif %}
+
+{% assign posts = paginator.posts | default: site.posts %}
+{% assign total = site.posts | size %}
+{% assign page_num = paginator.page | default: 1 %}
+
+<section class="archive" aria-labelledby="archive-heading">
+  <header class="archive__head reveal" data-reveal>
+    <h2 id="archive-heading" class="archive__title">
+      <span class="archive__kicker">&sect; 0{{ page_num }}</span>
+      {% if page_num == 1 %}Recent writing{% else %}Writing, page {{ page_num }}{% endif %}
+    </h2>
+    <p class="archive__meta">
+      <span>{{ total }} pieces</span>
+      <span aria-hidden="true">&middot;</span>
+      <span>Newest first</span>
+    </p>
+  </header>
+
+  <div class="post-feed" role="list">
+    {% for post in posts %}
+      {% assign words = post.content | strip_html | number_of_words %}
+      {% assign minutes = words | divided_by: 220 | plus: 1 %}
+      {% assign category = post.tags | first %}
+      {% if page_num == 1 and forloop.index == 1 %}
+        {% assign card_class = "post-card post-card--featured" %}
+      {% elsif page_num == 1 and forloop.index <= 3 %}
+        {% assign card_class = "post-card post-card--large" %}
+      {% else %}
+        {% assign card_class = "post-card" %}
+      {% endif %}
+      <article class="{{ card_class }} reveal" role="listitem" data-reveal>
+        <a class="post-card__link" href="{{ post.url | relative_url }}">
+          {% if post.feature_image %}
+            <span class="post-card__image">
+              <img src="{{ post.feature_image }}"
+                   alt=""
+                   loading="lazy"
+                   decoding="async">
+            </span>
+          {% endif %}
+          <span class="post-card__body">
+            {% if category %}
+              <span class="post-card__kicker">{{ category }}</span>
+            {% endif %}
+            <h3 class="post-card__title">{{ post.title | escape }}</h3>
+            {% if post.dek %}
+              <span class="post-card__dek">{{ post.dek | strip_html | truncate: 180 }}</span>
+            {% elsif post.excerpt %}
+              <span class="post-card__dek">{{ post.excerpt | strip_html | truncate: 180 }}</span>
+            {% endif %}
+            <span class="post-card__meta">
+              <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %b %Y" }}</time>
+              <span aria-hidden="true">&middot;</span>
+              <span>{{ minutes }} min read</span>
+            </span>
+          </span>
+        </a>
+      </article>
+    {% endfor %}
+  </div>
+
+  {% if paginator.total_pages > 1 %}
+  <nav class="pager" aria-label="Pagination">
+    <div class="pager__prev">
+      {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path | replace: '/index.html', '/' | relative_url }}" rel="prev">
+          <span class="pager__arrow" aria-hidden="true">&larr;</span>
+          <span class="pager__label">Newer</span>
+        </a>
+      {% endif %}
+    </div>
+    <ol class="pager__trail" role="list">
+      {% for entry in paginator.page_trail %}
+        <li>
+          {% if entry.num == paginator.page %}
+            <span class="pager__page is-current" aria-current="page">{{ entry.num }}</span>
+          {% else %}
+            <a class="pager__page" href="{{ entry.path | replace: '/index.html', '/' | relative_url }}" title="{{ entry.title }}">{{ entry.num }}</a>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ol>
+    <div class="pager__next">
+      {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path | replace: '/index.html', '/' | relative_url }}" rel="next">
+          <span class="pager__label">Older</span>
+          <span class="pager__arrow" aria-hidden="true">&rarr;</span>
+        </a>
+      {% endif %}
+    </div>
+  </nav>
+  {% endif %}
+</section>
+
+{{ content }}

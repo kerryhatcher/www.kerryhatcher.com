@@ -1,0 +1,16 @@
+---
+layout: post
+title: "SSH to AWS, Quick and dirty"
+date: 2011-05-03T00:00:00.000-04:00
+tags:
+  - "old"
+  - "#Import 2025-06-30 17:59"
+  - "#Import 2025-07-15 14:46"
+authors:
+  - "Kerry Hatcher"
+feature_image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDF8fHNlcnZlciUyMHJhY2t8ZW58MHx8fHwxNzQ5NTczMDY2fDA&ixlib=rb-4.1.0&q=80&w=2000"
+feature_image_caption: "<span style=\"white-space: pre-wrap;\">Photo by </span><a href=\"https://unsplash.com/@tvick?utm_source=ghost&amp;utm_medium=referral&amp;utm_campaign=api-credit\"><span style=\"white-space: pre-wrap;\">Taylor Vick</span></a><span style=\"white-space: pre-wrap;\"> / </span><a href=\"https://unsplash.com/?utm_source=ghost&amp;utm_medium=referral&amp;utm_campaign=api-credit\"><span style=\"white-space: pre-wrap;\">Unsplash</span></a>"
+ghost_id: "6876a213df7b2049e70a065d"
+ghost_url: "https://www.kerryhatcher.com/ssh-to-aws-quick-and-dirty/"
+---
+<p>So, you've got your EC2 instance up and running? Lets SSH into it.When you were creating your EC2 instance you should have downloaded a file called something.pem . This is the ssh key you will use.Place your somthing.pem file in your .ssh folder by copying/moving it from your downloads. Then set the correct permissions. In OSX this would be something like this:</p><ol><li>open terminal</li><li>cp Downloads/somthing.pem .ssh/</li><li>chmod 0600 .ssh/somthing.pem</li></ol><p>Now, if you go ahead and try and ssh into your EC2 you will get an error. Why? Becouse you're not using the file you just copied over. Add -i somthing.pem.For example: ssh -i App1.pem ubuntu@ec2-40-17-31-130.compute-2.amazonaws.com</p>

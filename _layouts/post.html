@@ -1,0 +1,55 @@
+---
+layout: default
+---
+<div class="reading-progress" data-reading-progress aria-hidden="true">
+  <div class="reading-progress__bar"></div>
+</div>
+
+<article class="post" data-reveal-stagger>
+  <header class="post__header">
+    <p class="post__kicker" data-reveal>
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+      {% assign words = content | strip_html | number_of_words %}
+      {% assign minutes = words | divided_by: 220 | plus: 1 %}
+      <span aria-hidden="true">&bull;</span>
+      <span>{{ minutes }} min read</span>
+    </p>
+    <h1 class="post__title" data-reveal>{{ page.title }}</h1>
+    {% if page.dek %}
+      <p class="post__dek" data-reveal>{{ page.dek }}</p>
+    {% endif %}
+    {% if page.tags and page.tags.size > 0 %}
+      <ul class="post__tags" data-reveal>
+        {% for tag in page.tags %}
+          <li>{{ tag }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </header>
+
+  {% if page.feature_image %}
+    <figure class="post__hero" data-reveal>
+      <img src="{{ page.feature_image }}"
+           alt="{{ page.feature_image_alt | default: page.title | escape }}"
+           loading="eager"
+           decoding="async">
+      {% if page.feature_image_caption %}
+        <figcaption>{{ page.feature_image_caption }}</figcaption>
+      {% endif %}
+    </figure>
+  {% endif %}
+
+  <div class="post__body prose">
+    {{ content }}
+  </div>
+
+  <footer class="post__footer reveal" data-reveal>
+    <p class="post__sign">
+      Kerry · {{ page.date | date: "%B %Y" }}
+    </p>
+    <a class="post__back" href="{{ '/' | relative_url }}">
+      <span aria-hidden="true">&larr;</span>
+      Back to writing
+    </a>
+  </footer>
+</article>

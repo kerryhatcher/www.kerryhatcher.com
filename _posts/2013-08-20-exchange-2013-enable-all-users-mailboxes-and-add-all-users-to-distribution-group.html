@@ -1,0 +1,20 @@
+---
+layout: post
+title: "Exchange 2013 | Enable all users' mailboxes and add all users to distribution group"
+dek: "An epic migration"
+date: 2013-08-20T10:00:00.000-04:00
+tags:
+  - "old"
+  - "powershell"
+  - "technology"
+  - "email"
+  - "#Import 2025-06-30 17:59"
+  - "#Import 2025-07-15 14:46"
+authors:
+  - "Kerry Hatcher"
+feature_image: "https://images.unsplash.com/photo-1512236258305-32fb110fdb01?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDQxfHxlbWFpbHxlbnwwfHx8fDE3NDk1NzUxODN8MA&ixlib=rb-4.1.0&q=80&w=2000"
+feature_image_caption: "<span style=\"white-space: pre-wrap;\">Photo by </span><a href=\"https://unsplash.com/@yannikm?utm_source=ghost&amp;utm_medium=referral&amp;utm_campaign=api-credit\"><span style=\"white-space: pre-wrap;\">Yannik Mika</span></a><span style=\"white-space: pre-wrap;\"> / </span><a href=\"https://unsplash.com/?utm_source=ghost&amp;utm_medium=referral&amp;utm_campaign=api-credit\"><span style=\"white-space: pre-wrap;\">Unsplash</span></a>"
+ghost_id: "6876a213df7b2049e70a0664"
+ghost_url: "https://www.kerryhatcher.com/exchange-2013-enable-all-users-mailboxes-and-add-all-users-to-distribution-group/"
+---
+<p>We are currently in the process of setting up an all new domain and related services. We have some techs doing the creation of users but those needed mailboxes created in exchange. So instead of manually creating the mailboxes in the ECP I just ran this script from the domain administrator login on the exchange &nbsp;CAS:</p><blockquote>Get-User -RecipientTypeDetails User -Filter { UserPrincipalName -ne $Null } | Enable-Mailbox</blockquote><p>I had already created an "All Users" distribution group so I needed to add these new users to the group:</p><blockquote>Get-User -RecipientTypeDetails UserMailbox &nbsp;-Filter { UserPrincipalName -ne $Null } | Add-DistributionGroupMember -Identity "All Users"&nbsp;</blockquote><p>I got some errors on the last command, however they were just warnings that some users were already members of the all users group, so no problem at all.<br><br>&nbsp;Hope you find this useful,<br>-Kerry</p>

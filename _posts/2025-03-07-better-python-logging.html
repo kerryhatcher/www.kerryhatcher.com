@@ -1,0 +1,301 @@
+---
+layout: post
+title: "Better Python Logging"
+dek: "Proper logging is critical to quality software. Even a quick script can benefit. Lets dive into how to make it much easier to do with Python. "
+date: 2025-03-07T14:27:00.000-05:00
+tags:
+  - "Python"
+  - "Software Development"
+  - "#Import 2025-06-30 17:59"
+  - "#Import 2025-07-15 14:46"
+authors:
+  - "Kerry Hatcher"
+feature_image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDN8fHB5dGhvbnxlbnwwfHx8fDE3NDEzNzU1OTl8MA&ixlib=rb-4.0.3&q=80&w=2000"
+feature_image_alt: "Stock image of python code"
+feature_image_caption: "<span style=\"white-space: pre-wrap;\">Photo by </span><a href=\"https://unsplash.com/@cdr6934?utm_source=ghost&amp;utm_medium=referral&amp;utm_campaign=api-credit\"><span style=\"white-space: pre-wrap;\">Chris Ried</span></a><span style=\"white-space: pre-wrap;\"> / </span><a href=\"https://unsplash.com/?utm_source=ghost&amp;utm_medium=referral&amp;utm_campaign=api-credit\"><span style=\"white-space: pre-wrap;\">Unsplash</span></a>"
+ghost_id: "6876a213df7b2049e70a0637"
+ghost_url: "https://www.kerryhatcher.com/better-python-logging/"
+---
+<hr><p>To download the code examples and details on how to run it locally please <a href="https://github.com/kerryhatcher/kerryhatcher.github.io/tree/master/examples/better-python-logging?ref=kerryhatcher.com">check out this link</a></p><hr><h2 id="recognizing-you-have-a-problem">Recognizing you have a problem</h2><p>Is that variable getting set correctly? Why is your loop sometimes failing? Debugging in general can be a pain and most folks start off by sprinkling <code>print()</code> statements all over there code. Hello I’m Kerry and sometimes I abuse <code>print()</code> myself. So lets talk about how to improve the situation starting with the following example:</p><pre><code>import random
+import time
+
+def count_cars(lotname): 
+
+    print("Starting to count cars")
+
+    print(lotname)
+
+    four_door_cars=random.randint(0,9)
+
+    print("four_door_cars: " + str(four_door_cars))
+
+    time.sleep(0.4)
+
+    three_door_cars=random.randint(0,9)
+
+    print("three_door_cars: " + str(three_door_cars))
+
+    time.sleep(0.4)
+
+    total_cars = four_door_cars + three_door_cars
+
+    print("Total cars at " + lotname + ": " + str(total_cars))
+
+    time.sleep(0.4)
+
+    print("done counting cars")
+
+    return total_cars
+
+
+if __name__ == "__main__":
+    lotnames=["henry_ford", "buck_chevy", "jimmy_jeep"]
+    all_cars=0
+
+    print("App started")
+
+    print("Counting cars in: ")
+    print(*lotnames, sep = "\n")
+
+    for lotname in lotnames: 
+        lot_total=count_cars(lotname)
+        all_cars=all_cars + lot_total
+
+    print("Grand Total of all cars at all lots:")
+    print(all_cars)
+</code></pre>
+<p>See all those <code>print()</code> statements? They are handy since you can see how the program is handling all of the steps as it goes along. This way if something isn’t adding up right you can see where it went wrong. This is the most basic form of logging, just printing to the standard output of the application. Saving and processing that log can then be handled by simply piping that to a text file and then doing something with that outside of the app itself.</p><p>Logging is an important feature for all applications and scripts. Many times its just an outgrowth of the creative development process or debugging after the fact. Either way you need a way to dynamically change the volume and detail of the output of your apps without resorting to commenting out <code>print()</code> statements. Python already has some great built-in feature to help with this but there is a great module out there that really sets the bar. More on that later. For now lets take our previous example and make it a little better.</p><pre><code>import random
+import time
+
+
+
+#---&gt; Need this to access environment variables
+import os 
+
+
+#---&gt; Create a wrapper around our print statement to determine if we should print or not based on environment variable
+def logging_example(message): 
+
+
+
+    #---&gt; Check to see if the "print_setting" environment variable is set to enabled
+    if os.getenv('print_setting')=="enable": 
+
+
+
+        #---&gt; The following print function will only happen if we run export print_setting="enable" before the app runs. 
+        print(message) 
+
+
+
+def count_cars(lotname): 
+
+
+
+    #---&gt; Send a message to our logging function.     
+    logging_example("Starting to count cars")
+
+
+
+    logging_example(lotname)
+
+    four_door_cars=random.randint(0,9)
+
+    logging_example("four_door_cars: " + str(four_door_cars))
+
+    time.sleep(0.4)
+
+    three_door_cars=random.randint(0,9)
+
+    logging_example("three_door_cars: " + str(three_door_cars))
+
+    time.sleep(0.4)
+
+    total_cars = four_door_cars + three_door_cars
+
+    logging_example("Total cars at " + lotname + ": " + str(total_cars))
+
+    time.sleep(0.4)
+
+    logging_example("done counting cars")
+
+    return total_cars
+
+
+if __name__ == "__main__":
+
+
+    lotnames=["henry_ford", "buck_chevy", "jimmy_jeep"]
+    all_cars=0
+
+    logging_example("App started")
+
+    logging_example("Counting cars in: ")
+    logging_example("\n".join(lotnames))
+
+    for lotname in lotnames: 
+        lot_total=count_cars(lotname)
+        all_cars=all_cars + lot_total
+
+    print("Grand Total of all cars at all lots:")
+    print(all_cars)
+</code></pre><p>That's a little bit better. Now we can control just how verbose our output is based on an environment variable. It would be better if we could have multiple levels of output and even send save the output of different levels to a text file or something without printing a bunch of stuff to the command line for the user to see. This is also known as logging level. Usually errors are always logged so those would be at a high level, whereas debug statements are common throughout an application and are considered low level. This way your logs only show the minimal information required while allowing the threshold for what is minimal to be easily configured.</p><h2 id="loguru">Loguru</h2><figure class="kg-card kg-image-card"><img src="/assets/images/remote/hatchdata/images/2025/03/image.png" class="kg-image" alt="" loading="lazy" width="507" height="150"></figure><p><a href="https://github.com/Delgan/loguru?ref=kerryhatcher.com">Loguru</a> makes all that we’ve talked about so far easy and automatic. An extremely over simplistic explanation is that <a href="https://github.com/Delgan/loguru?ref=kerryhatcher.com">Loguru</a> works like the <code>logging_example("Here is a simple message")</code> function from the previous example. It has a lot of flexibility and customization options however, it is still just as simple to use. The only added mandatory extra “config” is to pass what logging level a message is. So for example: <code>logger.debug("Here is a simple message")</code>.</p><p>Loguru also gives a lot of really great information back on our log messages. Lets take the previous example and update it with Loguru.</p><pre><code>import random
+import time
+
+
+
+
+#---&gt; Add Loguru to the project
+from loguru import logger 
+
+
+
+#---&gt; This next line isn't required to get started
+#---&gt; We will talk about what this is for in the next section
+logger.add("demo.log", rotation="1 week", retention="5 weeks", compression="zip")  
+
+
+
+def count_cars(lotname): 
+
+
+
+
+    #---&gt; Send loguru some messages and that is it. 
+    logger.debug("Starting to count cars")
+
+
+
+
+    logger.debug(lotname)
+
+    four_door_cars=random.randint(0,9)
+
+    logger.debug("four_door_cars: " + str(four_door_cars))
+
+    time.sleep(0.4)
+
+    three_door_cars=random.randint(0,9)
+
+    logger.debug("three_door_cars: " + str(three_door_cars))
+
+    time.sleep(0.4)
+
+    total_cars = four_door_cars + three_door_cars
+
+    logger.debug("Total cars at " + lotname + ": " + str(total_cars))
+
+    time.sleep(0.4)
+
+    logger.debug("done counting cars")
+
+    return total_cars
+
+
+if __name__ == "__main__":
+
+
+    lotnames=["henry_ford", "buck_chevy", "jimmy_jeep"]
+    all_cars=0
+
+    logger.debug("App started")
+
+    logger.info("Counting cars in: " + ",".join(lotnames))
+
+
+    for lotname in lotnames: 
+        lot_total=count_cars(lotname)
+        all_cars=all_cars + lot_total
+
+    logger.info("Grand Total of all cars at all lots:")
+    logger.info(all_cars)
+</code></pre><p>Now lets compare the output from the previous example and the current one.</p><p>Previous:</p><pre><code>App started
+Counting cars in: 
+henry_ford
+buck_chevy
+jimmy_jeep
+Starting to count cars
+henry_ford
+four_door_cars: 6
+three_door_cars: 6
+Total cars at henry_ford: 12
+done counting cars
+</code></pre><p>Current:</p><pre><code>2021-04-02 05:48:58.715 | DEBUG    | __main__:&lt;module&gt;:45 - App started
+2021-04-02 05:48:58.715 | INFO     | __main__:&lt;module&gt;:47 - Counting cars in: henry_ford,buck_chevy,jimmy_jeep
+2021-04-02 05:48:58.716 | DEBUG    | __main__:count_cars:12 - Starting to count cars
+2021-04-02 05:48:58.716 | DEBUG    | __main__:count_cars:14 - henry_ford
+2021-04-02 05:48:58.716 | DEBUG    | __main__:count_cars:18 - four_door_cars: 8
+2021-04-02 05:48:59.117 | DEBUG    | __main__:count_cars:24 - three_door_cars: 1
+2021-04-02 05:48:59.518 | DEBUG    | __main__:count_cars:30 - Total cars at henry_ford: 9
+2021-04-02 05:48:59.919 | DEBUG    | __main__:count_cars:34 - done counting cars
+</code></pre><p>Loguru automatically gives us a timestamp, log level, and even the code location of the message. This make fixing issues and understanding whats happing in your code exponentially easier.</p><h3 id="what-to-do-with-your-logs">What to do with your logs</h3><p>Now that you have some handy logs you need to save them somewhere. Printing the app’s log to the screen is handy but you need some sort of retention especially if the app is running in the background or automatically. Loguru makes adding a destination for your logs super simple via the <code>logger.add()</code> function.</p><h4 id="log-file"><strong>Log File</strong></h4><p>The most basic example of this saving the logs to a log file. Simply add <code>logger.add("app.log")</code> to the application and a copy of your logs will be saved in a text file named <code>app.log</code>. The most recent example above already has this setup but with a few extra options.</p><p><code>logger.add("demo.log", rotation="1 week", retention="5 weeks", compression="zip")</code></p><p>Those extra options tell Loguru to rotate the log file every week, keep 5 weeks worth of files, and compress the files to save space. Log rotation just means taking the current log file and saving it as a different file and start over in a empty text file. This makes finding a log from sometime in the past easier and helps to prevent your hard drive from filling up from log data.</p><h4 id="log-service"><strong>Log Service</strong></h4><p>Even better than saving the logs to the local computer is shipping them off to a service. This has the added advantage of surviving any sort of failure of the host computer. So if your app had a but that deleted every file on the hard drive because of a typo the logs will still exist elsewhere.</p><p>My default log service is <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html?ref=kerryhatcher.com">AWS Cloudwatch Logs</a>. There are plenty of “better” options out there but most of my work is done in AWS so it is generally easier for me to use it. To get those logs into AWS we will use a package named <a href="https://watchtower.readthedocs.io/en/latest/?ref=kerryhatcher.com">Watchtower</a>. This all assumes you have an <a href="https://aws.amazon.com/free/?ref=kerryhatcher.com">AWS account which is free to setup and many services have free tiers of use</a>. Also you will need to ensure you have setup your <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html?ref=kerryhatcher.com">AWS credentials</a> on the computer where your app is running.</p><p>Lets go update our example with watchtower. It is as simple as adding</p><pre><code>logger.add(watchtower.CloudWatchLogHandler(log_group="/kh.com/better_py_logging", stream_name="demotime"))
+</code></pre><p>We can leave the bit in that saves the logs to the local hard drive as well.</p><pre><code>import random
+import time
+
+from loguru import logger
+import watchtower
+
+
+
+
+#---&gt; Keep the log file with rotation, etc in place
+logger.add("demo.log", rotation="1 week", retention="5 weeks", compression="zip")  
+
+
+
+
+#---&gt; Another destination for logs in AWS
+logger.add(watchtower.CloudWatchLogHandler(log_group="/kh.com/better_py_logging", stream_name="demotime"))
+
+
+
+
+def count_cars(lotname): 
+
+
+    logger.debug("Starting to count cars")
+
+    logger.debug(lotname)
+
+    four_door_cars=random.randint(0,9)
+
+    logger.debug("four_door_cars: " + str(four_door_cars))
+
+    time.sleep(0.4)
+
+    three_door_cars=random.randint(0,9)
+
+    logger.debug("three_door_cars: " + str(three_door_cars))
+
+    time.sleep(0.4)
+
+    total_cars = four_door_cars + three_door_cars
+
+    logger.debug("Total cars at " + lotname + ": " + str(total_cars))
+
+    time.sleep(0.4)
+
+    logger.debug("done counting cars")
+
+    return total_cars
+
+
+if __name__ == "__main__":
+
+
+    lotnames=["henry_ford", "buck_chevy", "jimmy_jeep"]
+    all_cars=0
+
+    logger.debug("App started")
+
+    logger.info("Counting cars in: " + ",".join(lotnames))
+
+
+    for lotname in lotnames: 
+        lot_total=count_cars(lotname)
+        all_cars=all_cars + lot_total
+
+    logger.info("Grand Total of all cars at all lots:")
+    logger.info(all_cars)
+
+</code></pre><p>Now if we log into AWS we can see our logs even if the host computer fails in some way. This is real handy if your app is running on a remote computer that you don’t have remote control over. You can also setup monitor and alerts to go off based on patterns in the logs.</p><figure class="kg-card kg-image-card"><img src="/assets/images/remote/hatchdata/images/2025/03/image-1.png" class="kg-image" alt="" loading="lazy" width="1421" height="922"></figure><hr><p>Proper logging in Python can be added to any project no matter the size or complexity. Doing so will save you plenty of time and frustration.</p>

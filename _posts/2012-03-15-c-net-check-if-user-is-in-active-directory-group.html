@@ -1,0 +1,41 @@
+---
+layout: post
+title: "C#.net Check if user is in Active Directory Group"
+date: 2012-03-15T16:30:00.000-04:00
+tags:
+  - "old"
+  - "#Import 2025-06-30 17:59"
+  - "#Import 2025-07-15 14:46"
+authors:
+  - "Kerry Hatcher"
+feature_image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDJ8fHNvZnR3YXJlJTIwY29kZXxlbnwwfHx8fDE3NDk1NzQ1NzB8MA&ixlib=rb-4.1.0&q=80&w=2000"
+feature_image_caption: "<span style=\"white-space: pre-wrap;\">Photo by </span><a href=\"https://unsplash.com/@lucabravo?utm_source=ghost&amp;utm_medium=referral&amp;utm_campaign=api-credit\"><span style=\"white-space: pre-wrap;\">Luca Bravo</span></a><span style=\"white-space: pre-wrap;\"> / </span><a href=\"https://unsplash.com/?utm_source=ghost&amp;utm_medium=referral&amp;utm_campaign=api-credit\"><span style=\"white-space: pre-wrap;\">Unsplash</span></a>"
+ghost_id: "6876a213df7b2049e70a0661"
+ghost_url: "https://www.kerryhatcher.com/c-net-check-if-user-is-in-active-directory-group/"
+---
+<p>Here is a simple c#.net function to see if a user is in a AD group.<br><br>Be sure to add the Directory Services as a reference to your project and use:</p><pre><code class="language-C#">using System.DirectoryServices.AccountManagement;
+
+
+        public string GetDomain()
+        {
+
+            return Environment.UserDomainName.ToString();
+
+
+        }
+
+
+
+        public bool IsInGroup(string ingroup)
+        {
+            string username = Environment.UserName;
+
+            var domainctx = new PrincipalContext(ContextType.Domain, GetDomain());
+            var userPrincipal = UserPrincipal.FindByIdentity(domainctx, IdentityType.SamAccountName, username);
+
+            bool isMember = userPrincipal.IsMemberOf(domainctx, IdentityType.Name, ingroup);
+
+            return isMember;
+        }
+</code></pre>
+<hr>
