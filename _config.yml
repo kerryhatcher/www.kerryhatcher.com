@@ -75,3 +75,8 @@ exclude:
   - .wrangler
   - node_modules
   - .remember
+  - .jekyll-cache
+  - CLAUDE.md
+  - justfile
+  - package.json
+  - package-lock.json

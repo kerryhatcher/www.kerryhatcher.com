@@ -71,63 +71,67 @@
   </g>
 
   <!-- ===== SPECTRUM ===== -->
-  <!-- left endpoint label -->
-  <text x="80" y="516" class="spec-num" fill="#152870">+1.7 mills<tspan class="mills-mark" dy="-22">*</tspan></text>
-  <text x="80" y="551" class="spec-cost">~$12 / month
-    <tspan class="spec-sub">· median home</tspan></text>
+  <!-- mills labels centered above their indicator circles, with vertical connector lines -->
+  <text x="352"  y="516" text-anchor="middle" class="spec-num" fill="#152870">+1.7 mills<tspan class="mills-mark" dy="-22">*</tspan></text>
+  <text x="1249" y="516" text-anchor="middle" class="spec-num" fill="#0F5832">+4.3 mills<tspan class="mills-mark" dy="-22">*</tspan></text>
 
-  <!-- right endpoint label -->
-  <text x="1520" y="516" text-anchor="end" class="spec-num" fill="#0F5832">+4.3 mills<tspan class="mills-mark" dy="-22">*</tspan></text>
-  <text x="1520" y="551" text-anchor="end" class="spec-cost">~$30 / month
-    <tspan class="spec-sub">· median home</tspan></text>
+  <!-- connector lines from labels to circles (short pointer) -->
+  <g stroke="#5c5f6b" stroke-width="1.5" opacity="0.55">
+    <line x1="352"  y1="530" x2="352"  y2="554"/>
+    <line x1="1249" y1="530" x2="1249" y2="554"/>
+  </g>
 
   <!-- spectrum bar; mill 1..5 mapped to x=110..1490 (345 px per mill), inset past rounded caps -->
   <g>
-    <rect x="80" y="598" width="1440" height="50" rx="25" fill="url(#t-spectrum)"/>
+    <rect x="80" y="558" width="1440" height="50" rx="25" fill="url(#t-spectrum)"/>
 
     <!-- horizontal axis line down the center of the bar; extends to bar edges to signal the scale continues beyond 1 and 5 -->
-    <line x1="80" y1="623" x2="1520" y2="623" stroke="#f5f1e8" stroke-width="1.5" stroke-opacity="0.55"/>
+    <line x1="80" y1="583" x2="1520" y2="583" stroke="#f5f1e8" stroke-width="1.5" stroke-opacity="0.55"/>
 
     <!-- tick marks bisecting the bar at integer mill values -->
     <g stroke="#f5f1e8" stroke-width="2.5" stroke-linecap="square">
-      <line x1="110"  y1="588" x2="110"  y2="658"/>
-      <line x1="455"  y1="588" x2="455"  y2="658"/>
-      <line x1="800"  y1="588" x2="800"  y2="658"/>
-      <line x1="1145" y1="588" x2="1145" y2="658"/>
-      <line x1="1490" y1="588" x2="1490" y2="658"/>
+      <line x1="110"  y1="548" x2="110"  y2="618"/>
+      <line x1="455"  y1="548" x2="455"  y2="618"/>
+      <line x1="800"  y1="548" x2="800"  y2="618"/>
+      <line x1="1145" y1="548" x2="1145" y2="618"/>
+      <line x1="1490" y1="548" x2="1490" y2="618"/>
     </g>
 
     <!-- value indicators at 1.7 mills and 4.3 mills -->
-    <circle cx="352"  cy="623" r="24" fill="#152870" stroke="#f5f1e8" stroke-width="6"/>
-    <circle cx="1249" cy="623" r="24" fill="#0F5832" stroke="#f5f1e8" stroke-width="6"/>
+    <circle cx="352"  cy="583" r="24" fill="#152870" stroke="#f5f1e8" stroke-width="6"/>
+    <circle cx="1249" cy="583" r="24" fill="#0F5832" stroke="#f5f1e8" stroke-width="6"/>
   </g>
 
   <!-- larger numeric labels under the bar -->
   <g class="scale-num" text-anchor="middle">
-    <text x="110"  y="696">1</text>
-    <text x="455"  y="696">2</text>
-    <text x="800"  y="696">3</text>
-    <text x="1145" y="696">4</text>
-    <text x="1490" y="696">5</text>
+    <text x="110"  y="656">1</text>
+    <text x="455"  y="656">2</text>
+    <text x="800"  y="656">3</text>
+    <text x="1145" y="656">4</text>
+    <text x="1490" y="656">5</text>
   </g>
 
-  <!-- pill labels under bar (shifted down to make room for scale labels) -->
-  <rect x="80" y="720" width="360" height="50" rx="12" fill="#152870"/>
-  <text x="260" y="755" text-anchor="middle" class="pill-tag">MORE CUTS</text>
+  <!-- pill labels under bar -->
+  <rect x="80" y="680" width="360" height="50" rx="12" fill="#152870"/>
+  <text x="260" y="715" text-anchor="middle" class="pill-tag">MORE CUTS</text>
 
-  <rect x="1160" y="720" width="360" height="50" rx="12" fill="#0F5832"/>
-  <text x="1340" y="755" text-anchor="middle" class="pill-tag">MORE TAXES</text>
+  <rect x="1160" y="680" width="360" height="50" rx="12" fill="#0F5832"/>
+  <text x="1340" y="715" text-anchor="middle" class="pill-tag">MORE TAXES</text>
+
+  <!-- per-home monthly property-tax increase under each pill; "+" prefix mirrors the "+1.7 mills" / "+4.3 mills" notation above, ~ flags it as approximate, * ties to disclaimer -->
+  <text x="260"  y="762" text-anchor="middle" class="spec-cost">~+$12 / month property tax<tspan font-size="16" font-weight="700" fill="#5c5f6b" dy="-8">*</tspan></text>
+  <text x="1340" y="762" text-anchor="middle" class="spec-cost">~+$30 / month property tax<tspan font-size="16" font-weight="700" fill="#5c5f6b" dy="-8">*</tspan></text>
 
   <!-- ===== TOTAL CUTS UNDER EACH OPTION ===== -->
-  <text x="260" y="815" text-anchor="middle" class="cuts-label" fill="#152870">INCLUDES CUTS TOTALING</text>
-  <text x="260" y="858" text-anchor="middle" class="cuts-total" fill="#152870">$15.8M</text>
+  <text x="260" y="803" text-anchor="middle" class="cuts-label" fill="#152870">INCLUDES CUTS TOTALING</text>
+  <text x="260" y="845" text-anchor="middle" class="cuts-total" fill="#152870">$15.8M</text>
 
-  <text x="1340" y="815" text-anchor="middle" class="cuts-label" fill="#0F5832">INCLUDES CUTS TOTALING</text>
-  <text x="1340" y="858" text-anchor="middle" class="cuts-total" fill="#0F5832">$0.68M</text>
+  <text x="1340" y="803" text-anchor="middle" class="cuts-label" fill="#0F5832">INCLUDES CUTS TOTALING</text>
+  <text x="1340" y="845" text-anchor="middle" class="cuts-total" fill="#0F5832">$0.68M</text>
 
-  <!-- brand mark, centered at bottom -->
-  <text x="800" y="858" text-anchor="middle" class="footer-em">kerryhatcher.com</text>
+  <!-- brand mark, centered on the cuts-amount baseline -->
+  <text x="800" y="845" text-anchor="middle" class="footer-em">kerryhatcher.com</text>
 
-  <!-- disclaimer footnote -->
-  <text x="800" y="890" text-anchor="middle" class="disclaimer">* Mill estimates based on last year's tax digest. Final FY27 rates depend on the 2026 digest.</text>
+  <!-- disclaimer footnote; "median home" qualifier now lives here so the cost line stays uncluttered -->
+  <text x="800" y="880" text-anchor="middle" class="disclaimer">* Estimates based on last year's tax digest and a $207,100 median Bibb home. FY27 rates depend on the 2026 digest.</text>
 </svg>
