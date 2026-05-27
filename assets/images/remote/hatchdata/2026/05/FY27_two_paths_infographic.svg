@@ -206,7 +206,7 @@
        x="192"
        y="888"
        class="spec-cost"
-       id="text19">$9.40 / month <tspan
+       id="text19">~$12 / month <tspan
    font-size="18px"
    font-weight="500"
    fill="#5c5f6b"
@@ -228,7 +228,7 @@
        y="888"
        text-anchor="end"
        class="spec-cost"
-       id="text22">$24 / month <tspan
+       id="text22">~$30 / month <tspan
    font-size="18px"
    font-weight="500"
    fill="#5c5f6b"

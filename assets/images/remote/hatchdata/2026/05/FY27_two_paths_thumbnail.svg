@@ -63,12 +63,12 @@
   <!-- ===== SPECTRUM ===== -->
   <!-- left endpoint label -->
   <text x="80" y="516" class="spec-num" fill="#2e4a7a">+1.7 mills<tspan class="mills-mark" dy="-22">*</tspan></text>
-  <text x="80" y="551" class="spec-cost">~$9.40 / month
+  <text x="80" y="551" class="spec-cost">~$12 / month
     <tspan class="spec-sub">· median home</tspan></text>
 
   <!-- right endpoint label -->
   <text x="1520" y="516" text-anchor="end" class="spec-num" fill="#3a6952">+4.3 mills<tspan class="mills-mark" dy="-22">*</tspan></text>
-  <text x="1520" y="551" text-anchor="end" class="spec-cost">~$24 / month
+  <text x="1520" y="551" text-anchor="end" class="spec-cost">~$30 / month
     <tspan class="spec-sub">· median home</tspan></text>
 
   <!-- spectrum bar; mill 1..5 mapped to x=110..1490 (345 px per mill), inset past rounded caps -->
