@@ -118,20 +118,23 @@
   <rect x="1160" y="680" width="360" height="50" rx="12" fill="#0F5832"/>
   <text x="1340" y="715" text-anchor="middle" class="pill-tag">MORE TAXES</text>
 
-  <!-- per-home monthly property-tax increase under each pill; "+" prefix mirrors the "+1.7 mills" / "+4.3 mills" notation above, ~ flags it as approximate, * ties to disclaimer -->
-  <text x="260"  y="762" text-anchor="middle" class="spec-cost">~+$12 / month property tax<tspan font-size="16" font-weight="700" fill="#5c5f6b" dy="-8">*</tspan></text>
-  <text x="1340" y="762" text-anchor="middle" class="spec-cost">~+$30 / month property tax<tspan font-size="16" font-weight="700" fill="#5c5f6b" dy="-8">*</tspan></text>
+  <!-- per-home property-tax increase under each pill; eyebrow + figure parallel to the cuts block below -->
+  <text x="260"  y="755" text-anchor="middle" class="cuts-label" fill="#152870">PER MEDIAN HOME · PROPERTY TAX</text>
+  <text x="260"  y="790" text-anchor="middle" class="cuts-total" fill="#152870">~+$12 / month<tspan font-size="20" font-weight="700" fill="#5c5f6b" dy="-12">*</tspan></text>
 
-  <!-- ===== TOTAL CUTS UNDER EACH OPTION ===== -->
-  <text x="260" y="803" text-anchor="middle" class="cuts-label" fill="#152870">INCLUDES CUTS TOTALING</text>
-  <text x="260" y="845" text-anchor="middle" class="cuts-total" fill="#152870">$15.8M</text>
+  <text x="1340" y="755" text-anchor="middle" class="cuts-label" fill="#0F5832">PER MEDIAN HOME · PROPERTY TAX</text>
+  <text x="1340" y="790" text-anchor="middle" class="cuts-total" fill="#0F5832">~+$30 / month<tspan font-size="20" font-weight="700" fill="#5c5f6b" dy="-12">*</tspan></text>
 
-  <text x="1340" y="803" text-anchor="middle" class="cuts-label" fill="#0F5832">INCLUDES CUTS TOTALING</text>
-  <text x="1340" y="845" text-anchor="middle" class="cuts-total" fill="#0F5832">$0.68M</text>
+  <!-- ===== TOTAL DISTRICT CUTS UNDER EACH OPTION ===== -->
+  <text x="260" y="824" text-anchor="middle" class="cuts-label" fill="#152870">INCLUDES CUTS TOTALING</text>
+  <text x="260" y="860" text-anchor="middle" class="cuts-total" fill="#152870">$15.8M</text>
+
+  <text x="1340" y="824" text-anchor="middle" class="cuts-label" fill="#0F5832">INCLUDES CUTS TOTALING</text>
+  <text x="1340" y="860" text-anchor="middle" class="cuts-total" fill="#0F5832">$0.68M</text>
 
   <!-- brand mark, centered on the cuts-amount baseline -->
-  <text x="800" y="845" text-anchor="middle" class="footer-em">kerryhatcher.com</text>
+  <text x="800" y="860" text-anchor="middle" class="footer-em">kerryhatcher.com</text>
 
-  <!-- disclaimer footnote; "median home" qualifier now lives here so the cost line stays uncluttered -->
-  <text x="800" y="880" text-anchor="middle" class="disclaimer">* Estimates based on last year's tax digest and a $207,100 median Bibb home. FY27 rates depend on the 2026 digest.</text>
+  <!-- disclaimer footnote -->
+  <text x="800" y="890" text-anchor="middle" class="disclaimer">* Estimates based on last year's tax digest and a $207,100 median Bibb home. FY27 rates depend on the 2026 digest.</text>
 </svg>

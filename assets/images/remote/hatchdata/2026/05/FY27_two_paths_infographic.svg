@@ -28,9 +28,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="0.6356016"
      inkscape:cx="536.49959"
-     inkscape:cy="1441.1543"
-     inkscape:window-width="1920"
-     inkscape:window-height="1011"
+     inkscape:cy="811.8293"
+     inkscape:window-width="2560"
+     inkscape:window-height="1403"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -143,30 +143,27 @@
      class="hero-num"
      id="text6">-$23.8M</text>
   <text
-     x="722.4245"
-     y="272.85336"
+     x="722.70068"
+     y="285.89728"
      class="deck-mute"
-     id="text7">FY27 projected deficit</text>
+     id="text7"
+     style="font-size:26.6667px;stroke-width:0.866581">FY27 projected deficit</text>
   <text
-     x="722.44751"
-     y="318.65768"
+     x="722.72064"
+     y="325.59045"
      class="deck-mute"
-     id="text9">Do nothing, and fund balance</text>
+     id="text9"
+     style="font-size:26.6667px;stroke-width:0.866581">Do nothing, and fund balance</text>
   <text
-     x="724.08051"
-     y="366.02011"
+     x="724.13574"
+     y="366.63385"
      class="deck-mute"
-     id="text10">falls from <tspan
-   font-weight="800"
-   fill="#1a1d28"
-   id="tspan9">7.8% (FY27)</tspan> to <tspan
-   font-weight="800"
-   fill="#800000"
-   id="tspan10">-14.3% (FY30)</tspan>.</text>
+     id="text10"
+     style="font-size:26.6667px;stroke-width:0.866581">falls from 7.8% (FY27) to -14.3% (FY30).</text>
   <!-- ============ THE TRADE (full-width dark band) ============ -->
   <rect
      x="0"
-     y="440"
+     y="424"
      width="1424"
      height="200"
      fill="#1a1d28"
@@ -174,79 +171,101 @@
      style="fill:#111e48;fill-opacity:1" />
   <text
      x="102"
-     y="530.59766"
+     y="508.59766"
      class="trade-l"
      id="text13">Every mill <tspan
    class="trade-em"
    id="tspan12">not</tspan> raised must be matched by</text>
   <text
      x="539.00635"
-     y="597.54694"
+     y="575.54694"
      class="trade-l"
      id="text14"
      style="font-weight:700;font-size:48px;fill:#f5f1e8;fill-opacity:1"><tspan
    style="font-style:normal;font-variant:normal;font-weight:800;font-stretch:normal;font-size:53.3333px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;-inkscape-font-specification:'Helvetica Neue, Helvetica, Arial, sans-serif, Ultra-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#f5f1e8;fill-opacity:1"
    id="tspan63">~$5.4 million</tspan> of cuts somewhere.</text>
   <!-- marker underlines on emphasis words; hand-drawn curve, round caps, with ink-bleed halo -->
-  <g stroke="#D14545" stroke-linecap="round" fill="none">
-    <g opacity="0.32" stroke-width="18">
-      <path d="M 337 547 Q 378 554 419 544"/>
-      <path d="M 535 614 Q 684 623 833 611"/>
+  <g
+     stroke="#d14545"
+     stroke-linecap="round"
+     fill="none"
+     id="g5"
+     transform="translate(0,-22)">
+    <g
+       opacity="0.32"
+       stroke-width="18"
+       id="g2">
+      <path
+         d="m 337,547 q 41,7 82,-3"
+         id="path1" />
+      <path
+         d="m 535,614 q 149,9 298,-3"
+         id="path2" />
     </g>
-    <g stroke-width="10">
-      <path d="M 337 547 Q 378 553 419 544"/>
-      <path d="M 535 614 Q 684 621 833 611"/>
+    <g
+       stroke-width="10"
+       id="g4">
+      <path
+         d="m 337,547 q 41,6 82,-3"
+         id="path3" />
+      <path
+         d="m 535,614 q 149,7 298,-3"
+         id="path4" />
     </g>
   </g>
   <!-- ============ SPECTRUM ============ -->
-  <!-- LEFT bound chip + supporting -->
-  <g
-     id="g19"
-     transform="matrix(1.1851323,0,0,1.1851323,-22.684127,-279.36734)">
-    <text
-       x="192"
-       y="858"
-       class="spec-num"
-       fill="#152870"
-       id="text18">+1.7 mills</text>
-    <text
-       x="192"
-       y="888"
-       class="spec-cost"
-       id="text19">~$12 / month <tspan
-   font-size="18px"
-   font-weight="500"
+  <!-- mills labels centered above their indicator circles; per-home tax info lives under the pills now -->
+  <text
+     x="340"
+     y="697"
+     text-anchor="middle"
+     class="spec-num"
+     fill="#152870"
+     id="text18">+1.7 mills<tspan
+   font-size="34px"
+   font-weight="700"
    fill="#5c5f6b"
-   id="tspan18">· median home</tspan></text>
-  </g>
-  <!-- RIGHT bound chip + supporting -->
-  <g
-     id="g22"
-     transform="matrix(1.1856831,0,0,1.1856831,-249.26896,-274.31128)">
-    <text
-       x="1232"
-       y="858"
-       text-anchor="end"
-       class="spec-num"
-       fill="#0F5832"
-       id="text21">+4.3 mills</text>
-    <text
-       x="1232"
-       y="888"
-       text-anchor="end"
-       class="spec-cost"
-       id="text22">~$30 / month <tspan
-   font-size="18px"
-   font-weight="500"
+   dy="-20"
+   id="tspan5">*</tspan></text>
+  <text
+     x="1084"
+     y="697"
+     text-anchor="middle"
+     class="spec-num"
+     fill="#0F5832"
+     id="text21">+4.3 mills<tspan
+   font-size="34px"
+   font-weight="700"
    fill="#5c5f6b"
-   id="tspan21">· median home</tspan></text>
+   dy="-20"
+   id="tspan6">*</tspan></text>
+  <!-- short connector lines from mills labels to indicator circles -->
+  <g
+     stroke="#5c5f6b"
+     stroke-width="2"
+     opacity="0.55"
+     id="mills-connectors"
+     transform="translate(0,12)">
+    <line
+       x1="340"
+       y1="700"
+       x2="340"
+       y2="713"
+       id="line6" />
+    <line
+       x1="1084"
+       y1="700"
+       x2="1084"
+       y2="713"
+       id="line7" />
   </g>
   <!-- spectrum bar (thicker now) -->
   <g
-     id="g62">
+     id="g62"
+     transform="translate(0,12)">
     <rect
        x="102"
-       y="795.90167"
+       y="715.90167"
        width="1220"
        height="65.692307"
        rx="32.846153"
@@ -254,19 +273,56 @@
        id="rect22"
        style="fill:url(#spectrum);stroke-width:1.17308" />
     <!-- horizontal axis line through bar center; runs to bar edges to signal the scale continues -->
-    <line x1="102" y1="828.748" x2="1322" y2="828.748" stroke="#f5f1e8" stroke-width="2" stroke-opacity="0.55" id="scale-axis"/>
+    <line
+       x1="102"
+       y1="748.74799"
+       x2="1322"
+       y2="748.74799"
+       stroke="#f5f1e8"
+       stroke-width="2"
+       stroke-opacity="0.55"
+       id="scale-axis" />
     <!-- tick marks bisecting the bar at integer mill values (1..5), inset past rounded caps; 286 px per mill -->
-    <g stroke="#f5f1e8" stroke-width="3" stroke-linecap="square" id="scale-ticks">
-      <line x1="140"  y1="783" x2="140"  y2="875"/>
-      <line x1="426"  y1="783" x2="426"  y2="875"/>
-      <line x1="712"  y1="783" x2="712"  y2="875"/>
-      <line x1="998"  y1="783" x2="998"  y2="875"/>
-      <line x1="1284" y1="783" x2="1284" y2="875"/>
+    <g
+       stroke="#f5f1e8"
+       stroke-width="3"
+       stroke-linecap="square"
+       id="scale-ticks">
+      <line
+         x1="140"
+         y1="703"
+         x2="140"
+         y2="795"
+         id="line8" />
+      <line
+         x1="426"
+         y1="703"
+         x2="426"
+         y2="795"
+         id="line9" />
+      <line
+         x1="712"
+         y1="703"
+         x2="712"
+         y2="795"
+         id="line10" />
+      <line
+         x1="998"
+         y1="703"
+         x2="998"
+         y2="795"
+         id="line11" />
+      <line
+         x1="1284"
+         y1="703"
+         x2="1284"
+         y2="795"
+         id="line12" />
     </g>
     <!-- value indicators at 1.7 mills and 4.3 mills -->
     <circle
        cx="340"
-       cy="828.7478"
+       cy="748.7478"
        r="28"
        fill="#152870"
        stroke="#f5f1e8"
@@ -274,20 +330,42 @@
        id="circle22" />
     <circle
        cx="1084"
-       cy="828.7478"
+       cy="748.7478"
        r="28"
-       fill="#0F5832"
+       fill="#0f5832"
        stroke="#f5f1e8"
        stroke-width="6"
        id="circle23" />
   </g>
   <!-- scale numeric labels below the bar -->
-  <g font-size="30" font-weight="700" fill="#5c5f6b" text-anchor="middle" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" id="scale-labels">
-    <text x="140"  y="910">1</text>
-    <text x="426"  y="910">2</text>
-    <text x="712"  y="910">3</text>
-    <text x="998"  y="910">4</text>
-    <text x="1284" y="910">5</text>
+  <g
+     font-size="30px"
+     font-weight="700"
+     fill="#5c5f6b"
+     text-anchor="middle"
+     font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+     id="scale-labels"
+     transform="translate(0,12)">
+    <text
+       x="140"
+       y="830"
+       id="text12">1</text>
+    <text
+       x="426"
+       y="830"
+       id="text15">2</text>
+    <text
+       x="712"
+       y="830"
+       id="text16">3</text>
+    <text
+       x="998"
+       y="830"
+       id="text17">4</text>
+    <text
+       x="1284"
+       y="830"
+       id="text19">5</text>
   </g>
   <!-- directional labels below bar -->
   <!-- ============ DETAIL COLUMNS WITH COLORED PILL HEADERS ============ -->
@@ -298,15 +376,15 @@
   <!-- ============ CLOSER (converging dots + bigger type) ============ -->
   <g
      id="g61"
-     transform="translate(12.190125,-11.013188)">
+     transform="translate(12.190125,-89.013188)">
     <text
        x="179.80989"
-       y="958.53375"
+       y="974.53375"
        class="axis"
        id="text23">← MORE CLASSROOM IMPACT</text>
     <text
        x="1219.8099"
-       y="958.53375"
+       y="974.53375"
        text-anchor="end"
        class="axis"
        id="text24">LESS CLASSROOM IMPACT →</text>
@@ -324,8 +402,31 @@
        class="pill-tag"
        id="text25"
        style="font-size:32px">MORE CUTS</text>
+    <!-- LEFT per-home tax info (eyebrow + figure) under MORE CUTS pill -->
+    <text
+       x="369.81"
+       y="1140"
+       text-anchor="middle"
+       font-size="20px"
+       font-weight="700"
+       fill="#5c5f6b"
+       letter-spacing="2.5"
+       id="text20">PER MEDIAN HOME · PROPERTY TAX</text>
+    <text
+       x="369.81"
+       y="1188"
+       text-anchor="middle"
+       font-size="40px"
+       font-weight="800"
+       fill="#152870"
+       id="text22">~+$12 / month<tspan
+   font-size="24px"
+   font-weight="700"
+   fill="#5c5f6b"
+   dy="-16"
+   id="tspan20">*</tspan></text>
     <g
-       transform="translate(89.809893,1148.5337)"
+       transform="translate(89.809893,1228.5337)"
        id="g46">
       <g
          id="g28">
@@ -347,7 +448,9 @@
            y="65.08802"
            id="text62"><tspan
              sodipodi:role="line"
-             id="tspan62" /></text>
+             id="tspan62"
+             x="344.82074"
+             y="65.08802" /></text>
       </g>
       <g
          transform="translate(0,38)"
@@ -499,7 +602,7 @@
        width="560"
        height="98"
        rx="14"
-       fill="#0F5832"
+       fill="#0f5832"
        id="rect46" />
     <text
        x="911.36584"
@@ -507,17 +610,37 @@
        class="pill-tag"
        id="text47"
        style="font-size:32px">MORE TAXES</text>
+    <!-- RIGHT per-home tax info (eyebrow + figure) under MORE TAXES pill -->
+    <text
+       x="1029.8101"
+       y="1140"
+       text-anchor="middle"
+       font-size="20px"
+       font-weight="700"
+       fill="#5c5f6b"
+       letter-spacing="2.5"
+       id="text26">PER MEDIAN HOME · PROPERTY TAX</text>
+    <text
+       x="1029.8101"
+       y="1188"
+       text-anchor="middle"
+       font-size="40px"
+       font-weight="800"
+       fill="#0f5832"
+       id="text48">~+$30 / month<tspan
+   font-size="24px"
+   font-weight="700"
+   fill="#5c5f6b"
+   dy="-16"
+   id="tspan26">*</tspan></text>
     <g
-       transform="translate(749.80989,1148.5337)"
+       transform="translate(749.80989,1228.5337)"
        id="g56">
       <text
          x="22"
          y="32"
          class="body-mute"
-         id="text49">…closes the gap with only M<tspan
-   font-weight="800"
-   fill="#1a1d28"
-   id="tspan48">~$0.68M</tspan> of</text>
+         id="text49">Closes the gap with only M~$0.68M of</text>
       <text
          x="22"
          y="62"
@@ -558,52 +681,48 @@
     </g>
     <line
        x1="147.80989"
-       y1="1606.5337"
+       y1="1658.5337"
        x2="1251.8099"
-       y2="1606.5337"
+       y2="1658.5337"
        stroke="#8f8676"
        stroke-width="1"
        id="line56" />
     <circle
        cx="147.80989"
-       cy="1606.5337"
+       cy="1658.5337"
        r="8"
        fill="#152870"
        id="circle56" />
     <circle
        cx="1251.8099"
-       cy="1606.5337"
+       cy="1658.5337"
        r="8"
-       fill="#0F5832"
+       fill="#0f5832"
        id="circle57" />
   </g>
   <!-- ============ FOOTER ============ -->
   <text
      x="102"
-     y="1748"
+     y="1720"
      class="footer"
-     id="text59">
-    Sources: FY27 Tentative Adoption (5/14/2026), Budget Work Session No. 3, U.S. Census, Ga. Dept. of Revenue millage data.
-  </text>
+     id="text59">Sources: FY27 Tentative Adoption (5/14/2026), Budget Work Session No. 3, U.S. Census, Ga. Dept. of Revenue millage data.</text>
   <text
      x="102"
-     y="1768"
+     y="1740"
      class="footer"
-     id="text60">
-    Mill costs assume the median Bibb home ($165,800), before any homestead, senior, veteran, or historic exemptions.
-  </text>
+     id="text60">* Estimates assume the median Bibb home ($207,100), before any homestead, senior, veteran, or historic exemptions. FY27 rates depend on the 2026 tax digest.</text>
   <text
      x="921.56232"
-     y="1702.288"
+     y="1684.288"
      text-anchor="end"
      class="footer-em"
      id="text61"
-     style="font-size:53.3333px;stroke-width:2.93285;fill:#111e48;fill-opacity:1">kerryhatcher.com</text>
+     style="font-size:53.3333px;fill:#111e48;fill-opacity:1;stroke-width:2.93285">kerryhatcher.com</text>
   <text
      x="697.53583"
-     y="1646.4548"
+     y="1628.4548"
      text-anchor="end"
      class="footer-em"
      id="text61-1"
-     style="font-weight:700;font-size:42.6667px;text-align:center;text-anchor:middle;fill:#111e48;stroke-width:2.93285;fill-opacity:1">Read more:</text>
+     style="font-weight:700;font-size:42.6667px;text-align:center;text-anchor:middle;fill:#111e48;fill-opacity:1;stroke-width:2.93285">Read more:</text>
 </svg>
