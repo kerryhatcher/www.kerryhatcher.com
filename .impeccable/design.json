@@ -101,7 +101,7 @@
     "shadows": [
       {
         "name": "wordmark-inset",
-        "value": "inset 0 1px 0 oklch(1 0 0 / 0.35), inset 0 -1px 0 oklch(0 0 0 / 0.15), 0 0 0 1px oklch(1 0 0 / 0.06)",
+        "value": "inset 0 1px 0 oklch(0.98 0.005 250 / 0.35), inset 0 -1px 0 oklch(0.12 0.02 252 / 0.15), 0 0 0 1px oklch(0.98 0.005 250 / 0.06)",
         "purpose": "Brushed-metal effect on the wordmark monogram block. Only standing shadow in the system."
       }
     ],
