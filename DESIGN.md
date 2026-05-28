@@ -311,7 +311,6 @@ Long civic posts are frequently printed and forwarded in school board meetings, 
 - **Don't** add a Substack/Medium author-template stack: no giant author avatar + name + Subscribe button atop posts, no "X subscribers" social proof, no paywall chrome. The existing `.kg-signup-card` is a parity artifact for Ghost-imported content and is hidden by default; opt-in per card via `.is-shown`.
 - **Don't** add a local-news-site aesthetic: no sidebars, no "recent comments" widgets, no "most-read this week," no dated WordPress chrome.
 - **Don't** add a "Read more →" CTA at the end of post excerpts. The post-card itself is the link.
-- **Don't** add a profile photo in the hero.
 - **Don't** auto-play background gradients, conic-gradient blob heros, or scroll-tied parallax. Motion in this system is choreographed (scroll-stagger reveals, reading-progress bar, growing-underline links, sticky-header scrim, wordmark hover-rotate); it is not garnish.
 - **Don't** add third-party widgets (chat, analytics that surveil, social embeds beyond Ghost's existing card system). The site is hosted, not platform. (PRODUCT.md design principle.)
 

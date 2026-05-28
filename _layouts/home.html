@@ -2,15 +2,30 @@
 layout: default
 ---
 {% if paginator.page == 1 or paginator.page == nil %}
-<section class="hero" data-reveal-stagger>
-  <p class="hero__kicker" data-reveal>{{ page.kicker | default: "Field notes &amp; essays" }}</p>
-  <h1 class="hero__title">
-    <span class="hero__line" data-reveal>{{ page.headline_line_1 | default: "Writing about" }}</span>
-    <span class="hero__line hero__line--accent" data-reveal>{{ page.headline_line_2 | default: "the things I'm trying to learn." }}</span>
-  </h1>
-  <p class="hero__lede" data-reveal>
-    {{ page.lede | default: "Long-form notes, half-formed essays, and the occasional confident opinion. New things appear when they're ready, not when a schedule says so." }}
-  </p>
+<section class="hero{% if page.hero_image %} hero--with-figure{% endif %}" data-reveal-stagger>
+  <div class="hero__intro">
+    <p class="hero__kicker" data-reveal>{{ page.kicker | default: "Field notes &amp; essays" }}</p>
+    <h1 class="hero__title">
+      <span class="hero__line" data-reveal>{{ page.headline_line_1 | default: "Writing about" }}</span>
+      <span class="hero__line hero__line--accent" data-reveal>{{ page.headline_line_2 | default: "the things I'm trying to learn." }}</span>
+    </h1>
+    <p class="hero__lede" data-reveal>
+      {{ page.lede | default: "Long-form notes, half-formed essays, and the occasional confident opinion. New things appear when they're ready, not when a schedule says so." }}
+    </p>
+  </div>
+  {% if page.hero_image %}
+  <figure class="hero__figure" data-reveal>
+    <img src="{{ page.hero_image | relative_url }}"
+         {% if page.hero_image_small %}srcset="{{ page.hero_image_small | relative_url }} 600w, {{ page.hero_image | relative_url }} 1100w"
+         sizes="(min-width: 900px) 36vw, (min-width: 600px) 56vw, 80vw"{% endif %}
+         alt="{{ page.hero_image_alt | default: '' }}"
+         width="1100"
+         height="1375"
+         loading="eager"
+         fetchpriority="high"
+         decoding="async">
+  </figure>
+  {% endif %}
 </section>
 {% endif %}
 

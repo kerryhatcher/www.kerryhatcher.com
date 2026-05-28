@@ -11,6 +11,20 @@ layout: default
       <p class="page__dek" data-reveal>{{ page.dek }}</p>
     {% endif %}
   </header>
+
+  {% if page.feature_image %}
+    <figure class="post__hero" data-reveal>
+      <img src="{{ page.feature_image | relative_url }}"
+           alt="{{ page.feature_image_alt | default: page.title | escape }}"
+           loading="eager"
+           fetchpriority="high"
+           decoding="async">
+      {% if page.feature_image_caption %}
+        <figcaption>{{ page.feature_image_caption }}</figcaption>
+      {% endif %}
+    </figure>
+  {% endif %}
+
   <div class="page__body prose" data-reveal>
     {{ content }}
   </div>

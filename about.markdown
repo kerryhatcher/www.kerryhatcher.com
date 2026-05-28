@@ -5,6 +5,8 @@ permalink: /about/
 dek: >-
   I'm Kerry Hatcher. I live in downtown Macon, Georgia, with my wife and our
   three kids. This is where I write things that don't fit anywhere else.
+feature_image: /assets/images/kerry-hero.jpg
+feature_image_alt: Kerry Hatcher, smiling, in a checkered shirt, standing on a curb in front of a brick public school building.
 ---
 
 ## What lives here
