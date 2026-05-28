@@ -195,6 +195,7 @@ A small brushed-silver square (2rem) carrying `K·H` in Menlo, followed by the t
 - **Style:** inline list, gap clamp(1.25rem, 3vw, 2.25rem), no decoration.
 - **Default:** Noto Sans 500, 1rem, color Silver Ink.
 - **Hover / Active (`aria-current="page"`):** color Luminous Mid-Blue Brighter; a `background-image: linear-gradient(currentColor, currentColor)` underline grows from `background-size: 0 1px` to `100% 1px` over 360ms ease-out-quart. **No standard `text-decoration: underline`.**
+- **Touch target:** each link is `display: inline-flex`, `min-height: 44px`, padding `.75rem 0`, to meet the WCAG 2.5.5 44×44 floor on phones.
 
 ### Site Header
 - **Position:** sticky, top 0, z-50.
@@ -263,7 +264,7 @@ The site is wired to render content imported from Ghost CMS (`kg-*` classes). Do
 
 ### Pager (home pagination)
 - **Layout:** 3-column grid, `Newer` left / page trail center / `Older` right; top Strong Rule.
-- **Page pill (default):** Menlo 0.85rem, Silver Ink Muted, padded `0 .55rem` with a 2.2rem min-width, 999px radius, transparent border.
+- **Page pill (default):** Menlo 0.85rem, Silver Ink Muted, padded `0 .55rem` with a 2.75rem min-width and 2.75rem height (≈44px, the WCAG 2.5.5 touch-target floor), 999px radius, transparent border.
 - **Page pill (current):** Luminous Mid-Blue background, Ink-Blue Paper text, no border, weight 500.
 - **Newer / Older buttons:** Noto Sans 500, 1px Strong Rule border, 999px radius, padding `.55rem .9rem .55rem .8rem`; hover tints border + text to accent and lifts `-1px`. A mono arrow glyph nudges 3px on hover.
 
@@ -279,6 +280,9 @@ The site is wired to render content imported from Ghost CMS (`kg-*` classes). Do
 ### Focus Ring
 - **Treatment:** `outline: 2px solid var(--accent)` with `outline-offset: 3px` and `border-radius: 2px`. Used globally via `:focus-visible`. No `:focus` (mouse) styling — keyboard-only.
 
+### Print
+Long civic posts are frequently printed and forwarded in school board meetings, so print is a first-class surface, not an afterthought. `@page` margins are set to 1.6cm/1.8cm/2cm/1.8cm for A4 and Letter, body type is 11pt Noto Sans at 1.5 line-height, and the site header, footer, pager, post-feed, and reading-progress chrome are hidden. Links inside prose drop the growing-underline mechanism for a standard underline, and any `http(s)` link renders its URL inline after the link text in mono so paper carries provenance. The `kg-embed-card` iframe is replaced with a printed `[Embedded video. See the online post for content.]` marker between hairlines. The printed blockquote intentionally uses a 2px ink-line side stripe — an explicit print-only exception to the side-stripe ban in section 6, since a vertical ink rule is the long-established convention for quoted passages on paper.
+
 ## 6. Do's and Don'ts
 
 ### Do:
@@ -288,7 +292,7 @@ The site is wired to render content imported from Ghost CMS (`kg-*` classes). Do
 - **Do** use the growing-underline link treatment (`background-image: linear-gradient(currentColor, currentColor)`, `background-position: 0 100%`, transition on `background-size`). It is the canonical link affordance across the site.
 - **Do** tint every neutral toward the brand hue (chroma 0.004–0.03). No pure grays.
 - **Do** respect `prefers-reduced-motion` on every animation. The reveal system, the reading-progress bar, and the scroll-stagger logic all already do.
-- **Do** add a **print stylesheet** (PRODUCT.md commitment, not yet implemented): readable type at A4/Letter, hidden chrome, links rendered as URLs in margin. Treat as part of the design, not an afterthought.
+- **Do** treat the **print stylesheet** as part of the design: readable type at A4/Letter, hidden chrome, links rendered as URLs after the link text. (PRODUCT.md commitment, shipped — see **Print** under Components.)
 - **Do** plan for a **reader-mode toggle** or alternate body-font affordance (PRODUCT.md commitment, not yet implemented) for readers who tire on long passages.
 - **Do** keep the wordmark monogram as the **only logo**. No icon mark, no avatar in the header, no signature graphic.
 
