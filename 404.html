@@ -3,23 +3,65 @@ permalink: /404.html
 layout: default
 ---
 
-<style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+<article class="page error-404" data-reveal-stagger>
+  <header class="page__header">
+    <p class="kicker error-404__kicker" data-reveal>Error 404 &middot; Page not found</p>
+    <h1 class="error-404__title" data-reveal>That link didn&rsquo;t go where it was supposed to.</h1>
+    <p class="page__dek" data-reveal>Either the URL has a typo, or the piece moved when the site was reorganized. Both are common; neither requires the long apology. Two options for finding what you came for:</p>
+  </header>
 
-<div class="container">
-  <h1>404</h1>
+  <div class="error-404__body">
+    <section class="error-404__section" data-reveal aria-labelledby="error-404-recent">
+      <h2 class="error-404__section-title" id="error-404-recent">Recent writing</h2>
+      <ul class="error-404__list">
+        {% for post in site.posts limit:5 %}
+          <li class="error-404__item">
+            <a class="error-404__link" href="{{ post.url | relative_url }}">
+              <span class="error-404__post-title">{{ post.title | escape }}</span>
+              <span class="error-404__post-meta">{{ post.date | date: "%-d %b %Y" }}</span>
+              {% if post.dek %}
+                <span class="error-404__post-dek">{{ post.dek | strip_html | truncate: 140 }}</span>
+              {% endif %}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+    <hr class="error-404__sep" aria-hidden="true">
+
+    <section class="error-404__section" data-reveal aria-labelledby="error-404-useful">
+      <h2 class="error-404__section-title" id="error-404-useful">Always useful</h2>
+      <ul class="error-404__list">
+        <li class="error-404__item">
+          <a class="error-404__link" href="{{ '/' | relative_url }}">
+            <span class="error-404__kind">Home</span>
+            <span class="error-404__post-title">The full archive of writing.</span>
+          </a>
+        </li>
+        <li class="error-404__item">
+          <a class="error-404__link" href="{{ '/about/' | relative_url }}">
+            <span class="error-404__kind">About</span>
+            <span class="error-404__post-title">Who Kerry is, and what this site is for.</span>
+          </a>
+        </li>
+        <li class="error-404__item">
+          <a class="error-404__link" href="{{ '/feed.xml' | relative_url }}">
+            <span class="error-404__kind">Atom</span>
+            <span class="error-404__post-title">The Atom feed for new posts.</span>
+          </a>
+        </li>
+        <li class="error-404__item">
+          <a class="error-404__link" href="mailto:kerry@kerryhatcher.com">
+            <span class="error-404__kind">Email</span>
+            <span class="error-404__post-title">kerry@kerryhatcher.com</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <p class="error-404__sign" data-reveal>
+      If this is broken from a link I shared, send the URL to <a href="mailto:kerry@kerryhatcher.com">kerry@kerryhatcher.com</a> and I&rsquo;ll fix it.
+    </p>
+  </div>
+</article>
