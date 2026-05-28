@@ -60,7 +60,7 @@ social:
   - label: Email
     href: mailto:kerry@kerryhatcher.com
   - label: GitHub
-    href: https://github.com/
+    href: https://github.com/kerryhatcher
 
 exclude:
   - vendor
