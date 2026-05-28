@@ -18,8 +18,6 @@ I sat through last Thursday's Bibb County Board of Education budget work session
 
 The Superintendent's team walked the board through a menu of cuts they describe as *technically possible but explicitly not recommended*. The kind of slide nobody puts up unless the math has stopped pretending. Dr. Sims wasn't pitching these as a plan. He was showing the board what the floor looks like.
 
-Here's the floor.
-
 ## The hole we're staring at
 
 The tentatively-adopted FY27 General Fund budget, presented by CFO Eric Bush on May 14, lays out a **$23.8 million deficit** with no millage rate change. That's on top of the **$21.4 million deficit** the district is already running in the current FY26 budget. Two back-to-back eight-figure deficits on a $310M General Fund.
