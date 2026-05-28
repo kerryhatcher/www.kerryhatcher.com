@@ -633,11 +633,23 @@ main { flex: 1; }
 .prose mark { background: var(--mark); color: inherit; padding: 0 .15em; border-radius: 2px; }
 .prose blockquote {
   margin: 1.35em 0;
-  padding: 0 0 0 1.5rem;
-  border-left: 3px solid var(--accent);
+  padding: 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: .75rem;
   font-style: italic;
   color: var(--ink-soft);
 }
+.prose blockquote::before {
+  content: "\2016";
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 1.5em;
+  line-height: 1;
+  padding-top: .1em;
+  font-style: normal;
+}
+.prose blockquote > * { grid-column: 2; }
 .prose blockquote p { margin: 0; }
 .prose blockquote p + p { margin-top: 1em; }
 .prose code, .prose kbd, .prose samp {
@@ -831,7 +843,18 @@ main { flex: 1; }
   padding: 1.1rem 1.4rem;
   border-radius: 6px;
   background: var(--paper-2);
-  border-left: 3px solid var(--accent);
+  border: 1px solid var(--rule-strong);
+}
+.kg-callout-card::before {
+  content: "\00a7";
+  display: block;
+  font-family: var(--font-mono);
+  font-size: .78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: .55rem;
 }
 .kg-callout-text { color: var(--ink); }
 
