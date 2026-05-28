@@ -13,12 +13,16 @@ _pj := "podman run --rm --userns=keep-id --volume \"$PWD:/srv/jekyll:Z\" --workd
 default:
     @just --list
 
+# Verify posts don't contain duplicate <h1> headings (a11y guard).
+check-headings:
+    ./scripts/check-post-headings.sh
+
 # Build the site into _site/ (development).
-build:
+build: check-headings
     {{_pj}} --entrypoint sh {{jekyll_image}} -c 'if [ -f Gemfile ]; then bundle exec /usr/gem/bin/jekyll build --trace; else /usr/gem/bin/jekyll build --trace; fi'
 
 # Build with JEKYLL_ENV=production (clears _site/ first).
-build-prod:
+build-prod: check-headings
     rm -rf _site
     {{_pj}} --env JEKYLL_ENV=production --entrypoint sh {{jekyll_image}} -c 'if [ -f Gemfile ]; then bundle exec /usr/gem/bin/jekyll build --trace; else /usr/gem/bin/jekyll build --trace; fi'
 
