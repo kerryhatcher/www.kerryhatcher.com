@@ -48,6 +48,10 @@ layout: default
     <p class="post__sign">
       Kerry · {{ page.date | date: "%B %Y" }}
     </p>
+    <button type="button" class="post__reader-toggle" data-reader-toggle aria-pressed="false" title="Switch to a higher-readability font">
+      <span aria-hidden="true">Aa</span>
+      <span class="visually-hidden">Toggle reader-friendly font</span>
+    </button>
     <a class="post__back" href="{{ '/' | relative_url }}">
       <span aria-hidden="true">&larr;</span>
       Back to writing
