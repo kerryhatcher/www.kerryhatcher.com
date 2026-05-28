@@ -1,0 +1,237 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-05-28T00:00:00Z",
+  "title": "Design System: kerryhatcher.com",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Ink-Blue Paper",
+        "canonical": "oklch(0.17 0.03 252)",
+        "tonalRamp": [
+          "oklch(0.09 0.022 252)",
+          "oklch(0.13 0.026 252)",
+          "oklch(0.17 0.03 252)",
+          "oklch(0.215 0.032 252)",
+          "oklch(0.32 0.028 252)",
+          "oklch(0.45 0.024 252)",
+          "oklch(0.6 0.018 252)",
+          "oklch(0.78 0.012 252)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Silver Ink",
+        "canonical": "oklch(0.92 0.004 250)",
+        "tonalRamp": [
+          "oklch(0.22 0.008 250)",
+          "oklch(0.36 0.008 250)",
+          "oklch(0.5 0.008 250)",
+          "oklch(0.6 0.008 250)",
+          "oklch(0.7 0.008 250)",
+          "oklch(0.78 0.006 250)",
+          "oklch(0.86 0.006 250)",
+          "oklch(0.92 0.004 250)"
+        ]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Luminous Mid-Blue",
+        "canonical": "oklch(0.78 0.14 240)",
+        "tonalRamp": [
+          "oklch(0.22 0.08 240)",
+          "oklch(0.36 0.12 240)",
+          "oklch(0.48 0.15 240)",
+          "oklch(0.6 0.16 240)",
+          "oklch(0.72 0.15 240)",
+          "oklch(0.78 0.14 240)",
+          "oklch(0.85 0.12 235)",
+          "oklch(0.92 0.06 230)"
+        ]
+      },
+      "accent-2": {
+        "role": "primary",
+        "displayName": "Luminous Mid-Blue, Brighter",
+        "canonical": "oklch(0.88 0.1 230)",
+        "tonalRamp": [
+          "oklch(0.3 0.08 230)",
+          "oklch(0.45 0.12 230)",
+          "oklch(0.6 0.14 230)",
+          "oklch(0.72 0.13 230)",
+          "oklch(0.82 0.11 230)",
+          "oklch(0.88 0.1 230)",
+          "oklch(0.93 0.06 228)",
+          "oklch(0.97 0.025 225)"
+        ]
+      },
+      "mark": {
+        "role": "tertiary",
+        "displayName": "Mark Blue",
+        "canonical": "oklch(0.65 0.13 240)"
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "oklch(0.32 0.022 252)"
+      },
+      "rule-strong": {
+        "role": "neutral",
+        "displayName": "Strong Rule",
+        "canonical": "oklch(0.42 0.024 252)"
+      },
+      "silver-1": {
+        "role": "neutral",
+        "displayName": "Silver Bright",
+        "canonical": "oklch(0.86 0.005 250)"
+      },
+      "silver-2": {
+        "role": "neutral",
+        "displayName": "Silver Cool",
+        "canonical": "oklch(0.7 0.008 245)"
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Home hero headline. Two-line, second line accent-tinted." },
+      "headline": { "displayName": "Headline", "purpose": "Post title." },
+      "title": { "displayName": "Title", "purpose": "Prose h2, in-post section." },
+      "body": { "displayName": "Body", "purpose": "Site chrome, home archive head, footer." },
+      "prose": { "displayName": "Prose", "purpose": "Post and page reading surface. Larger than UI body on purpose." },
+      "label": { "displayName": "Label / Mono", "purpose": "Every meta signal: dates, read-time, kickers, captions, tag pills." }
+    },
+    "shadows": [
+      {
+        "name": "wordmark-inset",
+        "value": "inset 0 1px 0 oklch(1 0 0 / 0.35), inset 0 -1px 0 oklch(0 0 0 / 0.15), 0 0 0 1px oklch(1 0 0 / 0.06)",
+        "purpose": "Brushed-metal effect on the wordmark monogram block. Only standing shadow in the system."
+      }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Default easing for state transitions." },
+      { "name": "ease-out-quint", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Smoother decel for image hovers and slower reveals." },
+      { "name": "dur-1", "value": "240ms", "purpose": "Quick state changes: hover color, focus." },
+      { "name": "dur-2", "value": "360ms", "purpose": "Standard transition: nav underline grow, post-card title tint, header scrim fade." },
+      { "name": "dur-3", "value": "520ms", "purpose": "Slow reveal: post-card image saturation/scale, hero entrance." }
+    ],
+    "breakpoints": [
+      { "name": "post-body-collapse", "value": "760px" },
+      { "name": "footer-collapse", "value": "720px" },
+      { "name": "bookmark-stack", "value": "640px" },
+      { "name": "gallery-2up", "value": "600px" },
+      { "name": "post-feed-2up", "value": "960px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Wordmark",
+      "kind": "custom",
+      "refersTo": "wordmark",
+      "description": "Site identity. Brushed-silver monogram block + name. Rotates -6deg on hover.",
+      "html": "<a class=\"ds-wordmark\" href=\"#\" aria-label=\"Kerry Hatcher, home\"><span class=\"ds-wordmark__mark\" aria-hidden=\"true\">K&middot;H</span><span class=\"ds-wordmark__name\">Kerry Hatcher</span></a>",
+      "css": ".ds-wordmark { display: inline-flex; align-items: baseline; gap: .65rem; text-decoration: none; color: oklch(0.92 0.004 250); font-family: \"Noto Sans\", -apple-system, sans-serif; font-weight: 600; letter-spacing: -0.01em; } .ds-wordmark__mark { display: inline-grid; place-items: center; width: 2rem; height: 2rem; border-radius: 6px; background: linear-gradient(135deg, oklch(0.86 0.005 250) 0%, oklch(0.7 0.008 245) 55%, oklch(0.86 0.005 250) 100%); color: oklch(0.2 0.03 252); font-family: Menlo, Courier, monospace; font-size: .72rem; font-weight: 600; letter-spacing: 0.04em; transform: translateY(.15rem); transition: transform 360ms cubic-bezier(0.22, 1, 0.36, 1), filter 360ms cubic-bezier(0.22, 1, 0.36, 1); box-shadow: inset 0 1px 0 oklch(1 0 0 / 0.35), inset 0 -1px 0 oklch(0 0 0 / 0.15), 0 0 0 1px oklch(1 0 0 / 0.06); } .ds-wordmark:hover .ds-wordmark__mark { transform: translateY(.15rem) rotate(-6deg); filter: brightness(1.06); } .ds-wordmark__name { font-size: 1rem; }"
+    },
+    {
+      "name": "Prose Link",
+      "kind": "custom",
+      "refersTo": "link-prose",
+      "description": "Canonical link affordance across the site. Growing underline via background-size. No text-decoration.",
+      "html": "<p style=\"font-family:'Noto Sans',sans-serif;font-size:1.25rem;color:oklch(0.92 0.004 250);\">For example, the <a class=\"ds-link\" href=\"#\">FY27 BCSD budget analysis</a> walks through the math.</p>",
+      "css": ".ds-link { color: oklch(0.88 0.1 230); text-decoration: none; background-image: linear-gradient(currentColor, currentColor); background-repeat: no-repeat; background-position: 0 100%; background-size: 100% 1px; transition: color 240ms cubic-bezier(0.22, 1, 0.36, 1), background-size 360ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-link:hover, .ds-link:focus-visible { color: oklch(0.78 0.14 240); background-size: 100% 2px; outline: none; }"
+    },
+    {
+      "name": "Tag Pill",
+      "kind": "chip",
+      "refersTo": "tag-pill",
+      "description": "Inline post tag. Mono, uppercase-feel, pill border, never interactive.",
+      "html": "<ul style=\"display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;padding:0;margin:0;\"><li class=\"ds-tag\">civic</li><li class=\"ds-tag\">bcsd</li><li class=\"ds-tag\">budget</li></ul>",
+      "css": ".ds-tag { padding: .2rem .55rem; border: 1px solid oklch(0.42 0.024 252); border-radius: 999px; color: oklch(0.6 0.008 248); font-family: Menlo, Courier, monospace; font-size: .78rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; }"
+    },
+    {
+      "name": "Pager Page Pill (current)",
+      "kind": "nav",
+      "refersTo": "pager-page-current",
+      "description": "Current-page indicator in the home pagination trail. Accent fill, paper text.",
+      "html": "<ol style=\"list-style:none;padding:0;margin:0;display:inline-flex;align-items:baseline;gap:.3rem;\"><li><a class=\"ds-pager-page\" href=\"#\">1</a></li><li><span class=\"ds-pager-page ds-pager-page--current\" aria-current=\"page\">2</span></li><li><a class=\"ds-pager-page\" href=\"#\">3</a></li></ol>",
+      "css": ".ds-pager-page { display: inline-grid; place-items: center; min-width: 2.2rem; height: 2.2rem; padding: 0 .55rem; font-family: Menlo, Courier, monospace; font-size: .85rem; color: oklch(0.6 0.008 248); text-decoration: none; border-radius: 999px; border: 1px solid transparent; transition: color 360ms cubic-bezier(0.22, 1, 0.36, 1), border-color 360ms cubic-bezier(0.22, 1, 0.36, 1), background 360ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-pager-page:hover { color: oklch(0.92 0.004 250); border-color: oklch(0.32 0.022 252); } .ds-pager-page--current { color: oklch(0.17 0.03 252); background: oklch(0.78 0.14 240); border-color: oklch(0.78 0.14 240); font-weight: 500; }"
+    },
+    {
+      "name": "Subscribe Button",
+      "kind": "button",
+      "refersTo": "button-subscribe",
+      "description": "The only real button in the system. Lives inside .kg-signup-card from Ghost-imported content. No general primary button exists site-wide.",
+      "html": "<button class=\"ds-btn-subscribe\" type=\"button\">Subscribe</button>",
+      "css": ".ds-btn-subscribe { padding: .65rem 1.1rem; background: oklch(0.78 0.14 240); color: oklch(0.17 0.03 252); border: 0; border-radius: 6px; font-family: \"Noto Sans\", -apple-system, sans-serif; font-weight: 600; font-size: 1rem; cursor: pointer; transition: background 240ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-btn-subscribe:hover { background: oklch(0.88 0.1 230); } .ds-btn-subscribe:focus-visible { outline: 2px solid oklch(0.78 0.14 240); outline-offset: 3px; }"
+    },
+    {
+      "name": "Skip Link",
+      "kind": "nav",
+      "refersTo": "skip-link",
+      "description": "Accessibility-required skip-to-main affordance. Hidden via transform until focus.",
+      "html": "<a class=\"ds-skip\" href=\"#main\">Skip to main content</a>",
+      "css": ".ds-skip { position: absolute; left: 0; top: 0; padding: .5rem 1rem; background: oklch(0.92 0.004 250); color: oklch(0.17 0.03 252); font-family: Menlo, Courier, monospace; font-size: .8125rem; transform: translateY(-110%); transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1); z-index: 100; text-decoration: none; } .ds-skip:focus { transform: translateY(0); }"
+    },
+    {
+      "name": "Section Kicker (Numbered)",
+      "kind": "custom",
+      "refersTo": "archive-kicker",
+      "description": "Signature mono section marker. Used as a leading glyph on the archive head and as the visual rhythm device throughout the site.",
+      "html": "<h2 class=\"ds-archive__title\"><span class=\"ds-archive__kicker\">&sect; 02</span> Recent writing</h2>",
+      "css": ".ds-archive__title { font-family: \"Noto Sans\", -apple-system, sans-serif; font-weight: 600; font-size: clamp(1.1rem, 1.4vw, 1.25rem); letter-spacing: -0.005em; color: oklch(0.92 0.004 250); display: flex; align-items: baseline; gap: .9rem; margin: 0; } .ds-archive__kicker { font-family: Menlo, Courier, monospace; font-size: .78rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: oklch(0.78 0.14 240); }"
+    },
+    {
+      "name": "Reading Progress Bar",
+      "kind": "custom",
+      "refersTo": "reading-progress",
+      "description": "Fixed 2px top bar on post pages. Width tracks article scroll-through via JS. Functional, not decorative.",
+      "html": "<div class=\"ds-reading-progress\" aria-hidden=\"true\"><div class=\"ds-reading-progress__bar\" style=\"width:34%\"></div></div>",
+      "css": ".ds-reading-progress { position: relative; height: 2px; background: transparent; z-index: 60; pointer-events: none; } .ds-reading-progress__bar { height: 100%; background: oklch(0.78 0.14 240); transform-origin: left center; transition: width 80ms linear; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Notes from the Whiteboard",
+    "overview": "Mono kickers, numbered section markers (§ 02), and a single luminous blue feel like reasoning done in front of you. The aesthetic is provenance: nothing claims more than it can show. The page is deep ink-blue paper with silver type; the accent is held back so that when it appears — in a link, a section number, a hovered card, the reading-progress bar at the top of a post — it reads as emphasis, not decoration.\n\nThis is not a magazine, not a SaaS landing page, not a developer-portfolio dark mode, not a campaign site, not a Substack template. It is a self-owned reading space that happens to be dark by default because of the room: a 13-inch laptop in a study with one desk lamp on, late evening. Light mode is a courtesy for daytime mobile readers, not a hedge.",
+    "keyCharacteristics": [
+      "One typographic family across the surface (Noto Sans), letting hierarchy come from weight and scale rather than family contrast.",
+      "Mono labels (Menlo) carry every meta signal: dates, read-time, page numbers, section kickers, captions.",
+      "A single committed accent — luminous mid-blue — does all the identity work. No secondary brand colors.",
+      "The wordmark mark is a small brushed-silver square with K·H in mono; the only \"logo\" the site has.",
+      "Layout breathes: clamp-based gutters, a 70ch reading measure, and a three-zone post body grid.",
+      "Motion is choreographed, never decorative: scroll-stagger reveals, reading-progress bar, sticky-header scrim, growing-underline links."
+    ],
+    "rules": [
+      { "name": "The One Voice Rule", "body": "A single accent (Luminous Mid-Blue) carries the entire brand. Adding a second saturated color makes this site look like a startup.", "section": "colors" },
+      { "name": "The No-Pure-Neutral Rule", "body": "No #000, no #fff, no oklch(L 0 H) anywhere. Every neutral tints toward the brand hue (chroma 0.004–0.03).", "section": "colors" },
+      { "name": "The Reading Measure Rule", "body": "Long-form prose lives inside 70ch. Wider columns are reserved for figures that have earned the room. The post body uses a three-zone grid (main / wide / full).", "section": "typography" },
+      { "name": "The One Family Rule", "body": "Hierarchy is built from weight and scale within Noto Sans + Menlo. No third display font, no serif body, no italic-script display.", "section": "typography" },
+      { "name": "The Mono-For-Meta Rule", "body": "Every meta signal is in Menlo, uppercase, with 0.06–0.14em tracking. Body sentences are never in mono.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Surfaces are flat at rest. Hover and focus may introduce a 1–2px transform; that is the system's only motion-on-state.", "section": "elevation" },
+      { "name": "The No-Glassmorphism Rule", "body": "The single backdrop-filter in the system is a functional scrim on the sticky header. Decorative blurs are prohibited.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do use one accent (Luminous Mid-Blue) across the whole system. New states get weight and label changes, not new hues.",
+      "Do keep prose inside 70ch. Figures may expand into wide or full; paragraphs may not.",
+      "Do use Menlo, uppercase, 0.06–0.14em tracked for every meta signal.",
+      "Do use the growing-underline link treatment via background-size.",
+      "Do tint every neutral toward the brand hue (chroma 0.004–0.03).",
+      "Do respect prefers-reduced-motion on every animation.",
+      "Do add a print stylesheet (PRODUCT.md commitment, not yet implemented).",
+      "Do plan for a reader-mode toggle or alternate body-font affordance (PRODUCT.md commitment, not yet implemented).",
+      "Do keep the wordmark monogram as the only logo."
+    ],
+    "donts": [
+      "Don't introduce a second saturated brand color.",
+      "Don't use #000 or #fff in CSS or in SVG.",
+      "Don't add border-left or border-right greater than 1px as a colored accent. Two existing components (.prose blockquote and .kg-callout-card) already violate this rule (3px accent left border). They are documented divergences slated for revision; don't propagate the pattern.",
+      "Don't add a serif display, italic-script display, or third type family.",
+      "Don't use mono inside body sentences.",
+      "Don't add decorative shadows, gradient text, or glassmorphism panels.",
+      "Don't ship a SaaS landing surface, a magazine clone, a developer-portfolio terminal aesthetic, or default Jekyll theme chrome.",
+      "Don't add a campaign frame (endorsement bars, donate CTAs, yard-sign red/white/blue, Meet Kerry hero bio).",
+      "Don't add a Substack/Medium author-template stack.",
+      "Don't add a local-news-site aesthetic (sidebars, recent-comments widgets, most-read-this-week).",
+      "Don't add a Read more → CTA at the end of post excerpts.",
+      "Don't add a profile photo in the hero.",
+      "Don't auto-play background gradients, conic-gradient blob heros, or scroll-tied parallax.",
+      "Don't add third-party widgets (chat, surveilling analytics, social embeds beyond Ghost's card system)."
+    ]
+  }
+}
