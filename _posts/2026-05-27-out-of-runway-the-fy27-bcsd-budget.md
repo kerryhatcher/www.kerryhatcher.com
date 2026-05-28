@@ -18,6 +18,10 @@ I sat through last Thursday's Bibb County Board of Education budget work session
 
 The Superintendent's team walked the board through a menu of cuts they describe as *technically possible but explicitly not recommended*. The kind of slide nobody puts up unless the math has stopped pretending. Dr. Sims wasn't pitching these as a plan. He was showing the board what the floor looks like.
 
+If you'd rather watch it for yourself, here's the full work session. Everything below is my read on what happened in this room.
+
+<figure class="kg-card kg-embed-card kg-card-hascaption"><iframe width="200" height="113" src="https://www.youtube-nocookie.com/embed/QpxVOT7LK7k?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="BCSD BOE Meeting 21 May 2026" loading="lazy"></iframe><figcaption><span style="white-space: pre-wrap;">The May 21, 2026 Bibb County Board of Education budget work session, in full.</span></figcaption></figure>
+
 ## The hole we're staring at
 
 The tentatively-adopted FY27 General Fund budget, presented by CFO Eric Bush on May 14, lays out a **$23.8 million deficit** with no millage rate change. That's on top of the **$21.4 million deficit** the district is already running in the current FY26 budget. Two back-to-back eight-figure deficits on a $310M General Fund.
