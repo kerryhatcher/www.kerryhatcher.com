@@ -241,8 +241,7 @@ A three-zone CSS grid that defines `main`, `wide`, and `full` columns. By defaul
 - This is the canonical link treatment across the site. Site nav, footer, post-card titles, and post-back use the same growing-underline mechanism.
 
 ### Blockquote
-- **Style:** italic Silver Ink Soft, `padding-left: 1.5rem`, `border-left: 3px solid var(--accent)`, sits in the `main` column.
-- **Status:** documented as a known divergence from the impeccable side-stripe ban (see Don'ts). Candidate for revision: replace the side-stripe with a leading mono `‖` glyph or a top-and-bottom hairline.
+- **Style:** margin-notation treatment. A two-column CSS grid (`auto 1fr`) places a leading `‖` (U+2016, double vertical bar) glyph in Menlo Luminous Mid-Blue at `1.5em` to the left of the quote, with `.75rem` column gap. The quote body stays italic Silver Ink Soft and remains in the `main` (70ch) column. No side stripe, no padding-left rule — the mono glyph acts as a margin note, consistent with the "Notes from the Whiteboard" North Star and the `§ 02` archive kicker vocabulary.
 
 ### Code & Pre
 - **Inline code:** Menlo 0.9em, `background: var(--paper-2)`, 1px Hairline border, `border-radius: 3px`, padding `.12em .35em`.
@@ -254,7 +253,7 @@ The site is wired to render content imported from Ghost CMS (`kg-*` classes). Do
 - **`.kg-header-card.kg-layout-split`:** image + heading split, swappable via `.kg-swapped`, collapses to stacked at 720px.
 - **`.kg-gallery-card`:** 3-column grid that adapts to 2-up at ≤600px; rows with fewer images auto-balance.
 - **`.kg-bookmark-card`:** horizontal link card with thumbnail, 1px Hairline border, 10px radius, Inset Paper background, hover lifts via `translateY(-2px)` + Luminous Mid-Blue border.
-- **`.kg-callout-card`:** Inset Paper background, `border-left: 3px solid var(--accent)`. **Same side-stripe divergence as blockquote** (see Don'ts).
+- **`.kg-callout-card`:** Inset Paper background, full 1px Strong Rule border, 6px radius. A small Luminous Mid-Blue mono `§` marker (Menlo 0.78rem, uppercase, 0.06em tracking) sits above the callout content via `::before`, acting as a margin-note signature consistent with the `§ 02` archive kickers.
 - **`.kg-embed-card`:** 16:9 iframe wrapper, max-width 720px, 8px radius.
 - **`.kg-signup-card`:** the only embedded subscribe form in the system, rendered only when Ghost content includes it. Marked for review against the "no newsletter ceremony" principle in PRODUCT.md — consider hiding or styling-down site-wide.
 
@@ -296,7 +295,7 @@ The site is wired to render content imported from Ghost CMS (`kg-*` classes). Do
 ### Don't:
 - **Don't** introduce a second saturated brand color. No gold accents, no signal-green success states, no orange warnings. (Violation of the One Voice Rule and a PRODUCT.md anti-reference.)
 - **Don't** use `#000` or `#fff`, in CSS or in SVG. Every neutral tints toward the brand hue. (No-Pure-Neutral Rule.)
-- **Don't** add `border-left` or `border-right` greater than 1px as a colored accent on cards, callouts, or list items. **Two existing components — `.prose blockquote` and `.kg-callout-card` — already violate this rule (3px accent left border). They are documented divergences slated for revision; don't propagate the pattern to new components.**
+- **Don't** add `border-left` or `border-right` greater than 1px as a colored accent on cards, callouts, or list items.
 - **Don't** add a serif display, italic-script display, or third type family. Hierarchy is weight + scale within Noto Sans + Menlo. (One Family Rule.)
 - **Don't** use mono inside body sentences. Mono is for the margin: dates, kickers, captions, tags, page numbers. (Mono-For-Meta Rule.)
 - **Don't** add decorative shadows, gradient text, or glassmorphism panels. The single `backdrop-filter` lives on the sticky header scrim; the only standing shadow vocabulary lives on the wordmark monogram. (Flat-By-Default Rule.)
@@ -312,6 +311,6 @@ The site is wired to render content imported from Ghost CMS (`kg-*` classes). Do
 ### Anti-pattern audit tests
 - If a heading is in a serif or italic-script family, it is not this system.
 - If a meta line is in Noto Sans rather than Menlo, it is not this system.
-- If a card has a 3px colored stripe on one side and is not the documented divergence (`blockquote`, `kg-callout-card`), it is not this system.
+- If a card has a 3px colored stripe on one side, it is not this system.
 - If two saturated brand colors appear in the same screen, it is not this system.
 - If the page has a hero metric or a feature grid above the fold, it is not this system.
