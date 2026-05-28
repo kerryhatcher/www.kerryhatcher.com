@@ -41,7 +41,7 @@ Schools don't run on cash they collect this week. State and federal money arrive
 
 Most lenders and ratings agencies look for a school district fund balance ratio in the **15–20% range**. Bibb is projected to drop to **7.8%** by the end of FY27. And if we hold this course, the same deck shows the ratio falling to **0.5% in FY28** and going to **negative 14.3% by FY30**.
 
-A negative fund balance isn't a budget problem. That's a "the state intercepts your revenue and writes you an emergency loan at terms you don't choose" problem. Ask Dublin City Schools how that's been working out.
+A negative fund balance isn't just a budget problem. That's a the state is getting involved problem. Ask Dublin City Schools how that's been working out.
 
 ## The cut menu
 
@@ -66,7 +66,7 @@ Further cuts have been discussed previously outside the meeting:
 
 Apply every one of those, including the ones the Superintendent flatly does not recommend, and we are still **$8 million short** of balancing FY27. After consolidating schools, freezing pay, packing more kids into classrooms, and contracting out the people who hold our buildings together. Still short.
 
-Board member James Freeman put the school consolidation line in sharp relief: the district has had three separate studies (efficiency, rezoning, and consolidation) running for as long as six years. None of them have actually changed anything. *"Here I am six years in and we haven't consolidated the school, we haven't rezoned the school,"* Freeman said. The $3M consolidation figure isn't a new idea. It's an answer that keeps getting deferred.
+Board member James Freeman put the school consolidation line in sharp relief: the district has had three separate studies (efficiency, rezoning, and consolidation) running for as long as six years. None of them have actually changed anything. *"Here I am six years in and we haven't consolidated the schools, we haven't rezoned the schools,"* Freeman said. The $3M consolidation figure isn't a new idea. It's an answer that keeps getting deferred.
 
 Here are the slides CFO Bush showed:
 
