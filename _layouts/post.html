@@ -32,6 +32,7 @@ layout: default
       <img src="{{ page.feature_image }}"
            alt="{{ page.feature_image_alt | default: page.title | escape }}"
            loading="eager"
+           fetchpriority="high"
            decoding="async">
       {% if page.feature_image_caption %}
         <figcaption>{{ page.feature_image_caption }}</figcaption>
