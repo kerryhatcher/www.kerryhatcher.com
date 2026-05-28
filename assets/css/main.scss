@@ -23,6 +23,7 @@
 
   --font-display: "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
   --font-body: "Noto Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --font-body-reader: "Atkinson Hyperlegible", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: Menlo, Courier, monospace;
 
   --gutter: clamp(1.25rem, 5vw, 2.5rem);
@@ -184,9 +185,9 @@ main { flex: 1; }
   transform: translateY(.15rem);
   transition: transform var(--dur-2) var(--ease-out), filter var(--dur-2) var(--ease-out);
   box-shadow:
-    inset 0 1px 0 oklch(1 0 0 / 0.35),
-    inset 0 -1px 0 oklch(0 0 0 / 0.15),
-    0 0 0 1px oklch(1 0 0 / 0.06);
+    inset 0 1px 0 oklch(0.98 0.005 250 / 0.35),
+    inset 0 -1px 0 oklch(0.12 0.02 252 / 0.15),
+    0 0 0 1px oklch(0.98 0.005 250 / 0.06);
 }
 .wordmark:hover .wordmark__mark { transform: translateY(.15rem) rotate(-6deg); filter: brightness(1.06); }
 .wordmark__name { font-size: 1rem; }
@@ -473,10 +474,12 @@ main { flex: 1; }
   padding: 0;
 }
 .post__tags li {
-  padding: .2rem .55rem;
-  border: 1px solid var(--rule-strong);
-  border-radius: 999px;
   color: var(--ink-muted);
+}
+.post__tags li + li::before {
+  content: "·";
+  margin-right: .5rem;
+  color: var(--rule-strong);
 }
 
 .post__hero {
@@ -873,10 +876,12 @@ main { flex: 1; }
 }
 
 /* --- kg-signup-card (Ghost subscribe form) ------------------------------ */
-/* Ghost hides the form with inline style until JS sets it up. The live site
-   reveals it; we match by overriding. The form is non-functional without
-   Ghost's backend, but the layout matches visually. */
-.kg-signup-card[style*="display: none"] { display: block !important; }
+/* Ghost-imported posts may include a signup card. PRODUCT.md bans
+   Substack/Medium subscribe ceremony, so the card is hidden by default.
+   Opt in per-card by adding the `is-shown` class to the wrapper. The
+   visual styles below stay so that opted-in cards still render correctly. */
+.kg-signup-card { display: none; }
+.kg-signup-card.is-shown { display: block; }
 .kg-signup-card {
   margin: 2.5em 0;
   padding: clamp(1.5rem, 4vw, 2.5rem);
@@ -1490,4 +1495,62 @@ main { flex: 1; }
     opacity: 1 !important;
     transform: none !important;
   }
+}
+
+/* =========================================================================
+   Reader mode (alt body font for dyslexia-friendly reading)
+   ========================================================================= */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+html[data-reader="on"] .post__body,
+html[data-reader="on"] .page__body,
+html[data-reader="on"] .post__dek,
+html[data-reader="on"] .page__dek {
+  font-family: var(--font-body-reader);
+}
+
+html[data-reader="on"] .post__body,
+html[data-reader="on"] .page__body {
+  letter-spacing: 0.01em;
+}
+
+.post__reader-toggle {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: .8125rem;
+  letter-spacing: 0.06em;
+  color: var(--ink-muted);
+  background: transparent;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: .45rem .8rem;
+  min-height: 44px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--dur-1) var(--ease-out), border-color var(--dur-1) var(--ease-out);
+}
+.post__reader-toggle:hover,
+.post__reader-toggle:focus-visible {
+  color: var(--accent);
+  border-color: var(--rule-strong);
+}
+.post__reader-toggle[aria-pressed="true"] {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+@media print {
+  .post__reader-toggle { display: none !important; }
 }
