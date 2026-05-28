@@ -47,10 +47,22 @@ layout: default
         <a class="post-card__link" href="{{ post.url | relative_url }}">
           {% if post.feature_image %}
             <span class="post-card__image">
+              {% if page_num == 1 and forloop.index == 1 %}
               <img src="{{ post.feature_image }}"
                    alt=""
+                   width="1600"
+                   height="900"
+                   loading="eager"
+                   fetchpriority="high"
+                   decoding="async">
+              {% else %}
+              <img src="{{ post.feature_image }}"
+                   alt=""
+                   width="1280"
+                   height="800"
                    loading="lazy"
                    decoding="async">
+              {% endif %}
             </span>
           {% endif %}
           <span class="post-card__body">
