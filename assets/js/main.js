@@ -57,7 +57,7 @@
       const total = rect.height - viewport * 0.4;
       const passed = Math.min(Math.max(viewport * 0.6 - rect.top, 0), total);
       const pct = total > 0 ? (passed / total) * 100 : 0;
-      progress.style.width = `${pct}%`;
+      progress.style.transform = `scaleX(${pct / 100})`;
     };
     let raf = 0;
     const onScroll = () => {
