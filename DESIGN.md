@@ -75,10 +75,9 @@ components:
   card-post:
     backgroundColor: "{colors.paper-2}"
     rounded: "{rounded.lg}"
-  tag-pill:
+  tag-label:
     textColor: "{colors.ink-muted}"
-    rounded: "{rounded.pill}"
-    padding: ".2rem .55rem"
+    separatorColor: "{colors.rule-strong}"
   pager-page-current:
     backgroundColor: "{colors.accent}"
     textColor: "{colors.paper}"
@@ -128,7 +127,7 @@ Colors are canonical in **OKLCH**. Hex equivalents are intentionally not provide
 
 ### Neutral (Rules)
 - **Hairline** (`oklch(0.32 0.022 252)`): inline rules, separators, code-block and bookmark-card borders.
-- **Strong Rule** (`oklch(0.42 0.024 252)`): section dividers (archive head, footer rule, post footer top, post-tag pill border).
+- **Strong Rule** (`oklch(0.42 0.024 252)`): section dividers (archive head, footer rule, post footer top) and the mid-dot separator between post tag labels.
 
 ### Wordmark Mark
 - **Silver Bright** (`oklch(0.86 0.005 250)`) and **Silver Cool** (`oklch(0.7 0.008 245)`): the two stops of the brushed-silver gradient applied to the wordmark monogram block (`linear-gradient(135deg, silver-1, silver-2 55%, silver-1)`). The gradient stays on the block, never on text.
@@ -147,7 +146,7 @@ Light mode is a courtesy, not the headline. Paper inverts to a cool off-white (`
 
 **Body Font:** Noto Sans. The same family covers display, body, prose, and UI. Hierarchy comes from weight (400 ↔ 600 ↔ 700) and scale (≥1.25 ratio between steps), not from family contrast. There is no serif body, intentionally — the site is sans across the entire surface.
 
-**Label / Mono Font:** Menlo (with Courier fallback). System mono — no web mono is loaded. Carries every meta signal in the system: dates, read-time, page numbers, section kickers (`§ 02`), captions, tag pills, post-card kickers, signup disclaimer.
+**Label / Mono Font:** Menlo (with Courier fallback). System mono — no web mono is loaded. Carries every meta signal in the system: dates, read-time, page numbers, section kickers (`§ 02`), captions, tag labels, post-card kickers, signup disclaimer.
 
 **Character.** Quiet, geometric, evenly weighted. Noto Sans is deliberately not a "designer" sans — it is a workhorse with broad Unicode coverage, and the site leans into that as evidence of seriousness rather than performance. The mono is editorial-machine: a typewritten margin note in a thoughtful essay. Together they read as a notebook, not a brochure.
 
@@ -179,7 +178,7 @@ There are no decorative shadows on cards, no drop-shadow on hero text, no glassm
 The sticky site header uses `backdrop-filter: saturate(140%) blur(10px)` once scrolled — this is structural, not decorative. The "blur" is not stylized glass; it is a working scrim that keeps the page header readable as content slides under it.
 
 ### Shadow Vocabulary
-- **Wordmark Mark Inset** (`inset 0 1px 0 oklch(1 0 0 / 0.35), inset 0 -1px 0 oklch(0 0 0 / 0.15), 0 0 0 1px oklch(1 0 0 / 0.06)`): the brushed-silver block on the wordmark only. Applied to no other surface.
+- **Wordmark Mark Inset** (`inset 0 1px 0 oklch(0.98 0.005 250 / 0.35), inset 0 -1px 0 oklch(0.12 0.02 252 / 0.15), 0 0 0 1px oklch(0.98 0.005 250 / 0.06)`): the brushed-silver block on the wordmark only. Silver-hue lights, ink-blue-hue darks — hue-tinted per the No-Pure-Neutral Rule. Applied to no other surface.
 
 ### Named Rules
 **The Flat-By-Default Rule.** Surfaces are flat at rest. Depth at rest is anti-doctrine. Hover and focus may introduce a 1–2px transform; that is the system's only motion-on-state.
@@ -223,10 +222,11 @@ A small brushed-silver square (2rem) carrying `K·H` in Menlo, followed by the t
 - **Image at rest:** `filter: saturate(0.92)` — the post feed reads slightly desaturated; hover restores full color.
 - **Responsive:** 960px collapses to 2-up; 600px to 1-up with 16:9 hero images and 6px radius.
 
-### Tag Pill
-- **Shape:** `border-radius: 999px`, 1px Strong Rule border.
-- **Style:** Menlo 0.78rem, Silver Ink Muted, padding `.2rem .55rem`.
-- **Use:** inline post tags only. Not for filtering, not for navigation.
+### Tag Labels
+- **Style:** inline `<li>` items in Menlo 0.78rem, uppercase, 0.06em tracking, Silver Ink Muted. No border, no padding, no pill chrome.
+- **Separator:** a centered mid-dot (`·`) in Strong Rule color sits between adjacent items via `li + li::before`, keeping the row legible at low contrast.
+- **Layout:** flex row, `gap: .5rem`, wraps freely.
+- **Use:** non-interactive post tags only. The site has no tag archive — these are margin-note labels for provenance, not chips or filters. Wiring them as links would be a false affordance.
 
 ### Post Body Grid (signature component)
 A three-zone CSS grid that defines `main`, `wide`, and `full` columns. By default every child sits in `main` (70ch). A figure with `.kg-width-wide` spans into the `wide` zone (70ch + 14rem). A figure with `.kg-width-full` spans the entire viewport. Below 760px the grid collapses to a single block-flow column. The grid is the central typographic affordance of the site and the reason figures can breathe without disrupting paragraph rhythm.
@@ -256,7 +256,10 @@ The site is wired to render content imported from Ghost CMS (`kg-*` classes). Do
 - **`.kg-bookmark-card`:** horizontal link card with thumbnail, 1px Hairline border, 10px radius, Inset Paper background, hover lifts via `translateY(-2px)` + Luminous Mid-Blue border.
 - **`.kg-callout-card`:** Inset Paper background, full 1px Strong Rule border, 6px radius. A small Luminous Mid-Blue mono `§` marker (Menlo 0.78rem, uppercase, 0.06em tracking) sits above the callout content via `::before`, acting as a margin-note signature consistent with the `§ 02` archive kickers.
 - **`.kg-embed-card`:** 16:9 iframe wrapper, max-width 720px, 8px radius.
-- **`.kg-signup-card`:** the only embedded subscribe form in the system, rendered only when Ghost content includes it. Marked for review against the "no newsletter ceremony" principle in PRODUCT.md — consider hiding or styling-down site-wide.
+- **`.kg-signup-card`:** Ghost-imported subscribe form. **Hidden by default site-wide** to honor PRODUCT.md's "no newsletter ceremony" principle; the visual styles remain so that a specific card can be surfaced by adding the `.is-shown` class to the wrapper (or a build-time Jekyll filter). No card is shown without that explicit opt-in.
+
+### Reader-mode toggle
+A small mono `Aa` pill button in the post footer (between the byline and the back-link) that swaps the post body, dek, and analogous page surfaces from Noto Sans to **Atkinson Hyperlegible** — the Braille Institute's hyperlegible family widely used as a single-font intervention for low-vision and dyslexic readers. The choice persists in `localStorage` (`kh-reader-mode`) and is applied before paint via a tiny inline script in `head.html`, so it survives page navigation without a flash. When active, the body picks up `letter-spacing: 0.01em`; headings, kickers, and site chrome do not change — only the reading surface swaps.
 
 ### Subscribe Button (sole real button in the system)
 - **Style:** Luminous Mid-Blue background, Ink-Blue Paper text, `border-radius: 6px`, padding `.65rem 1.1rem`, Noto Sans 600.
@@ -288,12 +291,12 @@ Long civic posts are frequently printed and forwarded in school board meetings, 
 ### Do:
 - **Do** use **one** accent (Luminous Mid-Blue) across the whole system. New states get weight and label changes, not new hues. (See the One Voice Rule.)
 - **Do** keep prose inside `var(--measure)` (70ch). Figures may expand into `wide` or `full` via the post-body grid; paragraphs may not.
-- **Do** use **Menlo, uppercase, 0.06–0.14em tracked** for every meta signal: dates, read-time, page numbers, section kickers, captions, tag pills, post-card kickers.
+- **Do** use **Menlo, uppercase, 0.06–0.14em tracked** for every meta signal: dates, read-time, page numbers, section kickers, captions, tag labels, post-card kickers.
 - **Do** use the growing-underline link treatment (`background-image: linear-gradient(currentColor, currentColor)`, `background-position: 0 100%`, transition on `background-size`). It is the canonical link affordance across the site.
 - **Do** tint every neutral toward the brand hue (chroma 0.004–0.03). No pure grays.
 - **Do** respect `prefers-reduced-motion` on every animation. The reveal system, the reading-progress bar, and the scroll-stagger logic all already do.
 - **Do** treat the **print stylesheet** as part of the design: readable type at A4/Letter, hidden chrome, links rendered as URLs after the link text. (PRODUCT.md commitment, shipped — see **Print** under Components.)
-- **Do** plan for a **reader-mode toggle** or alternate body-font affordance (PRODUCT.md commitment, not yet implemented) for readers who tire on long passages.
+- **Do** use the **reader-mode toggle** (Atkinson Hyperlegible alt body font) for readers who tire on long passages. (PRODUCT.md commitment, shipped — see **Reader-mode toggle** under Components.)
 - **Do** keep the wordmark monogram as the **only logo**. No icon mark, no avatar in the header, no signature graphic.
 
 ### Don't:
@@ -305,7 +308,7 @@ Long civic posts are frequently printed and forwarded in school board meetings, 
 - **Don't** add decorative shadows, gradient text, or glassmorphism panels. The single `backdrop-filter` lives on the sticky header scrim; the only standing shadow vocabulary lives on the wordmark monogram. (Flat-By-Default Rule.)
 - **Don't** ship a SaaS landing surface, a magazine clone, a developer-portfolio terminal aesthetic, or default Jekyll theme chrome. (PRODUCT.md anti-references — all four still apply.)
 - **Don't** add a campaign frame: no endorsement bars, no donate CTAs, no yard-sign red/white/blue palette, no "Meet Kerry" hero bio block. The school board run is acknowledged when it is the subject of a post, not the frame of the site.
-- **Don't** add a Substack/Medium author-template stack: no giant author avatar + name + Subscribe button atop posts, no "X subscribers" social proof, no paywall chrome. The existing `.kg-signup-card` is a parity artifact for Ghost-imported content; consider hiding it site-wide.
+- **Don't** add a Substack/Medium author-template stack: no giant author avatar + name + Subscribe button atop posts, no "X subscribers" social proof, no paywall chrome. The existing `.kg-signup-card` is a parity artifact for Ghost-imported content and is hidden by default; opt-in per card via `.is-shown`.
 - **Don't** add a local-news-site aesthetic: no sidebars, no "recent comments" widgets, no "most-read this week," no dated WordPress chrome.
 - **Don't** add a "Read more →" CTA at the end of post excerpts. The post-card itself is the link.
 - **Don't** add a profile photo in the hero.
