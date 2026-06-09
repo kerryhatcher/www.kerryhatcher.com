@@ -11,6 +11,8 @@ tags:
   - "civil-liberties"
 authors:
   - "Kerry Hatcher"
+feature_image: "/assets/images/remote/hatchdata/2026/06/who-watches-the-flock.png"
+feature_image_alt: "Propaganda-poster-style illustration with a large central eye, license-plate reader cameras on either side, and cars driving down a highway, under the headline \"Who Watches the Flock? License-plate surveillance in plain sight.\""
 ---
 
 Picture every car you drove past today.
