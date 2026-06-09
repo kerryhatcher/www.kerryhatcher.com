@@ -44,6 +44,9 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          # v4 is required: the action's default wrangler (3.90.0) rejects
+          # `versions upload` for an assets-only Worker ("Missing entry-point").
+          wranglerVersion: "4"
           command: versions upload
 
       - name: Comment preview URL on the PR
