@@ -6,6 +6,10 @@
     "not_found_handling": "404-page",
     "html_handling": "auto-trailing-slash"
   },
+  // Required for `wrangler versions upload` (used by the PR preview workflow)
+  // to publish each version at a unique <version>-blog.<subdomain>.workers.dev
+  // preview URL. Does not affect the production deployment.
+  "preview_urls": true,
   "observability": {
     "enabled": true
   }
