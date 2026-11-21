@@ -56,6 +56,16 @@ test('image links and restored citations have accessible names', async ({ page }
   await expect(page.getByRole('link', { name: '', exact: true })).toHaveCount(0);
 });
 
+test('imported banner text prints dark on paper', async ({ page }) => {
+  await page.emulateMedia({ media: 'print', colorScheme: 'dark' });
+  await page.goto('/investing-in-bibb-countys-future/');
+  const heading = page.locator('#how-does-bibb-county-compare-in-teacher-pay');
+  await expect(heading).toHaveCSS('color', 'rgb(26, 26, 26)');
+  await expect(heading.locator('strong')).toHaveCSS('color', 'rgb(26, 26, 26)');
+  await expect(page.locator('#together-we-will-succeed')).toHaveCSS('color', 'rgb(26, 26, 26)');
+  await expect(page.locator('.kg-header-card').filter({ has: heading })).toHaveCSS('background-color', 'rgb(255, 255, 255)');
+});
+
 test('map and trailer frames have descriptive titles', async ({ page }) => {
   await page.goto('/better-schools-brighter-futures-literacy-special-edition/');
   await expect(page.locator('iframe[src*="google.com/maps/embed"]'))

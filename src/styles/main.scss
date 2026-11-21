@@ -1445,6 +1445,12 @@ main { flex: 1; }
   .prose h1 { font-size: 18pt; color: #1a1a1a; }
   .prose h2 { font-size: 15pt; color: #1a1a1a; }
   .prose h3 { font-size: 12.5pt; color: #1a1a1a; }
+  .prose .kg-header-card {
+    background: var(--paper) !important;
+  }
+  .prose :is(.kg-header-card-heading, .kg-header-card-subheading) {
+    color: var(--ink) !important;
+  }
   .prose p,
   .prose ul,
   .prose ol {
