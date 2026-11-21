@@ -60,6 +60,7 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           PR: ${{ github.event.pull_request.number }}
           SHA: ${{ github.event.pull_request.head.sha }}
+        shell: bash  # explicit shell enables pipefail so a failed upload fails the step
         run: |
           bunx wrangler@4 versions upload \
             --preview-alias "pr-${PR}" \
@@ -69,6 +70,10 @@ jobs:
           version_url=$(grep -oE 'Version Preview URL: *https://[^ ]+' upload.log | grep -oE 'https://[^ ]+' | head -1 || true)
           echo "alias_url=${alias_url}" >> "$GITHUB_OUTPUT"
           echo "version_url=${version_url}" >> "$GITHUB_OUTPUT"
+          if [ -z "$alias_url" ] && [ -z "$version_url" ]; then
+            echo "::error::Upload finished but no preview URL was found in wrangler output"
+            exit 1
+          fi
 
       - name: Comment preview URL
         if: steps.upload.outcome == 'success'
