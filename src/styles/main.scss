@@ -1087,7 +1087,7 @@ main { flex: 1; }
   padding: 0;
   margin: 0;
   display: inline-flex;
-  align-items: baseline;
+  align-items: center;
   gap: .3rem;
 }
 .pager__page {
@@ -1101,7 +1101,7 @@ main { flex: 1; }
   color: var(--ink-muted);
   text-decoration: none;
   border-radius: 999px;
-  border: 1px solid transparent;
+  border: 1px solid var(--rule-strong);
   transition: color var(--dur-2) var(--ease-out), border-color var(--dur-2) var(--ease-out), background var(--dur-2) var(--ease-out);
 }
 .pager__page:hover {
@@ -1114,7 +1114,7 @@ main { flex: 1; }
   border-color: var(--accent);
   font-weight: 500;
 }
-.pager a {
+.pager a:is([rel="prev"], [rel="next"]) {
   display: inline-flex;
   align-items: center;
   gap: .6rem;
@@ -1127,7 +1127,7 @@ main { flex: 1; }
   border-radius: 999px;
   transition: border-color var(--dur-2) var(--ease-out), color var(--dur-2) var(--ease-out), transform var(--dur-2) var(--ease-out);
 }
-.pager a:hover {
+.pager a:is([rel="prev"], [rel="next"]):hover {
   border-color: var(--accent);
   color: var(--accent-2);
   transform: translateY(-1px);

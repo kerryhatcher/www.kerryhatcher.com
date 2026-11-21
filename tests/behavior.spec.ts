@@ -186,6 +186,30 @@ test.describe('without JavaScript', () => {
 });
 
 test.describe('home pagination', () => {
+  test('page numbers are centered in a level row on mobile and desktop', async ({ page }) => {
+    for (const width of [402, 1280]) {
+      await page.setViewportSize({ width, height: 874 });
+      await page.goto('/page/2/');
+      const numbers = await page.locator('.pager__page').evaluateAll(elements => elements.map(element => {
+        const button = element.getBoundingClientRect();
+        const range = document.createRange();
+        range.selectNodeContents(element);
+        const label = range.getBoundingClientRect();
+        return {
+          horizontalOffset: label.left + label.width / 2 - button.left - button.width / 2,
+          verticalOffset: label.top + label.height / 2 - button.top - button.height / 2,
+          top: button.top,
+        };
+      }));
+      expect(numbers).toHaveLength(4);
+      for (const number of numbers) {
+        expect(Math.abs(number.horizontalOffset)).toBeLessThan(1);
+        expect(Math.abs(number.verticalOffset)).toBeLessThan(1);
+        expect(Math.abs(number.top - numbers[0].top)).toBeLessThan(1);
+      }
+    }
+  });
+
   test('page 1 shows 12 cards with a featured + two large lead cards', async ({ page }) => {
     await page.goto('/');
     await expect(page.locator('.post-card')).toHaveCount(12);
