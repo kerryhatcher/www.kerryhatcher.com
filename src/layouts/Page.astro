@@ -9,6 +9,9 @@ interface Props {
     dek?: string;
     feature_image?: string;
     feature_image_alt?: string;
+    feature_image_srcset?: string;
+    feature_image_width?: number;
+    feature_image_height?: number;
     feature_image_caption?: string;
   };
 }
@@ -21,7 +24,7 @@ const path = Astro.url.pathname;
   seo={{
     title: `${page.title} | ${site.title}`,
     headline: page.title,
-    description: site.description,
+    description: page.dek ?? site.description,
     path,
     kind: 'website',
     jsonLdType: 'WebSite',
@@ -38,7 +41,11 @@ const path = Astro.url.pathname;
       <figure class="post__hero" data-reveal>
         <img
           src={page.feature_image}
+          srcset={page.feature_image_srcset}
+          sizes={page.feature_image_srcset ? '(max-width: 760px) calc(100vw - 2.5rem), 70ch' : undefined}
           alt={page.feature_image_alt ?? page.title}
+          width={page.feature_image_width}
+          height={page.feature_image_height}
           loading="eager"
           fetchpriority="high"
           decoding="async"

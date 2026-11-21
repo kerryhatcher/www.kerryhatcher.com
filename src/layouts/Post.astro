@@ -3,6 +3,7 @@ import Base from './Base.astro';
 import { absoluteUrl, site } from '../lib/site';
 import { longDate, monthYear, xmlDate } from '../lib/dates';
 import { seoTitle } from '../lib/text';
+import { withCloudflareGalleryImages } from '../lib/gallery-images';
 import { postDescription, postHtml, postMinutes, postUrl, type Post } from '../lib/posts';
 
 interface Props {
@@ -13,6 +14,12 @@ const { data } = post;
 const published = xmlDate(data.date);
 const minutes = postMinutes(post);
 const title = seoTitle(data.title);
+const html = postHtml(post)
+  .replace(/<table\b[^>]*>[\s\S]*?<\/table>/g, table =>
+    `<div class="post__table-scroll" role="region" aria-label="Scrollable table" tabindex="0">${table}</div>`,
+  )
+  .replace(/<pre(?=[\s>])(?![^>]*\btabindex=)/g, '<pre tabindex="0"');
+const body = import.meta.env.MODE === 'cloudflare' ? withCloudflareGalleryImages(html) : html;
 ---
 <Base
   layout="post"
@@ -24,6 +31,8 @@ const title = seoTitle(data.title);
     kind: 'article',
     jsonLdType: 'BlogPosting',
     published,
+    image: data.feature_image,
+    imageAlt: data.feature_image_alt,
   }}
 >
   <div class="reading-progress" data-reading-progress aria-hidden="true">
@@ -59,7 +68,7 @@ const title = seoTitle(data.title);
       </figure>
     )}
 
-    <div class="post__body prose" set:html={postHtml(post)} />
+    <div class="post__body prose" set:html={body} />
 
     <footer class="post__footer reveal" data-reveal>
       <p class="post__sign">

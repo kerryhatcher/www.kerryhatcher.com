@@ -13,11 +13,15 @@ export interface SeoInput {
   kind: 'website' | 'article';
   jsonLdType: 'WebSite' | 'WebPage' | 'BlogPosting';
   published?: string;
+  image?: string;
+  imageAlt?: string;
+  noIndex?: boolean;
 }
 
 /** The meta tags and JSON-LD that jekyll-seo-tag used to emit, as data. */
 export function buildSeo(i: SeoInput) {
   const url = absoluteUrl(i.path);
+  const image = i.image ? new URL(i.image, site.url).href : undefined;
   const jsonLd: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@type': i.jsonLdType,
@@ -29,9 +33,10 @@ export function buildSeo(i: SeoInput) {
   };
   if (i.jsonLdType === 'WebSite') jsonLd.name = site.title;
   if (i.jsonLdType === 'BlogPosting') {
-    jsonLd.dateModified = i.published;
+    jsonLd.author = { '@type': 'Person', name: site.author, url: absoluteUrl('/about/') };
     jsonLd.datePublished = i.published;
+    if (image) jsonLd.image = image;
     jsonLd.mainEntityOfPage = { '@type': 'WebPage', '@id': url };
   }
-  return { ...i, description: decodeEntities(i.description), url, jsonLd: JSON.stringify(jsonLd) };
+  return { ...i, description: decodeEntities(i.description), url, image, jsonLd: JSON.stringify(jsonLd) };
 }

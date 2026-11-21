@@ -1,12 +1,17 @@
 import type { APIRoute } from 'astro';
 import { xmlDate } from '../lib/dates';
 import { getPosts, postUrl } from '../lib/posts';
-import { absoluteUrl } from '../lib/site';
+import { absoluteUrl, site } from '../lib/site';
 
-/** Every post plus /about/. (Home, paginated pages, the 404 and the legacy redirect are intentionally omitted, as before.) */
+/** Canonical content pages, including Home and each archive page. */
 export const GET: APIRoute = async () => {
   const posts = (await getPosts()).slice().reverse();
+  const pageCount = Math.max(1, Math.ceil(posts.length / site.postsPerPage));
+  const archivePages = Array.from({ length: pageCount }, (_, index) =>
+    index === 0 ? '/' : `/page/${index + 1}/`,
+  );
   const urls = [
+    ...archivePages.map(path => `<url>\n<loc>${absoluteUrl(path)}</loc>\n</url>`),
     ...posts.map((p) => `<url>\n<loc>${absoluteUrl(postUrl(p))}</loc>\n<lastmod>${xmlDate(p.data.date)}</lastmod>\n</url>`),
     `<url>\n<loc>${absoluteUrl('/about/')}</loc>\n</url>`,
   ];

@@ -46,3 +46,29 @@ test('home hero + post images actually decode in the browser', async ({ page }) 
   const broken = await page.$$eval('img', (imgs) => imgs.filter((i) => !i.naturalWidth).map((i) => i.src));
   expect(broken).toEqual([]);
 });
+
+for (const [path, inlineImages, linkedImages] of [
+  ['/save-money-protect-your-site-with-a-cdn/', 5, 2],
+  ['/state-of-play-gaming-on-linux-in-the-roaring-20s/', 6, 6],
+] as const) {
+  test(`restored media loads on ${path}`, async ({ page, request }) => {
+    await page.goto(path, { waitUntil: 'domcontentloaded' });
+    const images = page.locator('main img[src^="/assets/images/legacy/"]');
+    await expect(images).toHaveCount(inlineImages);
+    await images.evaluateAll(async (elements) => {
+      await Promise.all(elements.map((element) => {
+        const image = element as HTMLImageElement;
+        image.loading = 'eager';
+        return image.decode();
+      }));
+    });
+
+    const links = page.locator('main a[href^="/assets/images/legacy/"]');
+    await expect(links).toHaveCount(linkedImages);
+    for (const href of await links.evaluateAll(elements => elements.map(element => (element as HTMLAnchorElement).href))) {
+      const response = await request.get(href);
+      expect(response.ok(), href).toBe(true);
+      expect(response.headers()['content-type']).toMatch(/^image\//);
+    }
+  });
+}

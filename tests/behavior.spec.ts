@@ -7,6 +7,27 @@ test.beforeEach(async ({ page }) => {
   await page.route(/fonts\.bunny\.net/, (r) => r.abort());
 });
 
+test('mobile galleries fill both columns across imported rows', async ({ page }) => {
+  await page.setViewportSize({ width: 402, height: 874 });
+  await page.goto('/gsdf-patriot-25/');
+
+  const galleries = page.locator('.kg-gallery-container');
+  await expect(galleries).toHaveCount(10);
+  const rowCounts = await galleries.evaluateAll(albums => albums.map(album => {
+    const rows = new Map<number, number>();
+    for (const photo of album.querySelectorAll('.kg-gallery-image')) {
+      const { top } = photo.getBoundingClientRect();
+      rows.set(top, (rows.get(top) ?? 0) + 1);
+    }
+    return [...rows.values()];
+  }));
+
+  for (const rows of rowCounts) {
+    expect(rows.slice(0, -1)).not.toContain(1);
+    expect(rows.every(count => count === 1 || count === 2)).toBe(true);
+  }
+});
+
 test.describe('reader-mode toggle', () => {
   test('toggles the data-reader attribute, aria-pressed, and localStorage', async ({ page }) => {
     await page.goto(POST);
@@ -92,9 +113,8 @@ test.describe('chrome', () => {
     await expect(header).not.toHaveClass(/is-scrolled/);
   });
 
-  // NOTE: /page/2+ currently have no <h1> (hero is page-1 only); parity pins that.
   test('every page has exactly one h1', async ({ page }) => {
-    for (const path of ['/', '/about/', '/404.html', POST, '/crossover-2025/']) {
+    for (const path of ['/', '/page/2/', '/page/3/', '/page/4/', '/about/', '/404.html', POST, '/crossover-2025/']) {
       await page.goto(path);
       await expect(page.locator('h1'), path).toHaveCount(1);
     }
@@ -165,6 +185,44 @@ test.describe('without JavaScript', () => {
 });
 
 test.describe('home pagination', () => {
+  test('every archive page fits on a narrow viewport', async ({ page }) => {
+    for (const width of [320, 402]) {
+      await page.setViewportSize({ width, height: 874 });
+      for (const path of ['/', '/page/2/', '/page/3/', '/page/4/']) {
+        await page.goto(path);
+        expect(await page.evaluate(() => document.documentElement.scrollWidth), path).toBe(width);
+        const pager = page.getByRole('navigation', { name: 'Pagination' });
+        const controls = await pager.locator('a, [aria-current]').evaluateAll(elements =>
+          elements.map(element => element.getBoundingClientRect().right));
+        expect(controls.every(right => right <= width)).toBe(true);
+      }
+    }
+  });
+
+  test('page numbers are centered in a level row on mobile and desktop', async ({ page }) => {
+    for (const width of [402, 1280]) {
+      await page.setViewportSize({ width, height: 874 });
+      await page.goto('/page/2/');
+      const numbers = await page.locator('.pager__page').evaluateAll(elements => elements.map(element => {
+        const button = element.getBoundingClientRect();
+        const range = document.createRange();
+        range.selectNodeContents(element);
+        const label = range.getBoundingClientRect();
+        return {
+          horizontalOffset: label.left + label.width / 2 - button.left - button.width / 2,
+          verticalOffset: label.top + label.height / 2 - button.top - button.height / 2,
+          top: button.top,
+        };
+      }));
+      expect(numbers).toHaveLength(4);
+      for (const number of numbers) {
+        expect(Math.abs(number.horizontalOffset)).toBeLessThan(1);
+        expect(Math.abs(number.verticalOffset)).toBeLessThan(1);
+        expect(Math.abs(number.top - numbers[0].top)).toBeLessThan(1);
+      }
+    }
+  });
+
   test('page 1 shows 12 cards with a featured + two large lead cards', async ({ page }) => {
     await page.goto('/');
     await expect(page.locator('.post-card')).toHaveCount(12);
@@ -212,6 +270,19 @@ test.describe('home pagination', () => {
 test.describe('mobile layout', () => {
   test.use({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true });
 
+  test('the About portrait reserves space and selects the smaller file on a 1× phone', async ({ page }) => {
+    await page.route('**/kerry-hero-600.jpg', route => route.abort());
+    await page.goto('/about/');
+    const portrait = page.locator('.post__hero img');
+    const result = await portrait.evaluate(image => ({
+      src: (image as HTMLImageElement).currentSrc,
+      width: image.getBoundingClientRect().width,
+      height: image.getBoundingClientRect().height,
+    }));
+    expect(result.src).toMatch(/\/kerry-hero-600\.jpg$/);
+    expect(result.height / result.width).toBeCloseTo(1375 / 1100, 2);
+  });
+
   for (const path of ['/', '/about/', POST, '/crossover-2025/']) {
     test(`no horizontal overflow on ${path}`, async ({ page }) => {
       await page.goto(path);
@@ -233,3 +304,39 @@ test.describe('mobile layout', () => {
     expect(box.width / box.height).toBeCloseTo(16 / 9, 1);
   });
 });
+
+for (const width of [320, 402]) {
+  test(`audited posts reflow at ${width}px`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 874 });
+    for (const path of [
+      POST,
+      '/digital-privacy-and-freedoms-are-under-threat/',
+      '/gsdf-patriot-25/',
+      '/install-git-1-8-on-rhel-6/',
+      '/its-time-to-switch-to-a-new-email-provider/',
+      '/state-of-play-gaming-on-linux-in-the-roaring-20s/',
+      '/still-waiting-a-transparency-update-from-bibb-county-schools-and-the-state-superintendent/',
+      '/taking-control-of-your-email-part-1-choosing-a-private-email-provider/',
+      '/taking-control-of-your-email-part-2-using-your-own-domain-for-email/',
+    ]) {
+      expect((await page.goto(path))?.ok(), path).toBe(true);
+      const scrollWidth = await page.evaluate(() => document.documentElement.scrollWidth);
+      expect(scrollWidth, path).toBeLessThanOrEqual(width);
+    }
+
+    await page.goto(POST);
+    const table = page.locator('.post__body table').first();
+    await expect(table).toBeVisible();
+    expect((await table.boundingBox())!.width).toBeLessThan(width);
+
+    await page.goto('/better-python-logging/');
+    const code = page.locator('.post__body pre').first();
+    const scroller = await code.evaluate(node => ({
+      client: node.clientWidth,
+      scroll: node.scrollWidth,
+      overflow: getComputedStyle(node).overflowX,
+    }));
+    expect(scroller.scroll).toBeGreaterThan(scroller.client);
+    expect(scroller.overflow).toBe('auto');
+  });
+}

@@ -44,10 +44,10 @@ done
 log() { printf '\033[1;34m==>\033[0m %s\n' "$*"; }
 
 if [[ $SKIP_BUILD -eq 0 ]]; then
-  log "Building Astro site (bun run build)"
+  log "Building Astro site for Cloudflare"
   rm -rf dist
   bun install --frozen-lockfile
-  bun run build
+  bun run build --mode cloudflare
 else
   log "Skipping build (using existing dist/)"
 fi

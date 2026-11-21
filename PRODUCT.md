@@ -1,10 +1,16 @@
 # PRODUCT.md — kerryhatcher.com
 
+<!-- impeccable:product-schema 1 -->
+
+## Platform
+
+web
+
+## Capabilities and Constraints
+
 A personal site and writing space at www.kerryhatcher.com. Built with Astro (static output), deployed as a static site on Cloudflare.
 
-## Register
-
-**brand** — the design IS the product. A reader's first impression of the page is the deliverable. No transactional UI, no app surface.
+Readers can browse a paginated archive or follow the RSS feed. Posts can include source links, photos, charts, code examples, and embeds. The publishing workflow uses the source files in `src/content/posts/` and the Astro static build.
 
 ## Users
 
@@ -19,7 +25,21 @@ A secondary audience: Kerry, who will write here often enough that opening a dra
 
 A durable, self-owned record of careful work — civic analysis, technical notes, and field reports — that a first-time visitor reads and walks away thinking, *this person thinks carefully and shows their work*. Credibility through evidence, not warmth or charisma. The site succeeds when a reader sent here for one piece reads two.
 
-## Brand Personality
+## Positioning
+
+Kerry publishes local civic analysis, technical notes, and field reports under one byline. The civic writing shows its work through public records, source links, and the calculations behind its conclusions.
+
+## Operating Context
+
+Civic readers often open a single article on a phone from a shared link, then consult the source or print the piece for a meeting. Technical readers often arrive at a specific post to find a procedure or example. Kerry authors and publishes the site from the repository.
+
+## Evidence on Hand
+
+- The FY27 BCSD budget analysis in `src/content/posts/` contains a millage comparison and links to board materials and a meeting recording.
+- *Trust, Then Verify* documents a voter-registration address review with maps and methodology.
+- Technical walkthroughs and original field photography are available in `src/content/posts/` and `public/assets/`.
+
+## Brand Commitments
 
 Three concrete words: **deliberate, warm, evidence-led.** Not "modern" or "elegant." Closer to: a well-printed indie zine that argues its point from primary sources; a letter you actually wanted to receive; a workshop with the door open and the math on the whiteboard.
 
@@ -35,7 +55,7 @@ What this site is explicitly **not**:
 - **Not a Substack/Medium author template.** No giant author avatar + name + Subscribe stack at the top of every post. No "X subscribers" social proof. No paywall chrome.
 - **Not a local-news-site aesthetic.** No cluttered sidebars, no "recent comments" widgets, no "most-read this week," no dated WordPress chrome.
 
-## Design Principles
+## Product Principles
 
 - **Reading wins.** Long-form posts get the best typography, the widest margins, the calmest treatment. Every other surface defers to that one.
 - **Show the work.** The site should make it easy to cite a source, link a public record, embed a chart with the raw numbers, or footnote a methodology. Credibility is the through-line; design choices that obscure provenance fail the brief.
@@ -50,4 +70,4 @@ WCAG 2.2 AA across the site, mobile-first (civic readers arrive on phones via Fa
 Two additional commitments shaped by the audience:
 
 - **Print and PDF legibility.** Long civic posts get printed and forwarded in meetings. A deliberate print stylesheet (readable type at A4/Letter, hidden chrome, working links rendered as URLs) is part of the design, not an afterthought.
-- **Dyslexia-friendly affordances.** Given a meaningful SPED-parent readership (and Kerry's own background), the body type, line-length, and contrast should be tuned for readers who tire on long serif passages. Consider a per-page reader-mode toggle or alternate body-font option in DESIGN.md.
+- **Dyslexia-friendly affordances.** Given a meaningful SPED-parent readership (and Kerry's own background), the body type, line length, and contrast should support readers who tire on long passages. The post footer provides a reader-mode toggle that persists the alternate body font across pages.

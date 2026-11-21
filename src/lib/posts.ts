@@ -27,5 +27,6 @@ export const excerptText = (post: Post) => stripHtml(post.data.excerptHtml);
  */
 export function postDescription(post: Post): string {
   const text = normalizeWhitespace(stripHtml(separateBlocks(post.data.excerptHtml))).trim();
-  return truncateWords(text, 100, '…') || site.description;
+  const dek = normalizeWhitespace(stripHtml(post.data.dek ?? '')).trim();
+  return truncateWords(text || dek, 100, '…') || site.description;
 }
