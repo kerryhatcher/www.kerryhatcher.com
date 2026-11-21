@@ -41,6 +41,9 @@ jobs:
       # Builds dist/ and runs the suite; a failure stops the deploy.
       - run: bun run test
 
+      # The custom domain supports /cdn-cgi/image. Local and PR builds use originals.
+      - run: bun run build --mode cloudflare
+
       - name: Deploy
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

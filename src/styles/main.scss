@@ -563,8 +563,20 @@ main { flex: 1; }
 @media (max-width: 760px) {
   .post__body {
     display: block;
+    overflow-wrap: anywhere;
   }
   .post__body > * { grid-column: auto; }
+  .post__body pre { overflow-wrap: normal; }
+  .post__body table {
+    border-collapse: collapse;
+    font-size: .875rem;
+    line-height: 1.4;
+    overflow-wrap: normal;
+  }
+  .post__body :is(th, td) {
+    border-bottom: 1px solid var(--rule);
+    padding: .35rem .2rem;
+  }
 }
 .post__footer {
   font-size: 1.25rem;
@@ -796,6 +808,7 @@ main { flex: 1; }
   letter-spacing: -0.02em;
   margin: 0;
 }
+.prose .kg-header-card-heading strong { color: inherit; }
 .kg-header-card-subheading {
   font-family: var(--font-body);
   color: var(--ink-soft);
@@ -828,9 +841,14 @@ main { flex: 1; }
   border-radius: 4px;
 }
 @media (max-width: 600px) {
-  .kg-gallery-row,
-  .kg-gallery-row:has(.kg-gallery-image:nth-child(2):last-child) {
+  .kg-gallery-container {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  /* Let photos flow across the imported desktop row boundaries. */
+  .kg-gallery-row { display: contents; }
+  .kg-gallery-image img {
+    height: auto;
+    margin: 0;
   }
 }
 
@@ -1176,6 +1194,9 @@ main { flex: 1; }
   border-radius: 10px;
   overflow: hidden;
   transition: border-color var(--dur-2) var(--ease-out), transform var(--dur-2) var(--ease-out), background var(--dur-2) var(--ease-out);
+}
+.prose .kg-bookmark-container:not(:has(.kg-bookmark-thumbnail)) {
+  grid-template-columns: minmax(0, 1fr);
 }
 .prose .kg-bookmark-container:hover {
   border-color: var(--accent);

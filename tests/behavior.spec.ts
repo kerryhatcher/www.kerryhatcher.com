@@ -7,6 +7,27 @@ test.beforeEach(async ({ page }) => {
   await page.route(/fonts\.bunny\.net/, (r) => r.abort());
 });
 
+test('mobile galleries fill both columns across imported rows', async ({ page }) => {
+  await page.setViewportSize({ width: 402, height: 874 });
+  await page.goto('/gsdf-patriot-25/');
+
+  const galleries = page.locator('.kg-gallery-container');
+  await expect(galleries).toHaveCount(10);
+  const rowCounts = await galleries.evaluateAll(albums => albums.map(album => {
+    const rows = new Map<number, number>();
+    for (const photo of album.querySelectorAll('.kg-gallery-image')) {
+      const { top } = photo.getBoundingClientRect();
+      rows.set(top, (rows.get(top) ?? 0) + 1);
+    }
+    return [...rows.values()];
+  }));
+
+  for (const rows of rowCounts) {
+    expect(rows.slice(0, -1)).not.toContain(1);
+    expect(rows.every(count => count === 1 || count === 2)).toBe(true);
+  }
+});
+
 test.describe('reader-mode toggle', () => {
   test('toggles the data-reader attribute, aria-pressed, and localStorage', async ({ page }) => {
     await page.goto(POST);
@@ -233,3 +254,39 @@ test.describe('mobile layout', () => {
     expect(box.width / box.height).toBeCloseTo(16 / 9, 1);
   });
 });
+
+for (const width of [320, 402]) {
+  test(`audited posts reflow at ${width}px`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 874 });
+    for (const path of [
+      POST,
+      '/digital-privacy-and-freedoms-are-under-threat/',
+      '/gsdf-patriot-25/',
+      '/install-git-1-8-on-rhel-6/',
+      '/its-time-to-switch-to-a-new-email-provider/',
+      '/state-of-play-gaming-on-linux-in-the-roaring-20s/',
+      '/still-waiting-a-transparency-update-from-bibb-county-schools-and-the-state-superintendent/',
+      '/taking-control-of-your-email-part-1-choosing-a-private-email-provider/',
+      '/taking-control-of-your-email-part-2-using-your-own-domain-for-email/',
+    ]) {
+      expect((await page.goto(path))?.ok(), path).toBe(true);
+      const scrollWidth = await page.evaluate(() => document.documentElement.scrollWidth);
+      expect(scrollWidth, path).toBeLessThanOrEqual(width);
+    }
+
+    await page.goto(POST);
+    const table = page.locator('.post__body table').first();
+    await expect(table).toBeVisible();
+    expect((await table.boundingBox())!.width).toBeLessThan(width);
+
+    await page.goto('/better-python-logging/');
+    const code = page.locator('.post__body pre').first();
+    const scroller = await code.evaluate(node => ({
+      client: node.clientWidth,
+      scroll: node.scrollWidth,
+      overflow: getComputedStyle(node).overflowX,
+    }));
+    expect(scroller.scroll).toBeGreaterThan(scroller.client);
+    expect(scroller.overflow).toBe('auto');
+  });
+}

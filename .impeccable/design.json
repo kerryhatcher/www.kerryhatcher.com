@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-05-28T00:00:00Z",
+  "generatedAt": "2026-11-21T04:56:10Z",
   "title": "Design System: kerryhatcher.com",
   "extensions": {
     "colorMeta": {
@@ -19,6 +19,21 @@
           "oklch(0.78 0.012 252)"
         ]
       },
+      "paper-2": {
+        "role": "neutral",
+        "displayName": "Inset Paper",
+        "canonical": "oklch(0.215 0.032 252)",
+        "tonalRamp": [
+          "oklch(0.15 0.0224 252)",
+          "oklch(0.25 0.0272 252)",
+          "oklch(0.35 0.0320 252)",
+          "oklch(0.45 0.0320 252)",
+          "oklch(0.55 0.0320 252)",
+          "oklch(0.65 0.0272 252)",
+          "oklch(0.8 0.0208 252)",
+          "oklch(0.95 0.0096 252)"
+        ]
+      },
       "ink": {
         "role": "neutral",
         "displayName": "Silver Ink",
@@ -33,6 +48,46 @@
           "oklch(0.86 0.006 250)",
           "oklch(0.92 0.004 250)"
         ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Silver Ink, Soft",
+        "canonical": "oklch(0.78 0.006 250)",
+        "tonalRamp": [
+          "oklch(0.15 0.0042 250)",
+          "oklch(0.25 0.0051 250)",
+          "oklch(0.35 0.0060 250)",
+          "oklch(0.45 0.0060 250)",
+          "oklch(0.55 0.0060 250)",
+          "oklch(0.65 0.0051 250)",
+          "oklch(0.8 0.0039 250)",
+          "oklch(0.95 0.0018 250)"
+        ]
+      },
+      "ink-muted": {
+        "role": "neutral",
+        "displayName": "Silver Ink, Muted",
+        "canonical": "oklch(0.6 0.008 248)",
+        "tonalRamp": [
+          "oklch(0.15 0.0056 248)",
+          "oklch(0.25 0.0068 248)",
+          "oklch(0.35 0.0080 248)",
+          "oklch(0.45 0.0080 248)",
+          "oklch(0.55 0.0080 248)",
+          "oklch(0.65 0.0068 248)",
+          "oklch(0.8 0.0052 248)",
+          "oklch(0.95 0.0024 248)"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "oklch(0.32 0.022 252)"
+      },
+      "rule-strong": {
+        "role": "neutral",
+        "displayName": "Strong Rule",
+        "canonical": "oklch(0.42 0.024 252)"
       },
       "accent": {
         "role": "primary",
@@ -69,15 +124,20 @@
         "displayName": "Mark Blue",
         "canonical": "oklch(0.65 0.13 240)"
       },
-      "rule": {
+      "scrim": {
         "role": "neutral",
-        "displayName": "Hairline",
-        "canonical": "oklch(0.32 0.022 252)"
-      },
-      "rule-strong": {
-        "role": "neutral",
-        "displayName": "Strong Rule",
-        "canonical": "oklch(0.42 0.024 252)"
+        "displayName": "Header Scrim",
+        "canonical": "oklch(0.17 0.03 252 / 0.78)",
+        "tonalRamp": [
+          "oklch(0.15 0.0210 252)",
+          "oklch(0.25 0.0255 252)",
+          "oklch(0.35 0.0300 252)",
+          "oklch(0.45 0.0300 252)",
+          "oklch(0.55 0.0300 252)",
+          "oklch(0.65 0.0255 252)",
+          "oklch(0.8 0.0195 252)",
+          "oklch(0.95 0.0090 252)"
+        ]
       },
       "silver-1": {
         "role": "neutral",
@@ -91,12 +151,30 @@
       }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "Home hero headline. Two-line, second line accent-tinted." },
-      "headline": { "displayName": "Headline", "purpose": "Post title." },
-      "title": { "displayName": "Title", "purpose": "Prose h2, in-post section." },
-      "body": { "displayName": "Body", "purpose": "Site chrome, home archive head, footer." },
-      "prose": { "displayName": "Prose", "purpose": "Post and page reading surface. Larger than UI body on purpose." },
-      "label": { "displayName": "Label / Mono", "purpose": "Every meta signal: dates, read-time, kickers, captions, tag pills." }
+      "display": {
+        "displayName": "Display",
+        "purpose": "Home hero headline. Two-line, second line accent-tinted."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Post title."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Prose h2, in-post section."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Site chrome, home archive head, footer."
+      },
+      "prose": {
+        "displayName": "Prose",
+        "purpose": "Post and page reading surface. Larger than UI body on purpose."
+      },
+      "label": {
+        "displayName": "Label / Mono",
+        "purpose": "Dates, read time, kickers, captions, and post tags."
+      }
     },
     "shadows": [
       {
@@ -106,18 +184,53 @@
       }
     ],
     "motion": [
-      { "name": "ease-out", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Default easing for state transitions." },
-      { "name": "ease-out-quint", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Smoother decel for image hovers and slower reveals." },
-      { "name": "dur-1", "value": "240ms", "purpose": "Quick state changes: hover color, focus." },
-      { "name": "dur-2", "value": "360ms", "purpose": "Standard transition: nav underline grow, post-card title tint, header scrim fade." },
-      { "name": "dur-3", "value": "520ms", "purpose": "Slow reveal: post-card image saturation/scale, hero entrance." }
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Default easing for state transitions."
+      },
+      {
+        "name": "ease-out-quint",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Smoother decel for image hovers and slower reveals."
+      },
+      {
+        "name": "dur-1",
+        "value": "240ms",
+        "purpose": "Quick state changes: hover color, focus."
+      },
+      {
+        "name": "dur-2",
+        "value": "360ms",
+        "purpose": "Standard transition: nav underline grow, post-card title tint, header scrim fade."
+      },
+      {
+        "name": "dur-3",
+        "value": "520ms",
+        "purpose": "Slow reveal: post-card image saturation/scale, hero entrance."
+      }
     ],
     "breakpoints": [
-      { "name": "post-body-collapse", "value": "760px" },
-      { "name": "footer-collapse", "value": "720px" },
-      { "name": "bookmark-stack", "value": "640px" },
-      { "name": "gallery-2up", "value": "600px" },
-      { "name": "post-feed-2up", "value": "960px" }
+      {
+        "name": "post-body-collapse",
+        "value": "760px"
+      },
+      {
+        "name": "footer-collapse",
+        "value": "720px"
+      },
+      {
+        "name": "bookmark-stack",
+        "value": "640px"
+      },
+      {
+        "name": "gallery-2up",
+        "value": "600px"
+      },
+      {
+        "name": "post-feed-2up",
+        "value": "960px"
+      }
     ]
   },
   "components": [
@@ -138,12 +251,12 @@
       "css": ".ds-link { color: oklch(0.88 0.1 230); text-decoration: none; background-image: linear-gradient(currentColor, currentColor); background-repeat: no-repeat; background-position: 0 100%; background-size: 100% 1px; transition: color 240ms cubic-bezier(0.22, 1, 0.36, 1), background-size 360ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-link:hover, .ds-link:focus-visible { color: oklch(0.78 0.14 240); background-size: 100% 2px; outline: none; }"
     },
     {
-      "name": "Tag Pill",
+      "name": "Post Tags",
       "kind": "chip",
-      "refersTo": "tag-pill",
-      "description": "Inline post tag. Mono, uppercase-feel, pill border, never interactive.",
-      "html": "<ul style=\"display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;padding:0;margin:0;\"><li class=\"ds-tag\">civic</li><li class=\"ds-tag\">bcsd</li><li class=\"ds-tag\">budget</li></ul>",
-      "css": ".ds-tag { padding: .2rem .55rem; border: 1px solid oklch(0.42 0.024 252); border-radius: 999px; color: oklch(0.6 0.008 248); font-family: Menlo, Courier, monospace; font-size: .78rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; }"
+      "refersTo": "tag-label",
+      "description": "Inline mono labels with a mid-dot between adjacent tags.",
+      "html": "<ul class=\"ds-post-tags\"><li>News</li><li>GSDF</li><li>Military</li></ul>",
+      "css": ".ds-post-tags { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; padding: 0; } .ds-post-tags li { font-family: var(--font-mono, Menlo, Courier, monospace); font-size: .78rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-muted, oklch(0.6 0.008 248)); } .ds-post-tags li + li::before { content: \"·\"; margin-right: .5rem; color: var(--rule-strong, oklch(0.42 0.024 252)); }"
     },
     {
       "name": "Pager Page Pill (current)",
@@ -151,13 +264,13 @@
       "refersTo": "pager-page-current",
       "description": "Current-page indicator in the home pagination trail. Accent fill, paper text.",
       "html": "<ol style=\"list-style:none;padding:0;margin:0;display:inline-flex;align-items:baseline;gap:.3rem;\"><li><a class=\"ds-pager-page\" href=\"#\">1</a></li><li><span class=\"ds-pager-page ds-pager-page--current\" aria-current=\"page\">2</span></li><li><a class=\"ds-pager-page\" href=\"#\">3</a></li></ol>",
-      "css": ".ds-pager-page { display: inline-grid; place-items: center; min-width: 2.2rem; height: 2.2rem; padding: 0 .55rem; font-family: Menlo, Courier, monospace; font-size: .85rem; color: oklch(0.6 0.008 248); text-decoration: none; border-radius: 999px; border: 1px solid transparent; transition: color 360ms cubic-bezier(0.22, 1, 0.36, 1), border-color 360ms cubic-bezier(0.22, 1, 0.36, 1), background 360ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-pager-page:hover { color: oklch(0.92 0.004 250); border-color: oklch(0.32 0.022 252); } .ds-pager-page--current { color: oklch(0.17 0.03 252); background: oklch(0.78 0.14 240); border-color: oklch(0.78 0.14 240); font-weight: 500; }"
+      "css": ".ds-pager-page { display: inline-grid; place-items: center; min-width: 2.75rem; height: 2.75rem; padding: 0 .55rem; font-family: var(--font-mono, Menlo, Courier, monospace); font-size: .85rem; color: var(--ink-muted, oklch(0.6 0.008 248)); text-decoration: none; border-radius: 999px; border: 1px solid transparent; transition: color var(--dur-2, 360ms) var(--ease-out, cubic-bezier(0.22, 1, 0.36, 1)), border-color var(--dur-2, 360ms) var(--ease-out, cubic-bezier(0.22, 1, 0.36, 1)), background var(--dur-2, 360ms) var(--ease-out, cubic-bezier(0.22, 1, 0.36, 1)); } .ds-pager-page:hover { color: var(--ink, oklch(0.92 0.004 250)); border-color: var(--rule, oklch(0.32 0.022 252)); } .ds-pager-page--current { color: var(--paper, oklch(0.17 0.03 252)); background: var(--accent, oklch(0.78 0.14 240)); border-color: var(--accent, oklch(0.78 0.14 240)); font-weight: 500; } :focus-visible { outline: 2px solid var(--accent, oklch(0.78 0.14 240)); outline-offset: 3px; border-radius: 2px; }"
     },
     {
       "name": "Subscribe Button",
       "kind": "button",
       "refersTo": "button-subscribe",
-      "description": "The only real button in the system. Lives inside .kg-signup-card from Ghost-imported content. No general primary button exists site-wide.",
+      "description": "Opt-in subscribe button for imported Ghost signup cards.",
       "html": "<button class=\"ds-btn-subscribe\" type=\"button\">Subscribe</button>",
       "css": ".ds-btn-subscribe { padding: .65rem 1.1rem; background: oklch(0.78 0.14 240); color: oklch(0.17 0.03 252); border: 0; border-radius: 6px; font-family: \"Noto Sans\", -apple-system, sans-serif; font-weight: 600; font-size: 1rem; cursor: pointer; transition: background 240ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-btn-subscribe:hover { background: oklch(0.88 0.1 230); } .ds-btn-subscribe:focus-visible { outline: 2px solid oklch(0.78 0.14 240); outline-offset: 3px; }"
     },
@@ -181,9 +294,23 @@
       "name": "Reading Progress Bar",
       "kind": "custom",
       "refersTo": "reading-progress",
-      "description": "Fixed 2px top bar on post pages. Width tracks article scroll-through via JS. Functional, not decorative.",
-      "html": "<div class=\"ds-reading-progress\" aria-hidden=\"true\"><div class=\"ds-reading-progress__bar\" style=\"width:34%\"></div></div>",
-      "css": ".ds-reading-progress { position: relative; height: 2px; background: transparent; z-index: 60; pointer-events: none; } .ds-reading-progress__bar { height: 100%; background: oklch(0.78 0.14 240); transform-origin: left center; transition: width 80ms linear; }"
+      "description": "A fixed 2px bar on posts tracks article progress. The preview shows a sample position.",
+      "html": "<div class=\"ds-reading-progress\" aria-hidden=\"true\"><div class=\"ds-reading-progress__bar\" style=\"transform:scaleX(.34)\"></div></div>",
+      "css": ".ds-reading-progress { height: 2px; } .ds-reading-progress__bar { height: 100%; width: 100%; background: var(--accent, oklch(0.78 0.14 240)); transform: scaleX(0); transform-origin: left center; will-change: transform; transition: transform 80ms linear; }"
+    },
+    {
+      "name": "Primary Navigation",
+      "kind": "nav",
+      "description": "Home and About links with an underline on hover and on the current page.",
+      "html": "<nav class=\"ds-site-nav\" aria-label=\"Primary\"><ul><li><a href=\"#\" aria-current=\"page\">Home</a></li><li><a href=\"#\">About</a></li></ul></nav>",
+      "css": ".ds-site-nav { color: var(--ink, oklch(0.92 0.004 250)); } .ds-site-nav ul { display: flex; gap: clamp(1.25rem, 3vw, 2.25rem); list-style: none; padding: 0; margin: 0; } .ds-site-nav a { color: inherit; text-decoration: none; font-family: var(--font-display, \"Noto Sans\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", sans-serif); font-weight: 500; font-size: 1rem; padding: .75rem 0; min-height: 44px; display: inline-flex; align-items: center; background-image: linear-gradient(currentColor, currentColor); background-repeat: no-repeat; background-position: 0 100%; background-size: 0 1px; transition: background-size var(--dur-2, 360ms) var(--ease-out, cubic-bezier(0.22, 1, 0.36, 1)), color var(--dur-1, 240ms) var(--ease-out, cubic-bezier(0.22, 1, 0.36, 1)); } .ds-site-nav a:hover, .ds-site-nav a[aria-current=\"page\"] { background-size: 100% 1px; color: var(--accent-2, oklch(0.88 0.1 230)); } :focus-visible { outline: 2px solid var(--accent, oklch(0.78 0.14 240)); outline-offset: 3px; border-radius: 2px; }"
+    },
+    {
+      "name": "Reader Mode Toggle",
+      "kind": "button",
+      "description": "The post footer control swaps the reading font to Atkinson Hyperlegible and persists the selection.",
+      "html": "<button class=\"ds-reader-toggle\" type=\"button\" aria-label=\"Toggle reader-friendly font\" aria-pressed=\"false\">Aa</button>",
+      "css": ".ds-reader-toggle { font-family: var(--font-mono, Menlo, Courier, monospace); font-weight: 500; font-size: .8125rem; letter-spacing: 0.06em; color: var(--ink-muted, oklch(0.6 0.008 248)); background: transparent; border: 1px solid var(--rule, oklch(0.32 0.022 252)); border-radius: 999px; padding: .45rem .8rem; min-height: 44px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; transition: color var(--dur-1, 240ms) var(--ease-out, cubic-bezier(0.22, 1, 0.36, 1)), border-color var(--dur-1, 240ms) var(--ease-out, cubic-bezier(0.22, 1, 0.36, 1)); } .ds-reader-toggle:hover, .ds-reader-toggle:focus-visible { color: var(--accent, oklch(0.78 0.14 240)); border-color: var(--rule-strong, oklch(0.42 0.024 252)); } .ds-reader-toggle[aria-pressed=\"true\"] { color: var(--accent, oklch(0.78 0.14 240)); border-color: var(--accent, oklch(0.78 0.14 240)); } :focus-visible { outline: 2px solid var(--accent, oklch(0.78 0.14 240)); outline-offset: 3px; border-radius: 2px; }"
     }
   ],
   "narrative": {
@@ -198,13 +325,41 @@
       "Motion is choreographed, never decorative: scroll-stagger reveals, reading-progress bar, sticky-header scrim, growing-underline links."
     ],
     "rules": [
-      { "name": "The One Voice Rule", "body": "A single accent (Luminous Mid-Blue) carries the entire brand. Adding a second saturated color makes this site look like a startup.", "section": "colors" },
-      { "name": "The No-Pure-Neutral Rule", "body": "No #000, no #fff, no oklch(L 0 H) anywhere. Every neutral tints toward the brand hue (chroma 0.004–0.03).", "section": "colors" },
-      { "name": "The Reading Measure Rule", "body": "Long-form prose lives inside 70ch. Wider columns are reserved for figures that have earned the room. The post body uses a three-zone grid (main / wide / full).", "section": "typography" },
-      { "name": "The One Family Rule", "body": "Hierarchy is built from weight and scale within Noto Sans + Menlo. No third display font, no serif body, no italic-script display.", "section": "typography" },
-      { "name": "The Mono-For-Meta Rule", "body": "Every meta signal is in Menlo, uppercase, with 0.06–0.14em tracking. Body sentences are never in mono.", "section": "typography" },
-      { "name": "The Flat-By-Default Rule", "body": "Surfaces are flat at rest. Hover and focus may introduce a 1–2px transform; that is the system's only motion-on-state.", "section": "elevation" },
-      { "name": "The No-Glassmorphism Rule", "body": "The single backdrop-filter in the system is a functional scrim on the sticky header. Decorative blurs are prohibited.", "section": "elevation" }
+      {
+        "name": "The One Voice Rule",
+        "body": "A single accent (Luminous Mid-Blue) carries the entire brand. Adding a second saturated color makes this site look like a startup.",
+        "section": "colors"
+      },
+      {
+        "name": "The No-Pure-Neutral Rule",
+        "body": "No #000, no #fff, no oklch(L 0 H) anywhere. Every neutral tints toward the brand hue (chroma 0.004–0.03).",
+        "section": "colors"
+      },
+      {
+        "name": "The Reading Measure Rule",
+        "body": "Long-form prose lives inside 70ch. Wider columns are reserved for figures that have earned the room. The post body uses a three-zone grid (main / wide / full).",
+        "section": "typography"
+      },
+      {
+        "name": "The One Family Rule",
+        "body": "Hierarchy is built from weight and scale within Noto Sans + Menlo. No third display font, no serif body, no italic-script display.",
+        "section": "typography"
+      },
+      {
+        "name": "The Mono-For-Meta Rule",
+        "body": "Every meta signal is in Menlo, uppercase, with 0.06–0.14em tracking. Body sentences are never in mono.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-By-Default Rule",
+        "body": "Surfaces are flat at rest. Hover and focus may introduce a 1–2px transform; that is the system's only motion-on-state.",
+        "section": "elevation"
+      },
+      {
+        "name": "The No-Glassmorphism Rule",
+        "body": "The single backdrop-filter in the system is a functional scrim on the sticky header. Decorative blurs are prohibited.",
+        "section": "elevation"
+      }
     ],
     "dos": [
       "Do use one accent (Luminous Mid-Blue) across the whole system. New states get weight and label changes, not new hues.",

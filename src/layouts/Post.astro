@@ -3,6 +3,7 @@ import Base from './Base.astro';
 import { absoluteUrl, site } from '../lib/site';
 import { longDate, monthYear, xmlDate } from '../lib/dates';
 import { seoTitle } from '../lib/text';
+import { withCloudflareGalleryImages } from '../lib/gallery-images';
 import { postDescription, postHtml, postMinutes, postUrl, type Post } from '../lib/posts';
 
 interface Props {
@@ -13,6 +14,8 @@ const { data } = post;
 const published = xmlDate(data.date);
 const minutes = postMinutes(post);
 const title = seoTitle(data.title);
+const html = postHtml(post);
+const body = import.meta.env.MODE === 'cloudflare' ? withCloudflareGalleryImages(html) : html;
 ---
 <Base
   layout="post"
@@ -59,7 +62,7 @@ const title = seoTitle(data.title);
       </figure>
     )}
 
-    <div class="post__body prose" set:html={postHtml(post)} />
+    <div class="post__body prose" set:html={body} />
 
     <footer class="post__footer reveal" data-reveal>
       <p class="post__sign">
