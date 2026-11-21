@@ -4,12 +4,20 @@ import { baseline } from './support/baseline';
 test('unknown URLs return a real 404 with the custom 404 page', async ({ page }) => {
   const res = await page.goto('/this-page-does-not-exist/');
   expect(res?.status()).toBe(404);
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex');
+  await expect(page).toHaveTitle('Page not found | Kerry Hatcher');
   await expect(page.locator('h1')).toContainText('That link didn’t go where it was supposed to');
   await expect(page.getByRole('heading', { name: 'Recent writing' })).toBeVisible();
+  const archive = page.locator('main header').getByRole('link', { name: 'Browse the writing archive' });
+  await archive.focus();
+  await page.keyboard.press('Enter');
+  await expect(page).toHaveURL('/');
 });
 
 test('the 404 page lists the five most recent posts, newest first', async ({ page }) => {
   await page.goto('/404.html');
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex');
+  await expect(page).toHaveTitle('Page not found | Kerry Hatcher');
   const links = page.locator('section[aria-labelledby="error-404-recent"] .error-404__link');
   await expect(links).toHaveCount(5);
   const expected = baseline.pages['/'].main.links

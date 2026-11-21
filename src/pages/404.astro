@@ -9,19 +9,20 @@ const recent = (await getPosts()).slice(0, 5);
 ---
 <Base
   seo={{
-    title: `${site.title} | ${site.description}`,
-    headline: site.title,
-    description: site.description,
+    title: `Page not found | ${site.title}`,
+    headline: 'Page not found',
+    description: 'Find recent writing and browse the archive.',
     path: '/404.html',
     kind: 'website',
     jsonLdType: 'WebPage',
+    noIndex: true,
   }}
 >
   <article class="page error-404" data-reveal-stagger>
     <header class="page__header">
       <p class="kicker error-404__kicker" data-reveal>Error 404 &middot; Page not found</p>
       <h1 class="error-404__title" data-reveal>That link didn&rsquo;t go where it was supposed to.</h1>
-      <p class="page__dek" data-reveal>Either the URL has a typo, or the piece moved when the site was reorganized. Both are common; neither requires the long apology. Two options for finding what you came for:</p>
+      <p class="page__dek" data-reveal>The address may have a typo, or the piece may have moved. <a class="error-404__archive" href="/">Browse the writing archive</a> to find it.</p>
     </header>
 
     <div class="error-404__body">
@@ -45,12 +46,6 @@ const recent = (await getPosts()).slice(0, 5);
       <section class="error-404__section" data-reveal aria-labelledby="error-404-useful">
         <h2 class="error-404__section-title" id="error-404-useful">Always useful</h2>
         <ul class="error-404__list">
-          <li class="error-404__item">
-            <a class="error-404__link" href="/">
-              <span class="error-404__kind">Home</span>
-              <span class="error-404__post-title">The full archive of writing.</span>
-            </a>
-          </li>
           <li class="error-404__item">
             <a class="error-404__link" href="/about/">
               <span class="error-404__kind">About</span>

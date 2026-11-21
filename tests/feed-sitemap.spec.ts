@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-import { baseline } from './support/baseline';
+import { baseline, routes } from './support/baseline';
 import { parseFeed, parseSitemap } from './support/xml';
 
 test('feed.xml is a valid Atom feed matching the baseline', async ({ page, request }) => {
@@ -22,6 +22,8 @@ test('sitemap.xml lists exactly the same URLs and lastmod dates', async ({ page,
   const sitemap = await parseSitemap(page, await res.text());
   const sort = (u: { loc: string }[]) => [...u].sort((a, b) => a.loc.localeCompare(b.loc));
   expect(sort(sitemap.urls)).toEqual(sort(baseline.sitemap.urls));
+  expect(sitemap.urls.map(({ loc }) => new URL(loc).pathname).sort())
+    .toEqual(routes.filter(route => route !== '/404.html').sort());
 });
 
 test('the legacy redirect stub is excluded from the sitemap', async ({ page, request }) => {

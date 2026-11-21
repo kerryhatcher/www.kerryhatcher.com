@@ -113,9 +113,8 @@ test.describe('chrome', () => {
     await expect(header).not.toHaveClass(/is-scrolled/);
   });
 
-  // NOTE: /page/2+ currently have no <h1> (hero is page-1 only); parity pins that.
   test('every page has exactly one h1', async ({ page }) => {
-    for (const path of ['/', '/about/', '/404.html', POST, '/crossover-2025/']) {
+    for (const path of ['/', '/page/2/', '/page/3/', '/page/4/', '/about/', '/404.html', POST, '/crossover-2025/']) {
       await page.goto(path);
       await expect(page.locator('h1'), path).toHaveCount(1);
     }
@@ -186,6 +185,20 @@ test.describe('without JavaScript', () => {
 });
 
 test.describe('home pagination', () => {
+  test('every archive page fits on a narrow viewport', async ({ page }) => {
+    for (const width of [320, 402]) {
+      await page.setViewportSize({ width, height: 874 });
+      for (const path of ['/', '/page/2/', '/page/3/', '/page/4/']) {
+        await page.goto(path);
+        expect(await page.evaluate(() => document.documentElement.scrollWidth), path).toBe(width);
+        const pager = page.getByRole('navigation', { name: 'Pagination' });
+        const controls = await pager.locator('a, [aria-current]').evaluateAll(elements =>
+          elements.map(element => element.getBoundingClientRect().right));
+        expect(controls.every(right => right <= width)).toBe(true);
+      }
+    }
+  });
+
   test('page numbers are centered in a level row on mobile and desktop', async ({ page }) => {
     for (const width of [402, 1280]) {
       await page.setViewportSize({ width, height: 874 });
@@ -256,6 +269,19 @@ test.describe('home pagination', () => {
 
 test.describe('mobile layout', () => {
   test.use({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true });
+
+  test('the About portrait reserves space and selects the smaller file on a 1× phone', async ({ page }) => {
+    await page.route('**/kerry-hero-600.jpg', route => route.abort());
+    await page.goto('/about/');
+    const portrait = page.locator('.post__hero img');
+    const result = await portrait.evaluate(image => ({
+      src: (image as HTMLImageElement).currentSrc,
+      width: image.getBoundingClientRect().width,
+      height: image.getBoundingClientRect().height,
+    }));
+    expect(result.src).toMatch(/\/kerry-hero-600\.jpg$/);
+    expect(result.height / result.width).toBeCloseTo(1375 / 1100, 2);
+  });
 
   for (const path of ['/', '/about/', POST, '/crossover-2025/']) {
     test(`no horizontal overflow on ${path}`, async ({ page }) => {

@@ -1,5 +1,33 @@
 import { expect, test } from '@playwright/test';
 import { ORIGIN } from './support/site';
+import { routes } from './support/baseline';
+
+test('all pages reflow at 320px with text enlarged to 200%', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 874 });
+  for (const path of routes) {
+    await page.goto(path, { waitUntil: 'domcontentloaded' });
+    await page.addStyleTag({ content: 'html { font-size: 200%; }' });
+    expect(await page.evaluate(() => document.documentElement.scrollWidth), path).toBe(320);
+  }
+  await page.goto('/out-of-runway-the-fy27-bcsd-budget/');
+  await page.addStyleTag({ content: 'html { font-size: 200%; }' });
+  const table = page.getByRole('region', { name: 'Scrollable table' }).first();
+  await table.focus();
+  await expect(table).toBeFocused();
+  await page.keyboard.press('ArrowRight');
+  await expect.poll(() => table.evaluate(element => element.scrollLeft)).toBeGreaterThan(0);
+});
+
+test('About and error pages fit at 200% text on a narrow screen', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 874 });
+  for (const path of ['/about/', '/404.html', '/missing-page-for-accessibility-check/']) {
+    await page.goto(path);
+    await page.addStyleTag({ content: 'html { font-size: 200%; }' });
+    expect(await page.evaluate(() => document.documentElement.scrollWidth), path).toBe(320);
+    const about = page.getByRole('navigation', { name: 'Primary' }).getByRole('link', { name: 'About' });
+    await expect(about).toBeInViewport({ ratio: 1 });
+  }
+});
 
 test.beforeEach(async ({ page }) => {
   await page.route('**/*', (route) =>

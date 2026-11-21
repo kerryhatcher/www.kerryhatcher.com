@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-import { withCloudflareGalleryImages } from '../src/lib/gallery-images';
+import { unsplashImageSrcset, withCloudflareGalleryImages } from '../src/lib/gallery-images';
 
 const photo = '/assets/images/example.jpeg';
 const galleryImage = (attributes: string) => `<div class="kg-gallery-image"><img ${attributes}></div>`;
@@ -21,4 +21,10 @@ test('gallery optimization preserves remote, small, authored, and non-gallery im
     `<figure><img src="${photo}" width="1600" loading="lazy"></figure>`,
   ].join('');
   expect(withCloudflareGalleryImages(original)).toBe(original);
+});
+
+test('Unsplash variants preserve the photo identifier and attribution query', () => {
+  expect(unsplashImageSrcset('https://images.unsplash.com/photo-test?ixid=example&w=640'))
+    .toBe('https://images.unsplash.com/photo-test?ixid=example&w=320 320w');
+  expect(unsplashImageSrcset('https://example.com/photo-test?w=640')).toBeUndefined();
 });

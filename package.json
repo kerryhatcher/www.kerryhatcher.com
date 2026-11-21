@@ -9,7 +9,8 @@
     "gray-matter": "^4.0.3",
     "playwright": "1.62.0",
     "remark-gfm": "^4.0.1",
-    "sass": "^1.108.2"
+    "sass": "^1.108.2",
+    "sharp": "0.35.5"
   },
   "devDependencies": {
     "@playwright/test": "1.62.0",

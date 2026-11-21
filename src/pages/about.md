@@ -5,6 +5,9 @@ dek: >-
   I'm Kerry Hatcher. I live in downtown Macon, Georgia, with my wife and our
   three kids. This is where I write things that don't fit anywhere else.
 feature_image: /assets/images/kerry-hero.jpg
+feature_image_srcset: /assets/images/kerry-hero-600.jpg 600w, /assets/images/kerry-hero.jpg 1100w
+feature_image_width: 1100
+feature_image_height: 1375
 feature_image_alt: Kerry Hatcher, smiling, in a checkered shirt, standing on a curb in front of a brick public school building.
 ---
 
@@ -26,7 +29,7 @@ I serve as a Noncommissioned Officer in the Georgia State Defense Force. That wo
 
 My career started in high school by being the kid teachers called when a printer wouldn't work. That turned into public-safety technology for Georgia law enforcement, then a Network Engineer role with the City of Macon, where I helped build the new consolidated Macon-Bibb government's systems. I'm now a Lead Software Engineer at Cox Automotive, where I work on tools used by thousands of developers around the world. The instinct that runs through all of it: listen carefully to the people closest to the problem, and don't accept "that's just how it is" as an answer.
 
-Outside of work and service, I run a [small 3D-printing shop](https://shop.kerryhatcher.com/), [build strange contraptions with my kids](https://blaster.kerryhatcher.com/), and keep the house full of half-finished LEGO projects.
+Outside of work and service, I do 3D printing, [build strange contraptions with my kids](https://blaster.kerryhatcher.com/), and keep the house full of half-finished LEGO projects.
 
 ## Saying hello
 

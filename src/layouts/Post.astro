@@ -14,7 +14,11 @@ const { data } = post;
 const published = xmlDate(data.date);
 const minutes = postMinutes(post);
 const title = seoTitle(data.title);
-const html = postHtml(post);
+const html = postHtml(post)
+  .replace(/<table\b[^>]*>[\s\S]*?<\/table>/g, table =>
+    `<div class="post__table-scroll" role="region" aria-label="Scrollable table" tabindex="0">${table}</div>`,
+  )
+  .replace(/<pre(?=[\s>])(?![^>]*\btabindex=)/g, '<pre tabindex="0"');
 const body = import.meta.env.MODE === 'cloudflare' ? withCloudflareGalleryImages(html) : html;
 ---
 <Base
@@ -27,6 +31,8 @@ const body = import.meta.env.MODE === 'cloudflare' ? withCloudflareGalleryImages
     kind: 'article',
     jsonLdType: 'BlogPosting',
     published,
+    image: data.feature_image,
+    imageAlt: data.feature_image_alt,
   }}
 >
   <div class="reading-progress" data-reading-progress aria-hidden="true">
