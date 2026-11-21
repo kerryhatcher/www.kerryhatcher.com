@@ -1,0 +1,164 @@
+---
+import Base from '../layouts/Base.astro';
+import { shortDate, xmlDate } from '../lib/dates';
+import { postCategory, postMinutes, postUrl, excerptText, type Post } from '../lib/posts';
+import { site } from '../lib/site';
+import { stripHtml, truncate } from '../lib/text';
+
+interface Props {
+  posts: Post[];
+  /** 1-based page number. */
+  page: number;
+  totalPages: number;
+  /** Total posts across all pages. */
+  total: number;
+}
+const { posts, page, totalPages, total } = Astro.props;
+
+const hero = {
+  kicker: 'Macon-Bibb County, Georgia',
+  line1: 'I write about whatever',
+  line2: "I'm digging into.",
+  lede: "I'm a software engineer and a Macon-Bibb County resident. Most pieces here started as a question I wanted answered. The recurring subjects are civic data, local government, education, digital privacy, and whatever I'm building this month.",
+  image: '/assets/images/kerry-hero.jpg',
+  imageSmall: '/assets/images/kerry-hero-600.jpg',
+  imageAlt: 'Kerry Hatcher, smiling, in a checkered shirt, standing on a curb in front of a brick public school building.',
+};
+
+const pagePath = (n: number) => (n === 1 ? '/' : `/page/${n}/`);
+const pageHeadline = page === 1 ? site.title : `${site.title} - page ${page}`;
+// Jekyll's paginator titled later pages "Page N of M for …"; kept for parity.
+const docTitle = page === 1 ? `${site.title} | ${site.description}` : `Page ${page} of ${totalPages} for ${site.title} - page ${page} | ${site.title}`;
+
+// Pager window: up to 5 numbers (2 either side of the current page), sliding to
+// stay full near either end; with few pages, every page is listed.
+const TRAIL_SLOTS = 5;
+const trailStart = Math.max(1, Math.min(page - 2, totalPages - TRAIL_SLOTS + 1));
+const trailEnd = Math.min(totalPages, trailStart + TRAIL_SLOTS - 1);
+const trail = Array.from({ length: trailEnd - trailStart + 1 }, (_, i) => trailStart + i);
+---
+<Base
+  layout="home"
+  seo={{
+    title: docTitle,
+    headline: pageHeadline,
+    description: site.description,
+    path: pagePath(page),
+    kind: 'website',
+    jsonLdType: page === 1 ? 'WebSite' : 'WebPage',
+  }}
+>
+  {page === 1 && (
+    <section class="hero hero--with-figure" data-reveal-stagger>
+      <div class="hero__intro">
+        <p class="hero__kicker" data-reveal>{hero.kicker}</p>
+        <h1 class="hero__title">
+          <span class="hero__line" data-reveal>{hero.line1}</span>
+          <span class="hero__line hero__line--accent" data-reveal>{hero.line2}</span>
+        </h1>
+        <p class="hero__lede" data-reveal>{hero.lede}</p>
+      </div>
+      <figure class="hero__figure" data-reveal>
+        <img
+          src={hero.image}
+          srcset={`${hero.imageSmall} 600w, ${hero.image} 1100w`}
+          sizes="(min-width: 900px) 36vw, (min-width: 600px) 56vw, 80vw"
+          alt={hero.imageAlt}
+          width="1100"
+          height="1375"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </figure>
+    </section>
+  )}
+
+  <section class="archive" aria-labelledby="archive-heading">
+    <header class="archive__head reveal" data-reveal>
+      <h2 id="archive-heading" class="archive__title">
+        <span class="archive__kicker">&sect; 0{page}</span>
+        {page === 1 ? 'Recent writing' : `Writing, page ${page}`}
+      </h2>
+      <p class="archive__meta">
+        <span>{total} pieces</span>
+        <span aria-hidden="true">&middot;</span>
+        <span>Newest first</span>
+      </p>
+    </header>
+
+    <div class="post-feed" role="list">
+      {posts.map((post, i) => {
+        const index = i + 1;
+        const cardClass =
+          page === 1 && index === 1 ? 'post-card post-card--featured'
+          : page === 1 && index <= 3 ? 'post-card post-card--large'
+          : 'post-card';
+        const category = postCategory(post);
+        const dek = post.data.dek ? truncate(stripHtml(post.data.dek), 180) : truncate(excerptText(post), 180);
+        const isLead = page === 1 && index === 1;
+        return (
+          <article class={`${cardClass} reveal`} role="listitem" data-reveal>
+            <a class="post-card__link" href={postUrl(post)}>
+              {post.data.feature_image && (
+                <span class="post-card__image">
+                  <img
+                    src={post.data.feature_image}
+                    alt=""
+                    width={isLead ? 1600 : 1280}
+                    height={isLead ? 900 : 800}
+                    loading={isLead ? 'eager' : 'lazy'}
+                    fetchpriority={isLead ? 'high' : undefined}
+                    decoding="async"
+                  />
+                </span>
+              )}
+              <span class="post-card__body">
+                {category && <span class="post-card__kicker">{category}</span>}
+                <h3 class="post-card__title">{post.data.title}</h3>
+                {dek && <span class="post-card__dek" set:html={dek} />}
+                <span class="post-card__meta">
+                  <time datetime={xmlDate(post.data.date)}>{shortDate(post.data.date)}</time>
+                  <span aria-hidden="true">&middot;</span>
+                  <span>{postMinutes(post)} min read</span>
+                </span>
+              </span>
+            </a>
+          </article>
+        );
+      })}
+    </div>
+
+    {totalPages > 1 && (
+      <nav class="pager" aria-label="Pagination">
+        <div class="pager__prev">
+          {page > 1 && (
+            <a href={pagePath(page - 1)} rel="prev">
+              <span class="pager__arrow" aria-hidden="true">&larr;</span>
+              <span class="pager__label">Newer</span>
+            </a>
+          )}
+        </div>
+        <ol class="pager__trail" role="list">
+          {trail.map((n) => (
+            <li>
+              {n === page ? (
+                <span class="pager__page is-current" aria-current="page">{n}</span>
+              ) : (
+                <a class="pager__page" href={pagePath(n)} title={n === 1 ? site.title : `${site.title} - page ${n}`}>{n}</a>
+              )}
+            </li>
+          ))}
+        </ol>
+        <div class="pager__next">
+          {page < totalPages && (
+            <a href={pagePath(page + 1)} rel="next">
+              <span class="pager__label">Older</span>
+              <span class="pager__arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          )}
+        </div>
+      </nav>
+    )}
+  </section>
+</Base>

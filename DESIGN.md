@@ -200,7 +200,7 @@ A small brushed-silver square (2rem) carrying `K·H` in Menlo, followed by the t
 - **Position:** sticky, top 0, z-50.
 - **Default:** transparent background, transparent bottom border.
 - **Scrolled state (`.is-scrolled`, added when `scrollY > 8`):** background `var(--scrim)`, `backdrop-filter: saturate(140%) blur(10px)`, bottom border `var(--rule)`.
-- **Behavior:** RAF-throttled scroll listener (see `assets/js/main.js`).
+- **Behavior:** RAF-throttled scroll listener (see `src/scripts/main.js`).
 
 ### Hero (home)
 - **Layout:** grid, kicker → 2-line headline → lede, gap 1.25rem.
@@ -256,7 +256,7 @@ The site is wired to render content imported from Ghost CMS (`kg-*` classes). Do
 - **`.kg-bookmark-card`:** horizontal link card with thumbnail, 1px Hairline border, 10px radius, Inset Paper background, hover lifts via `translateY(-2px)` + Luminous Mid-Blue border.
 - **`.kg-callout-card`:** Inset Paper background, full 1px Strong Rule border, 6px radius. A small Luminous Mid-Blue mono `§` marker (Menlo 0.78rem, uppercase, 0.06em tracking) sits above the callout content via `::before`, acting as a margin-note signature consistent with the `§ 02` archive kickers.
 - **`.kg-embed-card`:** 16:9 iframe wrapper, max-width 720px, 8px radius.
-- **`.kg-signup-card`:** Ghost-imported subscribe form. **Hidden by default site-wide** to honor PRODUCT.md's "no newsletter ceremony" principle; the visual styles remain so that a specific card can be surfaced by adding the `.is-shown` class to the wrapper (or a build-time Jekyll filter). No card is shown without that explicit opt-in.
+- **`.kg-signup-card`:** Ghost-imported subscribe form. **Hidden by default site-wide** to honor PRODUCT.md's "no newsletter ceremony" principle; the visual styles remain so that a specific card can be surfaced by adding the `.is-shown` class to the wrapper (or a build-time filter). No card is shown without that explicit opt-in.
 
 ### Reader-mode toggle
 A small mono `Aa` pill button in the post footer (between the byline and the back-link) that swaps the post body, dek, and analogous page surfaces from Noto Sans to **Atkinson Hyperlegible** — the Braille Institute's hyperlegible family widely used as a single-font intervention for low-vision and dyslexic readers. The choice persists in `localStorage` (`kh-reader-mode`) and is applied before paint via a tiny inline script in `head.html`, so it survives page navigation without a flash. When active, the body picks up `letter-spacing: 0.01em`; headings, kickers, and site chrome do not change — only the reading surface swaps.
@@ -306,7 +306,7 @@ Long civic posts are frequently printed and forwarded in school board meetings, 
 - **Don't** add a serif display, italic-script display, or third type family. Hierarchy is weight + scale within Noto Sans + Menlo. (One Family Rule.)
 - **Don't** use mono inside body sentences. Mono is for the margin: dates, kickers, captions, tags, page numbers. (Mono-For-Meta Rule.)
 - **Don't** add decorative shadows, gradient text, or glassmorphism panels. The single `backdrop-filter` lives on the sticky header scrim; the only standing shadow vocabulary lives on the wordmark monogram. (Flat-By-Default Rule.)
-- **Don't** ship a SaaS landing surface, a magazine clone, a developer-portfolio terminal aesthetic, or default Jekyll theme chrome. (PRODUCT.md anti-references — all four still apply.)
+- **Don't** ship a SaaS landing surface, a magazine clone, a developer-portfolio terminal aesthetic, or default blog-theme chrome. (PRODUCT.md anti-references — all four still apply.)
 - **Don't** add a campaign frame: no endorsement bars, no donate CTAs, no yard-sign red/white/blue palette, no "Meet Kerry" hero bio block. The school board run is acknowledged when it is the subject of a post, not the frame of the site.
 - **Don't** add a Substack/Medium author-template stack: no giant author avatar + name + Subscribe button atop posts, no "X subscribers" social proof, no paywall chrome. The existing `.kg-signup-card` is a parity artifact for Ghost-imported content and is hidden by default; opt-in per card via `.is-shown`.
 - **Don't** add a local-news-site aesthetic: no sidebars, no "recent comments" widgets, no "most-read this week," no dated WordPress chrome.

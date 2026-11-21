@@ -1,0 +1,9 @@
+---
+import HomeFeed from '../components/HomeFeed.astro';
+import { getPosts } from '../lib/posts';
+import { site } from '../lib/site';
+
+const all = await getPosts();
+const totalPages = Math.ceil(all.length / site.postsPerPage);
+---
+<HomeFeed posts={all.slice(0, site.postsPerPage)} page={1} {totalPages} total={all.length} />

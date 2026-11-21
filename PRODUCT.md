@@ -1,6 +1,6 @@
 # PRODUCT.md — kerryhatcher.com
 
-A personal site and writing space at www.kerryhatcher.com. Built with Jekyll, run through podman, deployed as a static site.
+A personal site and writing space at www.kerryhatcher.com. Built with Astro (static output), deployed as a static site on Cloudflare.
 
 ## Register
 
@@ -30,7 +30,7 @@ What this site is explicitly **not**:
 - **Not a SaaS landing page.** No hero metric, no feature grid, no CTA-above-the-fold.
 - **Not a magazine clone.** No drop caps, no italic Fraunces display, no broadsheet grid as scaffolding.
 - **Not a developer-portfolio dark mode.** No green-on-black terminal aesthetic for its own sake.
-- **Not the default Jekyll theme aesthetic** (Minima, Chirpy, Hydejack). Those are templates; this is identity.
+- **Not a default blog-theme aesthetic** (Minima, Chirpy, Hydejack). Those are templates; this is identity.
 - **Not a campaign site.** No endorsement bars, no donate CTAs, no yard-sign red/white/blue palette, no "meet Kerry" bio block in the hero. The school board run is acknowledged when it's the subject of a post, not the frame of the site.
 - **Not a Substack/Medium author template.** No giant author avatar + name + Subscribe stack at the top of every post. No "X subscribers" social proof. No paywall chrome.
 - **Not a local-news-site aesthetic.** No cluttered sidebars, no "recent comments" widgets, no "most-read this week," no dated WordPress chrome.

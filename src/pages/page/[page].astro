@@ -1,0 +1,21 @@
+---
+import HomeFeed from '../../components/HomeFeed.astro';
+import { getPosts } from '../../lib/posts';
+import { site } from '../../lib/site';
+
+// Page 1 is the home page (/), so this route starts at /page/2/.
+export async function getStaticPaths() {
+  const all = await getPosts();
+  const totalPages = Math.ceil(all.length / site.postsPerPage);
+  return Array.from({ length: totalPages - 1 }, (_, i) => {
+    const page = i + 2;
+    const start = (page - 1) * site.postsPerPage;
+    return {
+      params: { page: String(page) },
+      props: { page, totalPages, total: all.length, posts: all.slice(start, start + site.postsPerPage) },
+    };
+  });
+}
+const { page, totalPages, total, posts } = Astro.props;
+---
+<HomeFeed {posts} {page} {totalPages} {total} />

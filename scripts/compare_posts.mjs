@@ -22,7 +22,7 @@ const OUT = path.join(ROOT, '_screenshots');
 for (const sub of ['local', 'live']) fs.mkdirSync(path.join(OUT, sub), { recursive: true });
 
 const VIEW = { width: 1200, height: 900 };
-const LOCAL_BASE = 'http://127.0.0.1:4000';
+const LOCAL_BASE = 'http://127.0.0.1:4321';
 const LIVE_BASE  = 'https://www.kerryhatcher.com';
 
 const browser = await chromium.launch();

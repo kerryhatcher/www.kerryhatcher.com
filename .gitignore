@@ -1,16 +1,22 @@
 node_modules/
 
-# Jekyll build output & caches
-_site/
-.jekyll-cache/
-.jekyll-metadata
-.sass-cache/
-
-# Bundler-installed gems (BUNDLE_PATH=vendor/bundle)
-vendor/
-
 # Generated screenshots / visual diffs
 _screenshots/
 
 # Local session state
 .remember/
+
+# Playwright output
+test-results/
+playwright-report/
+
+# Astro
+dist/
+.astro/
+# Legacy Jekyll output (only present on machines that built the old site)
+_site/
+.jekyll-cache/
+.jekyll-metadata
+
+# Pixel baselines are local-only (12MB); generate with `bun run test:update-screenshots`
+tests/__screenshots__/

@@ -3,7 +3,7 @@ import { chromium } from 'playwright';
 
 const slug = process.argv[2] || 'trust-then-verify-1-035-reasons-why';
 const sources = [
-  ['LOCAL', `http://127.0.0.1:4000/${slug}/`, '.post__body'],
+  ['LOCAL', `http://127.0.0.1:4321/${slug}/`, '.post__body'],
   ['LIVE',  `https://www.kerryhatcher.com/${slug}/`, '.gh-content'],
 ];
 

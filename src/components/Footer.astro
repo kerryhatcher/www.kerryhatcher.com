@@ -1,0 +1,27 @@
+---
+import { site } from '../lib/site';
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__col">
+      <p class="site-footer__wordmark">Kerry Hatcher</p>
+      <p class="site-footer__tag">{site.description}</p>
+    </div>
+    <div class="site-footer__col">
+      <p class="site-footer__label">Elsewhere</p>
+      <ul>
+        {site.social.map((link) => <li><a href={link.href}>{link.label}</a></li>)}
+      </ul>
+    </div>
+    <div class="site-footer__col">
+      <p class="site-footer__label">Feed</p>
+      <ul>
+        <li><a href="/feed.xml">Atom</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="site-footer__colophon">
+    <span>&copy; {year} Kerry Hatcher.</span>
+  </p>
+</footer>

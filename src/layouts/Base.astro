@@ -1,0 +1,30 @@
+---
+import Head from '../components/Head.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import type { SeoInput } from '../lib/seo';
+
+interface Props {
+  seo: SeoInput;
+  /** Drives the `layout-*` body class the stylesheet keys off. */
+  layout?: 'default' | 'home' | 'page' | 'post';
+  /** Marks the matching nav item as current. */
+  currentUrl?: string;
+}
+const { seo, layout = 'default', currentUrl } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <Head seo={seo} />
+  <body class={`layout-${layout}`}>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <Header currentUrl={currentUrl} />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+    <script>
+      import '../scripts/main.js';
+    </script>
+  </body>
+</html>
