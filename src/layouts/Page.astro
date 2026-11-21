@@ -1,0 +1,54 @@
+---
+import Base from './Base.astro';
+import { site } from '../lib/site';
+
+interface Props {
+  frontmatter: {
+    title: string;
+    kicker?: string;
+    dek?: string;
+    feature_image?: string;
+    feature_image_alt?: string;
+    feature_image_caption?: string;
+  };
+}
+const { frontmatter: page } = Astro.props;
+const path = Astro.url.pathname;
+---
+<Base
+  layout="page"
+  currentUrl={path}
+  seo={{
+    title: `${page.title} | ${site.title}`,
+    headline: page.title,
+    description: site.description,
+    path,
+    kind: 'website',
+    jsonLdType: 'WebSite',
+  }}
+>
+  <article class="page" data-reveal-stagger>
+    <header class="page__header">
+      {page.kicker && <p class="page__kicker" data-reveal>{page.kicker}</p>}
+      <h1 class="page__title" data-reveal set:html={page.title} />
+      {page.dek && <p class="page__dek" data-reveal set:html={page.dek} />}
+    </header>
+
+    {page.feature_image && (
+      <figure class="post__hero" data-reveal>
+        <img
+          src={page.feature_image}
+          alt={page.feature_image_alt ?? page.title}
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        />
+        {page.feature_image_caption && <figcaption>{page.feature_image_caption}</figcaption>}
+      </figure>
+    )}
+
+    <div class="page__body prose" data-reveal>
+      <slot />
+    </div>
+  </article>
+</Base>

@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
-# Build the Jekyll site and deploy _site/ as a static-assets Worker.
+# Build the Astro site and deploy dist/ as a static-assets Worker.
 #
 # Worker name comes from wrangler.jsonc — defaults to "blog", which serves at
 # blog.<account>.workers.dev.
 #
 # Usage:
 #   scripts/deploy.sh                    # build + deploy
-#   scripts/deploy.sh --skip-build       # deploy current _site/ as-is
+#   scripts/deploy.sh --skip-build       # deploy current dist/ as-is
 #   scripts/deploy.sh --dry-run          # build + validate, no upload
 #
 # Environment:
@@ -44,29 +44,16 @@ done
 log() { printf '\033[1;34m==>\033[0m %s\n' "$*"; }
 
 if [[ $SKIP_BUILD -eq 0 ]]; then
-  log "Building Jekyll site via podman (JEKYLL_ENV=production)"
-  rm -rf _site
-  podman run --rm \
-    --userns=keep-id \
-    --volume "$PWD:/srv/jekyll:Z" \
-    --workdir /srv/jekyll \
-    --env BUNDLE_PATH=vendor/bundle \
-    --env JEKYLL_ENV=production \
-    --entrypoint sh \
-    docker.io/jekyll/jekyll:4 \
-    -c '
-      if [ -f Gemfile ]; then
-        exec bundle exec /usr/gem/bin/jekyll "$@"
-      else
-        exec /usr/gem/bin/jekyll "$@"
-      fi
-    ' -- build --trace
+  log "Building Astro site (bun run build)"
+  rm -rf dist
+  bun install --frozen-lockfile
+  bun run build
 else
-  log "Skipping build (using existing _site/)"
+  log "Skipping build (using existing dist/)"
 fi
 
-if [[ ! -d _site ]] || [[ -z "$(ls -A _site 2>/dev/null)" ]]; then
-  echo "error: _site/ is missing or empty — nothing to deploy" >&2
+if [[ ! -d dist ]] || [[ -z "$(ls -A dist 2>/dev/null)" ]]; then
+  echo "error: dist/ is missing or empty — nothing to deploy" >&2
   exit 1
 fi
 

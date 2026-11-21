@@ -1,0 +1,102 @@
+name: PR preview
+
+# Builds the site, runs the Playwright suite, and uploads a non-production
+# Worker version so every PR gets a preview URL. Production is untouched:
+# `wrangler versions upload` never deploys.
+#
+# Required repo secrets: CLOUDFLARE_API_TOKEN (Workers Scripts:Edit),
+# CLOUDFLARE_ACCOUNT_ID.
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+concurrency:
+  group: preview-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+
+      - run: bun install --frozen-lockfile
+
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('bun.lock') }}
+
+      - run: bunx playwright install --with-deps chromium
+
+      # Builds dist/ then runs the suite (visual tests skip: screenshots are local-only).
+      - run: bun run test
+
+      - name: Upload Playwright report
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 7
+
+      # Fork PRs have no access to secrets; skip the upload for them.
+      - name: Upload preview version
+        id: upload
+        if: github.event.pull_request.head.repo.full_name == github.repository
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          PR: ${{ github.event.pull_request.number }}
+          SHA: ${{ github.event.pull_request.head.sha }}
+        shell: bash  # explicit shell enables pipefail so a failed upload fails the step
+        run: |
+          bunx wrangler@4 versions upload \
+            --preview-alias "pr-${PR}" \
+            --message "PR #${PR} @ ${SHA::7}" \
+            2>&1 | tee upload.log
+          alias_url=$(grep -oE 'Version Preview Alias URL: *https://[^ ]+' upload.log | grep -oE 'https://[^ ]+' | head -1 || true)
+          version_url=$(grep -oE 'Version Preview URL: *https://[^ ]+' upload.log | grep -oE 'https://[^ ]+' | head -1 || true)
+          echo "alias_url=${alias_url}" >> "$GITHUB_OUTPUT"
+          echo "version_url=${version_url}" >> "$GITHUB_OUTPUT"
+          if [ -z "$alias_url" ] && [ -z "$version_url" ]; then
+            echo "::error::Upload finished but no preview URL was found in wrangler output"
+            exit 1
+          fi
+
+      - name: Comment preview URL
+        if: steps.upload.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ github.event.pull_request.number }}
+          SHA: ${{ github.event.pull_request.head.sha }}
+          ALIAS_URL: ${{ steps.upload.outputs.alias_url }}
+          VERSION_URL: ${{ steps.upload.outputs.version_url }}
+        run: |
+          {
+            echo "<!-- cf-preview -->"
+            echo "### Preview deployed"
+            echo
+            [ -n "$ALIAS_URL" ] && echo "- **Latest for this PR:** ${ALIAS_URL}"
+            [ -n "$VERSION_URL" ] && echo "- **This commit (\`${SHA::7}\`):** ${VERSION_URL}"
+            echo
+            echo "Tests passed. Production is not affected."
+          } > comment.md
+          existing=$(gh api "repos/${GITHUB_REPOSITORY}/issues/${PR}/comments" \
+            --jq '[.[] | select(.body | startswith("<!-- cf-preview -->"))][0].id // empty')
+          if [ -n "$existing" ]; then
+            gh api -X PATCH "repos/${GITHUB_REPOSITORY}/issues/comments/${existing}" -F body=@comment.md
+          else
+            gh pr comment "$PR" --body-file comment.md
+          fi

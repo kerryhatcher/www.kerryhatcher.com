@@ -1,48 +1,44 @@
-# Tasks for kerryhatcher.com (Jekyll → Cloudflare Workers Static Assets).
-# See CLAUDE.md for why everything runs via podman.
+# Tasks for kerryhatcher.com (Astro static site → Cloudflare Workers Static Assets).
+# Node tooling runs through bun. See CLAUDE.md.
 
 set shell := ["bash", "-uc"]
 
-jekyll_image := "docker.io/jekyll/jekyll:4"
-host_port    := "4000"
-lr_port      := "35729"
-
-# Shared podman invocation (single line so `just` can interpolate it inline).
-_pj := "podman run --rm --userns=keep-id --volume \"$PWD:/srv/jekyll:Z\" --workdir /srv/jekyll --env BUNDLE_PATH=vendor/bundle"
-
 default:
     @just --list
+
+# Install dependencies.
+install:
+    bun install
 
 # Verify posts don't contain duplicate <h1> headings (a11y guard).
 check-headings:
     ./scripts/check-post-headings.sh
 
-# Build the site into _site/ (development).
+# Dev server with hot reload at http://localhost:4321.
+dev:
+    bun run dev
+
+# Production build into dist/.
 build: check-headings
-    {{_pj}} --entrypoint sh {{jekyll_image}} -c 'if [ -f Gemfile ]; then bundle exec /usr/gem/bin/jekyll build --trace; else /usr/gem/bin/jekyll build --trace; fi'
+    bun run build
 
-# Build with JEKYLL_ENV=production (clears _site/ first).
-build-prod: check-headings
-    rm -rf _site
-    {{_pj}} --env JEKYLL_ENV=production --entrypoint sh {{jekyll_image}} -c 'if [ -f Gemfile ]; then bundle exec /usr/gem/bin/jekyll build --trace; else /usr/gem/bin/jekyll build --trace; fi'
+# Serve the built dist/ at http://localhost:4321.
+preview: build
+    bun run preview
 
-# Serve the site at http://127.0.0.1:4000 (foreground, no watch).
-serve:
-    {{_pj}} -p {{host_port}}:4000 -p {{lr_port}}:35729 --entrypoint sh {{jekyll_image}} -c 'if [ -f Gemfile ]; then bundle exec /usr/gem/bin/jekyll serve --host 0.0.0.0 --skip-initial-build --no-watch; else /usr/gem/bin/jekyll serve --host 0.0.0.0 --skip-initial-build --no-watch; fi'
+# Build, then run the Playwright suite (parity, behavior, visual) against dist/.
+test:
+    bun run test
 
-# Serve with live-reload + watch (foreground).
-watch:
-    {{_pj}} -p {{host_port}}:4000 -p {{lr_port}}:35729 --entrypoint sh {{jekyll_image}} -c 'if [ -f Gemfile ]; then bundle exec /usr/gem/bin/jekyll serve --host 0.0.0.0 --livereload --livereload-port 35729; else /usr/gem/bin/jekyll serve --host 0.0.0.0 --livereload --livereload-port 35729; fi'
-
-# Run `bundle <args>` inside the Jekyll image (e.g. `just bundle install`).
-bundle *args:
-    {{_pj}} --entrypoint bundle {{jekyll_image}} {{args}}
+# Run the Playwright suite against the existing dist/ (no rebuild).
+test-only *args:
+    bun run test:only {{args}}
 
 # Build (production) and deploy to Cloudflare Workers Static Assets.
 deploy:
     scripts/deploy.sh
 
-# Deploy without rebuilding (uses current _site/).
+# Deploy without rebuilding (uses current dist/).
 deploy-fast:
     scripts/deploy.sh --skip-build
 
@@ -50,6 +46,6 @@ deploy-fast:
 deploy-check:
     scripts/deploy.sh --dry-run
 
-# Remove _site/ and Jekyll caches.
+# Remove build output and caches.
 clean:
-    rm -rf _site .jekyll-cache .jekyll-metadata
+    rm -rf dist .astro test-results playwright-report

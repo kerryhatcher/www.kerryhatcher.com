@@ -1,0 +1,48 @@
+name: Deploy production
+
+# Builds, tests, and deploys dist/ to the `blog` Worker on every push to master.
+# Runs in the `production` GitHub environment, which only allows the master branch.
+#
+# Secrets: CLOUDFLARE_API_TOKEN (Workers Scripts:Edit), CLOUDFLARE_ACCOUNT_ID.
+# Environment-level secrets of the same name override repo-level ones, so a
+# production-only token can be added to the `production` environment later.
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment:
+      name: production
+      url: https://www.kerryhatcher.com
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install --frozen-lockfile
+
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('bun.lock') }}
+      - run: bunx playwright install --with-deps chromium
+
+      # Builds dist/ and runs the suite; a failure stops the deploy.
+      - run: bun run test
+
+      - name: Deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: bunx wrangler@4 deploy

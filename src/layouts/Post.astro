@@ -1,0 +1,78 @@
+---
+import Base from './Base.astro';
+import { absoluteUrl, site } from '../lib/site';
+import { longDate, monthYear, xmlDate } from '../lib/dates';
+import { seoTitle } from '../lib/text';
+import { postDescription, postHtml, postMinutes, postUrl, type Post } from '../lib/posts';
+
+interface Props {
+  post: Post;
+}
+const { post } = Astro.props;
+const { data } = post;
+const published = xmlDate(data.date);
+const minutes = postMinutes(post);
+const title = seoTitle(data.title);
+---
+<Base
+  layout="post"
+  seo={{
+    title: `${title} | ${site.title}`,
+    headline: title,
+    description: postDescription(post),
+    path: postUrl(post),
+    kind: 'article',
+    jsonLdType: 'BlogPosting',
+    published,
+  }}
+>
+  <div class="reading-progress" data-reading-progress aria-hidden="true">
+    <div class="reading-progress__bar"></div>
+  </div>
+
+  <article class="post" data-reveal-stagger>
+    <header class="post__header">
+      <p class="post__kicker" data-reveal>
+        <time datetime={published}>{longDate(data.date)}</time>
+        <span aria-hidden="true">&bull;</span>
+        <span>{minutes} min read</span>
+      </p>
+      <h1 class="post__title" data-reveal set:html={data.title} />
+      {data.dek && <p class="post__dek" data-reveal set:html={data.dek} />}
+      {data.tags.length > 0 && (
+        <ul class="post__tags" data-reveal>
+          {data.tags.map((tag) => <li>{tag}</li>)}
+        </ul>
+      )}
+    </header>
+
+    {data.feature_image && (
+      <figure class="post__hero" data-reveal>
+        <img
+          src={data.feature_image}
+          alt={data.feature_image_alt ?? data.title}
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        />
+        {data.feature_image_caption && <figcaption set:html={data.feature_image_caption} />}
+      </figure>
+    )}
+
+    <div class="post__body prose" set:html={postHtml(post)} />
+
+    <footer class="post__footer reveal" data-reveal>
+      <p class="post__sign">
+        Kerry · {monthYear(data.date)}
+      </p>
+      <button type="button" class="post__reader-toggle" data-reader-toggle aria-pressed="false" title="Switch to a higher-readability font">
+        <span aria-hidden="true">Aa</span>
+        <span class="visually-hidden">Toggle reader-friendly font</span>
+      </button>
+      <a class="post__back" href="/">
+        <span aria-hidden="true">&larr;</span>
+        Back to writing
+      </a>
+    </footer>
+  </article>
+</Base>
