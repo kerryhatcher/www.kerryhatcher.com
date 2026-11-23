@@ -7228,7 +7228,7 @@
   "/in-pictures-a-day-of-action-and-art-in-downtown-macon/": {
    "lang": "en",
    "bodyClass": "layout-post",
-   "title": "(In pictures) A day of action and art in downtown Macon | Kerry Hatcher",
+   "title": "Downtown Macon Protest and Art in Photos | Kerry Hatcher",
    "canonical": "https://www.kerryhatcher.com/in-pictures-a-day-of-action-and-art-in-downtown-macon/",
    "meta": {
     "viewport": "width=device-width, initial-scale=1",
@@ -7238,8 +7238,8 @@
     "og:title": "(In pictures) A day of action and art in downtown Macon",
     "author": "Kerry Hatcher",
     "og:locale": "en_US",
-    "description": "See the full album: 25-04-19 Art Protest by Kerry Hatcher CC BY 4.0Kerry Hatcher CC BY 4.0",
-    "twitter:description": "See the full album: 25-04-19 Art Protest by Kerry Hatcher CC BY 4.0Kerry Hatcher CC BY 4.0",
+    "description": "Photos by Kerry Hatcher document a downtown Macon protest, including speakers, signs, live music and a portrait in progress.",
+    "twitter:description": "Photos by Kerry Hatcher document a downtown Macon protest, including speakers, signs, live music and a portrait in progress.",
     "og:url": "https://www.kerryhatcher.com/in-pictures-a-day-of-action-and-art-in-downtown-macon/",
     "og:site_name": "Kerry Hatcher",
     "og:type": "article",
@@ -7269,7 +7269,7 @@
       "name": "Kerry Hatcher",
       "url": "https://www.kerryhatcher.com/about/"
      },
-     "description": "See the full album: 25-04-19 Art Protest by Kerry Hatcher CC BY 4.0Kerry Hatcher CC BY 4.0",
+     "description": "Photos by Kerry Hatcher document a downtown Macon protest, including speakers, signs, live music and a portrait in progress.",
      "headline": "(In pictures) A day of action and art in downtown Macon",
      "url": "https://www.kerryhatcher.com/in-pictures-a-day-of-action-and-art-in-downtown-macon/",
      "datePublished": "2025-04-20T13:17:00-05:00",
@@ -7318,10 +7318,10 @@
       "text": "(In pictures) A day of action and art in downtown Macon"
      }
     ],
-    "text": "APRIL 20, 2025 • 1 MIN READ (In pictures) A day of action and art in downtown Macon An estimated 200 people assembled to protest recent actions of the federal government. See the full album: 25-04-19 Art Protest by Kerry Hatcher CC BY 4.0 KERRY HATCHER CC BY 4.0 Kerry · April 2025 Aa Toggle reader-friendly font ← Back to writing",
+    "text": "APRIL 20, 2025 • 1 MIN READ (In pictures) A day of action and art in downtown Macon An estimated 200 people assembled to protest recent actions of the federal government. An estimated 200 people gathered in downtown Macon to protest recent actions by the federal government. I photographed speakers at the lectern, handwritten signs in the crowd, a musician with an acoustic guitar, and an artist at work on a large portrait. View Kerry Hatcher’s full Macon protest photo album (CC BY 4.0). Kerry · April 2025 Aa Toggle reader-friendly font ← Back to writing",
     "links": [
      {
-      "text": "25-04-19 Art Protest by Kerry Hatcher CC BY 4.0Kerry Hatcher CC BY 4.0",
+      "text": "View Kerry Hatcher’s full Macon protest photo album (CC BY 4.0).",
       "href": "https://adobe.ly/4iuOvff?ref=kerryhatcher.com"
      },
      {
@@ -7500,30 +7500,12 @@
       "height": "3764",
       "loading": "lazy",
       "fetchpriority": null
-     },
-     {
-      "src": "/assets/images/remote/hatchdata/images/icon/lr2020_180_ios-d59f4d730859bcbfe2a8e5e613875309f9d93c7bbd763e8771c2f7bd94ece879-6.png",
-      "srcset": null,
-      "alt": "",
-      "width": null,
-      "height": null,
-      "loading": null,
-      "fetchpriority": null
-     },
-     {
-      "src": "/assets/images/remote/hatchdata/images/thumbnail/0e103b8e9efda87582134834c466ba05",
-      "srcset": null,
-      "alt": "",
-      "width": null,
-      "height": null,
-      "loading": null,
-      "fetchpriority": null
      }
     ],
     "iframes": [],
     "counts": {
-     "p": 10,
-     "figure": 4,
+     "p": 11,
+     "figure": 3,
      "figcaption": 0,
      "table": 0,
      "pre": 0,
@@ -7532,7 +7514,7 @@
      "ol": 0,
      "li": 0,
      "blockquote": 0,
-     "proseElements": 64,
+     "proseElements": 55,
      "shellElements": 19
     },
     "outline": [
@@ -7559,10 +7541,10 @@
      "4:span[aria-hidden]"
     ],
     "proseHashes": [
-     "0f3bacc7614895c5d0d95396cc2e5c94f8c6a8f0"
+     "644f4e2cadd6e34fc4a5bca78b42eab4782a1e2d"
     ],
     "proseLengths": [
-     5405
+     4990
     ]
    }
   },
