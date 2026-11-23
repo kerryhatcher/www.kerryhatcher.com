@@ -16,15 +16,15 @@ seo_title: "Bibb County FY27 Budget: The $23.8M Gap and Two Paths"
 seo_description: "A May 2026 analysis of Bibb County schools’ tentative budget, potential cuts, reserve projections, and estimated homeowner costs."
 ---
 
-I sat through the Bibb County Board of Education’s May 21, 2026 budget work session and left less encouraged than I went in. The May 14 tentative FY27 General Fund budget showed a $23.8 million deficit with no change to the school millage rate. On May 21, Dr. Sims’s team walked the board through what it could cut if it had to. The team explicitly said it did not recommend those cuts.
+I sat through the Bibb County Board of Education’s May 21, 2026 work session, and I left less encouraged than I went in. Dr. Sims’s team put up a menu of cuts the district could make if it had to. The team advised the board against making them. The kind of slide nobody puts up unless the math has stopped pretending.
 
-Here’s how I read the trade-offs the board was facing heading into the June 2 tentative adoption date. The board could still make changes before final passage, and the tax digest could change the revenue math. You can watch the full May 21 session below.
+If you’d rather watch it for yourself, here’s the full work session. Everything below is my read on what happened in the room. There’s a tentative vote on June 2, a final vote still to come, and a tax digest that could move the numbers.
 
 <figure class="kg-card kg-embed-card kg-card-hascaption"><iframe width="200" height="113" src="https://www.youtube-nocookie.com/embed/QpxVOT7LK7k?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="BCSD BOE Meeting 21 May 2026" loading="lazy"></iframe><figcaption><span style="white-space: pre-wrap;">The May 21, 2026 Bibb County Board of Education budget work session, in full.</span></figcaption></figure>
 
 ## The hole we're staring at
 
-The tentative FY27 General Fund budget presented by CFO Eric Bush on May 14 lays out a **$23.8 million deficit** with no millage rate change. That's on top of the **$21.4 million deficit** the district is already running in the current FY26 budget. Two back-to-back eight-figure deficits on a $310M General Fund.
+Start with the numbers CFO Eric Bush put up on May 14. Leave the millage rate where it is and the tentative FY27 General Fund budget is **$23.8 million short**. The district is already running a **$21.4 million deficit** in FY26. Two back-to-back eight-figure deficits on a $310 million General Fund.
 
 A few headline numbers from the tentative adoption presentation:
 
@@ -66,7 +66,7 @@ Further cuts have been discussed previously outside the meeting:
 - Redistricting without closures — **~$1.0M**
 - Close the VIP academy — **~$0.45M**
 
-**My working estimate for the combined cuts is about $15.8 million.** The figures are rounded, and options such as consolidation and redistricting could overlap.
+**I get about $15.8 million when I add these up.** I’m working with rounded numbers, and I wouldn’t count on getting both sets of savings if a school closes and the district redraws its lines.
 
 Apply every one of those, including the ones the Superintendent flatly does not recommend, and we are still **$8 million short** of balancing FY27. After consolidating schools, freezing pay, packing more kids into classrooms, and contracting out the people who hold our buildings together. Still short.
 
@@ -84,7 +84,7 @@ If the cut menu doesn't get you there, the only remaining variable is **revenue*
 
 ### District projections from the May 14 budget presentation
 
-The district modeled four scenarios:
+The district ran four versions of the budget:
 
 | Millage | FY27 Deficit | FY27 Fund Balance Ratio | FY30 Projected Ratio |
 |---|---|---|---|
@@ -100,7 +100,7 @@ The district modeled four scenarios:
 | +1.7 | About $15.8M, assuming all listed cuts are available and can be combined | About $12 |
 | +4.3 | About $0.68M | About $30 |
 
-The homeowner estimates are before exemptions. Overlapping cuts or a different tax digest could change the figures. The infographic uses about $5.4 million per mill as a rough estimate.
+Those costs are before exemptions. The graphic uses about $5.4 million per mill. I wouldn’t get too attached to the exact figures. Some cuts might overlap, and the digest can change the revenue side.
 
 ![Comparison chart showing FY27 deficit and projected fund balance ratios under four millage scenarios (current, +2, +3, and +4 mills) through FY30.](/assets/images/remote/hatchdata/2026/05/5JHp3Om4-18.png)
 
@@ -112,7 +112,7 @@ Board President Morton said it plainly at Thursday's session: *"We can't tax our
 
 What I *am* saying is this: **the numbers don't negotiate, and the deadline is Tuesday, June 2.**
 
-Strictly speaking, June 2 is the *tentative* adoption. The board can still tweak the numbers before final passage at the June 18 hearing. In past years, though, the changes between tentative and final have been minimal at best. I expected the June 2 vote to set the direction.
+Strictly speaking, June 2 is the *tentative* adoption. The board can still change the budget before final passage at the June 18 hearing. I’ve seen very little change between those two votes in past years. That’s why I was watching June 2.
 
 After June 2, the board owns whatever deficit it carries forward. Anything not fixed by then gets offset later, and "later" in school finance almost always means emergency loans, deeper cuts, or both.
 
@@ -165,7 +165,7 @@ That's worth keeping in mind when the conversation gets locked onto a specific n
 
 <h2 id="what-to-do-before-tuesday-june-2">What I asked readers to do before the June 2, 2026 vote</h2>
 
-If you live in Bibb County, show up. The tentative vote sets the direction for the budget, and even if you don't speak, a full room means something. If you can't be there, email the board. Their addresses are [here](https://simbli.eboardsolutions.com/AboutUs/AboutUs.aspx?S=4013&TID=1). Tell them which tradeoff you'd accept and which you wouldn't.
+If you live in Bibb County, I hope you’ll show up. You don’t have to speak for a full room to mean something. If you can’t make it, email the board. Their addresses are [here](https://simbli.eboardsolutions.com/AboutUs/AboutUs.aspx?S=4013&TID=1). Tell them what you’re willing to live with when they take that first vote.
 
 And share this post. The empty-chair problem at these meetings is real, and I've written about it [before](https://www.kerryhatcher.com/empty-chairs-and-big-decisions-why-the-final-bcsd-budget-hearing-matters/). If you've made it this far, you know more about the FY27 budget than 99% of Bibb County. Help fix that ratio.
 
