@@ -48,7 +48,7 @@ These are excerpt-level results from `nobotrs analyze --gptzero`. The percentage
 
 ## Unresolved scans
 
-- [Taking Control of Your Email, Part 1](src/content/posts/2025-06-03-taking-control-of-your-email-part-1-choosing-a-private-email-provider.html) stayed AI only at 100% across four revisions of the same ten paragraphs. The accepted draft keeps the provider comparisons easier to scan, dates the price examples to June 2025, and avoids treating paid plans as a guarantee of deliverability. Accepted in `eaaad18`.
+- [Taking Control of Your Email, Part 1](src/content/posts/2025-06-03-taking-control-of-your-email-part-1-choosing-a-private-email-provider.html) stayed AI only at 100% across four revisions of the same ten paragraphs. The accepted draft keeps the provider comparisons easier to scan, dates the price examples to June 2025, and avoids treating paid plans as a guarantee of deliverability. Accepted in `eaaad18`. Four follow-up rounds on those same paragraphs also scored AI only at 100%. The final draft states the reason for choosing Fastmail and the encryption trade-off up front, trims repeated provider descriptions, and keeps the pricing dated and the DNS example intact. Accepted in `b3e8a71`.
 
 ## Adding a new entry
 
