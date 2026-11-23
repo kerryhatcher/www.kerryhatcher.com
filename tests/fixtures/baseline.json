@@ -15762,7 +15762,7 @@
   "/using-rust-to-make-python-more-manageable-2/": {
    "lang": "en",
    "bodyClass": "layout-post",
-   "title": "Using Rust to make Python more manageable | Kerry Hatcher",
+   "title": "Use uv to Manage Python Virtual Environments | Kerry Hatcher",
    "canonical": "https://www.kerryhatcher.com/using-rust-to-make-python-more-manageable-2/",
    "meta": {
     "viewport": "width=device-width, initial-scale=1",
@@ -15772,8 +15772,8 @@
     "og:title": "Using Rust to make Python more manageable",
     "author": "Kerry Hatcher",
     "og:locale": "en_US",
-    "description": "Introducing UV \"An extremely fast Python package and project manager, written in Rust.\" UV is my new favorite Python tool, and it’s not even written in Python. This handy little CLI tool makes setting up a new Python project incredibly simple, thanks to sensible defaults and a streamlined workflow. With UV, you can avoid the typical headaches of environment management and package installation. Why UV? Blazing Fast – Because UV is written in Rust, it is much faster than traditional Python-based tools.Minimal Dependencies – Unlike tools that require their own virtual environments or Python installations, UV operates independently.Unified Package Management…",
-    "twitter:description": "Introducing UV \"An extremely fast Python package and project manager, written in Rust.\" UV is my new favorite Python tool, and it’s not even written in Python. This handy little CLI tool makes setting up a new Python project incredibly simple, thanks to sensible defaults and a streamlined workflow. With UV, you can avoid the typical headaches of environment management and package installation. Why UV? Blazing Fast – Because UV is written in Rust, it is much faster than traditional Python-based tools.Minimal Dependencies – Unlike tools that require their own virtual environments or Python installations, UV operates independently.Unified Package Management…",
+    "description": "A quick introduction to uv, the Rust-based Python tool for creating virtual environments and installing packages.",
+    "twitter:description": "A quick introduction to uv, the Rust-based Python tool for creating virtual environments and installing packages.",
     "og:url": "https://www.kerryhatcher.com/using-rust-to-make-python-more-manageable-2/",
     "og:site_name": "Kerry Hatcher",
     "og:type": "article",
@@ -15803,7 +15803,7 @@
       "name": "Kerry Hatcher",
       "url": "https://www.kerryhatcher.com/about/"
      },
-     "description": "Introducing UV &quot;An extremely fast Python package and project manager, written in Rust.&quot; UV is my new favorite Python tool, and it’s not even written in Python. This handy little CLI tool makes setting up a new Python project incredibly simple, thanks to sensible defaults and a streamlined workflow. With UV, you can avoid the typical headaches of environment management and package installation. Why UV? Blazing Fast – Because UV is written in Rust, it is much faster than traditional Python-based tools.Minimal Dependencies – Unlike tools that require their own virtual environments or Python installations, UV operates independently.Unified Package Management…",
+     "description": "A quick introduction to uv, the Rust-based Python tool for creating virtual environments and installing packages.",
      "headline": "Using Rust to make Python more manageable",
      "url": "https://www.kerryhatcher.com/using-rust-to-make-python-more-manageable-2/",
      "datePublished": "2025-03-10T16:14:58-05:00",
@@ -15861,7 +15861,11 @@
      },
      {
       "level": 3,
-      "text": "Getting Started with UV"
+      "text": "Install uv"
+     },
+     {
+      "level": 3,
+      "text": "Create a virtual environment"
      },
      {
       "level": 3,
@@ -15872,7 +15876,7 @@
       "text": "Final Thoughts"
      }
     ],
-    "text": "MARCH 10, 2025 • 2 MIN READ Using Rust to make Python more manageable It has long been best practice to use virtual python environments with locally installed libraries rather than system ones. However, setting up and managing those can be a hassle. Tools like pipx, pyenv and poetry went a long way to making life much easier but they have their own drawbacks. PYTHON SOFTWARE DEVELOPMENT NEWS Photo by Zdeněk Macháček / Unsplash Introducing UV \"An extremely fast Python package and project manager, written in Rust.\" UV is my new favorite Python tool, and it’s not even written in Python. This handy little CLI tool makes setting up a new Python project incredibly simple, thanks to sensible defaults and a streamlined workflow. With UV, you can avoid the typical headaches of environment management and package installation. Why UV? Blazing Fast – Because UV is written in Rust, it is much faster than traditional Python-based tools. Minimal Dependencies – Unlike tools that require their own virtual environments or Python installations, UV operates independently. Unified Package Management – UV combines environment creation and package installation in a seamless way. Drop-in Replacement – UV aims to be a drop-in replacement for pip, pip-tools, virtualenv, venv, pipx, and even aspects of poetry. Getting Started with UV First, you’ll need to install UV. If you’re on a Unix-based system, you can install it using the following command: curl -LsSf https://astral.sh/uv/install.sh | sh On Windows, you can download and install it manually from the official UV documentation. Once installed, you can create a new Python project and manage its dependencies effortlessly: uv venv my_project cd my_project uv pip install requests UV automatically creates a virtual environment and installs packages in it without needing separate activation commands. A Better Workflow UV simplifies Python project workflows in several ways: Automatic virtual environment management – No need to manually set up or activate environments. Lightning-fast dependency resolution – UV outperforms pip and poetry in many cases. Cross-platform support – Works seamlessly across different operating systems. Final Thoughts Python developers are always on the lookout for tools that reduce friction and improve efficiency. UV stands out as a game-changer in package management and virtual environments. If you’re tired of slow dependency resolution, confusing package installations, or clunky environment setups, UV is definitely worth a try. You can find more details and documentation at UV's official website. Happy coding! Kerry · March 2025 Aa Toggle reader-friendly font ← Back to writing",
+    "text": "MARCH 10, 2025 • 2 MIN READ Using Rust to make Python more manageable It has long been best practice to use virtual python environments with locally installed libraries rather than system ones. However, setting up and managing those can be a hassle. Tools like pipx, pyenv and poetry went a long way to making life much easier but they have their own drawbacks. PYTHON SOFTWARE DEVELOPMENT NEWS Photo by Zdeněk Macháček / Unsplash uv is my new favorite Python tool, and it isn’t even written in Python. It’s written in Rust. With one tool I can make a virtual environment and get my packages installed. I’ll try it below with requests so you can see what ends up where. Introducing UV \"An extremely fast Python package and project manager, written in Rust.\" UV is my new favorite Python tool, and it’s not even written in Python. This handy little CLI tool makes setting up a new Python project incredibly simple, thanks to sensible defaults and a streamlined workflow. With UV, you can avoid the typical headaches of environment management and package installation. Why UV? Blazing Fast – Because UV is written in Rust, it is much faster than traditional Python-based tools. Minimal Dependencies – Unlike tools that require their own virtual environments or Python installations, UV operates independently. Unified Package Management – UV combines environment creation and package installation in a seamless way. Drop-in Replacement – UV aims to be a drop-in replacement for pip, pip-tools, virtualenv, venv, pipx, and even aspects of poetry. Install uv First, you’ll need to install UV. If you’re on a Unix-based system, you can install it using the following command: curl -LsSf https://astral.sh/uv/install.sh | sh On Windows, you can download and install it manually from the official UV documentation. Create a virtual environment Once installed, you can create a new Python project and manage its dependencies effortlessly: uv venv my_project cd my_project uv pip install requests When you’re done, look in my_project. That’s where you’ll find the virtual environment. requests goes into that environment. UV automatically creates a virtual environment and installs packages in it without needing separate activation commands. A Better Workflow UV simplifies Python project workflows in several ways: Automatic virtual environment management – No need to manually set up or activate environments. Lightning-fast dependency resolution – UV outperforms pip and poetry in many cases. Cross-platform support – Works seamlessly across different operating systems. Final Thoughts Python developers are always on the lookout for tools that reduce friction and improve efficiency. UV stands out as a game-changer in package management and virtual environments. If you’re tired of slow dependency resolution, confusing package installations, or clunky environment setups, UV is definitely worth a try. You can find more details and documentation at UV's official website. Happy coding! Kerry · March 2025 Aa Toggle reader-friendly font ← Back to writing",
     "links": [
      {
       "text": "Zdeněk Macháček",
@@ -15925,17 +15929,17 @@
     ],
     "iframes": [],
     "counts": {
-     "p": 12,
+     "p": 13,
      "figure": 2,
      "figcaption": 1,
      "table": 0,
      "pre": 2,
-     "code": 10,
+     "code": 14,
      "ul": 2,
      "ol": 1,
      "li": 10,
      "blockquote": 1,
-     "proseElements": 51,
+     "proseElements": 57,
      "shellElements": 30
     },
     "outline": [
@@ -15973,10 +15977,10 @@
      "4:span[aria-hidden]"
     ],
     "proseHashes": [
-     "4ca4c0fe75750834e98c888fe8df278138336fa2"
+     "40fd99301df364005100818c32c37b4101991118"
     ],
     "proseLengths": [
-     3260
+     3739
     ]
    }
   },
