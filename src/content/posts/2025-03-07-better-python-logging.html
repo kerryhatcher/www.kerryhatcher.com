@@ -16,7 +16,7 @@ feature_image_caption: "<span style=\"white-space: pre-wrap;\">Photo by </span><
 ghost_id: "6876a213df7b2049e70a0637"
 ghost_url: "https://www.kerryhatcher.com/better-python-logging/"
 ---
-<p>Is that variable getting set? Why does the loop fail only sometimes? My first instinct is usually to add a <code>print()</code> and try again. Hello, I’m Kerry, and sometimes I abuse <code>print()</code>.</p><hr><h2 id="recognizing-you-have-a-problem">Recognizing you have a problem</h2><p>We’ll use one little car-counting script throughout. First it prints every step, then we give those messages an on/off switch, and finally we use Loguru to show where each message came from and save a copy to a file. I’ll show how I sent a copy to CloudWatch, too.</p><p><a href="https://github.com/kerryhatcher/kerryhatcher.github.io/tree/master/examples/better-python-logging?ref=kerryhatcher.com">Download the Python examples and local run instructions</a>.</p><pre><code>import random
+<p>Is that variable getting set? I stick a <code>print()</code> in there and run it again. Then the loop fails and I add another one. Hello, I’m Kerry, and sometimes I abuse <code>print()</code>.</p><hr><h2 id="recognizing-you-have-a-problem">Recognizing you have a problem</h2><p>I’ve got a little script that counts cars. Follow along and you’ll see it go from printing every step to giving me a switch for the debug output. Then I’ll use Loguru to show where the messages came from and save them to a file. I’ll show you how I sent them to CloudWatch, too.</p><p><a href="https://github.com/kerryhatcher/kerryhatcher.github.io/tree/master/examples/better-python-logging?ref=kerryhatcher.com">Download the Python examples and local run instructions</a>.</p><pre><code>import random
 import time
 
 def count_cars(lotname): 
@@ -209,7 +209,7 @@ if __name__ == "__main__":
 
     logger.info("Grand Total of all cars at all lots:")
     logger.info(all_cars)
-</code></pre><p>Now lets compare the output from the previous example and the current one. The car counts come from random numbers, so the totals differ between runs; the excerpts below show formatting from two example runs.</p><p><strong>Output with debug printing enabled</strong></p><pre><code>App started
+</code></pre><p>Here’s what the two runs printed. The car counts are random, so expect different numbers if you run the script. Look at what each line tells you about where it came from.</p><p><strong>Output with debug printing enabled</strong></p><pre><code>App started
 Counting cars in: 
 henry_ford
 buck_chevy
