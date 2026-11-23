@@ -4,6 +4,8 @@ November 22, 2026 · 43 posts
 
 Each post has proposed copy, a search title and description, a reading-experience change, and any publication checks. Drafts are scoped to specific passages. The source files are the reference for dates, figures, quotations, code, links, and the author’s experience.
 
+The PR also applies the editorial revisions. The live source in `src/content/posts/` is the implementation. Where the review calls for corroboration, the edits use the original evidence and keep uncertainty visible. The publication checks below record the remaining fact and source questions.
+
 ## Start with these pages
 
 The table uses HTP’s saved Google Search Console data for `sc-domain:kerryhatcher.com`, October 25–November 21, 2026, fetched November 22 UTC. The report recorded 23 clicks on 2,340 impressions (0.98% CTR, average position 15.4). Google excluded anonymized queries from query-level rows. Average position mixes different queries and searches.

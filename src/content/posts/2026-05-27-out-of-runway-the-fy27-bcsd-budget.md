@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Out of Runway: The FY27 BCSD Budget"
-dek: "The Bibb County School District is staring at back-to-back eight-figure deficits, a fund balance falling toward zero, and a June 2 deadline. Here's what the math actually says."
+dek: "In May 2026, Bibb County schools faced back-to-back eight-figure deficits and falling reserves. Here’s the math behind two possible paths for FY27."
 date: 2026-05-27T08:00:00.000-04:00
 tags:
   - "bibb-schools"
@@ -10,21 +10,21 @@ tags:
 authors:
   - "Kerry Hatcher"
 feature_image: "/assets/images/remote/hatchdata/2026/05/FY27_two_paths_thumbnail.png"
-feature_image_alt: "Summary graphic: BCSD faces a $23.8M FY27 deficit. Every mill not raised must be matched by ~$5.4M in cuts. A 1-to-5 mill scale shows two balanced options: +1.7 mills (~$12/month on a median home) with $15.8M in cuts, or +4.3 mills (~$30/month) with only $0.68M in cuts."
+feature_image_alt: "Illustration comparing two FY27 deficit scenarios. See the article’s two-path estimate table for figures."
 feature_image_caption: "<span style=\"white-space: pre-wrap;\">Two paths out of the FY27 deficit, and where each one lands on the mill scale.</span>"
+seo_title: "Bibb County FY27 Budget: The $23.8M Gap and Two Paths"
+seo_description: "A May 2026 analysis of Bibb County schools’ tentative budget, potential cuts, reserve projections, and estimated homeowner costs."
 ---
 
-I sat through last Thursday's Bibb County Board of Education budget work session, and I left less encouraged than I went in.
+I sat through the Bibb County Board of Education’s May 21, 2026 budget work session and left less encouraged than I went in. The May 14 tentative FY27 General Fund budget showed a $23.8 million deficit with no change to the school millage rate. On May 21, Dr. Sims’s team walked the board through what it could cut if it had to. The team explicitly said it did not recommend those cuts.
 
-The Superintendent's team walked the board through a menu of cuts they describe as *technically possible but explicitly not recommended*. The kind of slide nobody puts up unless the math has stopped pretending. Dr. Sims wasn't pitching these as a plan. He was showing the board what the floor looks like.
-
-If you'd rather watch it for yourself, here's the full work session. Everything below is my read on what happened in this room.
+Here’s how I read the trade-offs the board was facing heading into the June 2 tentative adoption date. The board could still make changes before final passage, and the tax digest could change the revenue math. You can watch the full May 21 session below.
 
 <figure class="kg-card kg-embed-card kg-card-hascaption"><iframe width="200" height="113" src="https://www.youtube-nocookie.com/embed/QpxVOT7LK7k?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen title="BCSD BOE Meeting 21 May 2026" loading="lazy"></iframe><figcaption><span style="white-space: pre-wrap;">The May 21, 2026 Bibb County Board of Education budget work session, in full.</span></figcaption></figure>
 
 ## The hole we're staring at
 
-The tentatively-adopted FY27 General Fund budget, presented by CFO Eric Bush on May 14, lays out a **$23.8 million deficit** with no millage rate change. That's on top of the **$21.4 million deficit** the district is already running in the current FY26 budget. Two back-to-back eight-figure deficits on a $310M General Fund.
+The tentative FY27 General Fund budget presented by CFO Eric Bush on May 14 lays out a **$23.8 million deficit** with no millage rate change. That's on top of the **$21.4 million deficit** the district is already running in the current FY26 budget. Two back-to-back eight-figure deficits on a $310M General Fund.
 
 A few headline numbers from the tentative adoption presentation:
 
@@ -66,7 +66,7 @@ Further cuts have been discussed previously outside the meeting:
 - Redistricting without closures — **~$1.0M**
 - Close the VIP academy — **~$0.45M**
 
-**Total: about $15.8 million.**
+**My working estimate for the combined cuts is about $15.8 million.** The figures are rounded, and options such as consolidation and redistricting could overlap.
 
 Apply every one of those, including the ones the Superintendent flatly does not recommend, and we are still **$8 million short** of balancing FY27. After consolidating schools, freezing pay, packing more kids into classrooms, and contracting out the people who hold our buildings together. Still short.
 
@@ -82,7 +82,9 @@ Here are the slides CFO Bush showed:
 
 If the cut menu doesn't get you there, the only remaining variable is **revenue**, and the only revenue lever the district actually controls is the **millage rate**.
 
-The tentative adoption deck models four scenarios:
+### District projections from the May 14 budget presentation
+
+The district modeled four scenarios:
 
 | Millage | FY27 Deficit | FY27 Fund Balance Ratio | FY30 Projected Ratio |
 |---|---|---|---|
@@ -91,9 +93,16 @@ The tentative adoption deck models four scenarios:
 | +3 mills (17.674) | $(8.2M) | 13.1% | +5.5% |
 | +4 mills (18.674) | $(2.2M) | 15.1% | +13.2% |
 
-![Comparison chart showing FY27 deficit and projected fund balance ratios under four millage scenarios (current, +2, +3, and +4 mills) through FY30.](/assets/images/remote/hatchdata/2026/05/5JHp3Om4-18.png)
+### My two-path estimate as of May 27
 
-There's no single right number. The math gives you a range: **+1.7 mills with every cut on the menu, or +4.3 mills with minimal cuts.** Anywhere in between, and the board picks the mix.
+| Added mills | Assumed cuts | Estimated monthly cost on a $207,100 home |
+|---|---|---|
+| +1.7 | About $15.8M, assuming all listed cuts are available and can be combined | About $12 |
+| +4.3 | About $0.68M | About $30 |
+
+The homeowner estimates are before exemptions. Overlapping cuts or a different tax digest could change the figures. The infographic uses about $5.4 million per mill as a rough estimate.
+
+![Comparison chart showing FY27 deficit and projected fund balance ratios under four millage scenarios (current, +2, +3, and +4 mills) through FY30.](/assets/images/remote/hatchdata/2026/05/5JHp3Om4-18.png)
 
 ## What I'm not saying
 
@@ -103,7 +112,7 @@ Board President Morton said it plainly at Thursday's session: *"We can't tax our
 
 What I *am* saying is this: **the numbers don't negotiate, and the deadline is Tuesday, June 2.**
 
-Strictly speaking, June 2 is the *tentative* adoption. The board can still tweak the numbers before final passage at the June 18 hearing. In past years, though, the changes between tentative and final have been minimal at best. June 2 is where the direction gets locked in.
+Strictly speaking, June 2 is the *tentative* adoption. The board can still tweak the numbers before final passage at the June 18 hearing. In past years, though, the changes between tentative and final have been minimal at best. I expected the June 2 vote to set the direction.
 
 After June 2, the board owns whatever deficit it carries forward. Anything not fixed by then gets offset later, and "later" in school finance almost always means emergency loans, deeper cuts, or both.
 
@@ -154,9 +163,9 @@ Everything above assumes property valuations look like last year. They probably 
 
 That's worth keeping in mind when the conversation gets locked onto a specific number. The board still has to commit to a direction on June 2. The digest refines the math; it doesn't reset the clock.
 
-## What to do before Tuesday, June 2
+<h2 id="what-to-do-before-tuesday-june-2">What I asked readers to do before the June 2, 2026 vote</h2>
 
-If you live in Bibb County, show up. This is when the deficit gets locked in, one way or another, and even if you don't speak, a full room means something. If you can't be there, email the board. Their addresses are [here](https://simbli.eboardsolutions.com/AboutUs/AboutUs.aspx?S=4013&TID=1). Tell them which tradeoff you'd accept and which you wouldn't.
+If you live in Bibb County, show up. The tentative vote sets the direction for the budget, and even if you don't speak, a full room means something. If you can't be there, email the board. Their addresses are [here](https://simbli.eboardsolutions.com/AboutUs/AboutUs.aspx?S=4013&TID=1). Tell them which tradeoff you'd accept and which you wouldn't.
 
 And share this post. The empty-chair problem at these meetings is real, and I've written about it [before](https://www.kerryhatcher.com/empty-chairs-and-big-decisions-why-the-final-bcsd-budget-hearing-matters/). If you've made it this far, you know more about the FY27 budget than 99% of Bibb County. Help fix that ratio.
 
@@ -176,4 +185,4 @@ Contact me on [Signal](https://signal.org/): `kerryhatcher.03`
 
 If you found this useful, the full infographic below summarizes everything: the deficit, the cut menu, the two paths, and what each end of the range actually costs a homeowner. Save it, send it, post it.
 
-![Full FY27 BCSD budget infographic: $23.8M deficit by June 2; fund balance falls from 7.8% (FY27) to -14.3% (FY30). Every mill not raised must be matched by ~$5.4M of cuts. Path A (cuts-heavy): +1.7 mills (~$12/month on a median home) plus $15.8M in cuts including bigger class sizes, school closures, outsourcing paraprofessionals, pay freeze, and furloughs. Path B (revenue-heavy): +4.3 mills (~$30/month) with only $0.68M in small operational cuts and minimal classroom impact.](/assets/images/remote/hatchdata/2026/05/FY27_two_paths_infographic.png)
+![FY27 budget infographic showing the deficit, projected reserves, and two paths to balance. See the budget figures and estimate table above.](/assets/images/remote/hatchdata/2026/05/FY27_two_paths_infographic.png)
