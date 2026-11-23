@@ -12711,7 +12711,7 @@
       "text": "SSH to AWS, Quick and dirty"
      }
     ],
-    "text": "§ 04 Writing, page 4 43 pieces · Newest first OLD To The West Just a silly vacation video 5 OCT 2012 · 1 MIN READ OLD Mounting Network Drives with C#.net First off, big thanks to aejw for making my life a lot easier by writing an awesome class to make this possible.Download the project files from here, extract cNet... 20 MAR 2012 · 1 MIN READ OLD C#.net Check if user is in Active Directory Group Here is a simple c#.net function to see if a user is in a AD group.Be sure to add the Directory Services as a reference to your project and use:using System.DirectoryServices.Ac... 15 MAR 2012 · 1 MIN READ OLD Networking 101 | Document everything Documentation is you friend. In fact it is so important that you should have you documentation done before you begin, and check it oven to ensure it's accuracy. 10 AUG 2011 · 1 MIN READ OLD Jenkins (Hudson) on Ubuntu 10.04 LTS This is VERY simple. Don't be afraid of using this alternate repo for your Ubuntu Server. As of now, it doesn't seem to update any other software other than Jenkins itself. Howe... 1 JUN 2011 · 1 MIN READ OLD Format and Mount EBS in Ubuntu Once you have a server up and running with an extra disk, you’ll need a few steps to get that disk ready. Here’s what I did with an EBS volume on the official Ubuntu 10.04 LTS A... 3 MAY 2011 · 1 MIN READ OLD SSH to AWS, Quick and dirty So, you've got your EC2 instance up and running? Lets SSH into it.When you were creating your EC2 instance you should have downloaded a file called something.pem . This is the s... 2 MAY 2011 · 1 MIN READ 1 2 3 4 ← Newer",
+    "text": "§ 04 Writing, page 4 43 pieces · Newest first OLD To The West Just a silly vacation video 5 OCT 2012 · 1 MIN READ OLD Mounting Network Drives with C#.net First off, big thanks to aejw for making my life a lot easier by writing an awesome class to make this possible.Download the project files from here, extract cNet... 20 MAR 2012 · 1 MIN READ OLD C#.net Check if user is in Active Directory Group Here is a simple c#.net function to see if a user is in a AD group.Be sure to add the Directory Services as a reference to your project and use:using System.DirectoryServices.Ac... 15 MAR 2012 · 1 MIN READ OLD Networking 101 | Document everything Documentation is you friend. In fact it is so important that you should have you documentation done before you begin, and check it oven to ensure it's accuracy. 10 AUG 2011 · 1 MIN READ OLD Jenkins (Hudson) on Ubuntu 10.04 LTS This is VERY simple. Don't be afraid of using this alternate repo for your Ubuntu Server. As of now, it doesn't seem to update any other software other than Jenkins itself. Howe... 1 JUN 2011 · 1 MIN READ OLD Format and Mount EBS in Ubuntu Once you have a server up and running with an extra disk, you’ll need a few steps to get that disk ready. Here’s what I did with an EBS volume on the official Ubuntu 10.04 LTS A... 3 MAY 2011 · 1 MIN READ OLD SSH to AWS, Quick and dirty Got your EC2 instance running? Here’s how I connect from OS X. Copy the private key you downloaded when you created the instance into your .ssh directory and restrict its file p... 2 MAY 2011 · 1 MIN READ 1 2 3 4 ← Newer",
     "links": [
      {
       "text": "old To The West Just a silly vacation video 5 Oct 2012 · 1 min read",
@@ -12738,7 +12738,7 @@
       "href": "/format-and-mount-ebs-in-ubuntu/"
      },
      {
-      "text": "old SSH to AWS, Quick and dirty So, you've got your EC2 instance up and running? Lets SSH into it.When you were creating your EC2 instance you should have downloaded a file called something.pem . This is the s... 2 May 2011 · 1 min read",
+      "text": "old SSH to AWS, Quick and dirty Got your EC2 instance running? Here’s how I connect from OS X. Copy the private key you downloaded when you created the instance into your .ssh directory and restrict its file p... 2 May 2011 · 1 min read",
       "href": "/ssh-to-aws-quick-and-dirty/"
      },
      {
@@ -13529,7 +13529,7 @@
   "/ssh-to-aws-quick-and-dirty/": {
    "lang": "en",
    "bodyClass": "layout-post",
-   "title": "SSH to AWS, Quick and dirty | Kerry Hatcher",
+   "title": "SSH into AWS EC2 with a PEM Key (2011) | Kerry Hatcher",
    "canonical": "https://www.kerryhatcher.com/ssh-to-aws-quick-and-dirty/",
    "meta": {
     "viewport": "width=device-width, initial-scale=1",
@@ -13539,8 +13539,8 @@
     "og:title": "SSH to AWS, Quick and dirty",
     "author": "Kerry Hatcher",
     "og:locale": "en_US",
-    "description": "So, you've got your EC2 instance up and running? Lets SSH into it.When you were creating your EC2 instance you should have downloaded a file called something.pem . This is the ssh key you will use.Place your somthing.pem file in your .ssh folder by copying/moving it from your downloads. Then set the correct permissions. In OSX this would be something like this: open terminalcp Downloads/somthing.pem .ssh/chmod 0600 .ssh/somthing.pem Now, if you go ahead and try and ssh into your EC2 you will get an error. Why? Becouse you're not using the file you just copied over. Add -i somthing.pem.For example:…",
-    "twitter:description": "So, you've got your EC2 instance up and running? Lets SSH into it.When you were creating your EC2 instance you should have downloaded a file called something.pem . This is the ssh key you will use.Place your somthing.pem file in your .ssh folder by copying/moving it from your downloads. Then set the correct permissions. In OSX this would be something like this: open terminalcp Downloads/somthing.pem .ssh/chmod 0600 .ssh/somthing.pem Now, if you go ahead and try and ssh into your EC2 you will get an error. Why? Becouse you're not using the file you just copied over. Add -i somthing.pem.For example:…",
+    "description": "A short 2011 OS X example of using an EC2 private key, setting file permissions and passing the key to SSH.",
+    "twitter:description": "A short 2011 OS X example of using an EC2 private key, setting file permissions and passing the key to SSH.",
     "og:url": "https://www.kerryhatcher.com/ssh-to-aws-quick-and-dirty/",
     "og:site_name": "Kerry Hatcher",
     "og:type": "article",
@@ -13570,7 +13570,7 @@
       "name": "Kerry Hatcher",
       "url": "https://www.kerryhatcher.com/about/"
      },
-     "description": "So, you&#39;ve got your EC2 instance up and running? Lets SSH into it.When you were creating your EC2 instance you should have downloaded a file called something.pem . This is the ssh key you will use.Place your somthing.pem file in your .ssh folder by copying/moving it from your downloads. Then set the correct permissions. In OSX this would be something like this: open terminalcp Downloads/somthing.pem .ssh/chmod 0600 .ssh/somthing.pem Now, if you go ahead and try and ssh into your EC2 you will get an error. Why? Becouse you&#39;re not using the file you just copied over. Add -i somthing.pem.For example:…",
+     "description": "A short 2011 OS X example of using an EC2 private key, setting file permissions and passing the key to SSH.",
      "headline": "SSH to AWS, Quick and dirty",
      "url": "https://www.kerryhatcher.com/ssh-to-aws-quick-and-dirty/",
      "datePublished": "2011-05-02T23:00:00-05:00",
@@ -13619,7 +13619,7 @@
       "text": "SSH to AWS, Quick and dirty"
      }
     ],
-    "text": "MAY 2, 2011 • 1 MIN READ SSH to AWS, Quick and dirty OLD Photo by Taylor Vick / Unsplash So, you've got your EC2 instance up and running? Lets SSH into it.When you were creating your EC2 instance you should have downloaded a file called something.pem . This is the ssh key you will use.Place your somthing.pem file in your .ssh folder by copying/moving it from your downloads. Then set the correct permissions. In OSX this would be something like this: open terminal cp Downloads/somthing.pem .ssh/ chmod 0600 .ssh/somthing.pem Now, if you go ahead and try and ssh into your EC2 you will get an error. Why? Becouse you're not using the file you just copied over. Add -i somthing.pem.For example: ssh -i App1.pem ubuntu@ec2-40-17-31-130.compute-2.amazonaws.com Kerry · May 2011 Aa Toggle reader-friendly font ← Back to writing",
+    "text": "MAY 2, 2011 • 1 MIN READ SSH to AWS, Quick and dirty OLD Photo by Taylor Vick / Unsplash Got your EC2 instance running? Here’s how I connect from OS X. Copy the private key you downloaded when you created the instance into your .ssh directory and restrict its file permissions. When you connect, give SSH the path to that key with -i. The final line shows a sample Ubuntu login. Use the username for your instance’s image and the hostname for your own instance. open terminal cp Downloads/somthing.pem .ssh/ chmod 0600 .ssh/somthing.pem Now, if you go ahead and try and ssh into your EC2 you will get an error. Why? Becouse you're not using the file you just copied over. Add -i somthing.pem. For example, replace the placeholders with your key file and your instance’s hostname: ssh -i App1.pem ubuntu@ec2-40-17-31-130.compute-2.amazonaws.com Kerry · May 2011 Aa Toggle reader-friendly font ← Back to writing",
     "links": [
      {
       "text": "Taylor Vick",
@@ -13651,13 +13651,13 @@
      "figure": 1,
      "figcaption": 1,
      "table": 0,
-     "pre": 0,
-     "code": 0,
+     "pre": 1,
+     "code": 6,
      "ul": 1,
      "ol": 1,
      "li": 4,
      "blockquote": 0,
-     "proseElements": 6,
+     "proseElements": 13,
      "shellElements": 27
     },
     "outline": [
@@ -13692,10 +13692,10 @@
      "4:span[aria-hidden]"
     ],
     "proseHashes": [
-     "a9d36e00a1efe6dfd2418fec58e0928d74c68769"
+     "c285e48cda2260ddb50cce2f6da6a01220774440"
     ],
     "proseLengths": [
-     716
+     901
     ]
    }
   },
