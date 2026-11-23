@@ -11,6 +11,8 @@ The older posts should sound as if Kerry is writing at the time of publication. 
 - **Show one ordinary example.** The first CDN rewrite still scored 100% AI only. The next pass put a reader in front of a photo and showed what happens when the CDN already has a copy. The example made a cache hit easier to picture.
 - **Give present-day guidance its own place.** Keep compatibility and safety advice in a labeled archive note when the original article needs it. The EBS note keeps the warning about formatting the wrong disk and points readers to the AWS instructions for a current instance.
 
+- **Start with a measurement when the post already has one.** The DNS post is easier to follow when the reader sees a lookup take 283 ms and the download take 124 ms before learning what DNS does. The timings give the distinction between lookup speed and throughput some stakes.
+
 ## Successful GPTZero flips
 
 These are excerpt-level results from `nobotrs analyze --gptzero`. The percentages are GPTZero’s scores for the displayed classes. Short excerpts can vary between runs. The results describe the passages tested and give us observations to compare in later edits.
@@ -23,6 +25,8 @@ These are excerpt-level results from `nobotrs analyze --gptzero`. The percentage
 | [Mounting Network Drives with C#](src/content/posts/2012-03-20-mounting-network-drives-with-c-net.html) | Restored the thanks to aejw and explained the helper from call to result. | AI only 100% → Human only 77.2% | `c084347` |
 | [Install Git 1.8 on RHEL 6](src/content/posts/2014-05-26-install-git-1-8-on-rhel-6.html) | Put PyCharm’s complaints and the unsuccessful Fast Track search back at the center of the opening. | AI only 100% → Human only 72.0% | `c084347` |
 | [Save Money and Protect Your Site with a CDN](src/content/posts/2020-05-07-save-money-protect-your-site-with-a-cdn.html) | Replaced a generic explanation with an example of a reader requesting a photo that the CDN already has. | AI only 100% → Human only 96.3% | `c084347` |
+| [Make Your Internet Faster and Safer for Free](src/content/posts/2020-05-08-make-your-internet-faster-and-safer-for-free.html) | Two definition-first drafts still scored 100% AI only. The accepted draft opened with the actual Firefox timings and used them to introduce DNS. | AI only 100% → Human only 91.0% | `5d3e476` |
+| [Better Python Logging](src/content/posts/2025-03-07-better-python-logging.html) | Restored the joke about overusing `print()` and showed how another failing run leads to another debug print. The output captions point readers to message context while explaining why totals vary. | AI only 100% → Human only 68.4% | `5d3e476` |
 
 ## Adding a new entry
 
