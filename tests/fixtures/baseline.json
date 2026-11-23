@@ -5166,7 +5166,7 @@
   "/format-and-mount-ebs-in-ubuntu/": {
    "lang": "en",
    "bodyClass": "layout-post",
-   "title": "Format and Mount EBS in Ubuntu | Kerry Hatcher",
+   "title": "Formatting and Mounting EBS on Ubuntu 10.04 (2011) | Kerry Hatcher",
    "canonical": "https://www.kerryhatcher.com/format-and-mount-ebs-in-ubuntu/",
    "meta": {
     "viewport": "width=device-width, initial-scale=1",
@@ -5176,8 +5176,8 @@
     "og:title": "Format and Mount EBS in Ubuntu",
     "author": "Kerry Hatcher",
     "og:locale": "en_US",
-    "description": "Once you have a server up and running with an extra disk, you'll need a few extra steps to get that disk ready for use. *Note: This is for the official Ubuntu 10.04 LTS AMI SSH into your instancemounttake note of the /dev/sdX that is mounted i.e. /dev/sda1 on / type ext3 (rw)ls /devtake note of the /dev/sdX that is not the one from step 3fdisk /dev/sdXAt \"Command\" type nat \"Primary or Extended\" type pAt Number of volumes type 1Press \"Return\" two time to accept the defaultsPress W to write the changes and exittype \"mkfs.ext4 /dev/sdX\" to format in Ext4type…",
-    "twitter:description": "Once you have a server up and running with an extra disk, you'll need a few extra steps to get that disk ready for use. *Note: This is for the official Ubuntu 10.04 LTS AMI SSH into your instancemounttake note of the /dev/sdX that is mounted i.e. /dev/sda1 on / type ext3 (rw)ls /devtake note of the /dev/sdX that is not the one from step 3fdisk /dev/sdXAt \"Command\" type nat \"Primary or Extended\" type pAt Number of volumes type 1Press \"Return\" two time to accept the defaultsPress W to write the changes and exittype \"mkfs.ext4 /dev/sdX\" to format in Ext4type…",
+    "description": "Kerry Hatcher’s 2011 notes on preparing an added EBS volume on Ubuntu 10.04 LTS, with a caveat about the example disk path.",
+    "twitter:description": "Kerry Hatcher’s 2011 notes on preparing an added EBS volume on Ubuntu 10.04 LTS, with a caveat about the example disk path.",
     "og:url": "https://www.kerryhatcher.com/format-and-mount-ebs-in-ubuntu/",
     "og:site_name": "Kerry Hatcher",
     "og:type": "article",
@@ -5207,7 +5207,7 @@
       "name": "Kerry Hatcher",
       "url": "https://www.kerryhatcher.com/about/"
      },
-     "description": "Once you have a server up and running with an extra disk, you&#39;ll need a few extra steps to get that disk ready for use. *Note: This is for the official Ubuntu 10.04 LTS AMI SSH into your instancemounttake note of the /dev/sdX that is mounted i.e. /dev/sda1 on / type ext3 (rw)ls /devtake note of the /dev/sdX that is not the one from step 3fdisk /dev/sdXAt &quot;Command&quot; type nat &quot;Primary or Extended&quot; type pAt Number of volumes type 1Press &quot;Return&quot; two time to accept the defaultsPress W to write the changes and exittype &quot;mkfs.ext4 /dev/sdX&quot; to format in Ext4type…",
+     "description": "Kerry Hatcher’s 2011 notes on preparing an added EBS volume on Ubuntu 10.04 LTS, with a caveat about the example disk path.",
      "headline": "Format and Mount EBS in Ubuntu",
      "url": "https://www.kerryhatcher.com/format-and-mount-ebs-in-ubuntu/",
      "datePublished": "2011-05-03T21:00:00-05:00",
@@ -5256,7 +5256,7 @@
       "text": "Format and Mount EBS in Ubuntu"
      }
     ],
-    "text": "MAY 3, 2011 • 1 MIN READ Format and Mount EBS in Ubuntu OLD Photo by Gabriel Heinzer / Unsplash Once you have a server up and running with an extra disk, you'll need a few extra steps to get that disk ready for use. *Note: This is for the official Ubuntu 10.04 LTS AMI SSH into your instance mount take note of the /dev/sdX that is mounted i.e. /dev/sda1 on / type ext3 (rw) ls /dev take note of the /dev/sdX that is not the one from step 3 fdisk /dev/sdX At \"Command\" type n at \"Primary or Extended\" type p At Number of volumes type 1 Press \"Return\" two time to accept the defaults Press W to write the changes and exit type \"mkfs.ext4 /dev/sdX\" to format in Ext4 type \"mkdir /media/ebs\" type \"mount /dev/sdX /media/ebs\" to mount the drive Kerry · May 2011 Aa Toggle reader-friendly font ← Back to writing",
+    "text": "MAY 3, 2011 • 1 MIN READ Format and Mount EBS in Ubuntu OLD Photo by Gabriel Heinzer / Unsplash Once you have a server up and running with an extra disk, you’ll need a few steps to get that disk ready. Here’s what I did with an EBS volume on the official Ubuntu 10.04 LTS AMI. Archive note. Check the disk before running these commands. Formatting erases data. The example uses /dev/sdX for both partitioning and formatting, so confirm whether you intend to format the whole disk or a partition. For a current EC2 instance, see AWS’s guide to identifying, formatting, and mounting an EBS volume. SSH into your instance mount take note of the /dev/sdX that is mounted i.e. /dev/sda1 on / type ext3 (rw) ls /dev take note of the /dev/sdX that is not the one from step 3 fdisk /dev/sdX At \"Command\" type n at \"Primary or Extended\" type p At Number of volumes type 1 Press \"Return\" two time to accept the defaults Press W to write the changes and exit type \"mkfs.ext4 /dev/sdX\" to format in Ext4 type \"mkdir /media/ebs\" type \"mount /dev/sdX /media/ebs\" to mount the drive Kerry · May 2011 Aa Toggle reader-friendly font ← Back to writing",
     "links": [
      {
       "text": "Gabriel Heinzer",
@@ -5265,6 +5265,10 @@
      {
       "text": "Unsplash",
       "href": "https://unsplash.com/?utm_source=ghost&utm_medium=referral&utm_campaign=api-credit"
+     },
+     {
+      "text": "AWS’s guide to identifying, formatting, and mounting an EBS volume",
+      "href": "https://docs.aws.amazon.com/ebs/latest/userguide/ebs-using-volumes.html"
      },
      {
       "text": "← Back to writing",
@@ -5289,12 +5293,12 @@
      "figcaption": 1,
      "table": 0,
      "pre": 0,
-     "code": 0,
+     "code": 14,
      "ul": 1,
      "ol": 1,
      "li": 15,
      "blockquote": 0,
-     "proseElements": 17,
+     "proseElements": 33,
      "shellElements": 27
     },
     "outline": [
@@ -5329,10 +5333,10 @@
      "4:span[aria-hidden]"
     ],
     "proseHashes": [
-     "09959fb9fbef013e496cae03513d1aed84a1870e"
+     "56399d0db4236242e495a809000db02ba3ef0212"
     ],
     "proseLengths": [
-     779
+     1390
     ]
    }
   },
@@ -12707,7 +12711,7 @@
       "text": "SSH to AWS, Quick and dirty"
      }
     ],
-    "text": "§ 04 Writing, page 4 43 pieces · Newest first OLD To The West Just a silly vacation video 5 OCT 2012 · 1 MIN READ OLD Mounting Network Drives with C#.net First off, big thanks to aejw for making my life a lot easier by writing an awesome class to make this possible.Download the project files from here, extract cNet... 20 MAR 2012 · 1 MIN READ OLD C#.net Check if user is in Active Directory Group Here is a simple c#.net function to see if a user is in a AD group.Be sure to add the Directory Services as a reference to your project and use:using System.DirectoryServices.Ac... 15 MAR 2012 · 1 MIN READ OLD Networking 101 | Document everything Documentation is you friend. In fact it is so important that you should have you documentation done before you begin, and check it oven to ensure it's accuracy. 10 AUG 2011 · 1 MIN READ OLD Jenkins (Hudson) on Ubuntu 10.04 LTS This is VERY simple. Don't be afraid of using this alternate repo for your Ubuntu Server. As of now, it doesn't seem to update any other software other than Jenkins itself. Howe... 1 JUN 2011 · 1 MIN READ OLD Format and Mount EBS in Ubuntu Once you have a server up and running with an extra disk, you'll need a few extra steps to get that disk ready for use. *Note: This is for the official Ubuntu 10.04 LTS AMISSH i... 3 MAY 2011 · 1 MIN READ OLD SSH to AWS, Quick and dirty So, you've got your EC2 instance up and running? Lets SSH into it.When you were creating your EC2 instance you should have downloaded a file called something.pem . This is the s... 2 MAY 2011 · 1 MIN READ 1 2 3 4 ← Newer",
+    "text": "§ 04 Writing, page 4 43 pieces · Newest first OLD To The West Just a silly vacation video 5 OCT 2012 · 1 MIN READ OLD Mounting Network Drives with C#.net First off, big thanks to aejw for making my life a lot easier by writing an awesome class to make this possible.Download the project files from here, extract cNet... 20 MAR 2012 · 1 MIN READ OLD C#.net Check if user is in Active Directory Group Here is a simple c#.net function to see if a user is in a AD group.Be sure to add the Directory Services as a reference to your project and use:using System.DirectoryServices.Ac... 15 MAR 2012 · 1 MIN READ OLD Networking 101 | Document everything Documentation is you friend. In fact it is so important that you should have you documentation done before you begin, and check it oven to ensure it's accuracy. 10 AUG 2011 · 1 MIN READ OLD Jenkins (Hudson) on Ubuntu 10.04 LTS This is VERY simple. Don't be afraid of using this alternate repo for your Ubuntu Server. As of now, it doesn't seem to update any other software other than Jenkins itself. Howe... 1 JUN 2011 · 1 MIN READ OLD Format and Mount EBS in Ubuntu Once you have a server up and running with an extra disk, you’ll need a few steps to get that disk ready. Here’s what I did with an EBS volume on the official Ubuntu 10.04 LTS A... 3 MAY 2011 · 1 MIN READ OLD SSH to AWS, Quick and dirty So, you've got your EC2 instance up and running? Lets SSH into it.When you were creating your EC2 instance you should have downloaded a file called something.pem . This is the s... 2 MAY 2011 · 1 MIN READ 1 2 3 4 ← Newer",
     "links": [
      {
       "text": "old To The West Just a silly vacation video 5 Oct 2012 · 1 min read",
@@ -12730,7 +12734,7 @@
       "href": "/jenkins-hudson-on-ubuntu-10-04-lts/"
      },
      {
-      "text": "old Format and Mount EBS in Ubuntu Once you have a server up and running with an extra disk, you'll need a few extra steps to get that disk ready for use. *Note: This is for the official Ubuntu 10.04 LTS AMISSH i... 3 May 2011 · 1 min read",
+      "text": "old Format and Mount EBS in Ubuntu Once you have a server up and running with an extra disk, you’ll need a few steps to get that disk ready. Here’s what I did with an EBS volume on the official Ubuntu 10.04 LTS A... 3 May 2011 · 1 min read",
       "href": "/format-and-mount-ebs-in-ubuntu/"
      },
      {
