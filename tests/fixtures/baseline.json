@@ -2454,7 +2454,7 @@
   "/coding-with-ai-episode-2-supercharging-your-python-workflow-with-github-copilot-ruff/": {
    "lang": "en",
    "bodyClass": "layout-post",
-   "title": "Coding with AI - Episode 2: Supercharging Your Python Workflow with GitHub Copilot + Ruff | Kerry Hatcher",
+   "title": "GitHub Copilot and Ruff in VS Code for Python | Episode 2 | Kerry Hatcher",
    "canonical": "https://www.kerryhatcher.com/coding-with-ai-episode-2-supercharging-your-python-workflow-with-github-copilot-ruff/",
    "meta": {
     "viewport": "width=device-width, initial-scale=1",
@@ -2464,8 +2464,8 @@
     "og:title": "Coding with AI - Episode 2: Supercharging Your Python Workflow with GitHub Copilot + Ruff",
     "author": "Kerry Hatcher",
     "og:locale": "en_US",
-    "description": "Welcome back to the blog, fellow coders! In Episode 2, we’re taking GitHub Copilot, your AI coding sidekick, to the next level by combining it with Ruff, a lightning-fast Python linter and formatter. In the video embedded below, you’ll see how Copilot predicts your code and how Ruff ensures it's clean and consistent, all with minimal effort. If you're following along for the first time, make sure your editor (VS Code) has the GitHub Copilot extension installed and you're signed into your GitHub account. Now let's dive deeper than the video and break down each step, so you can not…",
-    "twitter:description": "Welcome back to the blog, fellow coders! In Episode 2, we’re taking GitHub Copilot, your AI coding sidekick, to the next level by combining it with Ruff, a lightning-fast Python linter and formatter. In the video embedded below, you’ll see how Copilot predicts your code and how Ruff ensures it's clean and consistent, all with minimal effort. If you're following along for the first time, make sure your editor (VS Code) has the GitHub Copilot extension installed and you're signed into your GitHub account. Now let's dive deeper than the video and break down each step, so you can not…",
+    "description": "Guide Copilot with comments, use Ruff to format and lint Python, and set up a pre-commit hook in this VS Code walkthrough.",
+    "twitter:description": "Guide Copilot with comments, use Ruff to format and lint Python, and set up a pre-commit hook in this VS Code walkthrough.",
     "og:url": "https://www.kerryhatcher.com/coding-with-ai-episode-2-supercharging-your-python-workflow-with-github-copilot-ruff/",
     "og:site_name": "Kerry Hatcher",
     "og:type": "article",
@@ -2495,7 +2495,7 @@
       "name": "Kerry Hatcher",
       "url": "https://www.kerryhatcher.com/about/"
      },
-     "description": "Welcome back to the blog, fellow coders! In Episode 2, we’re taking GitHub Copilot, your AI coding sidekick, to the next level by combining it with Ruff, a lightning-fast Python linter and formatter. In the video embedded below, you’ll see how Copilot predicts your code and how Ruff ensures it&#39;s clean and consistent, all with minimal effort. If you&#39;re following along for the first time, make sure your editor (VS Code) has the GitHub Copilot extension installed and you&#39;re signed into your GitHub account. Now let&#39;s dive deeper than the video and break down each step, so you can not…",
+     "description": "Guide Copilot with comments, use Ruff to format and lint Python, and set up a pre-commit hook in this VS Code walkthrough.",
      "headline": "Coding with AI - Episode 2: Supercharging Your Python Workflow with GitHub Copilot + Ruff",
      "url": "https://www.kerryhatcher.com/coding-with-ai-episode-2-supercharging-your-python-workflow-with-github-copilot-ruff/",
      "datePublished": "2025-09-02T16:00:29-05:00",
@@ -2576,7 +2576,7 @@
       "text": "Final Thoughts"
      }
     ],
-    "text": "SEPTEMBER 2, 2025 • 4 MIN READ Coding with AI - Episode 2: Supercharging Your Python Workflow with GitHub Copilot + Ruff Boost your coding flow by pairing GitHub Copilot’s smart autocomplete with Ruff’s lightning-fast linting. Learn how to guide AI with comments, enforce clean code automatically, and keep your Python projects consistent and secure. Photo by Jan Huber / Unsplash Welcome back to the blog, fellow coders! In Episode 2, we’re taking GitHub Copilot, your AI coding sidekick, to the next level by combining it with Ruff, a lightning-fast Python linter and formatter. In the video embedded below, you’ll see how Copilot predicts your code and how Ruff ensures it's clean and consistent, all with minimal effort. If you're following along for the first time, make sure your editor (VS Code) has the GitHub Copilot extension installed and you're signed into your GitHub account. Now let's dive deeper than the video and break down each step, so you can not just follow, but understand every part of the process. 1. Setting Up GitHub Copilot in VS Code Why install it? Copilot analyzes the context of your open files and your already-typed code to suggest completions that feel like they’re written by you. It’s ghost text that appears as you type, pressing Tab accepts the suggestion or Escape dismisses it. Pro Tip: Use descriptive variable and function names, this clarity improves Copilot’s suggestions, because clean code in, clean code out (its also helpful to humans as well, future you will thank you) 2. Guiding Copilot with Comments Adding a focused comment like: # Write a function that scrapes headlines from a news site elicits a complete function stub from Copilot, great for scaffolding! Remember this: Keep comments short yet precise. Stubbing out functionality in comments will help you think though your project before you start coding. Comments are just as important for people as they are AI agents. For example: # fetch top news headlines as list of strings 3. Introduce Ruff for Code Hygiene 💡 Ruff's documentation is great. I feel like I learn something new from it all the time. Ruff An extremely fast Python linter and code formatter, written in Rust. LOGO CHARLIERMARSH Linting and formatting tools like Ruff are your code’s best friend. Ruff is fast, easy to install, and enforces consistency, and can even catch potential issues Copilot may inadvertently produce. If you are not using UV or don't know what it is, then read this! How to install Ruff: uv add --dev ruff or to install ruff globally uv tool install ruff you can also install via pip, pipx, and poetry You can make sure Copilot knows to use ruff by using a .copilot-instructions.yml file with: # GitHub Copilot Project Instructions always run any generated code through the ruff tool for linting and style fixes. This gets Copilot to produce cleaner code right out of the gate. 4. Seeing Ruff in Action Run the following check and lint your project. ruff format . ruff check . The ruff format . command will automatically fix many minor issues in the format and layout of your code. It won't change what it does, just how it looks to us humans. When you run ruff check ., you'll get a breakdown of issues, style infractions or potential bugs. Review errors manually or prompt Copilot to refine. Using Ruff ensures consistency, speed, and reliability. Ruff is a must no matter if your code is created by humans or AI. 5. Automate with Pre-Commit Hooks Keep your repository clean automatically by making Ruff a gatekeeper with a pre-commit hook: Install and activate: uv add --dev pre-commit pre-commit install In .pre-commit-config.yaml: repos: - repo: https://github.com/charliermarsh/ruff-pre-commit rev: v0.0.258 hooks: - id: ruff Now, Ruff runs before commits, code must pass your linting rules to be committed. 6. Know the Limits, Stay in the Loop AI like Copilot is a helpful assistant, not a replacement for critical thinking. It can generate insecure, inefficient, or outdated code. Always examine, test, and review what Copilot outputs. Future episodes will dive into tools like SonarQube for catching deeper logic and security issues. 7. What’s Next? In the upcoming Episode 3, you’ll explore securing your workflow further, introducing automated scanning tools alongside Copilot to catch problems early, whether for security, efficiency, or code quality. Final Thoughts The future of coding isn’t AI replacing you, it’s AI enhancing you. By using tools like Copilot and Ruff together, you’re building a workflow where your assistant is precise, self-checking, and aligned with your standards. Share your Copilot + linter setup in the comments! I’d love to hear how you keep your code clean and consistent. Stay curious, stay critical, and happy coding! -Kerry Kerry · September 2025 Aa Toggle reader-friendly font ← Back to writing",
+    "text": "SEPTEMBER 2, 2025 • 4 MIN READ Coding with AI - Episode 2: Supercharging Your Python Workflow with GitHub Copilot + Ruff Boost your coding flow by pairing GitHub Copilot’s smart autocomplete with Ruff’s lightning-fast linting. Learn how to guide AI with comments, enforce clean code automatically, and keep your Python projects consistent and secure. Photo by Jan Huber / Unsplash I’m doing two things in this one. First I’ll write a comment and see what Copilot suggests. Then I’ll run Ruff on the Python code. It can fix the formatting and point out stuff for me to look at. I’ll also show the hook I use to run the lint check before a commit. Want to try it with me? Open VS Code, install the GitHub Copilot extension, and sign in to GitHub. I install Ruff with uv below. 1. Setting Up GitHub Copilot in VS Code Why install it? Copilot analyzes the context of your open files and your already-typed code to suggest completions that feel like they’re written by you. It’s ghost text that appears as you type, pressing Tab accepts the suggestion or Escape dismisses it. Pro Tip: Use descriptive variable and function names, this clarity improves Copilot’s suggestions, because clean code in, clean code out (its also helpful to humans as well, future you will thank you) 2. Guiding Copilot with Comments Adding a focused comment like: # Write a function that scrapes headlines from a news site elicits a complete function stub from Copilot, great for scaffolding! Remember this: Keep comments short yet precise. Stubbing out functionality in comments will help you think though your project before you start coding. Comments are just as important for people as they are AI agents. For example: # fetch top news headlines as list of strings A separate example: after a comment asking to fetch user data from an API, Copilot suggests a fetch_user_data function. 3. Introduce Ruff for Code Hygiene 💡 Ruff's documentation is great. I feel like I learn something new from it all the time. Ruff An extremely fast Python linter and code formatter, written in Rust. LOGO CHARLIERMARSH Linting and formatting tools like Ruff are your code’s best friend. Ruff is fast, easy to install, and enforces consistency, and can even catch potential issues Copilot may inadvertently produce. If you are not using UV or don't know what it is, then read this! How to install Ruff: uv add --dev ruff or to install ruff globally uv tool install ruff you can also install via pip, pipx, and poetry You can make sure Copilot knows to use ruff by using a .copilot-instructions.yml file with: # GitHub Copilot Project Instructions always run any generated code through the ruff tool for linting and style fixes. This gets Copilot to produce cleaner code right out of the gate. 4. Seeing Ruff in Action Run the following check and lint your project. Fix the formatting ruff format . The ruff format . command will automatically fix many minor issues in the format and layout of your code. It won't change what it does, just how it looks to us humans. See what the linter finds ruff check . When you run ruff check ., you'll get a breakdown of issues, style infractions or potential bugs. Review errors manually or prompt Copilot to refine. Using Ruff ensures consistency, speed, and reliability. Ruff is a must no matter if your code is created by humans or AI. 5. Automate with Pre-Commit Hooks Keep your repository clean automatically by making Ruff a gatekeeper with a pre-commit hook: Install and activate: uv add --dev pre-commit pre-commit install In .pre-commit-config.yaml: repos: - repo: https://github.com/charliermarsh/ruff-pre-commit rev: v0.0.258 hooks: - id: ruff Now, Ruff runs before commits, code must pass your linting rules to be committed. 6. Know the Limits, Stay in the Loop AI like Copilot is a helpful assistant, not a replacement for critical thinking. It can generate insecure, inefficient, or outdated code. Always examine, test, and review what Copilot outputs. Future episodes will dive into tools like SonarQube for catching deeper logic and security issues. 7. What’s Next? In the upcoming Episode 3, you’ll explore securing your workflow further, introducing automated scanning tools alongside Copilot to catch problems early, whether for security, efficiency, or code quality. Final Thoughts The future of coding isn’t AI replacing you, it’s AI enhancing you. By using tools like Copilot and Ruff together, you’re building a workflow where your assistant is precise, self-checking, and aligned with your standards. Share your Copilot + linter setup in the comments! I’d love to hear how you keep your code clean and consistent. Stay curious, stay critical, and happy coding! -Kerry Kerry · September 2025 Aa Toggle reader-friendly font ← Back to writing",
     "links": [
      {
       "text": "Jan Huber",
@@ -2670,17 +2670,17 @@
     ],
     "iframes": [],
     "counts": {
-     "p": 30,
+     "p": 32,
      "figure": 6,
-     "figcaption": 1,
+     "figcaption": 2,
      "table": 0,
-     "pre": 8,
-     "code": 15,
+     "pre": 9,
+     "code": 18,
      "ul": 3,
      "ol": 0,
      "li": 8,
      "blockquote": 0,
-     "proseElements": 120,
+     "proseElements": 130,
      "shellElements": 26
     },
     "outline": [
@@ -2714,10 +2714,10 @@
      "4:span[aria-hidden]"
     ],
     "proseHashes": [
-     "53c7bac513791681f64d93b2d449b0f00ff26b1a"
+     "1317420d91267074f5eab4666c1fc2356afe60f2"
     ],
     "proseLengths": [
-     7856
+     7991
     ]
    }
   },
@@ -16395,7 +16395,7 @@
     "id": "https://www.kerryhatcher.com/coding-with-ai-episode-2-supercharging-your-python-workflow-with-github-copilot-ruff",
     "published": "2025-09-02T16:00:29-05:00",
     "updated": "2025-09-02T16:00:29-05:00",
-    "contentHash": "03ff3039dc11b7d4b5046053c40dd6fd3fa5b14f"
+    "contentHash": "db05c77d601dfaf3e3c5265c667ea5b972f9f433"
    },
    {
     "title": "Coding with AI - Episode 1: How Real‑Time Collaboration Transforms Your Workflow",
