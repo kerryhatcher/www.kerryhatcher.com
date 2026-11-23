@@ -8726,7 +8726,7 @@
       "text": "The Tomcat conflict I ran into"
      }
     ],
-    "text": "JUNE 1, 2011 • 1 MIN READ Jenkins (Hudson) on Ubuntu 10.04 LTS OLD Photo by Alev Takil / Unsplash This is pretty simple. I used the Jenkins Debian package repo on Ubuntu 10.04 LTS. So far it only seems to update Jenkins itself. I’d still fire up a VM and give it a quick try before putting it on a server you rely on. Archive note. The repository and commands below are specific to this Ubuntu 10.04 setup. The first step is to add the Jenkins key to your apt. wget -q -O - http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add - Then add the repo to your sources list (/et/apt/sources.list). I just added it to the bottom with a quick #comment to let others know what it is: #Jenkins CI Server Repo deb http://pkg.jenkins-ci.org/debian binary Now update and install with aptitude: sudo aptitude update sudo aptitude install jenkins The Tomcat conflict I ran into When I first started. I installed Tomcat during the Ubuntu setup. I had read that would be the preferred way to deploy Hudson (Hudson was renamed Jenkins due to a trademark dispute with Oracle). Don't do this!! If you do, just aptitude remove tomcat6 and service restart jenkins. Original Jenkins Debian package instructions Kerry · June 2011 Aa Toggle reader-friendly font ← Back to writing",
+    "text": "JUNE 1, 2011 • 1 MIN READ Jenkins (Hudson) on Ubuntu 10.04 LTS OLD Photo by Alev Takil / Unsplash This is pretty simple. I used the Jenkins Debian package repo on my Ubuntu server. So far it doesn’t look like it updates anything besides Jenkins. I’d still fire up a virtual machine and give it a quick try before installing it on a server you depend on. Archive note. The repository and commands below are specific to this Ubuntu 10.04 setup. The first step is to add the Jenkins key to your apt. wget -q -O - http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add - Then add the repo to your sources list (/et/apt/sources.list). I just added it to the bottom with a quick #comment to let others know what it is: #Jenkins CI Server Repo deb http://pkg.jenkins-ci.org/debian binary Now update and install with aptitude: sudo aptitude update sudo aptitude install jenkins The Tomcat conflict I ran into When I first started. I installed Tomcat during the Ubuntu setup. I had read that would be the preferred way to deploy Hudson (Hudson was renamed Jenkins due to a trademark dispute with Oracle). Don't do this!! If you do, just aptitude remove tomcat6 and service restart jenkins. Original Jenkins Debian package instructions Kerry · June 2011 Aa Toggle reader-friendly font ← Back to writing",
     "links": [
      {
       "text": "Alev Takil",
@@ -8811,10 +8811,10 @@
      "4:span[aria-hidden]"
     ],
     "proseHashes": [
-     "242c260dd81cc0b927c2f4b0c508f56ebcf7cca9"
+     "f3709fb3ccb90050c11001665fae01d9a1998f02"
     ],
     "proseLengths": [
-     1577
+     1613
     ]
    }
   },
@@ -12858,7 +12858,7 @@
       "text": "SSH to AWS, Quick and dirty"
      }
     ],
-    "text": "§ 04 Writing, page 4 43 pieces · Newest first OLD To The West Just a silly vacation video 5 OCT 2012 · 1 MIN READ OLD Mounting Network Drives with C#.net I used aejw’s NetworkDrive class to map a network share from C#. Big thanks to aejw for saving me the work. The wrapper calls the class with its default credentials behavior whe... 20 MAR 2012 · 1 MIN READ OLD C#.net Check if user is in Active Directory Group Here’s a little C# function to see if the current user is in an Active Directory group. Give it the group name and it looks up your Windows login by SAM account name using the u... 15 MAR 2012 · 1 MIN READ OLD Networking 101 | Document everything Draw the network, photograph the setup, and keep the plan handy for the next person. 10 AUG 2011 · 2 MIN READ OLD Jenkins (Hudson) on Ubuntu 10.04 LTS This is pretty simple. I used the Jenkins Debian package repo on Ubuntu 10.04 LTS. So far it only seems to update Jenkins itself. I’d still fire up a VM and give it a quick try ... 1 JUN 2011 · 1 MIN READ OLD Format and Mount EBS in Ubuntu Once you have a server up and running with an extra disk, you’ll need a few steps to get that disk ready. Here’s what I did with an EBS volume on the official Ubuntu 10.04 LTS A... 3 MAY 2011 · 1 MIN READ OLD SSH to AWS, Quick and dirty Got your EC2 instance running? Here’s how I connect from OS X. Copy the private key you downloaded when you created the instance into your .ssh directory and restrict its file p... 2 MAY 2011 · 1 MIN READ 1 2 3 4 ← Newer",
+    "text": "§ 04 Writing, page 4 43 pieces · Newest first OLD To The West Just a silly vacation video 5 OCT 2012 · 1 MIN READ OLD Mounting Network Drives with C#.net I used aejw’s NetworkDrive class to map a network share from C#. Big thanks to aejw for saving me the work. The wrapper calls the class with its default credentials behavior whe... 20 MAR 2012 · 1 MIN READ OLD C#.net Check if user is in Active Directory Group Here’s a little C# function to see if the current user is in an Active Directory group. Give it the group name and it looks up your Windows login by SAM account name using the u... 15 MAR 2012 · 1 MIN READ OLD Networking 101 | Document everything Draw the network, photograph the setup, and keep the plan handy for the next person. 10 AUG 2011 · 2 MIN READ OLD Jenkins (Hudson) on Ubuntu 10.04 LTS This is pretty simple. I used the Jenkins Debian package repo on my Ubuntu server. So far it doesn’t look like it updates anything besides Jenkins. I’d still fire up a virtual m... 1 JUN 2011 · 1 MIN READ OLD Format and Mount EBS in Ubuntu Once you have a server up and running with an extra disk, you’ll need a few steps to get that disk ready. Here’s what I did with an EBS volume on the official Ubuntu 10.04 LTS A... 3 MAY 2011 · 1 MIN READ OLD SSH to AWS, Quick and dirty Got your EC2 instance running? Here’s how I connect from OS X. Copy the private key you downloaded when you created the instance into your .ssh directory and restrict its file p... 2 MAY 2011 · 1 MIN READ 1 2 3 4 ← Newer",
     "links": [
      {
       "text": "old To The West Just a silly vacation video 5 Oct 2012 · 1 min read",
@@ -12877,7 +12877,7 @@
       "href": "/networking-101-document-everything/"
      },
      {
-      "text": "old Jenkins (Hudson) on Ubuntu 10.04 LTS This is pretty simple. I used the Jenkins Debian package repo on Ubuntu 10.04 LTS. So far it only seems to update Jenkins itself. I’d still fire up a VM and give it a quick try ... 1 Jun 2011 · 1 min read",
+      "text": "old Jenkins (Hudson) on Ubuntu 10.04 LTS This is pretty simple. I used the Jenkins Debian package repo on my Ubuntu server. So far it doesn’t look like it updates anything besides Jenkins. I’d still fire up a virtual m... 1 Jun 2011 · 1 min read",
       "href": "/jenkins-hudson-on-ubuntu-10-04-lts/"
      },
      {
