@@ -41,6 +41,7 @@ These are excerpt-level results from `nobotrs analyze --gptzero`. The percentage
 | [Meet Me At The Mall](src/content/posts/2025-04-09-meet-me-at-the-mall.html) | Used the author’s account of what people could see and do, from hands-on CPR to the children’s activities. | AI only 100% → Human only 99.6% | `cc56fe2` |
 | [Still Waiting](src/content/posts/2025-04-16-still-waiting-a-transparency-update-from-bibb-county-schools-and-the-state-superintendent.html) | After two rewrites stayed AI only, the third let the records-request dates carry the opening. The district and state responses stay with their quotations. | AI only 50.1% (low confidence) → Human only 99.98% | `cc56fe2` |
 | [Investing in Bibb County’s Future](src/content/posts/2025-05-16-investing-in-bibb-countys-future.html) | Restored the author’s own request in the opening, distinguished it from the district’s modeled raise, and walked readers into the tax calculation using a house price before exemptions. | AI only 100% → Human only 98.2% | `eaaad18` |
+| [Better Schools, Brighter Futures: Literacy Special Edition](src/content/posts/2025-06-09-better-schools-brighter-futures-literacy-special-edition.html) | The fourth rewrite opened with the one job the author wanted to keep, kept the 18% figure with its attribution, and made the hearing request specific. | AI only 100% → Human only 86.1% | `3c19efb` |
 
 ## Mixed to Human only
 
@@ -49,6 +50,9 @@ These are excerpt-level results from `nobotrs analyze --gptzero`. The percentage
 ## Unresolved scans
 
 - [Taking Control of Your Email, Part 1](src/content/posts/2025-06-03-taking-control-of-your-email-part-1-choosing-a-private-email-provider.html) stayed AI only at 100% across four revisions of the same ten paragraphs. The accepted draft keeps the provider comparisons easier to scan, dates the price examples to June 2025, and avoids treating paid plans as a guarantee of deliverability. Accepted in `eaaad18`. Four follow-up rounds on those same paragraphs also scored AI only at 100%. The final draft states the reason for choosing Fastmail and the encryption trade-off up front, trims repeated provider descriptions, and keeps the pricing dated and the DNS example intact. Accepted in `b3e8a71`.
+- [Introducing Better Schools, Brighter Futures](src/content/posts/2025-06-04-introducing-the-better-schools-brighter-futures-series-learning-from-schools-that-beat-the-odds-2.html) All four rounds scored AI only at 100%. The revision replaces broad topic previews with questions for Bibb County schools and keeps the dissertation attribution. Accepted in `3c19efb`.
+- [Taking Control of Your Email, Part 2](src/content/posts/2025-06-05-taking-control-of-your-email-part-2-using-your-own-domain-for-email.html) All four rounds stayed AI only. Round three fell to 66.2% AI only before round four returned to 100%. The accepted draft retains the domain-portability example and the DNS migration warning. Accepted in `3c19efb`.
+- [Digital Privacy and Freedoms Are Under Threat](src/content/posts/2025-06-13-digital-privacy-and-freedoms-are-under-threat.html) All four rounds scored AI only at 100%. Round two returned HTTP 502 on the first attempt and scored successfully when retried. The accepted draft keeps the author’s parental perspective, attributes the warnings to EFF, and dates the legislative status and call to action. Accepted in `3c19efb`.
 
 ## Adding a new entry
 
