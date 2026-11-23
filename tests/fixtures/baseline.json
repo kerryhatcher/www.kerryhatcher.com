@@ -5371,25 +5371,25 @@
   "/gear-review-focusrite-scarlet-solo/": {
    "lang": "en",
    "bodyClass": "layout-post",
-   "title": "Gear Review: Focusrite Scarlet Solo | Kerry Hatcher",
+   "title": "Focusrite Scarlett Solo Review for Linux and Work Calls | Kerry Hatcher",
    "canonical": "https://www.kerryhatcher.com/gear-review-focusrite-scarlet-solo/",
    "meta": {
     "viewport": "width=device-width, initial-scale=1",
     "color-scheme": "dark light",
     "theme-color[(prefers-color-scheme: dark)]": "#161f30",
     "theme-color[(prefers-color-scheme: light)]": "#eef2f8",
-    "og:title": "Gear Review: Focusrite Scarlet Solo",
+    "og:title": "Gear Review: Focusrite Scarlett Solo",
     "author": "Kerry Hatcher",
     "og:locale": "en_US",
-    "description": "Over the years, especially since 2020, I’ve struggled to find a reliable audio setup for online meetings. The most reliable was for a while my Bose Quite Comfort headphones but they had the same drawback as other wireless solutions: battery life. On the other hand, some “gaming“ headsets that were USB wouldn’t have the battery issue, but rather they would fall apart with extended daily professional use. TL;DR: For years now my Focusrite Scarlett Solo has worked fantastically. Highly recommended if you are looking for an great single microphone input device. Works great with Linux, MacOS, and Windows Very portable…",
-    "twitter:description": "Over the years, especially since 2020, I’ve struggled to find a reliable audio setup for online meetings. The most reliable was for a while my Bose Quite Comfort headphones but they had the same drawback as other wireless solutions: battery life. On the other hand, some “gaming“ headsets that were USB wouldn’t have the battery issue, but rather they would fall apart with extended daily professional use. TL;DR: For years now my Focusrite Scarlett Solo has worked fantastically. Highly recommended if you are looking for an great single microphone input device. Works great with Linux, MacOS, and Windows Very portable…",
+    "description": "My experience using a Focusrite Scarlett Solo with an XLR broadcast headset for daily meetings on Pop!_OS and a work Mac.",
+    "twitter:description": "My experience using a Focusrite Scarlett Solo with an XLR broadcast headset for daily meetings on Pop!_OS and a work Mac.",
     "og:url": "https://www.kerryhatcher.com/gear-review-focusrite-scarlet-solo/",
     "og:site_name": "Kerry Hatcher",
     "og:type": "article",
     "og:image": "https://images.unsplash.com/photo-1671103176160-6e15bf3806f9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDJ8fEZvY3Vzcml0ZXxlbnwwfHx8fDE3NDE3MDQ3MjF8MA&ixlib=rb-4.0.3&q=80&w=2000",
     "article:published_time": "2025-03-13T09:38:30-05:00",
     "twitter:card": "summary_large_image",
-    "twitter:title": "Gear Review: Focusrite Scarlet Solo",
+    "twitter:title": "Gear Review: Focusrite Scarlett Solo",
     "twitter:image": "https://images.unsplash.com/photo-1671103176160-6e15bf3806f9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDJ8fEZvY3Vzcml0ZXxlbnwwfHx8fDE3NDE3MDQ3MjF8MA&ixlib=rb-4.0.3&q=80&w=2000"
    },
    "alternates": [
@@ -5412,8 +5412,8 @@
       "name": "Kerry Hatcher",
       "url": "https://www.kerryhatcher.com/about/"
      },
-     "description": "Over the years, especially since 2020, I’ve struggled to find a reliable audio setup for online meetings. The most reliable was for a while my Bose Quite Comfort headphones but they had the same drawback as other wireless solutions: battery life. On the other hand, some “gaming“ headsets that were USB wouldn’t have the battery issue, but rather they would fall apart with extended daily professional use. TL;DR: For years now my Focusrite Scarlett Solo has worked fantastically. Highly recommended if you are looking for an great single microphone input device. Works great with Linux, MacOS, and Windows Very portable…",
-     "headline": "Gear Review: Focusrite Scarlet Solo",
+     "description": "My experience using a Focusrite Scarlett Solo with an XLR broadcast headset for daily meetings on Pop!_OS and a work Mac.",
+     "headline": "Gear Review: Focusrite Scarlett Solo",
      "url": "https://www.kerryhatcher.com/gear-review-focusrite-scarlet-solo/",
      "datePublished": "2025-03-13T09:38:30-05:00",
      "image": "https://images.unsplash.com/photo-1671103176160-6e15bf3806f9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDJ8fEZvY3Vzcml0ZXxlbnwwfHx8fDE3NDE3MDQ3MjF8MA&ixlib=rb-4.0.3&q=80&w=2000",
@@ -5458,11 +5458,11 @@
     "headings": [
      {
       "level": 1,
-      "text": "Gear Review: Focusrite Scarlet Solo"
+      "text": "Gear Review: Focusrite Scarlett Solo"
      },
      {
       "level": 2,
-      "text": "TL;DR:"
+      "text": "What worked for daily calls"
      },
      {
       "level": 2,
@@ -5481,7 +5481,7 @@
       "text": "Conclusion"
      }
     ],
-    "text": "MARCH 13, 2025 • 2 MIN READ Gear Review: Focusrite Scarlet Solo Photo by gaspi the artist / Unsplash Over the years, especially since 2020, I’ve struggled to find a reliable audio setup for online meetings. The most reliable was for a while my Bose Quite Comfort headphones but they had the same drawback as other wireless solutions: battery life. On the other hand, some “gaming“ headsets that were USB wouldn’t have the battery issue, but rather they would fall apart with extended daily professional use. TL;DR: For years now my Focusrite Scarlett Solo has worked fantastically. Highly recommended if you are looking for an great single microphone input device. Works great with Linux, MacOS, and Windows Very portable USB C works with phones and tablets as well Direct monitor provides a bit of your voice back into headphones, preventing unintentional shouting Very affordable for its feature set Some background Having some experience in the professional audio/video world I knew that the quality of that equipment would last probably until retirement. So I started looking around and settled on a professional broadcast headset from audio-technica. I'll probably do a separate review on that so be sure to check back later. The challenge was that headset uses XLR for the microphone and 1/4 inch phone connection for the headphones. Most standard computers, including mine, don't come equipped with those I/O options. The solution Enter the Focusrite Scarlett Solo USB audio interface. Utilizing common professional audio connectors, it's compatible with a wide array of professional audio devices. This setup offers flexibility: you can connect a boom mic, a shotgun mic, or even route the output of an audio mixer to capture multiple microphones or instruments. If a microphone fails (as my expensive Blue Yeti did), you don't have to replace the entire setup—just the mic. Photos of my Focusrite on my desk. Yes the plastic cover is still on, no I won't take it off. Works with Linux My personal computers are all PopOS Linux and this little box works great out of the box. Nothing to mess about with, just plug and play. There are even utilities that let you update the firmware from Linux. It's then just as simple and moving the USB cable over to my Mac for work use. Conclusion The Focusrite Scarlett Solo has proven to be a reliable and versatile solution for my audio needs across various platforms. Its compatibility, portability, and affordability make it a standout choice for anyone seeking a robust single-microphone input device. Kerry · March 2025 Aa Toggle reader-friendly font ← Back to writing",
+    "text": "MARCH 13, 2025 • 2 MIN READ Gear Review: Focusrite Scarlett Solo How a Scarlett Solo and a wired broadcast headset solved my meeting audio problems on Linux and Mac. Photo by gaspi the artist / Unsplash I’ve gone through a few headsets for meetings, especially since 2020. For a while the Bose QuietComfort headphones were the most reliable thing I had, right up until the battery ran out. I tried wired gaming headsets, too. Those didn’t need charging, but daily use was hard on them. I finally went with a broadcast headset and a Scarlett Solo. The headset’s XLR mic and quarter-inch headphone plugs have somewhere to go, and when it’s time to work I just move the USB cable from my Pop!_OS machine to the Mac. What worked for daily calls For years now my Focusrite Scarlett Solo has worked fantastically. Highly recommended if you are looking for an great single microphone input device. Direct monitor feeds a bit of your voice back into the headphones, so you don’t end up shouting Works great with Linux, MacOS, and Windows Very portable USB C works with phones and tablets as well Very affordable for its feature set Some background Having some experience in the professional audio/video world I knew that the quality of that equipment would last probably until retirement. So I started looking around and settled on a professional broadcast headset from audio-technica. I'll probably do a separate review on that so be sure to check back later. The challenge was that headset uses XLR for the microphone and 1/4 inch phone connection for the headphones. Most standard computers, including mine, don't come equipped with those I/O options. The solution Enter the Focusrite Scarlett Solo USB audio interface. Utilizing common professional audio connectors, it's compatible with a wide array of professional audio devices. This setup offers flexibility: you can connect a boom mic, a shotgun mic, or even route the output of an audio mixer to capture multiple microphones or instruments. If a microphone fails (as my expensive Blue Yeti did), you don't have to replace the entire setup—just the mic. Photos of my Focusrite on my desk. Yes the plastic cover is still on, no I won't take it off. Works with Linux My personal computers are all PopOS Linux and this little box works great out of the box. Nothing to mess about with, just plug and play. There are even utilities that let you update the firmware from Linux. It's then just as simple and moving the USB cable over to my Mac for work use. Conclusion The Focusrite Scarlett Solo has proven to be a reliable and versatile solution for my audio needs across various platforms. Its compatibility, portability, and affordability make it a standout choice for anyone seeking a robust single-microphone input device. Kerry · March 2025 Aa Toggle reader-friendly font ← Back to writing",
     "links": [
      {
       "text": "gaspi the artist",
@@ -5524,7 +5524,7 @@
      {
       "src": "https://images.unsplash.com/photo-1671103176160-6e15bf3806f9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDJ8fEZvY3Vzcml0ZXxlbnwwfHx8fDE3NDE3MDQ3MjF8MA&ixlib=rb-4.0.3&q=80&w=2000",
       "srcset": null,
-      "alt": "Gear Review: Focusrite Scarlet Solo",
+      "alt": "Gear Review: Focusrite Scarlett Solo",
       "width": null,
       "height": null,
       "loading": "eager",
@@ -5551,7 +5551,7 @@
     ],
     "iframes": [],
     "counts": {
-     "p": 10,
+     "p": 11,
      "figure": 2,
      "figcaption": 2,
      "table": 0,
@@ -5562,7 +5562,7 @@
      "li": 5,
      "blockquote": 0,
      "proseElements": 39,
-     "shellElements": 25
+     "shellElements": 26
     },
     "outline": [
      "0:main[id=main]",
@@ -5575,6 +5575,7 @@
      "4:span[aria-hidden]",
      "4:span",
      "3:h1.post__title[data-reveal]",
+     "3:p.post__dek[data-reveal]",
      "2:figure.post__hero[data-reveal]",
      "3:img",
      "3:figcaption",
@@ -5594,10 +5595,10 @@
      "4:span[aria-hidden]"
     ],
     "proseHashes": [
-     "464e7cd852943a0ab376120a1f79d8d67f4b2ff4"
+     "184aee0e739f09c4c818208ac7ce00d0c9ba45ce"
     ],
     "proseLengths": [
-     4031
+     4151
     ]
    }
   },
@@ -12224,7 +12225,7 @@
      },
      {
       "level": 2,
-      "text": "Gear Review: Focusrite Scarlet Solo"
+      "text": "Gear Review: Focusrite Scarlett Solo"
      },
      {
       "level": 2,
@@ -12267,14 +12268,14 @@
       "text": "Exchange 2013 | Enable all users' mailboxes and add all users to distribution group"
      }
     ],
-    "text": "§ 03 Writing, page 3 43 pieces · Newest first ALEX II A successful beginning, not an end While the admins may have an opportunity to continue in the district, we still have a long road ahead of us. 22 MAR 2025 · 4 MIN READ Gear Review: Focusrite Scarlet Solo Over the years, especially since 2020, I’ve struggled to find a reliable audio setup for online meetings. The most reliable was for a while my Bose Quite Comfort headphones but ... 13 MAR 2025 · 2 MIN READ PYTHON Using Rust to make Python more manageable It has long been best practice to use virtual python environments with locally installed libraries rather than system ones. However, setting up and managing those can be a hassl... 10 MAR 2025 · 2 MIN READ PYTHON Better Python Logging Proper logging is critical to quality software. Even a quick script can benefit. Lets dive into how to make it much easier to do with Python. 7 MAR 2025 · 8 MIN READ SCOUTS The Crossover Ceremony A Milestone in a Scout’s Journey. 7 MAR 2025 · 3 MIN READ NEWS Encrypt your calls and messages on your smartphone Grab your tinfoil hat because today, we are going into the world of encrypted communications. 6 MAR 2024 · 4 MIN READ GAMING State of Play, Gaming on Linux in the roaring 20's Its the year of the Linux desktop... Again!! Let's talk gaming on Linux. 18 MAY 2020 · 6 MIN READ NEWS It's time to switch to a new email provider. Ever forget your password for one of the services you use? Perhaps your online bank? Click that reset password link and you usually get an email with a link to get back in. That... 10 MAY 2020 · 5 MIN READ COMMUNICATIONS Make your internet faster and safer for free I opened up Firefox to see what happens when I load a page. One request took 283 ms just to look up the name. Compare that to the 124 ms it took to get the data! That first bit ... 7 MAY 2020 · 5 MIN READ COMMUNICATIONS Save money, protect your site with a CDN I’ve used all three of these providers, Akamai, Amazon CloudFront, and Cloudflare, at work and on personal projects. So everything here is from my own experience. Say someone wa... 6 MAY 2020 · 8 MIN READ OLD Install Git 1.8 on RHEL 6 PyCharm works with the Git that ships with RHEL 6.5, but it sure complains about it. I figured something might break eventually, so I went looking for an update. Fast Track didn... 26 MAY 2014 · 2 MIN READ OLD Exchange 2013 | Enable all users' mailboxes and add all users to distribution group An epic migration 20 AUG 2013 · 1 MIN READ 1 2 3 4 ← Newer Older →",
+    "text": "§ 03 Writing, page 3 43 pieces · Newest first ALEX II A successful beginning, not an end While the admins may have an opportunity to continue in the district, we still have a long road ahead of us. 22 MAR 2025 · 4 MIN READ Gear Review: Focusrite Scarlett Solo How a Scarlett Solo and a wired broadcast headset solved my meeting audio problems on Linux and Mac. 13 MAR 2025 · 2 MIN READ PYTHON Using Rust to make Python more manageable It has long been best practice to use virtual python environments with locally installed libraries rather than system ones. However, setting up and managing those can be a hassl... 10 MAR 2025 · 2 MIN READ PYTHON Better Python Logging Proper logging is critical to quality software. Even a quick script can benefit. Lets dive into how to make it much easier to do with Python. 7 MAR 2025 · 8 MIN READ SCOUTS The Crossover Ceremony A Milestone in a Scout’s Journey. 7 MAR 2025 · 3 MIN READ NEWS Encrypt your calls and messages on your smartphone Grab your tinfoil hat because today, we are going into the world of encrypted communications. 6 MAR 2024 · 4 MIN READ GAMING State of Play, Gaming on Linux in the roaring 20's Its the year of the Linux desktop... Again!! Let's talk gaming on Linux. 18 MAY 2020 · 6 MIN READ NEWS It's time to switch to a new email provider. Ever forget your password for one of the services you use? Perhaps your online bank? Click that reset password link and you usually get an email with a link to get back in. That... 10 MAY 2020 · 5 MIN READ COMMUNICATIONS Make your internet faster and safer for free I opened up Firefox to see what happens when I load a page. One request took 283 ms just to look up the name. Compare that to the 124 ms it took to get the data! That first bit ... 7 MAY 2020 · 5 MIN READ COMMUNICATIONS Save money, protect your site with a CDN I’ve used all three of these providers, Akamai, Amazon CloudFront, and Cloudflare, at work and on personal projects. So everything here is from my own experience. Say someone wa... 6 MAY 2020 · 8 MIN READ OLD Install Git 1.8 on RHEL 6 PyCharm works with the Git that ships with RHEL 6.5, but it sure complains about it. I figured something might break eventually, so I went looking for an update. Fast Track didn... 26 MAY 2014 · 2 MIN READ OLD Exchange 2013 | Enable all users' mailboxes and add all users to distribution group An epic migration 20 AUG 2013 · 1 MIN READ 1 2 3 4 ← Newer Older →",
     "links": [
      {
       "text": "Alex II A successful beginning, not an end While the admins may have an opportunity to continue in the district, we still have a long road ahead of us. 22 Mar 2025 · 4 min read",
       "href": "/a-successful-beginning-not-an-end/"
      },
      {
-      "text": "Gear Review: Focusrite Scarlet Solo Over the years, especially since 2020, I’ve struggled to find a reliable audio setup for online meetings. The most reliable was for a while my Bose Quite Comfort headphones but ... 13 Mar 2025 · 2 min read",
+      "text": "Gear Review: Focusrite Scarlett Solo How a Scarlett Solo and a wired broadcast headset solved my meeting audio problems on Linux and Mac. 13 Mar 2025 · 2 min read",
       "href": "/gear-review-focusrite-scarlet-solo/"
      },
      {
