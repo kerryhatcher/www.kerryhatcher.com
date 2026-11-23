@@ -1,7 +1,31 @@
-import { readFileSync, readdirSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
+import { join, resolve } from 'node:path';
+import { copyFileSync, cpSync, mkdirSync, readFileSync, readdirSync } from 'node:fs';
+import { decodeHTML } from 'entities';
 import matter from 'gray-matter';
 import { expect, test } from '@playwright/test';
 import { postRoutes } from './support/baseline';
+
+test('renders editorial metadata independently of the visible article', async ({ page }, testInfo) => {
+  const root = testInfo.outputPath('site');
+  const posts = join(root, 'src/content/posts');
+  cpSync('src', join(root, 'src'), {
+    recursive: true,
+    filter: source => resolve(source) !== resolve('src/content/posts'),
+  });
+  mkdirSync(posts);
+  for (const file of ['astro.config.mjs', 'package.json']) {
+    copyFileSync(file, join(root, file));
+  }
+  copyFileSync('tests/fixtures/editorial-search.md', join(posts, '2026-01-01-editorial-search.md'));
+  execFileSync(resolve('node_modules/.bin/astro'), ['build'], { cwd: root });
+
+  const html = readFileSync(join(root, 'dist/editorial-search/index.html'), 'utf8');
+  await page.setContent(html, { waitUntil: 'domcontentloaded' });
+  await expect(page.locator('h1')).toHaveText('A headline for readers');
+  await expect(page).toHaveTitle('A title for search | Kerry Hatcher');
+  await expect(page.locator('meta[name="description"]')).toHaveAttribute('content', 'Schools & budgets');
+});
 
 test('article search metadata uses editorial overrides when present', async ({ page }) => {
   const files = readdirSync('src/content/posts');
@@ -16,14 +40,16 @@ test('article search metadata uses editorial overrides when present', async ({ p
     const path = `/${file.replace(/^\d{4}-\d{2}-\d{2}-/, '').replace(/\.[^.]+$/, '')}/`;
     await page.goto(path, { waitUntil: 'domcontentloaded' });
     if (data.seo_title) {
-      await expect(page).toHaveTitle(`${data.seo_title} | Kerry Hatcher`);
-      expect(titles.has(data.seo_title), path).toBe(false);
-      titles.add(data.seo_title);
+      const title = data.seo_title.trim();
+      await expect(page).toHaveTitle(`${title} | Kerry Hatcher`);
+      expect(titles.has(title), path).toBe(false);
+      titles.add(title);
     }
     if (data.seo_description) {
-      await expect(page.locator('meta[name="description"]')).toHaveAttribute('content', data.seo_description);
-      expect(descriptions.has(data.seo_description), path).toBe(false);
-      descriptions.add(data.seo_description);
+      const description = decodeHTML(data.seo_description.trim());
+      await expect(page.locator('meta[name="description"]')).toHaveAttribute('content', description);
+      expect(descriptions.has(description), path).toBe(false);
+      descriptions.add(description);
     }
   }
 });

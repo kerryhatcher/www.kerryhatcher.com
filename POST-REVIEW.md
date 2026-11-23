@@ -4,7 +4,7 @@ November 22, 2026 · 43 posts
 
 Each post has proposed copy, a search title and description, a reading-experience change, and any publication checks. Drafts are scoped to specific passages. The source files are the reference for dates, figures, quotations, code, links, and the author’s experience.
 
-The PR also applies the editorial revisions. The live source in `src/content/posts/` is the implementation. Where the review calls for corroboration, the edits use the original evidence and keep uncertainty visible. The publication checks below record the remaining fact and source questions.
+This foundation PR adds shared SEO and rendering support. The follow-up article PRs apply the proposed revisions in `src/content/posts/`. The publication checks below record the remaining fact and source questions.
 
 ## Start with these pages
 
