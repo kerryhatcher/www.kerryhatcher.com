@@ -7508,7 +7508,7 @@
   "/install-git-1-8-on-rhel-6/": {
    "lang": "en",
    "bodyClass": "layout-post",
-   "title": "Install Git 1.8 on RHEL 6 | Kerry Hatcher",
+   "title": "Installing Git 1.8 on RHEL 6.5 with IUS (2014) | Kerry Hatcher",
    "canonical": "https://www.kerryhatcher.com/install-git-1-8-on-rhel-6/",
    "meta": {
     "viewport": "width=device-width, initial-scale=1",
@@ -7518,8 +7518,8 @@
     "og:title": "Install Git 1.8 on RHEL 6",
     "author": "Kerry Hatcher",
     "og:locale": "en_US",
-    "description": "While PyCharm does work with the native version of Git that ships with RHEL 6.5, it does complain a lot. I also feared that something would go wrong eventually so I started looking around on updating.There wasn't a newer version of Git in fast track so I had to go with something else. Luckily I found the IUS Community Project.  The IUS Community Project is aimed at providing up to date and regularly maintained RPM packages for the latest upstream versions of PHP, Python, MySQL and other common software specifically for Redhat Enterprise Linux. IUS can be thought of as…",
-    "twitter:description": "While PyCharm does work with the native version of Git that ships with RHEL 6.5, it does complain a lot. I also feared that something would go wrong eventually so I started looking around on updating.There wasn't a newer version of Git in fast track so I had to go with something else. Luckily I found the IUS Community Project.  The IUS Community Project is aimed at providing up to date and regularly maintained RPM packages for the latest upstream versions of PHP, Python, MySQL and other common software specifically for Redhat Enterprise Linux. IUS can be thought of as…",
+    "description": "How I used the IUS git18 package on RHEL 6.5 when PyCharm complained about the Git version shipped with the system.",
+    "twitter:description": "How I used the IUS git18 package on RHEL 6.5 when PyCharm complained about the Git version shipped with the system.",
     "og:url": "https://www.kerryhatcher.com/install-git-1-8-on-rhel-6/",
     "og:site_name": "Kerry Hatcher",
     "og:type": "article",
@@ -7549,7 +7549,7 @@
       "name": "Kerry Hatcher",
       "url": "https://www.kerryhatcher.com/about/"
      },
-     "description": "While PyCharm does work with the native version of Git that ships with RHEL 6.5, it does complain a lot. I also feared that something would go wrong eventually so I started looking around on updating.There wasn&#39;t a newer version of Git in fast track so I had to go with something else. Luckily I found the IUS Community Project.&nbsp; The IUS Community Project is aimed at providing up to date and regularly maintained RPM packages for the latest upstream versions of PHP, Python, MySQL and other common software specifically for Redhat Enterprise Linux. IUS can be thought of as…",
+     "description": "How I used the IUS git18 package on RHEL 6.5 when PyCharm complained about the Git version shipped with the system.",
      "headline": "Install Git 1.8 on RHEL 6",
      "url": "https://www.kerryhatcher.com/install-git-1-8-on-rhel-6/",
      "datePublished": "2014-05-26T09:29:00-05:00",
@@ -7596,9 +7596,13 @@
      {
       "level": 1,
       "text": "Install Git 1.8 on RHEL 6"
+     },
+     {
+      "level": 2,
+      "text": "Install Git 1.8 on RHEL 6.5"
      }
     ],
-    "text": "MAY 26, 2014 • 2 MIN READ Install Git 1.8 on RHEL 6 OLD TECHNOLOGY LINUX Photo by Cornelius Ventures / Unsplash While PyCharm does work with the native version of Git that ships with RHEL 6.5, it does complain a lot. I also feared that something would go wrong eventually so I started looking around on updating. There wasn't a newer version of Git in fast track so I had to go with something else. Luckily I found the IUS Community Project. The IUS Community Project is aimed at providing up to date and regularly maintained RPM packages for the latest upstream versions of PHP, Python, MySQL and other common software specifically for Redhat Enterprise Linux. IUS can be thought of as a better way to upgrade RHEL, when you need to. The project is sponsored by Rackspace and is a spin off of their own internal project. A huge plus is that it is SafeRepo Aware. Meaning that when I installed the repo I couldn't just do a yum update and get the latest version of git (along with any other software and totally wreak my system). To install git 1.8 I had to yum install git18 Now when I yum search git, I see (along with others): git.x86_64 : Fast Version Control System git18.x86_64 : Fast Version Control System So I can choose which version I want without upgrading all the great stock RHEL packages on my system. Well enough of my talking, to the script!! View Git18.sh on GitHub As Root: wget http://dl.iuscommunity.org/pub/ius/stable/Redhat/6/x86_64/epel-release-6-5.noarch.rpm yum install epel-release-6-5.noarch.rpm wget http://dl.iuscommunity.org/pub/ius/stable/Redhat/6/x86_64/ius-release-1.0-11.ius.el6.noarch.rpm yum install ius-release-1.0-11.ius.el6.noarch.rpm yum install git18 Kerry · May 2014 Aa Toggle reader-friendly font ← Back to writing",
+    "text": "MAY 26, 2014 • 2 MIN READ Install Git 1.8 on RHEL 6 OLD TECHNOLOGY LINUX Photo by Cornelius Ventures / Unsplash PyCharm works with the Git that ships with RHEL 6.5, but it sure complains about it. I figured something might break eventually, so I went looking for an update. Fast Track didn’t have one. Luckily I found the IUS Community Project. I could install git18 without upgrading the rest of the stock RHEL packages. The IUS Community Project is aimed at providing up to date and regularly maintained RPM packages for the latest upstream versions of PHP, Python, MySQL and other common software specifically for Redhat Enterprise Linux. IUS can be thought of as a better way to upgrade RHEL, when you need to. The project is sponsored by Rackspace and is a spin off of their own internal project. A huge plus is that it is SafeRepo Aware. Meaning that when I installed the repo I couldn't just do a yum update and get the latest version of git (along with any other software and totally wreak my system). To install git 1.8 I had to yum install git18 Now when I run yum search git, I see (along with others): Output of yum search git git.x86_64 : Fast Version Control System git18.x86_64 : Fast Version Control System So I can choose which version I want without upgrading all the great stock RHEL packages on my system. Well enough of my talking, to the script!! View Git18.sh on GitHub Install Git 1.8 on RHEL 6.5 Archive note. These commands use the RHEL 6.5 and IUS package setup described above. As root, in a shell: wget http://dl.iuscommunity.org/pub/ius/stable/Redhat/6/x86_64/epel-release-6-5.noarch.rpm yum install epel-release-6-5.noarch.rpm wget http://dl.iuscommunity.org/pub/ius/stable/Redhat/6/x86_64/ius-release-1.0-11.ius.el6.noarch.rpm yum install ius-release-1.0-11.ius.el6.noarch.rpm yum install git18 Kerry · May 2014 Aa Toggle reader-friendly font ← Back to writing",
     "links": [
      {
       "text": "Cornelius Ventures",
@@ -7609,7 +7613,7 @@
       "href": "https://unsplash.com/?utm_source=ghost&utm_medium=referral&utm_campaign=api-credit"
      },
      {
-      "text": "IUS Community Project.",
+      "text": "IUS Community Project",
       "href": "https://iuscommunity.org/pages/About.html?ref=kerryhatcher.com"
      },
      {
@@ -7638,17 +7642,17 @@
     ],
     "iframes": [],
     "counts": {
-     "p": 5,
+     "p": 8,
      "figure": 1,
      "figcaption": 1,
      "table": 0,
-     "pre": 0,
-     "code": 0,
+     "pre": 2,
+     "code": 5,
      "ul": 1,
      "ol": 0,
      "li": 3,
-     "blockquote": 3,
-     "proseElements": 29,
+     "blockquote": 1,
+     "proseElements": 26,
      "shellElements": 29
     },
     "outline": [
@@ -7685,10 +7689,10 @@
      "4:span[aria-hidden]"
     ],
     "proseHashes": [
-     "fc725b6ff79d1590de4b69a1d172414ce1d70c83"
+     "081cc6152c1f66e662d456fad5f3efefec4d7577"
     ],
     "proseLengths": [
-     2015
+     2249
     ]
    }
   },
@@ -12247,7 +12251,7 @@
       "text": "Exchange 2013 | Enable all users' mailboxes and add all users to distribution group"
      }
     ],
-    "text": "§ 03 Writing, page 3 43 pieces · Newest first ALEX II A successful beginning, not an end While the admins may have an opportunity to continue in the district, we still have a long road ahead of us. 22 MAR 2025 · 4 MIN READ Gear Review: Focusrite Scarlet Solo Over the years, especially since 2020, I’ve struggled to find a reliable audio setup for online meetings. The most reliable was for a while my Bose Quite Comfort headphones but ... 13 MAR 2025 · 2 MIN READ PYTHON Using Rust to make Python more manageable It has long been best practice to use virtual python environments with locally installed libraries rather than system ones. However, setting up and managing those can be a hassl... 10 MAR 2025 · 2 MIN READ PYTHON Better Python Logging Proper logging is critical to quality software. Even a quick script can benefit. Lets dive into how to make it much easier to do with Python. 7 MAR 2025 · 7 MIN READ SCOUTS The Crossover Ceremony A Milestone in a Scout’s Journey. 7 MAR 2025 · 3 MIN READ NEWS Encrypt your calls and messages on your smartphone Grab your tinfoil hat because today, we are going into the world of encrypted communications. 6 MAR 2024 · 4 MIN READ GAMING State of Play, Gaming on Linux in the roaring 20's Its the year of the Linux desktop... Again!! Let's talk gaming on Linux. 18 MAY 2020 · 6 MIN READ NEWS It's time to switch to a new email provider. Email has become the gateway into the vast majority of the online applications we use every day. From Facebook to Amazon, your email is your identity. The very reason there are ... 10 MAY 2020 · 5 MIN READ COMMUNICATIONS Make your internet faster and safer for free Today we will be talking about the Domain Name System (DNS). Us lowly humans prefer to give things names while computers need numbers. DNS acts like the Internet’s phone book, t... 7 MAY 2020 · 5 MIN READ COMMUNICATIONS Save money, protect your site with a CDN There are many providers out there that provide CDN services, but the 3 big ones are Akamai, Amazon Web Services (AWS), and Cloudflare. All 3 offer the same basic services with ... 6 MAY 2020 · 9 MIN READ OLD Install Git 1.8 on RHEL 6 While PyCharm does work with the native version of Git that ships with RHEL 6.5, it does complain a lot. I also feared that something would go wrong eventually so I started look... 26 MAY 2014 · 2 MIN READ OLD Exchange 2013 | Enable all users' mailboxes and add all users to distribution group An epic migration 20 AUG 2013 · 1 MIN READ 1 2 3 4 ← Newer Older →",
+    "text": "§ 03 Writing, page 3 43 pieces · Newest first ALEX II A successful beginning, not an end While the admins may have an opportunity to continue in the district, we still have a long road ahead of us. 22 MAR 2025 · 4 MIN READ Gear Review: Focusrite Scarlet Solo Over the years, especially since 2020, I’ve struggled to find a reliable audio setup for online meetings. The most reliable was for a while my Bose Quite Comfort headphones but ... 13 MAR 2025 · 2 MIN READ PYTHON Using Rust to make Python more manageable It has long been best practice to use virtual python environments with locally installed libraries rather than system ones. However, setting up and managing those can be a hassl... 10 MAR 2025 · 2 MIN READ PYTHON Better Python Logging Proper logging is critical to quality software. Even a quick script can benefit. Lets dive into how to make it much easier to do with Python. 7 MAR 2025 · 7 MIN READ SCOUTS The Crossover Ceremony A Milestone in a Scout’s Journey. 7 MAR 2025 · 3 MIN READ NEWS Encrypt your calls and messages on your smartphone Grab your tinfoil hat because today, we are going into the world of encrypted communications. 6 MAR 2024 · 4 MIN READ GAMING State of Play, Gaming on Linux in the roaring 20's Its the year of the Linux desktop... Again!! Let's talk gaming on Linux. 18 MAY 2020 · 6 MIN READ NEWS It's time to switch to a new email provider. Email has become the gateway into the vast majority of the online applications we use every day. From Facebook to Amazon, your email is your identity. The very reason there are ... 10 MAY 2020 · 5 MIN READ COMMUNICATIONS Make your internet faster and safer for free Today we will be talking about the Domain Name System (DNS). Us lowly humans prefer to give things names while computers need numbers. DNS acts like the Internet’s phone book, t... 7 MAY 2020 · 5 MIN READ COMMUNICATIONS Save money, protect your site with a CDN There are many providers out there that provide CDN services, but the 3 big ones are Akamai, Amazon Web Services (AWS), and Cloudflare. All 3 offer the same basic services with ... 6 MAY 2020 · 9 MIN READ OLD Install Git 1.8 on RHEL 6 PyCharm works with the Git that ships with RHEL 6.5, but it sure complains about it. I figured something might break eventually, so I went looking for an update. Fast Track didn... 26 MAY 2014 · 2 MIN READ OLD Exchange 2013 | Enable all users' mailboxes and add all users to distribution group An epic migration 20 AUG 2013 · 1 MIN READ 1 2 3 4 ← Newer Older →",
     "links": [
      {
       "text": "Alex II A successful beginning, not an end While the admins may have an opportunity to continue in the district, we still have a long road ahead of us. 22 Mar 2025 · 4 min read",
@@ -12290,7 +12294,7 @@
       "href": "/save-money-protect-your-site-with-a-cdn/"
      },
      {
-      "text": "old Install Git 1.8 on RHEL 6 While PyCharm does work with the native version of Git that ships with RHEL 6.5, it does complain a lot. I also feared that something would go wrong eventually so I started look... 26 May 2014 · 2 min read",
+      "text": "old Install Git 1.8 on RHEL 6 PyCharm works with the Git that ships with RHEL 6.5, but it sure complains about it. I figured something might break eventually, so I went looking for an update. Fast Track didn... 26 May 2014 · 2 min read",
       "href": "/install-git-1-8-on-rhel-6/"
      },
      {
