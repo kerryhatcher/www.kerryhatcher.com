@@ -44,6 +44,7 @@ These are excerpt-level results from `nobotrs analyze --gptzero`. The percentage
 | [Better Schools, Brighter Futures: Literacy Special Edition](src/content/posts/2025-06-09-better-schools-brighter-futures-literacy-special-edition.html) | The fourth rewrite opened with the one job the author wanted to keep, kept the 18% figure with its attribution, and made the hearing request specific. | AI only 100% → Human only 86.1% | `3c19efb` |
 | [No Kings Protest](src/content/posts/2025-06-14-no-kings-protest.html) | Opened the gallery in the photographer’s voice and let readers look at the signs and flags. Repeated scans of the first revision stayed close to the class boundary. | AI only 100% → Human only 51.5%, low confidence | `276d4f2` |
 | [Coding with AI, Episode 2](src/content/posts/2025-09-02-coding-with-ai-episode-2-supercharging-your-python-workflow-with-github-copilot-ruff.html) | The third rewrite described the two steps the reader can follow, then said what to install and what the lint hook does. | AI only 100% → Human only 92.4% | `276d4f2` |
+| [Trust, Then Verify](src/content/posts/2026-02-11-trust-then-verify-1-035-reasons-why.html) | The third rewrite opened with the question the author checked. It asked readers to look at where the dot colors and district boundaries disagree and kept possible mapping errors explicit. | AI only 100% → Human only 60.9%, medium confidence | `24b625f` |
 
 ## Mixed to Human only
 
@@ -57,6 +58,7 @@ These are excerpt-level results from `nobotrs analyze --gptzero`. The percentage
 - [Digital Privacy and Freedoms Are Under Threat](src/content/posts/2025-06-13-digital-privacy-and-freedoms-are-under-threat.html) All four rounds scored AI only at 100%. Round two returned HTTP 502 on the first attempt and scored successfully when retried. The accepted draft keeps the author’s parental perspective, attributes the warnings to EFF, and dates the legislative status and call to action. Accepted in `3c19efb`.
 - [Coding with AI, Episode 1](src/content/posts/2025-09-01-coding-with-ai-how-real-time-collaboration-transforms-your-workflow.html) Four rounds stayed AI only. The fourth reached 63.9% AI only, but the accepted third draft (100% AI only) uses a hypothetical example so the opening makes no new claim about the author’s former habits. Accepted in `276d4f2`.
 - [Restoring State Funding for State-Mandated Costs](src/content/posts/2025-12-02-restoring-state-funding-for-state-mandated-costs.html) Four rounds scored AI only at 100%. The accepted draft explains whose health insurance the district pays for and spells out the enrollment assumption behind the estimate. Accepted in `276d4f2`.
+- [Out of Runway: The FY27 BCSD Budget](src/content/posts/2026-05-27-out-of-runway-the-fy27-bcsd-budget.md) stayed AI only at 100% across four revisions of the same eight prose blocks. The accepted draft restores the author’s observation from the work session and keeps the figures, assumptions, and tentative vote chronology distinct. Accepted in `24b625f`.
 
 ## Adding a new entry
 
