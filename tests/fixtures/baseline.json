@@ -15260,7 +15260,7 @@
   "/to-the-west/": {
    "lang": "en",
    "bodyClass": "layout-post",
-   "title": "To The West | Kerry Hatcher",
+   "title": "To the West | A Vacation Video | Kerry Hatcher",
    "canonical": "https://www.kerryhatcher.com/to-the-west/",
    "meta": {
     "viewport": "width=device-width, initial-scale=1",
@@ -15270,8 +15270,8 @@
     "og:title": "To The West",
     "author": "Kerry Hatcher",
     "og:locale": "en_US",
-    "description": "That submarine was a tight fit!!",
-    "twitter:description": "That submarine was a tight fit!!",
+    "description": "A short vacation video with a tight squeeze in a submarine.",
+    "twitter:description": "A short vacation video with a tight squeeze in a submarine.",
     "og:url": "https://www.kerryhatcher.com/to-the-west/",
     "og:site_name": "Kerry Hatcher",
     "og:type": "article",
@@ -15301,7 +15301,7 @@
       "name": "Kerry Hatcher",
       "url": "https://www.kerryhatcher.com/about/"
      },
-     "description": "That submarine was a tight fit!!",
+     "description": "A short vacation video with a tight squeeze in a submarine.",
      "headline": "To The West",
      "url": "https://www.kerryhatcher.com/to-the-west/",
      "datePublished": "2012-10-05T12:00:00-05:00",
@@ -15350,7 +15350,7 @@
       "text": "To The West"
      }
     ],
-    "text": "OCTOBER 5, 2012 • 1 MIN READ To The West Just a silly vacation video OLD ADVENTURE Photo by Jamie Street / Unsplash That submarine was a tight fit!! Kerry · October 2012 Aa Toggle reader-friendly font ← Back to writing",
+    "text": "OCTOBER 5, 2012 • 1 MIN READ To The West Just a silly vacation video OLD ADVENTURE Photo by Jamie Street / Unsplash A little video from my vacation. That submarine was a tight fit!! Watch To the West on YouTube Kerry · October 2012 Aa Toggle reader-friendly font ← Back to writing",
     "links": [
      {
       "text": "Jamie Street",
@@ -15359,6 +15359,10 @@
      {
       "text": "Unsplash",
       "href": "https://unsplash.com/?utm_source=ghost&utm_medium=referral&utm_campaign=api-credit"
+     },
+     {
+      "text": "Watch To the West on YouTube",
+      "href": "https://www.youtube.com/watch?v=F_FwEsYKtpc"
      },
      {
       "text": "← Back to writing",
@@ -15379,11 +15383,11 @@
     "iframes": [
      {
       "src": "https://www.youtube.com/embed/F_FwEsYKtpc?feature=oembed",
-      "title": "To The West"
+      "title": "To the West vacation video"
      }
     ],
     "counts": {
-     "p": 7,
+     "p": 8,
      "figure": 2,
      "figcaption": 1,
      "table": 0,
@@ -15393,7 +15397,7 @@
      "ol": 0,
      "li": 2,
      "blockquote": 0,
-     "proseElements": 6,
+     "proseElements": 8,
      "shellElements": 29
     },
     "outline": [
@@ -15430,10 +15434,10 @@
      "4:span[aria-hidden]"
     ],
     "proseHashes": [
-     "b83ecd9472cffc75c36ecc17f68e2d802513b6f3"
+     "1ff181628a5992a9d187a730aeb5b953ec6d7e48"
     ],
     "proseLengths": [
-     424
+     565
     ]
    }
   },
