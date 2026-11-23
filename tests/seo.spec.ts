@@ -1,5 +1,32 @@
+import { readFileSync, readdirSync } from 'node:fs';
+import matter from 'gray-matter';
 import { expect, test } from '@playwright/test';
 import { postRoutes } from './support/baseline';
+
+test('article search metadata uses editorial overrides when present', async ({ page }) => {
+  const files = readdirSync('src/content/posts');
+  const titles = new Set<string>();
+  const descriptions = new Set<string>();
+  await page.route('**/*', (route) => route.request().resourceType() === 'document' ? route.continue() : route.abort());
+
+  for (const file of files) {
+    const { data } = matter(readFileSync(`src/content/posts/${file}`, 'utf8'));
+    if (!data.seo_title && !data.seo_description) continue;
+
+    const path = `/${file.replace(/^\d{4}-\d{2}-\d{2}-/, '').replace(/\.[^.]+$/, '')}/`;
+    await page.goto(path, { waitUntil: 'domcontentloaded' });
+    if (data.seo_title) {
+      await expect(page).toHaveTitle(`${data.seo_title} | Kerry Hatcher`);
+      expect(titles.has(data.seo_title), path).toBe(false);
+      titles.add(data.seo_title);
+    }
+    if (data.seo_description) {
+      await expect(page.locator('meta[name="description"]')).toHaveAttribute('content', data.seo_description);
+      expect(descriptions.has(data.seo_description), path).toBe(false);
+      descriptions.add(data.seo_description);
+    }
+  }
+});
 
 test('each article advertises its feature image and author profile', async ({ page }) => {
   await page.route('**/*', (route) => route.request().resourceType() === 'document' ? route.continue() : route.abort());

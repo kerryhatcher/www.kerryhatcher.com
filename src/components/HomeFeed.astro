@@ -1,12 +1,10 @@
 ---
-import { resolve } from 'node:path';
-import sharp from 'sharp';
 import Base from '../layouts/Base.astro';
 import { shortDate, xmlDate } from '../lib/dates';
 import { postCategory, postMinutes, postUrl, excerptText, type Post } from '../lib/posts';
 import { site } from '../lib/site';
 import { stripHtml, truncate } from '../lib/text';
-import { cloudflareImageSrcset, isLocalResizableImage, unsplashImageSrcset } from '../lib/gallery-images';
+import { cloudflareImageSrcset, isLocalResizableImage, localImageDimensions, unsplashImageSrcset } from '../lib/gallery-images';
 
 interface Props {
   posts: Post[];
@@ -20,8 +18,8 @@ const { posts, page, totalPages, total } = Astro.props;
 const cardSrcsets = await Promise.all(posts.map(async ({ data }) => {
   const src = data.feature_image;
   if (import.meta.env.MODE !== 'cloudflare' || !isLocalResizableImage(src)) return unsplashImageSrcset(src);
-  const metadata = await sharp(resolve('public', `.${src}`)).metadata().catch(() => undefined);
-  return metadata ? cloudflareImageSrcset(src, metadata.autoOrient.width) : undefined;
+  const dimensions = await localImageDimensions(src);
+  return dimensions ? cloudflareImageSrcset(src, dimensions.width) : undefined;
 }));
 
 const hero = {

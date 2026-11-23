@@ -31,7 +31,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -544,7 +544,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -756,7 +756,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -896,8 +896,8 @@
       "src": "/assets/images/remote/hatchdata/images/2025/03/blog_cover.png",
       "srcset": null,
       "alt": "A successful beginning, not an end",
-      "width": null,
-      "height": null,
+      "width": "1920",
+      "height": "1080",
       "loading": "eager",
       "fetchpriority": "high"
      },
@@ -1102,7 +1102,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -1262,7 +1262,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -1503,7 +1503,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -1703,8 +1703,8 @@
       "src": "/assets/images/remote/hatchdata/images/2025/06/576A4855.jpg",
       "srcset": null,
       "alt": "Better Schools, Brighter Futures: Literacy special edition",
-      "width": null,
-      "height": null,
+      "width": "2000",
+      "height": "1333",
       "loading": "eager",
       "fetchpriority": "high"
      },
@@ -2299,7 +2299,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -2472,7 +2472,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -2742,7 +2742,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -2947,7 +2947,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -3075,8 +3075,8 @@
       "src": "/assets/images/remote/hatchdata/images/2025/03/576A1378.jpeg",
       "srcset": null,
       "alt": "The Crossover Ceremony",
-      "width": null,
-      "height": null,
+      "width": "2000",
+      "height": "1125",
       "loading": "eager",
       "fetchpriority": "high"
      },
@@ -3473,7 +3473,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -3681,7 +3681,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -3969,8 +3969,8 @@
       "src": "/assets/images/remote/hatchdata/images/2025/06/Infographic---Understanding-U.S.-First-Amendment-Rights-Today-6-.png",
       "srcset": null,
       "alt": "Digital Privacy and Freedoms Are Under Threat",
-      "width": null,
-      "height": null,
+      "width": "1200",
+      "height": "500",
       "loading": "eager",
       "fetchpriority": "high"
      },
@@ -4347,7 +4347,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -4495,8 +4495,8 @@
       "src": "/assets/images/remote/hatchdata/images/2025/06/576A7070.jpeg",
       "srcset": null,
       "alt": "Empty Chairs and Big Decisions: Why the Final BCSD Budget Hearing Matters",
-      "width": null,
-      "height": null,
+      "width": "2000",
+      "height": "1125",
       "loading": "eager",
       "fetchpriority": "high"
      },
@@ -4699,7 +4699,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -5019,7 +5019,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -5196,7 +5196,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -5369,7 +5369,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -5602,7 +5602,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -5698,8 +5698,8 @@
       "src": "/assets/images/remote/hatchdata/images/2025/04/pang12.webp",
       "srcset": null,
       "alt": "Gear review: System76 Pangolin 12",
-      "width": null,
-      "height": null,
+      "width": "1234",
+      "height": "812",
       "loading": "eager",
       "fetchpriority": "high"
      },
@@ -5805,7 +5805,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -5945,8 +5945,8 @@
       "src": "/assets/images/remote/hatchdata/images/2025/03/IMG_8519-1.jpeg",
       "srcset": null,
       "alt": "Patriot 25",
-      "width": null,
-      "height": null,
+      "width": "1500",
+      "height": "998",
       "loading": "eager",
       "fetchpriority": "high"
      },
@@ -6972,7 +6972,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -7088,8 +7088,8 @@
       "src": "/assets/images/remote/hatchdata/2025/12/vote_hatcher.png",
       "srcset": null,
       "alt": "I’m Running for the Bibb County Board of Education",
-      "width": null,
-      "height": null,
+      "width": "2000",
+      "height": "1125",
       "loading": "eager",
       "fetchpriority": "high"
      },
@@ -7181,7 +7181,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -7257,8 +7257,8 @@
       "src": "/assets/images/remote/hatchdata/images/2025/04/576A5283.jpeg",
       "srcset": null,
       "alt": "(In pictures) A day of action and art in downtown Macon",
-      "width": null,
-      "height": null,
+      "width": "2000",
+      "height": "1334",
       "loading": "eager",
       "fetchpriority": "high"
      },
@@ -7522,7 +7522,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -7709,7 +7709,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -7801,8 +7801,8 @@
       "src": "/assets/images/remote/hatchdata/images/2025/06/576A6578.jpg",
       "srcset": null,
       "alt": "Introducing the Better Schools, Brighter Futures Series: Learning from Schools that Beat the Odds",
-      "width": null,
-      "height": null,
+      "width": "2000",
+      "height": "1125",
       "loading": "eager",
       "fetchpriority": "high"
      },
@@ -7907,7 +7907,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -8063,8 +8063,8 @@
       "src": "/assets/images/remote/hatchdata/images/2025/05/576A4865-1-.jpg",
       "srcset": null,
       "alt": "Investing in Bibb County's Future",
-      "width": null,
-      "height": null,
+      "width": "1365",
+      "height": "910",
       "loading": "eager",
       "fetchpriority": "high"
      },
@@ -8230,7 +8230,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -8390,8 +8390,8 @@
       "src": "/assets/images/remote/hatchdata/images/2025/03/protonmail-corporate-door.jpg",
       "srcset": null,
       "alt": "It's time to switch to a new email provider.",
-      "width": null,
-      "height": null,
+      "width": "1920",
+      "height": "1024",
       "loading": "eager",
       "fetchpriority": "high"
      },
@@ -8559,7 +8559,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -8748,7 +8748,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -9043,7 +9043,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -9211,8 +9211,8 @@
       "src": "/assets/images/remote/hatchdata/images/2025/05/576A6483.jpeg",
       "srcset": null,
       "alt": "Make Your Voice Heard on the FY2026 Budget",
-      "width": null,
-      "height": null,
+      "width": "2000",
+      "height": "1333",
       "loading": "eager",
       "fetchpriority": "high"
      },
@@ -9383,7 +9383,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -9463,8 +9463,8 @@
       "src": "/assets/images/remote/hatchdata/images/2025/04/576A5084-1.jpeg",
       "srcset": null,
       "alt": "Meet me at the mall",
-      "width": null,
-      "height": null,
+      "width": "2000",
+      "height": "1125",
       "loading": "eager",
       "fetchpriority": "high"
      },
@@ -9953,7 +9953,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -10134,7 +10134,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -10318,8 +10318,8 @@
       "src": "/assets/images/remote/hatchdata/images/2025/04/6A52A948-D280-492E-A7DD-A77681E40A51.jpeg",
       "srcset": null,
       "alt": "Museum of Aviation",
-      "width": null,
-      "height": null,
+      "width": "2000",
+      "height": "1125",
       "loading": "eager",
       "fetchpriority": "high"
      },
@@ -10889,7 +10889,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -11109,7 +11109,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -11181,8 +11181,8 @@
       "src": "/assets/images/remote/hatchdata/images/2025/06/576A7079.jpeg",
       "srcset": null,
       "alt": "No Kings Protest",
-      "width": null,
-      "height": null,
+      "width": "2000",
+      "height": "2000",
       "loading": "eager",
       "fetchpriority": "high"
      },
@@ -11340,7 +11340,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -11464,8 +11464,8 @@
       "src": "/assets/images/remote/hatchdata/2026/05/FY27_two_paths_thumbnail.png",
       "srcset": null,
       "alt": "Summary graphic: BCSD faces a $23.8M FY27 deficit. Every mill not raised must be matched by ~$5.4M in cuts. A 1-to-5 mill scale shows two balanced options: +1.7 mills (~$12/month on a median home) with $15.8M in cuts, or +4.3 mills (~$30/month) with only $0.68M in cuts.",
-      "width": null,
-      "height": null,
+      "width": "1600",
+      "height": "900",
       "loading": "eager",
       "fetchpriority": "high"
      },
@@ -11620,7 +11620,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -12122,7 +12122,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -12626,7 +12626,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -12982,7 +12982,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -13220,7 +13220,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -13555,7 +13555,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -13728,7 +13728,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -13980,8 +13980,8 @@
       "src": "/assets/images/remote/hatchdata/images/2025/03/photo-1517784229726-7b866d820438.jpeg",
       "srcset": null,
       "alt": "State of Play, Gaming on Linux in the roaring 20's",
-      "width": null,
-      "height": null,
+      "width": "2000",
+      "height": "1393",
       "loading": "eager",
       "fetchpriority": "high"
      },
@@ -14128,7 +14128,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -14355,7 +14355,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -14713,7 +14713,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -15039,7 +15039,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -15274,7 +15274,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -15456,7 +15456,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -15584,8 +15584,8 @@
       "src": "/assets/images/remote/hatchdata/2026/02/signal-2026-02-10-090706-2.jpeg",
       "srcset": null,
       "alt": "A man wearing headphones reviews a QGIS map of Macon-Bibb County voter district mismatches on a center monitor, flanked by two screens of Python code, at a desk late at night.",
-      "width": null,
-      "height": null,
+      "width": "2000",
+      "height": "1500",
       "loading": "eager",
       "fetchpriority": "high"
      },
@@ -15732,7 +15732,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
@@ -15953,7 +15953,7 @@
    ],
    "stylesheets": [
     "https://fonts.bunny.net/css?family=noto-sans:400,400i,700,700i|atkinson-hyperlegible:400,400i,700,700i&display=swap",
-    "/assets/css/main.css"
+    "/_astro/Base.Bfb0OV4t.css"
    ],
    "jsonLd": [
     {
