@@ -15,6 +15,8 @@ The older posts should sound as if Kerry is writing at the time of publication. 
 
 - **Give a photo essay a reason to start looking.** The crossover opening points readers to the bridge and says what it means. The awards section can then introduce the people and the order of events.
 
+- **Let the source material do some of the work.** In the transparency update, the dates show how long Kerry had been waiting. The attorney’s email explains the delay in the next section, where the reader can see the exact wording.
+
 ## Successful GPTZero flips
 
 These are excerpt-level results from `nobotrs analyze --gptzero`. The percentages are GPTZero’s scores for the displayed classes. Short excerpts can vary between runs. The results describe the passages tested and give us observations to compare in later edits.
@@ -33,6 +35,11 @@ These are excerpt-level results from `nobotrs analyze --gptzero`. The percentage
 | [Using Rust to Make Python More Manageable](src/content/posts/2025-03-10-using-rust-to-make-python-more-manageable-2.html) | Restored the joke about the author’s favorite Python tool and told readers where to find the environment after running the commands. | AI only 60.6% → Human only 99.98% | `42d3142` |
 | [Focusrite Scarlett Solo Review](src/content/posts/2025-03-13-gear-review-focusrite-scarlet-solo.html) | The first rewrite still read like a product summary. The second followed the battery and durability problems through to the cable swap the author uses for work. | AI only 100% → Human only 80.7% | `42d3142` |
 | [Delayed but Determined](src/content/posts/2025-03-29-delayed-but-determined.html) | Opened with the missed Friday estimate and the author’s calls and emails. Kept the district’s explanation attributed and its new date tentative. | AI only 100% → Human only 57.8% (low confidence) | `42d3142` |
+| [GSDF Patriot 25](src/content/posts/2025-03-29-gsdf-patriot-25.html) | Opened with what the observer controller did and gave the reader a reason to look at the exercise photos. | AI only 100% → Human only 75.3% (medium confidence) | `cc56fe2` |
+| [System76 Pangolin 12 Review](src/content/posts/2025-04-01-gear-review-system76-pangolin-12-2.html) | After the first rewrite stayed AI only, the second showed what the author plugs in and the USB-C setup he still wants. | AI only 100% → Human only 99.91% | `cc56fe2` |
+| [Museum of Aviation](src/content/posts/2025-04-02-museum-of-aviation-25.html) | Kept the invitation to visit and pointed families toward the cockpits. Replaced generic praise with a reason to come back. | AI only 100% → Human only 92.9% | `cc56fe2` |
+| [Meet Me At The Mall](src/content/posts/2025-04-09-meet-me-at-the-mall.html) | Used the author’s account of what people could see and do, from hands-on CPR to the children’s activities. | AI only 100% → Human only 99.6% | `cc56fe2` |
+| [Still Waiting](src/content/posts/2025-04-16-still-waiting-a-transparency-update-from-bibb-county-schools-and-the-state-superintendent.html) | After two rewrites stayed AI only, the third let the records-request dates carry the opening. The district and state responses stay with their quotations. | AI only 50.1% (low confidence) → Human only 99.98% | `cc56fe2` |
 
 ## Mixed to Human only
 
