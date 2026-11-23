@@ -9931,7 +9931,7 @@
   "/mounting-network-drives-with-c-net/": {
    "lang": "en",
    "bodyClass": "layout-post",
-   "title": "Mounting Network Drives with C#.net | Kerry Hatcher",
+   "title": "Mapping a Network Drive in C# with NetworkDrive | Kerry Hatcher",
    "canonical": "https://www.kerryhatcher.com/mounting-network-drives-with-c-net/",
    "meta": {
     "viewport": "width=device-width, initial-scale=1",
@@ -9941,8 +9941,8 @@
     "og:title": "Mounting Network Drives with C#.net",
     "author": "Kerry Hatcher",
     "og:locale": "en_US",
-    "description": "First off, big thanks to aejw for making my life a lot easier by writing an awesome class to make this possible.Download the project files from here, extract cNetworkDrives0015.cs and add it to your project. using aejw.Network;",
-    "twitter:description": "First off, big thanks to aejw for making my life a lot easier by writing an awesome class to make this possible.Download the project files from here, extract cNetworkDrives0015.cs and add it to your project. using aejw.Network;",
+    "description": "A 2012 C# example using aejw's NetworkDrive class to map a share, pass optional credentials, and handle a mapping failure.",
+    "twitter:description": "A 2012 C# example using aejw's NetworkDrive class to map a share, pass optional credentials, and handle a mapping failure.",
     "og:url": "https://www.kerryhatcher.com/mounting-network-drives-with-c-net/",
     "og:site_name": "Kerry Hatcher",
     "og:type": "article",
@@ -9972,7 +9972,7 @@
       "name": "Kerry Hatcher",
       "url": "https://www.kerryhatcher.com/about/"
      },
-     "description": "First off, big thanks to&nbsp;aejw&nbsp;for making my life a lot easier by writing an awesome class to make this&nbsp;possible.Download the project files from here, extract cNetworkDrives0015.cs and add it to your project. using aejw.Network;",
+     "description": "A 2012 C# example using aejw&#39;s NetworkDrive class to map a share, pass optional credentials, and handle a mapping failure.",
      "headline": "Mounting Network Drives with C#.net",
      "url": "https://www.kerryhatcher.com/mounting-network-drives-with-c-net/",
      "datePublished": "2012-03-20T09:00:00-05:00",
@@ -10019,9 +10019,17 @@
      {
       "level": 1,
       "text": "Mounting Network Drives with C#.net"
+     },
+     {
+      "level": 2,
+      "text": "Add the drive-mapping helper"
+     },
+     {
+      "level": 2,
+      "text": "Map a share and check the result"
      }
     ],
-    "text": "MARCH 20, 2012 • 1 MIN READ Mounting Network Drives with C#.net OLD Photo by Patrick Lindenberg / Unsplash First off, big thanks to aejw for making my life a lot easier by writing an awesome class to make this possible. Download the project files from here, extract cNetworkDrives0015.cs and add it to your project. using aejw.Network; private bool mount_drive(string localdrive, string sharelocation, string user = \"blank\", string pass = \"blank\") { NetworkDrive oNetDrive = new NetworkDrive(); try { oNetDrive.LocalDrive = localdrive; oNetDrive.ShareName = sharelocation; if (user == \"blank\") { oNetDrive.MapDrive(); } else { oNetDrive.MapDrive(user, pass); } } catch (Exception err) { //Optional MessageBox to show Error //MessageBox.Show(this, \"Error: \" + err.Message); return false; } return true; } Example Usage: if (mount_drive(\"h\", @\"\\\\nas007\\shared\")) { //Alert that drive was mapped } else { //Alert that drive mapping failed } Kerry · March 2012 Aa Toggle reader-friendly font ← Back to writing",
+    "text": "MARCH 20, 2012 • 1 MIN READ Mounting Network Drives with C#.net OLD Photo by Patrick Lindenberg / Unsplash First off, big thanks to aejw’s NetworkDrive class for making my life easier. Here’s how I use it to map a share from C#. Call the helper with a drive letter and a share path. If you leave out the username, it lets NetworkDrive decide which credentials to use. You can also pass a username and password. If the code throws while setting up or mapping the drive, you get false back. Open the original NetworkDrives0015 source ZIP, then extract cNetworkDrives0015.cs and add it to your project. Add the drive-mapping helper using aejw.Network; private bool mount_drive(string localdrive, string sharelocation, string user = \"blank\", string pass = \"blank\") { NetworkDrive oNetDrive = new NetworkDrive(); try { oNetDrive.LocalDrive = localdrive; oNetDrive.ShareName = sharelocation; if (user == \"blank\") { oNetDrive.MapDrive(); } else { oNetDrive.MapDrive(user, pass); } } catch (Exception err) { //Optional MessageBox to show Error //MessageBox.Show(this, \"Error: \" + err.Message); return false; } return true; } Map a share and check the result if (mount_drive(\"h\", @\"\\\\nas007\\shared\")) { //Alert that drive was mapped } else { //Alert that drive mapping failed } Kerry · March 2012 Aa Toggle reader-friendly font ← Back to writing",
     "links": [
      {
       "text": "Patrick Lindenberg",
@@ -10032,11 +10040,11 @@
       "href": "https://unsplash.com/?utm_source=ghost&utm_medium=referral&utm_campaign=api-credit"
      },
      {
-      "text": "aejw",
+      "text": "aejw’s NetworkDrive class",
       "href": "http://www.codeproject.com/Members/aejw?ref=kerryhatcher.com"
      },
      {
-      "text": "here",
+      "text": "original NetworkDrives0015 source ZIP",
       "href": "http://www.codeproject.com/KB/system/mapnetdrive/NetworkDrives0015_src.zip?ref=kerryhatcher.com"
      },
      {
@@ -10062,12 +10070,12 @@
      "figcaption": 1,
      "table": 0,
      "pre": 2,
-     "code": 2,
+     "code": 4,
      "ul": 1,
      "ol": 0,
      "li": 1,
      "blockquote": 0,
-     "proseElements": 10,
+     "proseElements": 12,
      "shellElements": 27
     },
     "outline": [
@@ -10102,10 +10110,10 @@
      "4:span[aria-hidden]"
     ],
     "proseHashes": [
-     "c04e0debb5aa5e4cfdf39a8ae3319457e38ec180"
+     "3d9cdfb63b7c1d56ca6ae35bd03a1fc59cefe363"
     ],
     "proseLengths": [
-     1199
+     1622
     ]
    }
   },
@@ -12715,14 +12723,14 @@
       "text": "SSH to AWS, Quick and dirty"
      }
     ],
-    "text": "§ 04 Writing, page 4 43 pieces · Newest first OLD To The West Just a silly vacation video 5 OCT 2012 · 1 MIN READ OLD Mounting Network Drives with C#.net First off, big thanks to aejw for making my life a lot easier by writing an awesome class to make this possible.Download the project files from here, extract cNet... 20 MAR 2012 · 1 MIN READ OLD C#.net Check if user is in Active Directory Group Here’s a little C# function to see if the current user is in an Active Directory group. Give it the group name and it looks up your Windows login by SAM account name using the u... 15 MAR 2012 · 1 MIN READ OLD Networking 101 | Document everything Draw the network, photograph the setup, and keep the plan handy for the next person. 10 AUG 2011 · 2 MIN READ OLD Jenkins (Hudson) on Ubuntu 10.04 LTS This is pretty simple. I used the Jenkins Debian package repo on my Ubuntu server. So far it doesn’t look like it updates anything besides Jenkins. I’d still fire up a virtual m... 1 JUN 2011 · 1 MIN READ OLD Format and Mount EBS in Ubuntu Once you have a server up and running with an extra disk, you’ll need a few steps to get that disk ready. Here’s what I did with an EBS volume on the official Ubuntu 10.04 LTS A... 3 MAY 2011 · 1 MIN READ OLD SSH to AWS, Quick and dirty Got your EC2 instance running? Here’s how I connect from OS X. Copy the private key you downloaded when you created the instance into your .ssh directory and restrict its file p... 2 MAY 2011 · 1 MIN READ 1 2 3 4 ← Newer",
+    "text": "§ 04 Writing, page 4 43 pieces · Newest first OLD To The West Just a silly vacation video 5 OCT 2012 · 1 MIN READ OLD Mounting Network Drives with C#.net First off, big thanks to aejw’s NetworkDrive class for making my life easier. Here’s how I use it to map a share from C#. Call the helper with a drive letter and a share path. I... 20 MAR 2012 · 1 MIN READ OLD C#.net Check if user is in Active Directory Group Here’s a little C# function to see if the current user is in an Active Directory group. Give it the group name and it looks up your Windows login by SAM account name using the u... 15 MAR 2012 · 1 MIN READ OLD Networking 101 | Document everything Draw the network, photograph the setup, and keep the plan handy for the next person. 10 AUG 2011 · 2 MIN READ OLD Jenkins (Hudson) on Ubuntu 10.04 LTS This is pretty simple. I used the Jenkins Debian package repo on my Ubuntu server. So far it doesn’t look like it updates anything besides Jenkins. I’d still fire up a virtual m... 1 JUN 2011 · 1 MIN READ OLD Format and Mount EBS in Ubuntu Once you have a server up and running with an extra disk, you’ll need a few steps to get that disk ready. Here’s what I did with an EBS volume on the official Ubuntu 10.04 LTS A... 3 MAY 2011 · 1 MIN READ OLD SSH to AWS, Quick and dirty Got your EC2 instance running? Here’s how I connect from OS X. Copy the private key you downloaded when you created the instance into your .ssh directory and restrict its file p... 2 MAY 2011 · 1 MIN READ 1 2 3 4 ← Newer",
     "links": [
      {
       "text": "old To The West Just a silly vacation video 5 Oct 2012 · 1 min read",
       "href": "/to-the-west/"
      },
      {
-      "text": "old Mounting Network Drives with C#.net First off, big thanks to aejw for making my life a lot easier by writing an awesome class to make this possible.Download the project files from here, extract cNet... 20 Mar 2012 · 1 min read",
+      "text": "old Mounting Network Drives with C#.net First off, big thanks to aejw’s NetworkDrive class for making my life easier. Here’s how I use it to map a share from C#. Call the helper with a drive letter and a share path. I... 20 Mar 2012 · 1 min read",
       "href": "/mounting-network-drives-with-c-net/"
      },
      {
