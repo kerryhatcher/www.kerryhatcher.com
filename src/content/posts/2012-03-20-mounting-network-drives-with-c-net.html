@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Mounting Network Drives with C#.net"
+seo_title: "Mapping a Network Drive in C# with NetworkDrive"
+seo_description: "A 2012 C# example using aejw's NetworkDrive class to map a share, pass optional credentials, and handle a mapping failure."
 date: 2012-03-20T10:00:00.000-04:00
 tags:
   - "old"
@@ -11,7 +13,7 @@ feature_image_caption: "<span style=\"white-space: pre-wrap;\">Photo by </span><
 ghost_id: "6876a213df7b2049e70a0662"
 ghost_url: "https://www.kerryhatcher.com/mounting-network-drives-with-c-net/"
 ---
-<p>First off, big thanks to&nbsp;<a href="http://www.codeproject.com/Members/aejw?ref=kerryhatcher.com" rel="noreferrer">aejw</a>&nbsp;for making my life a lot easier by writing an awesome class to make this&nbsp;possible.<br><br>Download the project files from <a href="http://www.codeproject.com/KB/system/mapnetdrive/NetworkDrives0015_src.zip?ref=kerryhatcher.com" rel="noreferrer">here</a>, extract cNetworkDrives0015.cs and add it to your project.</p><pre><code class="language-C#">using aejw.Network;
+<p>First off, big thanks to <a href="http://www.codeproject.com/Members/aejw?ref=kerryhatcher.com" rel="noreferrer">aejw’s NetworkDrive class</a> for making my life easier. Here’s how I use it to map a share from C#. Call the helper with a drive letter and a share path. If you leave out the username, it lets NetworkDrive decide which credentials to use. You can also pass a username and password. If the code throws while setting up or mapping the drive, you get <code>false</code> back.</p><p>Open the <a href="http://www.codeproject.com/KB/system/mapnetdrive/NetworkDrives0015_src.zip?ref=kerryhatcher.com" rel="noreferrer">original NetworkDrives0015 source ZIP</a>, then extract <code>cNetworkDrives0015.cs</code> and add it to your project.</p><h2 id="add-the-drive-mapping-helper">Add the drive-mapping helper</h2><pre><code class="language-C#">using aejw.Network;
 
 
 private bool mount_drive(string localdrive, string sharelocation, string user = "blank", string pass = "blank")
@@ -43,7 +45,7 @@ private bool mount_drive(string localdrive, string sharelocation, string user = 
 
         }
 </code></pre>
-<p>Example Usage:</p><pre><code class="language-C#">
+<h2 id="map-a-share-and-check-the-result">Map a share and check the result</h2><pre><code class="language-C#">
 if (mount_drive("h", @"\\nas007\shared"))
             {
                 //Alert that drive was mapped

@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Jenkins (Hudson) on Ubuntu 10.04 LTS"
+seo_title: "Installing Jenkins on Ubuntu 10.04 LTS (2011)"
+seo_description: "A 2011 walkthrough of installing Jenkins on Ubuntu 10.04 LTS with the Debian package repository, including a Tomcat snag."
 date: 2011-06-01T13:46:00.000-04:00
 tags:
   - "old"
@@ -11,11 +13,11 @@ feature_image_caption: "<span style=\"white-space: pre-wrap;\">Photo by </span><
 ghost_id: "6876a213df7b2049e70a065f"
 ghost_url: "https://www.kerryhatcher.com/jenkins-hudson-on-ubuntu-10-04-lts/"
 ---
-<p>This is VERY simple. Don't be afraid of using this alternate repo for your Ubuntu Server. As of now, it doesn't seem to update any other software other than Jenkins itself. However, I would still recommend firing up a Virtual Machine to test it real quick before you begin deploying on a mission critical server.</p><p><br>The first step is to add the Jenkins key to your apt.</p><pre><code>wget -q -O - http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -
+<p>This is pretty simple. I used the Jenkins Debian package repo on my Ubuntu server. So far it doesn’t look like it updates anything besides Jenkins. I’d still fire up a virtual machine and give it a quick try before installing it on a server you depend on.</p><p><strong>Archive note.</strong> The repository and commands below are specific to this Ubuntu 10.04 setup.</p><p><br>The first step is to add the Jenkins key to your apt.</p><pre><code>wget -q -O - http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -
 </code></pre>
 <p>Then add the repo to your sources list (/et/apt/sources.list). I just added it to the bottom with a quick #comment to let others know what it is:</p><pre><code>#Jenkins CI Server Repo 
 deb http://pkg.jenkins-ci.org/debian binary
 </code></pre>
 <p>Now update and install with aptitude:</p><pre><code>sudo aptitude update sudo aptitude install jenkins
 </code></pre>
-<h2 id="warning">Warning:</h2><p>When I first started. I installed <a href="http://tomcat.apache.org/?ref=kerryhatcher.com" rel="noreferrer">Tomcat</a> during the Ubuntu setup. I had read that would be the preferred way to deploy Hudson (<a href="http://jenkins-ci.org/content/hudsons-future?ref=kerryhatcher.com" rel="noreferrer">Hudson was renamed Jenkins due to a trademark dispute with Oracle</a>). Don't do this!! If you do, just <code>aptitude remove tomcat6</code> and service restart jenkins.</p><p><a href="http://pkg.jenkins-ci.org/debian/?ref=kerryhatcher.com" rel="noreferrer">Reference</a></p>
+<h2 id="warning">The Tomcat conflict I ran into</h2><p>When I first started. I installed <a href="http://tomcat.apache.org/?ref=kerryhatcher.com" rel="noreferrer">Tomcat</a> during the Ubuntu setup. I had read that would be the preferred way to deploy Hudson (<a href="http://jenkins-ci.org/content/hudsons-future?ref=kerryhatcher.com" rel="noreferrer">Hudson was renamed Jenkins due to a trademark dispute with Oracle</a>). Don't do this!! If you do, just <code>aptitude remove tomcat6</code> and service restart jenkins.</p><p><a href="http://pkg.jenkins-ci.org/debian/?ref=kerryhatcher.com" rel="noreferrer">Original Jenkins Debian package instructions</a></p>

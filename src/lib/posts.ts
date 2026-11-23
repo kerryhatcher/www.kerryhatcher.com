@@ -20,12 +20,13 @@ export const postCategory = (post: Post) => post.data.tags[0];
 export const excerptText = (post: Post) => stripHtml(post.data.excerptHtml);
 
 /**
- * `<meta name="description">` text, as jekyll-seo-tag produced it:
+ * Use the editorial description when present. The legacy fallback uses
  * excerpt → strip HTML → normalise whitespace → 100 words max (with "…").
  * Returned *undecoded* (entities such as &nbsp; intact); consumers decode for
  * attributes and escape-once for JSON-LD, as seo-tag did.
  */
 export function postDescription(post: Post): string {
+  if (post.data.seo_description) return post.data.seo_description;
   const text = normalizeWhitespace(stripHtml(separateBlocks(post.data.excerptHtml))).trim();
   const dek = normalizeWhitespace(stripHtml(post.data.dek ?? '')).trim();
   return truncateWords(text || dek, 100, '…') || site.description;

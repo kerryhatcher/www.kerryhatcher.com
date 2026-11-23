@@ -16,6 +16,8 @@ import { z } from 'astro/zod';
 const postSchema = z.object({
   title: z.string(),
   dek: z.string().optional(),
+  seo_title: z.string().trim().min(1).optional(),
+  seo_description: z.string().trim().min(1).optional(),
   date: z.coerce.date(),
   tags: z.array(z.string()).default([]),
   authors: z.array(z.string()).default([]),
