@@ -137,7 +137,7 @@
       "text": "Taking Control of Your Email - Part 2: Using Your Own Domain for Email"
      }
     ],
-    "text": "MACON-BIBB COUNTY, GEORGIA I write about whatever I'm digging into. I'm a software engineer and a Macon-Bibb County resident. Most pieces here started as a question I wanted answered. The recurring subjects are civic data, local government, education, digital privacy, and whatever I'm building this month. § 01 Recent writing 43 pieces · Newest first BIBB-SCHOOLS Out of Runway: The FY27 BCSD Budget The Bibb County School District is staring at back-to-back eight-figure deficits, a fund balance falling toward zero, and a June 2 deadline. Here's what the math actually says. 27 MAY 2026 · 7 MIN READ MACON Trust, Then Verify: 1,035 Reasons Why What happens when you check voter registrations against a map? In Macon-Bibb County, 1,035 voters don't match. A special election is in 34 days. 11 FEB 2026 · 8 MIN READ I’m Running for the Bibb County Board of Education I’ve been attending budget hearings, digging through spreadsheets, researching state funding formulas for fun, and then writing long posts trying to share what I discover. I’ve ... 11 DEC 2025 · 4 MIN READ BCSD Restoring State Funding, For State Mandated Costs Funding for school employee health insurance was eliminated due to the great recession, it needs to be restored. 2 DEC 2025 · 7 MIN READ Coding with AI - Episode 2: Supercharging Your Python Workflow with GitHub Copilot + Ruff Boost your coding flow by pairing GitHub Copilot’s smart autocomplete with Ruff’s lightning-fast linting. Learn how to guide AI with comments, enforce clean code automatically, ... 2 SEP 2025 · 4 MIN READ Coding with AI - Episode 1: How Real‑Time Collaboration Transforms Your Workflow Discover how coding with AI feels less like searching for answers and more like collaborating with a teammate—boosting flow, sparking creativity, and helping you learn faster. 1 SEP 2025 · 3 MIN READ Yesterday and Tomorrow The Bibb School Board adopted the budget yesterday, however, this is only the beginning. 19 JUN 2025 · 3 MIN READ No Kings Protest Well over 500 peaceful protesters gathered in downtown Macon today. 14 JUN 2025 · 1 MIN READ Digital Privacy and Freedoms Are Under Threat The STOP CSAM Act threatens encryption and online privacy. Learn why the EFF opposes it — and how you can help defend digital freedom. 13 JUN 2025 · 16 MIN READ Empty Chairs and Big Decisions: Why the Final BCSD Budget Hearing Matters At the June 10, 2025 budget hearing, I urged the Bibb County school board to fund an elementary literacy coordinator. 11 JUN 2025 · 4 MIN READ Better Schools, Brighter Futures: Literacy special edition In Bibb County, roughly 18% of elementary students were proficient in reading. In June 2025, I asked the board to fund an elementary English Language Arts coordinator. 9 JUN 2025 · 9 MIN READ Taking Control of Your Email - Part 2: Using Your Own Domain for Email Keep your email address if you switch providers. This June 2025 walkthrough uses Fastmail and Cloudflare DNS. 5 JUN 2025 · 15 MIN READ 1 2 3 4 Older →",
+    "text": "MACON-BIBB COUNTY, GEORGIA I write about whatever I'm digging into. I'm a software engineer and a Macon-Bibb County resident. Most pieces here started as a question I wanted answered. The recurring subjects are civic data, local government, education, digital privacy, and whatever I'm building this month. § 01 Recent writing 43 pieces · Newest first BIBB-SCHOOLS Out of Runway: The FY27 BCSD Budget The Bibb County School District is staring at back-to-back eight-figure deficits, a fund balance falling toward zero, and a June 2 deadline. Here's what the math actually says. 27 MAY 2026 · 7 MIN READ MACON Trust, Then Verify: 1,035 Reasons Why What happens when you check voter registrations against a map? In Macon-Bibb County, 1,035 voters don't match. A special election is in 34 days. 11 FEB 2026 · 8 MIN READ I’m Running for the Bibb County Board of Education I’ve been attending budget hearings, digging through spreadsheets, researching state funding formulas for fun, and then writing long posts trying to share what I discover. I’ve ... 11 DEC 2025 · 4 MIN READ BCSD Restoring State Funding, For State Mandated Costs Funding for school employee health insurance was eliminated due to the great recession, it needs to be restored. 2 DEC 2025 · 7 MIN READ Coding with AI - Episode 2: Supercharging Your Python Workflow with GitHub Copilot + Ruff Boost your coding flow by pairing GitHub Copilot’s smart autocomplete with Ruff’s lightning-fast linting. Learn how to guide AI with comments, enforce clean code automatically, ... 2 SEP 2025 · 4 MIN READ Coding with AI - Episode 1: How Real‑Time Collaboration Transforms Your Workflow Discover how coding with AI feels less like searching for answers and more like collaborating with a teammate—boosting flow, sparking creativity, and helping you learn faster. 1 SEP 2025 · 3 MIN READ Yesterday and Tomorrow The Bibb School Board adopted the budget yesterday, however, this is only the beginning. 19 JUN 2025 · 3 MIN READ No Kings Protest Photographs from the June 14, 2025 No Kings protest in downtown Macon. 14 JUN 2025 · 1 MIN READ Digital Privacy and Freedoms Are Under Threat The STOP CSAM Act threatens encryption and online privacy. Learn why the EFF opposes it — and how you can help defend digital freedom. 13 JUN 2025 · 16 MIN READ Empty Chairs and Big Decisions: Why the Final BCSD Budget Hearing Matters At the June 10, 2025 budget hearing, I urged the Bibb County school board to fund an elementary literacy coordinator. 11 JUN 2025 · 4 MIN READ Better Schools, Brighter Futures: Literacy special edition In Bibb County, roughly 18% of elementary students were proficient in reading. In June 2025, I asked the board to fund an elementary English Language Arts coordinator. 9 JUN 2025 · 9 MIN READ Taking Control of Your Email - Part 2: Using Your Own Domain for Email Keep your email address if you switch providers. This June 2025 walkthrough uses Fastmail and Cloudflare DNS. 5 JUN 2025 · 15 MIN READ 1 2 3 4 Older →",
     "links": [
      {
       "text": "bibb-schools Out of Runway: The FY27 BCSD Budget The Bibb County School District is staring at back-to-back eight-figure deficits, a fund balance falling toward zero, and a June 2 deadline. Here's what the math actually says. 27 May 2026 · 7 min read",
@@ -168,7 +168,7 @@
       "href": "/yesterday-and-tomorrow/"
      },
      {
-      "text": "No Kings Protest Well over 500 peaceful protesters gathered in downtown Macon today. 14 Jun 2025 · 1 min read",
+      "text": "No Kings Protest Photographs from the June 14, 2025 No Kings protest in downtown Macon. 14 Jun 2025 · 1 min read",
       "href": "/no-kings-protest/"
      },
      {
@@ -11222,7 +11222,7 @@
   "/no-kings-protest/": {
    "lang": "en",
    "bodyClass": "layout-post",
-   "title": "No Kings Protest | Kerry Hatcher",
+   "title": "No Kings Protest in Downtown Macon | June 14, 2025 Photos | Kerry Hatcher",
    "canonical": "https://www.kerryhatcher.com/no-kings-protest/",
    "meta": {
     "viewport": "width=device-width, initial-scale=1",
@@ -11232,8 +11232,8 @@
     "og:title": "No Kings Protest",
     "author": "Kerry Hatcher",
     "og:locale": "en_US",
-    "description": "Well over 500 peaceful protesters gathered in downtown Macon today.",
-    "twitter:description": "Well over 500 peaceful protesters gathered in downtown Macon today.",
+    "description": "Kerry Hatcher's photo gallery from the June 14, 2025 No Kings protest in downtown Macon, Georgia.",
+    "twitter:description": "Kerry Hatcher's photo gallery from the June 14, 2025 No Kings protest in downtown Macon, Georgia.",
     "og:url": "https://www.kerryhatcher.com/no-kings-protest/",
     "og:site_name": "Kerry Hatcher",
     "og:type": "article",
@@ -11263,7 +11263,7 @@
       "name": "Kerry Hatcher",
       "url": "https://www.kerryhatcher.com/about/"
      },
-     "description": "Well over 500 peaceful protesters gathered in downtown Macon today.",
+     "description": "Kerry Hatcher&#39;s photo gallery from the June 14, 2025 No Kings protest in downtown Macon, Georgia.",
      "headline": "No Kings Protest",
      "url": "https://www.kerryhatcher.com/no-kings-protest/",
      "datePublished": "2025-06-14T15:11:04-05:00",
@@ -11310,9 +11310,13 @@
      {
       "level": 1,
       "text": "No Kings Protest"
+     },
+     {
+      "level": 2,
+      "text": "Photos from downtown Macon"
      }
     ],
-    "text": "JUNE 14, 2025 • 1 MIN READ No Kings Protest Well over 500 peaceful protesters gathered in downtown Macon today. Kerry · June 2025 Aa Toggle reader-friendly font ← Back to writing",
+    "text": "JUNE 14, 2025 • 1 MIN READ No Kings Protest Photographs from the June 14, 2025 No Kings protest in downtown Macon. Here’s what downtown Macon looked like on June 14, 2025. I took these photos at the No Kings protest. The signs and flags tell a lot of the story. Photos from downtown Macon Kerry · June 2025 Aa Toggle reader-friendly font ← Back to writing",
     "links": [
      {
       "text": "← Back to writing",
@@ -11359,7 +11363,7 @@
      {
       "src": "/assets/images/remote/hatchdata/images/2025/06/576A7091.jpeg",
       "srcset": null,
-      "alt": "",
+      "alt": "A man in a blue shirt holds a “Trump Was Right (About Everything)” sign above a hand-painted yellow sign and a U.S. flag, with another attendee wearing a mask and sunglasses.",
       "width": "2945",
       "height": "4417",
       "loading": "lazy",
@@ -11404,7 +11408,7 @@
     ],
     "iframes": [],
     "counts": {
-     "p": 3,
+     "p": 4,
      "figure": 2,
      "figcaption": 0,
      "table": 0,
@@ -11414,7 +11418,7 @@
      "ol": 0,
      "li": 0,
      "blockquote": 0,
-     "proseElements": 21,
+     "proseElements": 23,
      "shellElements": 19
     },
     "outline": [
@@ -11441,10 +11445,10 @@
      "4:span[aria-hidden]"
     ],
     "proseHashes": [
-     "314152d0444899c56e5d591a258c2188f1b98c7c"
+     "d05a9d42a22974a93c474873e3fba01f6e7e9bbb"
     ],
     "proseLengths": [
-     2070
+     2464
     ]
    }
   },
@@ -16411,7 +16415,7 @@
     "id": "https://www.kerryhatcher.com/no-kings-protest",
     "published": "2025-06-14T15:11:04-05:00",
     "updated": "2025-06-14T15:11:04-05:00",
-    "contentHash": "314152d0444899c56e5d591a258c2188f1b98c7c"
+    "contentHash": "d05a9d42a22974a93c474873e3fba01f6e7e9bbb"
    },
    {
     "title": "Digital Privacy and Freedoms Are Under Threat",
