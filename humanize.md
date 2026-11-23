@@ -40,10 +40,15 @@ These are excerpt-level results from `nobotrs analyze --gptzero`. The percentage
 | [Museum of Aviation](src/content/posts/2025-04-02-museum-of-aviation-25.html) | Kept the invitation to visit and pointed families toward the cockpits. Replaced generic praise with a reason to come back. | AI only 100% → Human only 92.9% | `cc56fe2` |
 | [Meet Me At The Mall](src/content/posts/2025-04-09-meet-me-at-the-mall.html) | Used the author’s account of what people could see and do, from hands-on CPR to the children’s activities. | AI only 100% → Human only 99.6% | `cc56fe2` |
 | [Still Waiting](src/content/posts/2025-04-16-still-waiting-a-transparency-update-from-bibb-county-schools-and-the-state-superintendent.html) | After two rewrites stayed AI only, the third let the records-request dates carry the opening. The district and state responses stay with their quotations. | AI only 50.1% (low confidence) → Human only 99.98% | `cc56fe2` |
+| [Investing in Bibb County’s Future](src/content/posts/2025-05-16-investing-in-bibb-countys-future.html) | Restored the author’s own request in the opening, distinguished it from the district’s modeled raise, and walked readers into the tax calculation using a house price before exemptions. | AI only 100% → Human only 98.2% | `eaaad18` |
 
 ## Mixed to Human only
 
 - [It’s Time to Switch to a New Email Provider](src/content/posts/2020-05-11-its-time-to-switch-to-a-new-email-provider.html) moved from Mixed (99.6%) to Human only (65.8%, medium confidence) in one follow-up round. The password-reset opening returned to the author’s original question, and the postcard analogy showed what changes when two mail servers encrypt the connection between them. The same five paragraphs were scanned before and after. Accepted in `67519dc`.
+
+## Unresolved scans
+
+- [Taking Control of Your Email, Part 1](src/content/posts/2025-06-03-taking-control-of-your-email-part-1-choosing-a-private-email-provider.html) stayed AI only at 100% across four revisions of the same ten paragraphs. The accepted draft keeps the provider comparisons easier to scan, dates the price examples to June 2025, and avoids treating paid plans as a guarantee of deliverability. Accepted in `eaaad18`.
 
 ## Adding a new entry
 
