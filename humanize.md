@@ -28,6 +28,10 @@ These are excerpt-level results from `nobotrs analyze --gptzero`. The percentage
 | [Make Your Internet Faster and Safer for Free](src/content/posts/2020-05-08-make-your-internet-faster-and-safer-for-free.html) | Two definition-first drafts still scored 100% AI only. The accepted draft opened with the actual Firefox timings and used them to introduce DNS. | AI only 100% → Human only 91.0% | `5d3e476` |
 | [Better Python Logging](src/content/posts/2025-03-07-better-python-logging.html) | Restored the joke about overusing `print()` and showed how another failing run leads to another debug print. The output captions point readers to message context while explaining why totals vary. | AI only 100% → Human only 68.4% | `5d3e476` |
 
+## Mixed to Human only
+
+- [It’s Time to Switch to a New Email Provider](src/content/posts/2020-05-11-its-time-to-switch-to-a-new-email-provider.html) moved from Mixed (99.6%) to Human only (65.8%, medium confidence) in one follow-up round. The password-reset opening returned to the author’s original question, and the postcard analogy showed what changes when two mail servers encrypt the connection between them. The same five paragraphs were scanned before and after. Accepted in `67519dc`.
+
 ## Adding a new entry
 
 Whenever a revised excerpt moves from **AI only** to **Human only** and the edit is kept, add a row with the post link, the concrete change, the two results, and the accepted commit. Use the same passage boundaries on both scans. If an archive note was part of the first excerpt, include it in the second. Record an intermediate round when it helps explain why the next edit worked better for the reader. Add a lesson above when the example reveals something new about the author’s voice or the material.
