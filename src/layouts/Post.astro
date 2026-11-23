@@ -3,7 +3,7 @@ import Base from './Base.astro';
 import { absoluteUrl, site } from '../lib/site';
 import { longDate, monthYear, xmlDate } from '../lib/dates';
 import { seoTitle } from '../lib/text';
-import { withCloudflareGalleryImages } from '../lib/gallery-images';
+import { localImageDimensions, withCloudflareGalleryImages } from '../lib/gallery-images';
 import { postDescription, postHtml, postMinutes, postUrl, type Post } from '../lib/posts';
 
 interface Props {
@@ -14,6 +14,7 @@ const { data } = post;
 const published = xmlDate(data.date);
 const minutes = postMinutes(post);
 const title = seoTitle(data.title);
+const heroDimensions = await localImageDimensions(data.feature_image);
 const html = postHtml(post)
   .replace(/<table\b[^>]*>[\s\S]*?<\/table>/g, table =>
     `<div class="post__table-scroll" role="region" aria-label="Scrollable table" tabindex="0">${table}</div>`,
@@ -24,7 +25,7 @@ const body = import.meta.env.MODE === 'cloudflare' ? withCloudflareGalleryImages
 <Base
   layout="post"
   seo={{
-    title: `${title} | ${site.title}`,
+    title: `${data.seo_title ?? title} | ${site.title}`,
     headline: title,
     description: postDescription(post),
     path: postUrl(post),
@@ -60,6 +61,8 @@ const body = import.meta.env.MODE === 'cloudflare' ? withCloudflareGalleryImages
         <img
           src={data.feature_image}
           alt={data.feature_image_alt ?? data.title}
+          width={heroDimensions?.width}
+          height={heroDimensions?.height}
           loading="eager"
           fetchpriority="high"
           decoding="async"

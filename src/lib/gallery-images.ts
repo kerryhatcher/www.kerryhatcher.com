@@ -1,8 +1,17 @@
+import { resolve } from 'node:path';
+import sharp from 'sharp';
+
 const imageWidths = [320, 640, 960, 1280];
 
 export function isLocalResizableImage(src: string | undefined): src is string {
   return !!src && /^\/assets\/images\/[\w./@-]+\.(?:jpe?g|png|webp|avif)$/i.test(src) &&
     !src.split('/').includes('..');
+}
+
+export async function localImageDimensions(src: string | undefined) {
+  if (!isLocalResizableImage(src)) return;
+  const metadata = await sharp(resolve('public', `.${src}`)).metadata().catch(() => undefined);
+  return metadata?.autoOrient;
 }
 
 export function cloudflareImageSrcset(src: string, width: number): string | undefined {
