@@ -13,6 +13,8 @@ The older posts should sound as if Kerry is writing at the time of publication. 
 
 - **Start with a measurement when the post already has one.** The DNS post is easier to follow when the reader sees a lookup take 283 ms and the download take 124 ms before learning what DNS does. The timings give the distinction between lookup speed and throughput some stakes.
 
+- **Give a photo essay a reason to start looking.** The crossover opening points readers to the bridge and says what it means. The awards section can then introduce the people and the order of events.
+
 ## Successful GPTZero flips
 
 These are excerpt-level results from `nobotrs analyze --gptzero`. The percentages are GPTZero’s scores for the displayed classes. Short excerpts can vary between runs. The results describe the passages tested and give us observations to compare in later edits.
@@ -27,6 +29,10 @@ These are excerpt-level results from `nobotrs analyze --gptzero`. The percentage
 | [Save Money and Protect Your Site with a CDN](src/content/posts/2020-05-07-save-money-protect-your-site-with-a-cdn.html) | Replaced a generic explanation with an example of a reader requesting a photo that the CDN already has. | AI only 100% → Human only 96.3% | `c084347` |
 | [Make Your Internet Faster and Safer for Free](src/content/posts/2020-05-08-make-your-internet-faster-and-safer-for-free.html) | Two definition-first drafts still scored 100% AI only. The accepted draft opened with the actual Firefox timings and used them to introduce DNS. | AI only 100% → Human only 91.0% | `5d3e476` |
 | [Better Python Logging](src/content/posts/2025-03-07-better-python-logging.html) | Restored the joke about overusing `print()` and showed how another failing run leads to another debug print. The output captions point readers to message context while explaining why totals vary. | AI only 100% → Human only 68.4% | `5d3e476` |
+| [Crossover 2025](src/content/posts/2025-03-07-crossover-2025.html) | The first rewrite retold the ceremony and overlapped the awards section. The second invited readers into the photo essay and explained the bridge. | AI only 100% → Human only 99.3% | `42d3142` |
+| [Using Rust to Make Python More Manageable](src/content/posts/2025-03-10-using-rust-to-make-python-more-manageable-2.html) | Restored the joke about the author’s favorite Python tool and told readers where to find the environment after running the commands. | AI only 60.6% → Human only 99.98% | `42d3142` |
+| [Focusrite Scarlett Solo Review](src/content/posts/2025-03-13-gear-review-focusrite-scarlet-solo.html) | The first rewrite still read like a product summary. The second followed the battery and durability problems through to the cable swap the author uses for work. | AI only 100% → Human only 80.7% | `42d3142` |
+| [Delayed but Determined](src/content/posts/2025-03-29-delayed-but-determined.html) | Opened with the missed Friday estimate and the author’s calls and emails. Kept the district’s explanation attributed and its new date tentative. | AI only 100% → Human only 57.8% (low confidence) | `42d3142` |
 
 ## Mixed to Human only
 
