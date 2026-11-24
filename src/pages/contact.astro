@@ -238,11 +238,15 @@ const available = endpoint !== '';
         } else if (response.status === 409) {
           // Same ID, different data: never resubmit automatically.
           show('error', `I could not reconcile this message with an earlier submission. Please email ${email} before trying again.`);
-        } else if ([413, 422, 429].includes(response.status)) {
-          // Definite rejection: nothing was stored, so the next attempt may use a new ID.
+        } else if ([413, 422].includes(response.status)) {
+          // Validation or size rejection happens before storage, so the next attempt may use a new ID.
           pending = null;
           writeMarker(null);
           show('error', `Your message was not accepted. Check your details and try again, or email ${email}.`);
+        } else if (response.status === 429) {
+          // Form-wide ingress can reject a retry of an already-stored submission, so a 429 is
+          // unconfirmed: keep the ID and body and let the visitor resend the same request later.
+          show('error', `This form is receiving too many requests right now. Wait about 10 minutes, then send again with the same details. Your message has not been confirmed, so it may already have been received.`);
         } else {
           // Opaque failure, 5xx, or a 2xx without the receipt shape: unconfirmed, keep the ID.
           show('error', unconfirmed);

@@ -263,13 +263,22 @@ A small mono `Aa` pill button in the post footer (between the byline and the bac
 
 ### Subscribe Button (sole real button in the system)
 - **Style:** Luminous Mid-Blue background, Ink-Blue Paper text, `border-radius: 6px`, padding `.65rem 1.1rem`, Noto Sans 600.
-- **Used only inside `.kg-signup-card`.** There is no general primary button in the chrome.
+- **Used only inside `.kg-signup-card`.** There is no general primary button in the chrome. The only other button is the `/contact/` submit, described under Contact Form.
 
 ### Pager (home pagination)
 - **Layout:** 3-column grid, `Newer` left / page trail center / `Older` right; top Strong Rule.
 - **Page pill (default):** Menlo 0.85rem, Silver Ink Muted, padded `0 .55rem` with a 2.75rem min-width and 2.75rem height (≈44px, the WCAG 2.5.5 touch-target floor), 999px radius, transparent border.
 - **Page pill (current):** Luminous Mid-Blue background, Ink-Blue Paper text, no border, weight 500.
 - **Newer / Older buttons:** Noto Sans 500, 1px Strong Rule border, 999px radius, padding `.55rem .9rem .55rem .8rem`; hover tints border + text to accent and lifts `-1px`. A mono arrow glyph nudges 3px on hover.
+
+### Contact Form (hidden `/contact/` page)
+- **Scope:** the single form on `/contact/`, a `noindex` page that is absent from navigation and the sitemap. It is a pilot surface, not a site-wide pattern.
+- **Fields:** stacked labels in Noto Sans 600 above each control. Inputs use the `--paper-2` surface, a 1px `--rule-strong` border and 4px radius. Name and email are required; phone and message are optional. The honeypot `website` field is off-screen and hidden from assistive technology.
+- **Focus:** the 2px `--accent` outline from the Focus Ring rule, on inputs and the submit button.
+- **Submit:** a pill button (`999px` radius, 1px `--rule-strong` border, `--paper-2` fill). On hover the border and text take the accent colour. While a request is in flight the button is disabled and reads "Sending…".
+- **Status:** a bordered block (1px `currentColor` border, 16px padding) with `role="status"`. Success uses the accent colour. Errors are bold. Every state is carried by text, never colour alone.
+- **Unavailable:** when no public endpoint is configured, the fieldset is disabled (controls at 60% opacity, `not-allowed` cursor). An explicit paragraph gives the public email address. The form is never hidden silently.
+- **Privacy:** typed values are not written to browser storage. Only the retry ID and a digest are kept, so a reload requires the original text again.
 
 ### Footer
 - **Layout:** 3-column grid (1fr auto auto), collapses to 1-column at 720px. Top Strong Rule.

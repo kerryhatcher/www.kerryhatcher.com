@@ -1,4 +1,5 @@
-import { expect, test } from '@playwright/test';
+import { expect, test, type Page } from '@playwright/test';
+import { validateHtpEndpoint } from '../src/lib/htp-endpoint.mjs';
 
 // Default build (PUBLIC_HTP_FORM_ENDPOINT unset): hidden page with an explicit unavailable state.
 test.describe('hidden contact page (default build)', () => {
@@ -25,36 +26,45 @@ test.describe('hidden contact page (default build)', () => {
   });
 });
 
-// Fixture build (CONTACT_HTP_FIXTURE=1, built with a synthetic .invalid endpoint): exercises
-// the submission contract against mocked responses. Every external request is aborted.
+// Fixture build (CONTACT_HTP_FIXTURE=1, built with the same synthetic endpoint passed as
+// CONTACT_HTP_ENDPOINT). Responses are mocked; every other external request is aborted.
 test.describe('contact form submission (fixture build)', () => {
   test.skip(!process.env.CONTACT_HTP_FIXTURE, 'set CONTACT_HTP_FIXTURE=1 with the synthetic fixture build');
 
-  // Must equal the PUBLIC_HTP_FORM_ENDPOINT the fixture build was made with.
+  // Fail collection loudly in fixture mode rather than letting an empty target hang on unhandled routes.
   const endpoint = process.env.CONTACT_HTP_ENDPOINT ?? '';
+  if (process.env.CONTACT_HTP_FIXTURE) {
+    if (!endpoint) throw new Error('CONTACT_HTP_ENDPOINT must be set when CONTACT_HTP_FIXTURE=1');
+    validateHtpEndpoint(endpoint);
+  }
+
+  const local = (url: string) => url.startsWith('http://localhost') || url.startsWith('http://127.0.0.1');
+
+  // Registered before the endpoint route: Playwright matches the most recent route first.
+  async function guardExternal(page: Page) {
+    await page.route('**/*', route => (local(route.request().url()) ? route.continue() : route.abort()));
+  }
+
+  async function fillAndSend(page: Page, name: string) {
+    await page.getByLabel('Your name (required)').fill(name);
+    await page.getByLabel('Email address (required)').fill('visitor@example.invalid');
+    await page.getByRole('button', { name: 'Send message' }).click();
+  }
 
   test('retries reuse one submission ID and only ok:true confirms', async ({ page }) => {
-    await page.route('**/*', route => {
-      const url = route.request().url();
-      if (url.startsWith(endpoint)) return; // handled below
-      return url.startsWith('http://localhost') || url.startsWith('http://127.0.0.1')
-        ? route.continue()
-        : route.abort();
-    });
-    const bodies: { submission_id: string; name: string }[] = [];
+    await guardExternal(page);
+    const bodies: { submission_id: string }[] = [];
     let call = 0;
     await page.route(endpoint, async route => {
       bodies.push(JSON.parse(route.request().postData() ?? '{}'));
       call += 1;
-      if (call === 1) return route.fulfill({ status: 503, contentType: 'application/json', body: '{"ok":false}' });
+      if (call === 1) return route.fulfill({ status: 503, contentType: 'application/json', body: '{}' });
       return route.fulfill({ status: 200, contentType: 'application/json', body: '{"ok":true,"duplicate":false}' });
     });
 
     await page.goto('/contact/');
     await expect(page.locator('[data-contact-form]')).toHaveAttribute('action', endpoint);
-    await page.getByLabel('Your name (required)').fill('Test Visitor');
-    await page.getByLabel('Email address (required)').fill('visitor@example.invalid');
-    await page.getByRole('button', { name: 'Send message' }).click();
+    await fillAndSend(page, 'Test Visitor');
     await expect(page.locator('[data-form-status]')).toContainText('could not confirm');
     await expect(page.locator('[data-form-status]')).not.toContainText('has been received');
 
@@ -65,26 +75,53 @@ test.describe('contact form submission (fixture build)', () => {
     expect(bodies[1].submission_id).toBe(bodies[0].submission_id);
   });
 
-  test('session storage keeps no raw contact values', async ({ page }) => {
-    await page.route(endpoint, route => route.fulfill({ status: 503, contentType: 'application/json', body: '{}' }));
-    await page.route('**/*', route => (route.request().url().startsWith('http://localhost') || route.request().url().startsWith('http://127.0.0.1')) ? route.continue() : route.abort());
+  test('a 429 keeps the submission ID and body for a same-ID retry', async ({ page }) => {
+    // Regression for review B1: form-wide 429 can hit a retry of an already-stored submission,
+    // so the client must not discard the ID or report a definite rejection.
+    await guardExternal(page);
+    const bodies: { submission_id: string; name: string }[] = [];
+    let call = 0;
+    await page.route(endpoint, async route => {
+      bodies.push(JSON.parse(route.request().postData() ?? '{}'));
+      call += 1;
+      if (call === 1) {
+        return route.fulfill({ status: 429, contentType: 'application/json', headers: { 'Retry-After': '600' }, body: '{"error":"rate_limited"}' });
+      }
+      return route.fulfill({ status: 200, contentType: 'application/json', body: '{"ok":true,"duplicate":true}' });
+    });
+
     await page.goto('/contact/');
-    await page.getByLabel('Your name (required)').fill('Private Name Value');
-    await page.getByLabel('Email address (required)').fill('private.value@example.invalid');
+    await fillAndSend(page, 'Rate Limited');
+    const status = page.locator('[data-form-status]');
+    await expect(status).toContainText('too many requests');
+    await expect(status).not.toContainText('was not accepted');
+    // The control is re-enabled and the details are not cleared, so the same request can be resent.
+    await expect(page.getByRole('button', { name: 'Send message' })).toBeEnabled();
+    await expect(page.getByLabel('Your name (required)')).toHaveValue('Rate Limited');
+
     await page.getByRole('button', { name: 'Send message' }).click();
+    await expect(status).toContainText('Thank you');
+    expect(bodies).toHaveLength(2);
+    expect(bodies[1].submission_id).toBe(bodies[0].submission_id);
+    expect(bodies[1].name).toBe('Rate Limited');
+  });
+
+  test('session storage keeps no raw contact values', async ({ page }) => {
+    await guardExternal(page);
+    await page.route(endpoint, route => route.fulfill({ status: 503, contentType: 'application/json', body: '{}' }));
+    await page.goto('/contact/');
+    await fillAndSend(page, 'Private Name Value');
     await expect(page.locator('[data-form-status]')).toContainText('could not confirm');
     const stored = await page.evaluate(() => JSON.stringify(Object.entries(sessionStorage)));
     expect(stored).not.toContain('Private Name Value');
-    expect(stored).not.toContain('private.value@example.invalid');
+    expect(stored).not.toContain('visitor@example.invalid');
   });
 
   test('a 2xx without the receipt shape is not confirmed', async ({ page }) => {
+    await guardExternal(page);
     await page.route(endpoint, route => route.fulfill({ status: 200, contentType: 'application/json', body: '{"ok":true}' }));
-    await page.route('**/*', route => (route.request().url().startsWith('http://localhost') || route.request().url().startsWith('http://127.0.0.1')) ? route.continue() : route.abort());
     await page.goto('/contact/');
-    await page.getByLabel('Your name (required)').fill('Receipt Check');
-    await page.getByLabel('Email address (required)').fill('receipt@example.invalid');
-    await page.getByRole('button', { name: 'Send message' }).click();
+    await fillAndSend(page, 'Receipt Check');
     await expect(page.locator('[data-form-status]')).toContainText('could not confirm');
     await expect(page.locator('[data-form-status]')).not.toContainText('has been received');
   });
