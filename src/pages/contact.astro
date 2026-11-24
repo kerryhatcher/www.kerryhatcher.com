@@ -1,0 +1,268 @@
+---
+import Base from '../layouts/Base.astro';
+import { validateHtpEndpoint } from '../lib/htp-endpoint.mjs';
+import { site } from '../lib/site';
+
+// Hidden pilot page: not in nav, not in the sitemap, noindex. The public HTP Forms route is
+// build-time configuration only. Invalid values fail the build; an absent value disables the form.
+const configured: string | undefined = import.meta.env.PUBLIC_HTP_FORM_ENDPOINT || undefined;
+const endpoint = configured ? validateHtpEndpoint(configured) : '';
+const available = endpoint !== '';
+---
+<Base
+  layout="page"
+  currentUrl="/contact/"
+  seo={{
+    title: `Contact | ${site.title}`,
+    headline: 'Contact',
+    description: 'Send Kerry a message.',
+    path: '/contact/',
+    kind: 'website',
+    jsonLdType: 'WebPage',
+    noIndex: true,
+  }}
+>
+  <article class="page contact" data-reveal-stagger>
+    <header class="page__header">
+      <h1 class="page__title" data-reveal>Contact</h1>
+      <p class="page__dek" data-reveal>Send a message. Name and email are required so I can reply.</p>
+    </header>
+
+    <div class="page__body prose contact__body" data-reveal>
+      <p class="contact__status" data-form-status role="status" aria-live="polite" aria-atomic="true" tabindex="-1" hidden></p>
+
+      <form
+        class="contact__form"
+        data-contact-form
+        data-endpoint={available ? endpoint : undefined}
+        action={available ? endpoint : undefined}
+        method="POST"
+        aria-label="Contact form"
+        aria-describedby="contact-note"
+      >
+        <fieldset disabled={!available}>
+          <legend>Your details</legend>
+          <p id="contact-note" class="contact__note">{available
+            ? 'You will see a confirmation only after your message is received.'
+            : 'The contact form is not available right now.'}</p>
+
+          {available && (
+            <div class="contact__hp" hidden>
+              <label for="contact-website">Leave this field empty</label>
+              <input id="contact-website" name="website" tabindex="-1" autocomplete="off" />
+            </div>
+          )}
+
+          <div class="contact__grid">
+            <label class="contact__field contact__field--full">
+              <span>Your name (required)</span>
+              <input name="name" type="text" autocomplete="name" required />
+            </label>
+            <label class="contact__field">
+              <span>Email address (required)</span>
+              <input name="email" type="email" autocomplete="email" required />
+            </label>
+            <label class="contact__field">
+              <span>Phone number (optional)</span>
+              <input name="phone" type="tel" autocomplete="tel" />
+            </label>
+            <label class="contact__field contact__field--full">
+              <span>Message (optional)</span>
+              <textarea name="message" rows="5"></textarea>
+            </label>
+          </div>
+
+          <button class="contact__submit" type="submit" data-submit>
+            <span data-submit-label>Send message</span>
+          </button>
+        </fieldset>
+      </form>
+
+      {!available && (
+        <p class="contact__unavailable" data-unavailable>
+          The contact form is unavailable. You can still reach me directly by email at{' '}
+          <a href={`mailto:${site.email}`}>{site.email}</a>.
+        </p>
+      )}
+    </div>
+  </article>
+</Base>
+
+<style>
+  .contact__form fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+  .contact__form legend { font-weight: 700; margin-bottom: .75rem; }
+  .contact__note { color: var(--ink-muted); font-size: .95rem; margin: 0 0 1.25rem; }
+  .contact__grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+  @media (min-width: 640px) { .contact__grid { grid-template-columns: 1fr 1fr; } }
+  .contact__field { display: grid; gap: .35rem; }
+  .contact__field--full { grid-column: 1 / -1; }
+  .contact__field span { font-weight: 600; font-size: .95rem; }
+  .contact__field input, .contact__field textarea {
+    width: 100%; padding: .6rem .75rem; border: 1px solid var(--rule-strong);
+    border-radius: 4px; background: var(--paper-2); color: var(--ink);
+  }
+  .contact__field input:focus-visible, .contact__field textarea:focus-visible,
+  .contact__submit:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .contact__hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+  .contact__submit {
+    margin-top: 1.25rem; padding: .6rem 1.1rem; border-radius: 999px;
+    border: 1px solid var(--rule-strong); background: var(--paper-2); color: var(--ink); cursor: pointer;
+  }
+  .contact__submit:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+  .contact__form fieldset:disabled .contact__field input,
+  .contact__form fieldset:disabled .contact__field textarea,
+  .contact__form fieldset:disabled .contact__submit { opacity: .6; cursor: not-allowed; }
+  .contact__status:not(:empty) { padding: 16px; margin: 0 0 1.5rem; border: 1px solid currentColor; }
+  .contact__status[data-state="error"] { font-weight: 600; }
+  .contact__status[data-state="success"] { color: var(--accent); }
+  .contact__unavailable { margin-top: 1.5rem; }
+</style>
+
+<script>
+  // Privacy: raw contact values live only in memory for same-page retry. sessionStorage holds
+  // just the submission ID and a salted digest, so a reload requires the original text again.
+  const form = document.querySelector<HTMLFormElement>('[data-contact-form]');
+  const endpoint = form?.dataset.endpoint;
+  if (form && endpoint) {
+    const status = document.querySelector<HTMLElement>('[data-form-status]')!;
+    const button = form.querySelector<HTMLButtonElement>('[data-submit]')!;
+    const label = form.querySelector<HTMLElement>('[data-submit-label]')!;
+    const fieldset = form.querySelector('fieldset')!;
+    const email = 'kerry@kerryhatcher.com';
+    const storageKey = `contact-htp:${endpoint}`;
+    type Fields = { name: string; email: string; phone: string; message: string; website: string };
+    type Pending = { submission_id: string; fields: Fields };
+
+    // In memory only: the exact body and ID for the current page.
+    let pending: Pending | null = null;
+    // Persisted: ID and digest only. Digest binds the reused ID to identical details.
+    const readMarker = (): { submission_id: string; digest: string } | null => {
+      try {
+        const parsed = JSON.parse(sessionStorage.getItem(storageKey) ?? 'null');
+        if (parsed && typeof parsed.submission_id === 'string' && typeof parsed.digest === 'string') return parsed;
+      } catch { /* storage optional */ }
+      return null;
+    };
+    const writeMarker = (value: { submission_id: string; digest: string } | null) => {
+      try {
+        if (value) sessionStorage.setItem(storageKey, JSON.stringify(value));
+        else sessionStorage.removeItem(storageKey);
+      } catch { /* in-memory retry only */ }
+    };
+    const digestOf = async (submissionId: string, fields: Fields) => {
+      const bytes = new TextEncoder().encode(`${submissionId}\n${JSON.stringify(fields)}`);
+      const hash = await crypto.subtle.digest('SHA-256', bytes);
+      return Array.from(new Uint8Array(hash), b => b.toString(16).padStart(2, '0')).join('');
+    };
+    const readFields = (): Fields => {
+      const values = new FormData(form);
+      return {
+        name: String(values.get('name') || ''),
+        email: String(values.get('email') || ''),
+        phone: String(values.get('phone') || ''),
+        message: String(values.get('message') || ''),
+        website: String(values.get('website') || ''),
+      };
+    };
+    const show = (state: 'error' | 'success', text: string) => {
+      status.hidden = false;
+      status.dataset.state = state;
+      status.textContent = text;
+      status.focus();
+    };
+    const unconfirmed = `I could not confirm your message. Send again to retry with the same details, or email ${email} to check.`;
+
+    // After a reload the original text must be entered again; the stored digest must match it.
+    if (readMarker()) {
+      show('error', `Your previous message could not be confirmed. Enter the original details again to retry, or email ${email} before changing them.`);
+    }
+    let inFlight = false;
+
+    form.addEventListener('submit', async event => {
+      event.preventDefault();
+      if (inFlight || !form.reportValidity()) return;
+      const fields = readFields();
+      let submissionId: string;
+      if (pending) {
+        // Same page: the in-memory body must be identical before reusing its ID.
+        if (JSON.stringify(pending.fields) !== JSON.stringify(fields)) {
+          show('error', `Your earlier message may have been received. Restore the original details to retry, or email ${email} before sending changes.`);
+          return;
+        }
+        submissionId = pending.submission_id;
+      } else {
+        const marker = readMarker();
+        if (marker) {
+          const digest = await digestOf(marker.submission_id, fields);
+          if (digest !== marker.digest) {
+            show('error', `Your earlier message may have been received. Restore the original details to retry, or email ${email} before sending changes.`);
+            return;
+          }
+          submissionId = marker.submission_id;
+        } else {
+          submissionId = crypto.randomUUID();
+        }
+        pending = { submission_id: submissionId, fields };
+        writeMarker({ submission_id: submissionId, digest: await digestOf(submissionId, fields) });
+      }
+
+      inFlight = true;
+      button.disabled = true;
+      label.textContent = 'Sending…';
+      form.setAttribute('aria-busy', 'true');
+      status.hidden = true;
+      status.textContent = '';
+      delete status.dataset.state;
+      const controller = new AbortController();
+      const timeout = window.setTimeout(() => controller.abort(), 20000);
+      let confirmed = false;
+      try {
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          body: JSON.stringify({ submission_id: submissionId, ...fields }),
+          headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
+          signal: controller.signal,
+        });
+        let result: unknown = null;
+        try { result = await response.json(); } catch { result = null; }
+        const receipt = result as { ok?: unknown; duplicate?: unknown } | null;
+        // Confirmation requires the API receipt shape: {"ok":true,"duplicate":<boolean>}.
+        if (response.ok && receipt?.ok === true && typeof receipt.duplicate === 'boolean') {
+          confirmed = true;
+          pending = null;
+          writeMarker(null);
+          form.reset();
+          fieldset.disabled = true;
+          label.textContent = 'Message received';
+          show('success', 'Thank you. Your message has been received. I will reply using the contact details you gave.');
+        } else if (response.status === 409) {
+          // Same ID, different data: never resubmit automatically.
+          show('error', `I could not reconcile this message with an earlier submission. Please email ${email} before trying again.`);
+        } else if ([413, 422].includes(response.status)) {
+          // Validation or size rejection happens before storage, so the next attempt may use a new ID.
+          pending = null;
+          writeMarker(null);
+          show('error', `Your message was not accepted. Check your details and try again, or email ${email}.`);
+        } else if (response.status === 429) {
+          // Form-wide ingress can reject a retry of an already-stored submission, so a 429 is
+          // unconfirmed: keep the ID and body and let the visitor resend the same request later.
+          show('error', `This form is receiving too many requests right now. Wait about 10 minutes, then send again with the same details. Your message has not been confirmed, so it may already have been received.`);
+        } else {
+          // Opaque failure, 5xx, or a 2xx without the receipt shape: unconfirmed, keep the ID.
+          show('error', unconfirmed);
+        }
+      } catch {
+        // A lost response can follow an accepted POST. Keep the same ID and body.
+        show('error', unconfirmed);
+      } finally {
+        window.clearTimeout(timeout);
+        inFlight = false;
+        form.removeAttribute('aria-busy');
+        if (!confirmed) {
+          button.disabled = false;
+          label.textContent = 'Send message';
+        }
+      }
+    });
+  }
+</script>

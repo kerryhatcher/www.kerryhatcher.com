@@ -42,7 +42,10 @@ jobs:
       - run: bun run test
 
       # The custom domain supports /cdn-cgi/image. Local and PR builds use originals.
+      # Public routing URL only (not a secret). Unset or empty keeps the contact form disabled.
       - run: bun run build --mode cloudflare
+        env:
+          PUBLIC_HTP_FORM_ENDPOINT: ${{ vars.PUBLIC_HTP_FORM_ENDPOINT }}
 
       - name: Deploy
         env:
